@@ -25,7 +25,7 @@
 
 	employment_size = huge_foreign_trade_employment
 
-	rural_settlement = yes
+	rural_settlement = no
 	town = yes
 	city = yes
 
@@ -41,10 +41,13 @@
 	}
 
 	modifier = {
-		monthly_towards_plutocracy = 0.1
-		local_burghers_estate_power = 1
+		local_burghers_estate_power = 2
 		local_burghers_desired_pop_scaled = 10
-		local_unrest = 0.1
+		local_unrest = 0.2
 		monthly_burghers_estate_rebel_growth = 0.01
+		local_pop_join_rebel_threshold = -0.2
+		local_migration_attraction = 1
+		local_migration_speed = 1
+		gold_to_building_owner = 0.5
 	}
 }

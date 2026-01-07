@@ -31,9 +31,36 @@ cap_econ.1 = {
 		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_extreme_bonus	}
 		add_gold_to_estate = {
 			estate_type = estate_type:burghers_estate
-			value = { value = root.estate_tax_base:burghers_estate multiply = 100	}
+			value = { value = root.estate_tax_base:burghers_estate multiply = 10	}
 		}
-		random_owned_location = {
+		random_owned_non_rural_location = {
+			change_building_level_in_location = {
+				building = building_type:Mangiatoia
+				value = 1
+			}
+		}
+	}
+		option = {
+		name = cap_econ.2.a
+		add_gold = { value = root.estate_tax_base:burghers_estate	multiply = 20 }
+		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_mild_bonus	}
+		add_gold_to_estate = {
+			estate_type = estate_type:burghers_estate
+			value = { value = root.estate_tax_base:burghers_estate multiply = 5	}
+		}
+		random_owned_non_rural_location = {
+			change_building_level_in_location = {
+				building = building_type:Mangiatoia
+				value = 1
+			}
+		}
+			random_owned_location = {
+			change_building_level_in_location = {
+				building = building_type:Mangiatoia
+				value = 1
+			}
+		}
+			random_owned_location = {
 			change_building_level_in_location = {
 				building = building_type:Mangiatoia
 				value = 1
