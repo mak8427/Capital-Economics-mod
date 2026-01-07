@@ -20,7 +20,15 @@
 	}
 
 	location_potential = {
-		raw_material = goods:alum
+		OR = {
+
+			vegetation = woods
+			vegetation = forest
+			vegetation = farmland
+			vegetation = jungle
+		    raw_material = goods:alum
+		}
+
 	}
 
 	category = rgo_building_category

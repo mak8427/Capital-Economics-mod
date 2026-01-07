@@ -5,7 +5,9 @@
 	pop_type = burghers
 
 	can_close = no
-
+		allow = {
+		always = no
+	}
 	can_destroy = {
 		custom_tooltip = {
 			text = jesuits_allowed_or_non_catholic
@@ -43,6 +45,6 @@
 		local_burghers_estate_power = 1
 		local_burghers_desired_pop_scaled = 10
 		local_unrest = 0.1
-		monthly_burghers_estate_rebel_growth = 0.001
+		monthly_burghers_estate_rebel_growth = 0.01
 	}
 }
