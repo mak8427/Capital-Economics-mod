@@ -1,0 +1,567 @@
+namespace = cap_econ
+
+scripted_effect cap_econ_apply_mangiatoia_investment = {
+	if = {
+		limit = { var:mangiatoia_final_count >= 1 exists = scope:mangiatoia_loc_1 }
+		scope:mangiatoia_loc_1 = {
+			change_building_level_in_location = {
+				building = building_type:Mangiatoia
+				value = 1
+			}
+		}
+	}
+	if = {
+		limit = { var:mangiatoia_final_count >= 2 exists = scope:mangiatoia_loc_2 }
+		scope:mangiatoia_loc_2 = {
+			change_building_level_in_location = {
+				building = building_type:Mangiatoia
+				value = 1
+			}
+		}
+	}
+	if = {
+		limit = { var:mangiatoia_final_count >= 3 exists = scope:mangiatoia_loc_3 }
+		scope:mangiatoia_loc_3 = {
+			change_building_level_in_location = {
+				building = building_type:Mangiatoia
+				value = 1
+			}
+		}
+	}
+	if = {
+		limit = { var:mangiatoia_final_count >= 4 exists = scope:mangiatoia_loc_4 }
+		scope:mangiatoia_loc_4 = {
+			change_building_level_in_location = {
+				building = building_type:Mangiatoia
+				value = 1
+			}
+		}
+	}
+	if = {
+		limit = { var:mangiatoia_final_count >= 5 exists = scope:mangiatoia_loc_5 }
+		scope:mangiatoia_loc_5 = {
+			change_building_level_in_location = {
+				building = building_type:Mangiatoia
+				value = 1
+			}
+		}
+	}
+	if = {
+		limit = { var:mangiatoia_final_count >= 6 exists = scope:mangiatoia_loc_6 }
+		scope:mangiatoia_loc_6 = {
+			change_building_level_in_location = {
+				building = building_type:Mangiatoia
+				value = 1
+			}
+		}
+	}
+	if = {
+		limit = { var:mangiatoia_final_count >= 7 exists = scope:mangiatoia_loc_7 }
+		scope:mangiatoia_loc_7 = {
+			change_building_level_in_location = {
+				building = building_type:Mangiatoia
+				value = 1
+			}
+		}
+	}
+	if = {
+		limit = { var:mangiatoia_final_count >= 8 exists = scope:mangiatoia_loc_8 }
+		scope:mangiatoia_loc_8 = {
+			change_building_level_in_location = {
+				building = building_type:Mangiatoia
+				value = 1
+			}
+		}
+	}
+	if = {
+		limit = { var:mangiatoia_final_count >= 9 exists = scope:mangiatoia_loc_9 }
+		scope:mangiatoia_loc_9 = {
+			change_building_level_in_location = {
+				building = building_type:Mangiatoia
+				value = 1
+			}
+		}
+	}
+	if = {
+		limit = { var:mangiatoia_final_count >= 10 exists = scope:mangiatoia_loc_10 }
+		scope:mangiatoia_loc_10 = {
+			change_building_level_in_location = {
+				building = building_type:Mangiatoia
+				value = 1
+			}
+		}
+	}
+	if = {
+		limit = { var:mangiatoia_final_count >= 11 exists = scope:mangiatoia_loc_11 }
+		scope:mangiatoia_loc_11 = {
+			change_building_level_in_location = {
+				building = building_type:Mangiatoia
+				value = 1
+			}
+		}
+	}
+	if = {
+		limit = { var:mangiatoia_final_count >= 12 exists = scope:mangiatoia_loc_12 }
+		scope:mangiatoia_loc_12 = {
+			change_building_level_in_location = {
+				building = building_type:Mangiatoia
+				value = 1
+			}
+		}
+	}
+	if = {
+		limit = { var:mangiatoia_final_count >= 13 exists = scope:mangiatoia_loc_13 }
+		scope:mangiatoia_loc_13 = {
+			change_building_level_in_location = {
+				building = building_type:Mangiatoia
+				value = 1
+			}
+		}
+	}
+	if = {
+		limit = { var:mangiatoia_final_count >= 14 exists = scope:mangiatoia_loc_14 }
+		scope:mangiatoia_loc_14 = {
+			change_building_level_in_location = {
+				building = building_type:Mangiatoia
+				value = 1
+			}
+		}
+	}
+	if = {
+		limit = { var:mangiatoia_final_count >= 15 exists = scope:mangiatoia_loc_15 }
+		scope:mangiatoia_loc_15 = {
+			change_building_level_in_location = {
+				building = building_type:Mangiatoia
+				value = 1
+			}
+		}
+	}
+	if = {
+		limit = { var:mangiatoia_final_count >= 16 exists = scope:mangiatoia_loc_16 }
+		scope:mangiatoia_loc_16 = {
+			change_building_level_in_location = {
+				building = building_type:Mangiatoia
+				value = 1
+			}
+		}
+	}
+	if = {
+		limit = { var:mangiatoia_final_count >= 17 exists = scope:mangiatoia_loc_17 }
+		scope:mangiatoia_loc_17 = {
+			change_building_level_in_location = {
+				building = building_type:Mangiatoia
+				value = 1
+			}
+		}
+	}
+	if = {
+		limit = { var:mangiatoia_final_count >= 18 exists = scope:mangiatoia_loc_18 }
+		scope:mangiatoia_loc_18 = {
+			change_building_level_in_location = {
+				building = building_type:Mangiatoia
+				value = 1
+			}
+		}
+	}
+	if = {
+		limit = { var:mangiatoia_final_count >= 19 exists = scope:mangiatoia_loc_19 }
+		scope:mangiatoia_loc_19 = {
+			change_building_level_in_location = {
+				building = building_type:Mangiatoia
+				value = 1
+			}
+		}
+	}
+	if = {
+		limit = { var:mangiatoia_final_count >= 20 exists = scope:mangiatoia_loc_20 }
+		scope:mangiatoia_loc_20 = {
+			change_building_level_in_location = {
+				building = building_type:Mangiatoia
+				value = 1
+			}
+		}
+	}
+}
+
+scripted_effect cap_econ_cleanup_mangiatoia_selection = {
+	scope:mangiatoia_loc_1 ?= { remove_variable = cap_econ_mangiatoia_selected }
+	scope:mangiatoia_loc_2 ?= { remove_variable = cap_econ_mangiatoia_selected }
+	scope:mangiatoia_loc_3 ?= { remove_variable = cap_econ_mangiatoia_selected }
+	scope:mangiatoia_loc_4 ?= { remove_variable = cap_econ_mangiatoia_selected }
+	scope:mangiatoia_loc_5 ?= { remove_variable = cap_econ_mangiatoia_selected }
+	scope:mangiatoia_loc_6 ?= { remove_variable = cap_econ_mangiatoia_selected }
+	scope:mangiatoia_loc_7 ?= { remove_variable = cap_econ_mangiatoia_selected }
+	scope:mangiatoia_loc_8 ?= { remove_variable = cap_econ_mangiatoia_selected }
+	scope:mangiatoia_loc_9 ?= { remove_variable = cap_econ_mangiatoia_selected }
+	scope:mangiatoia_loc_10 ?= { remove_variable = cap_econ_mangiatoia_selected }
+	scope:mangiatoia_loc_11 ?= { remove_variable = cap_econ_mangiatoia_selected }
+	scope:mangiatoia_loc_12 ?= { remove_variable = cap_econ_mangiatoia_selected }
+	scope:mangiatoia_loc_13 ?= { remove_variable = cap_econ_mangiatoia_selected }
+	scope:mangiatoia_loc_14 ?= { remove_variable = cap_econ_mangiatoia_selected }
+	scope:mangiatoia_loc_15 ?= { remove_variable = cap_econ_mangiatoia_selected }
+	scope:mangiatoia_loc_16 ?= { remove_variable = cap_econ_mangiatoia_selected }
+	scope:mangiatoia_loc_17 ?= { remove_variable = cap_econ_mangiatoia_selected }
+	scope:mangiatoia_loc_18 ?= { remove_variable = cap_econ_mangiatoia_selected }
+	scope:mangiatoia_loc_19 ?= { remove_variable = cap_econ_mangiatoia_selected }
+	scope:mangiatoia_loc_20 ?= { remove_variable = cap_econ_mangiatoia_selected }
+	remove_variable = mangiatoia_count
+	remove_variable = mangiatoia_available
+	remove_variable = mangiatoia_choice_1
+	remove_variable = mangiatoia_choice_2
+	remove_variable = mangiatoia_choice_3
+	remove_variable = mangiatoia_cost_2
+	remove_variable = mangiatoia_cost_3
+	remove_variable = mangiatoia_final_count
+}
+
+cap_econ.1 = {
+	type = country_event
+
+	title = cap_econ.1.title
+	desc = cap_econ.1.desc
+	illustration_tags = {
+		10 = interior
+		10 = happy
+	}
+
+	trigger = {
+		any_country = {
+			limit = {
+					receiving_scripted_relation = {
+						type = relation_type:cap_econ_extraction_rights
+						target = root
+					}
+			}
+		}
+	}
+	immediate = {
+		random_country = {
+			limit = {
+				this != root
+				OR = {
+					receiving_scripted_relation = {
+						type = relation_type:fondaco_rights
+						target = root
+					}
+					receiving_scripted_relation = {
+						type = relation_type:cap_econ_extraction_rights
+						target = root
+					}
+				}
+				any_owned_location = {
+					NOT = { has_building_with_at_least_one_level = Mangiatoia }
+				}
+			}
+			save_scope_as = target_country
+		}
+		set_variable = {
+			name = mangiatoia_count
+			value = {
+				add = scope:target_country.num_locations
+				multiply = "scope:target_country.estate_power(estate_type:burghers_estate)"
+				divide = 10
+				floor = yes
+				min = 1
+				max = 20
+			}
+		}
+		set_variable = {
+			name = mangiatoia_choice_1
+			value = 1
+		}
+		set_variable = {
+			name = mangiatoia_choice_2
+			value = {
+				value = var:mangiatoia_count
+				multiply = 0.5
+				floor = yes
+				add = 1
+				max = 20
+			}
+		}
+		set_variable = {
+			name = mangiatoia_choice_3
+			value = {
+				value = var:mangiatoia_count
+				add = 2
+				max = 20
+			}
+		}
+		set_variable = {
+			name = mangiatoia_select_target
+			value = var:mangiatoia_choice_3
+		}
+		set_variable = {
+			name = mangiatoia_selected
+			value = 0
+		}
+		set_variable = {
+			name = mangiatoia_index
+			value = 1
+		}
+		while = {
+			limit = {
+				var:mangiatoia_index <= var:mangiatoia_select_target
+				scope:target_country = {
+					any_owned_location = {
+						NOT = { has_building_with_at_least_one_level = Mangiatoia }
+						NOT = { has_variable = cap_econ_mangiatoia_selected }
+					}
+				}
+			}
+			scope:target_country = {
+				random_owned_location = {
+					limit = {
+						NOT = { has_building_with_at_least_one_level = Mangiatoia }
+						NOT = { has_variable = cap_econ_mangiatoia_selected }
+					}
+					set_variable = {
+						name = cap_econ_mangiatoia_selected
+						value = 1
+					}
+					if = {
+						limit = { var:mangiatoia_index = 1 }
+						save_scope_as = mangiatoia_loc_1
+					}
+					else_if = {
+						limit = { var:mangiatoia_index = 2 }
+						save_scope_as = mangiatoia_loc_2
+					}
+					else_if = {
+						limit = { var:mangiatoia_index = 3 }
+						save_scope_as = mangiatoia_loc_3
+					}
+					else_if = {
+						limit = { var:mangiatoia_index = 4 }
+						save_scope_as = mangiatoia_loc_4
+					}
+					else_if = {
+						limit = { var:mangiatoia_index = 5 }
+						save_scope_as = mangiatoia_loc_5
+					}
+					else_if = {
+						limit = { var:mangiatoia_index = 6 }
+						save_scope_as = mangiatoia_loc_6
+					}
+					else_if = {
+						limit = { var:mangiatoia_index = 7 }
+						save_scope_as = mangiatoia_loc_7
+					}
+					else_if = {
+						limit = { var:mangiatoia_index = 8 }
+						save_scope_as = mangiatoia_loc_8
+					}
+					else_if = {
+						limit = { var:mangiatoia_index = 9 }
+						save_scope_as = mangiatoia_loc_9
+					}
+					else_if = {
+						limit = { var:mangiatoia_index = 10 }
+						save_scope_as = mangiatoia_loc_10
+					}
+					else_if = {
+						limit = { var:mangiatoia_index = 11 }
+						save_scope_as = mangiatoia_loc_11
+					}
+					else_if = {
+						limit = { var:mangiatoia_index = 12 }
+						save_scope_as = mangiatoia_loc_12
+					}
+					else_if = {
+						limit = { var:mangiatoia_index = 13 }
+						save_scope_as = mangiatoia_loc_13
+					}
+					else_if = {
+						limit = { var:mangiatoia_index = 14 }
+						save_scope_as = mangiatoia_loc_14
+					}
+					else_if = {
+						limit = { var:mangiatoia_index = 15 }
+						save_scope_as = mangiatoia_loc_15
+					}
+					else_if = {
+						limit = { var:mangiatoia_index = 16 }
+						save_scope_as = mangiatoia_loc_16
+					}
+					else_if = {
+						limit = { var:mangiatoia_index = 17 }
+						save_scope_as = mangiatoia_loc_17
+					}
+					else_if = {
+						limit = { var:mangiatoia_index = 18 }
+						save_scope_as = mangiatoia_loc_18
+					}
+					else_if = {
+						limit = { var:mangiatoia_index = 19 }
+						save_scope_as = mangiatoia_loc_19
+					}
+					else_if = {
+						limit = { var:mangiatoia_index = 20 }
+						save_scope_as = mangiatoia_loc_20
+					}
+				}
+			}
+			change_variable = {
+				name = mangiatoia_selected
+				add = 1
+			}
+			change_variable = {
+				name = mangiatoia_index
+				add = 1
+			}
+		}
+		set_variable = {
+			name = mangiatoia_available
+			value = var:mangiatoia_selected
+		}
+		remove_variable = mangiatoia_selected
+		remove_variable = mangiatoia_index
+		remove_variable = mangiatoia_select_target
+		if = {
+			limit = { var:mangiatoia_choice_1 > var:mangiatoia_available }
+			set_variable = {
+				name = mangiatoia_choice_1
+				value = var:mangiatoia_available
+			}
+		}
+		if = {
+			limit = { var:mangiatoia_choice_2 > var:mangiatoia_available }
+			set_variable = {
+				name = mangiatoia_choice_2
+				value = var:mangiatoia_available
+			}
+		}
+		if = {
+			limit = { var:mangiatoia_choice_3 > var:mangiatoia_available }
+			set_variable = {
+				name = mangiatoia_choice_3
+				value = var:mangiatoia_available
+			}
+		}
+		set_variable = {
+			name = mangiatoia_cost_2
+			value = {
+				add = var:mangiatoia_choice_2
+				multiply = 100
+			}
+		}
+		set_variable = {
+			name = mangiatoia_cost_3
+			value = {
+				add = var:mangiatoia_choice_3
+				multiply = 100
+			}
+		}
+	}
+
+	option = {
+		name = cap_econ.1.a
+		custom_tooltip = cap_econ.1.a.tt
+		if = { limit = { var:mangiatoia_choice_1 >= 1 exists = scope:mangiatoia_loc_1 } custom_tooltip = cap_econ.1.loc_1.tt }
+		if = { limit = { var:mangiatoia_choice_1 >= 2 exists = scope:mangiatoia_loc_2 } custom_tooltip = cap_econ.1.loc_2.tt }
+		if = { limit = { var:mangiatoia_choice_1 >= 3 exists = scope:mangiatoia_loc_3 } custom_tooltip = cap_econ.1.loc_3.tt }
+		if = { limit = { var:mangiatoia_choice_1 >= 4 exists = scope:mangiatoia_loc_4 } custom_tooltip = cap_econ.1.loc_4.tt }
+		if = { limit = { var:mangiatoia_choice_1 >= 5 exists = scope:mangiatoia_loc_5 } custom_tooltip = cap_econ.1.loc_5.tt }
+		if = { limit = { var:mangiatoia_choice_1 >= 6 exists = scope:mangiatoia_loc_6 } custom_tooltip = cap_econ.1.loc_6.tt }
+		if = { limit = { var:mangiatoia_choice_1 >= 7 exists = scope:mangiatoia_loc_7 } custom_tooltip = cap_econ.1.loc_7.tt }
+		if = { limit = { var:mangiatoia_choice_1 >= 8 exists = scope:mangiatoia_loc_8 } custom_tooltip = cap_econ.1.loc_8.tt }
+		if = { limit = { var:mangiatoia_choice_1 >= 9 exists = scope:mangiatoia_loc_9 } custom_tooltip = cap_econ.1.loc_9.tt }
+		if = { limit = { var:mangiatoia_choice_1 >= 10 exists = scope:mangiatoia_loc_10 } custom_tooltip = cap_econ.1.loc_10.tt }
+		if = { limit = { var:mangiatoia_choice_1 >= 11 exists = scope:mangiatoia_loc_11 } custom_tooltip = cap_econ.1.loc_11.tt }
+		if = { limit = { var:mangiatoia_choice_1 >= 12 exists = scope:mangiatoia_loc_12 } custom_tooltip = cap_econ.1.loc_12.tt }
+		if = { limit = { var:mangiatoia_choice_1 >= 13 exists = scope:mangiatoia_loc_13 } custom_tooltip = cap_econ.1.loc_13.tt }
+		if = { limit = { var:mangiatoia_choice_1 >= 14 exists = scope:mangiatoia_loc_14 } custom_tooltip = cap_econ.1.loc_14.tt }
+		if = { limit = { var:mangiatoia_choice_1 >= 15 exists = scope:mangiatoia_loc_15 } custom_tooltip = cap_econ.1.loc_15.tt }
+		if = { limit = { var:mangiatoia_choice_1 >= 16 exists = scope:mangiatoia_loc_16 } custom_tooltip = cap_econ.1.loc_16.tt }
+		if = { limit = { var:mangiatoia_choice_1 >= 17 exists = scope:mangiatoia_loc_17 } custom_tooltip = cap_econ.1.loc_17.tt }
+		if = { limit = { var:mangiatoia_choice_1 >= 18 exists = scope:mangiatoia_loc_18 } custom_tooltip = cap_econ.1.loc_18.tt }
+		if = { limit = { var:mangiatoia_choice_1 >= 19 exists = scope:mangiatoia_loc_19 } custom_tooltip = cap_econ.1.loc_19.tt }
+		if = { limit = { var:mangiatoia_choice_1 >= 20 exists = scope:mangiatoia_loc_20 } custom_tooltip = cap_econ.1.loc_20.tt }
+		set_variable = {
+			name = mangiatoia_final_count
+			value = var:mangiatoia_choice_1
+		}
+		cap_econ_apply_mangiatoia_investment = yes
+		cap_econ_cleanup_mangiatoia_selection = yes
+	}
+
+	option = {
+		name = cap_econ.1.b
+		trigger = {
+			gold >= {
+				value = var:mangiatoia_cost_2
+			}
+		}
+		custom_tooltip = cap_econ.1.b.tt
+		if = { limit = { var:mangiatoia_choice_2 >= 1 exists = scope:mangiatoia_loc_1 } custom_tooltip = cap_econ.1.loc_1.tt }
+		if = { limit = { var:mangiatoia_choice_2 >= 2 exists = scope:mangiatoia_loc_2 } custom_tooltip = cap_econ.1.loc_2.tt }
+		if = { limit = { var:mangiatoia_choice_2 >= 3 exists = scope:mangiatoia_loc_3 } custom_tooltip = cap_econ.1.loc_3.tt }
+		if = { limit = { var:mangiatoia_choice_2 >= 4 exists = scope:mangiatoia_loc_4 } custom_tooltip = cap_econ.1.loc_4.tt }
+		if = { limit = { var:mangiatoia_choice_2 >= 5 exists = scope:mangiatoia_loc_5 } custom_tooltip = cap_econ.1.loc_5.tt }
+		if = { limit = { var:mangiatoia_choice_2 >= 6 exists = scope:mangiatoia_loc_6 } custom_tooltip = cap_econ.1.loc_6.tt }
+		if = { limit = { var:mangiatoia_choice_2 >= 7 exists = scope:mangiatoia_loc_7 } custom_tooltip = cap_econ.1.loc_7.tt }
+		if = { limit = { var:mangiatoia_choice_2 >= 8 exists = scope:mangiatoia_loc_8 } custom_tooltip = cap_econ.1.loc_8.tt }
+		if = { limit = { var:mangiatoia_choice_2 >= 9 exists = scope:mangiatoia_loc_9 } custom_tooltip = cap_econ.1.loc_9.tt }
+		if = { limit = { var:mangiatoia_choice_2 >= 10 exists = scope:mangiatoia_loc_10 } custom_tooltip = cap_econ.1.loc_10.tt }
+		if = { limit = { var:mangiatoia_choice_2 >= 11 exists = scope:mangiatoia_loc_11 } custom_tooltip = cap_econ.1.loc_11.tt }
+		if = { limit = { var:mangiatoia_choice_2 >= 12 exists = scope:mangiatoia_loc_12 } custom_tooltip = cap_econ.1.loc_12.tt }
+		if = { limit = { var:mangiatoia_choice_2 >= 13 exists = scope:mangiatoia_loc_13 } custom_tooltip = cap_econ.1.loc_13.tt }
+		if = { limit = { var:mangiatoia_choice_2 >= 14 exists = scope:mangiatoia_loc_14 } custom_tooltip = cap_econ.1.loc_14.tt }
+		if = { limit = { var:mangiatoia_choice_2 >= 15 exists = scope:mangiatoia_loc_15 } custom_tooltip = cap_econ.1.loc_15.tt }
+		if = { limit = { var:mangiatoia_choice_2 >= 16 exists = scope:mangiatoia_loc_16 } custom_tooltip = cap_econ.1.loc_16.tt }
+		if = { limit = { var:mangiatoia_choice_2 >= 17 exists = scope:mangiatoia_loc_17 } custom_tooltip = cap_econ.1.loc_17.tt }
+		if = { limit = { var:mangiatoia_choice_2 >= 18 exists = scope:mangiatoia_loc_18 } custom_tooltip = cap_econ.1.loc_18.tt }
+		if = { limit = { var:mangiatoia_choice_2 >= 19 exists = scope:mangiatoia_loc_19 } custom_tooltip = cap_econ.1.loc_19.tt }
+		if = { limit = { var:mangiatoia_choice_2 >= 20 exists = scope:mangiatoia_loc_20 } custom_tooltip = cap_econ.1.loc_20.tt }
+		add_gold = {
+			value = var:mangiatoia_cost_2
+			multiply = -1
+		}
+		set_variable = {
+			name = mangiatoia_final_count
+			value = var:mangiatoia_choice_2
+		}
+		cap_econ_apply_mangiatoia_investment = yes
+		cap_econ_cleanup_mangiatoia_selection = yes
+	}
+
+	option = {
+		name = cap_econ.1.c
+		trigger = {
+			gold >= {
+				value = var:mangiatoia_cost_3
+			}
+		}
+		custom_tooltip = cap_econ.1.c.tt
+		if = { limit = { var:mangiatoia_choice_3 >= 1 exists = scope:mangiatoia_loc_1 } custom_tooltip = cap_econ.1.loc_1.tt }
+		if = { limit = { var:mangiatoia_choice_3 >= 2 exists = scope:mangiatoia_loc_2 } custom_tooltip = cap_econ.1.loc_2.tt }
+		if = { limit = { var:mangiatoia_choice_3 >= 3 exists = scope:mangiatoia_loc_3 } custom_tooltip = cap_econ.1.loc_3.tt }
+		if = { limit = { var:mangiatoia_choice_3 >= 4 exists = scope:mangiatoia_loc_4 } custom_tooltip = cap_econ.1.loc_4.tt }
+		if = { limit = { var:mangiatoia_choice_3 >= 5 exists = scope:mangiatoia_loc_5 } custom_tooltip = cap_econ.1.loc_5.tt }
+		if = { limit = { var:mangiatoia_choice_3 >= 6 exists = scope:mangiatoia_loc_6 } custom_tooltip = cap_econ.1.loc_6.tt }
+		if = { limit = { var:mangiatoia_choice_3 >= 7 exists = scope:mangiatoia_loc_7 } custom_tooltip = cap_econ.1.loc_7.tt }
+		if = { limit = { var:mangiatoia_choice_3 >= 8 exists = scope:mangiatoia_loc_8 } custom_tooltip = cap_econ.1.loc_8.tt }
+		if = { limit = { var:mangiatoia_choice_3 >= 9 exists = scope:mangiatoia_loc_9 } custom_tooltip = cap_econ.1.loc_9.tt }
+		if = { limit = { var:mangiatoia_choice_3 >= 10 exists = scope:mangiatoia_loc_10 } custom_tooltip = cap_econ.1.loc_10.tt }
+		if = { limit = { var:mangiatoia_choice_3 >= 11 exists = scope:mangiatoia_loc_11 } custom_tooltip = cap_econ.1.loc_11.tt }
+		if = { limit = { var:mangiatoia_choice_3 >= 12 exists = scope:mangiatoia_loc_12 } custom_tooltip = cap_econ.1.loc_12.tt }
+		if = { limit = { var:mangiatoia_choice_3 >= 13 exists = scope:mangiatoia_loc_13 } custom_tooltip = cap_econ.1.loc_13.tt }
+		if = { limit = { var:mangiatoia_choice_3 >= 14 exists = scope:mangiatoia_loc_14 } custom_tooltip = cap_econ.1.loc_14.tt }
+		if = { limit = { var:mangiatoia_choice_3 >= 15 exists = scope:mangiatoia_loc_15 } custom_tooltip = cap_econ.1.loc_15.tt }
+		if = { limit = { var:mangiatoia_choice_3 >= 16 exists = scope:mangiatoia_loc_16 } custom_tooltip = cap_econ.1.loc_16.tt }
+		if = { limit = { var:mangiatoia_choice_3 >= 17 exists = scope:mangiatoia_loc_17 } custom_tooltip = cap_econ.1.loc_17.tt }
+		if = { limit = { var:mangiatoia_choice_3 >= 18 exists = scope:mangiatoia_loc_18 } custom_tooltip = cap_econ.1.loc_18.tt }
+		if = { limit = { var:mangiatoia_choice_3 >= 19 exists = scope:mangiatoia_loc_19 } custom_tooltip = cap_econ.1.loc_19.tt }
+		if = { limit = { var:mangiatoia_choice_3 >= 20 exists = scope:mangiatoia_loc_20 } custom_tooltip = cap_econ.1.loc_20.tt }
+		add_gold = {
+			value = var:mangiatoia_cost_3
+			multiply = -1
+		}
+		set_variable = {
+			name = mangiatoia_final_count
+			value = var:mangiatoia_choice_3
+		}
+		cap_econ_apply_mangiatoia_investment = yes
+		cap_econ_cleanup_mangiatoia_selection = yes
+	}
+}

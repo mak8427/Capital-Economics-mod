@@ -1,0 +1,3 @@
+﻿corporate_extraction_building_cap_level = {
+	positive = "gfx/interface/icons/modifier_types/construction_center_max_level.dds"
+}

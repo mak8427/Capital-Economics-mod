@@ -1,0 +1,49 @@
+﻿corporate_local_headquarters = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_local_headquarters_max_level
+	pop_type = burghers
+
+
+	category = trade_category
+
+	employment_size = huge_foreign_trade_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+
+	build_time = trade_post_build_time
+
+	unique_production_methods = {
+		corporate_local_headquarters_maintenance = {
+			paper = 0.5
+			tools = 0.2
+			fine_cloth = 0.5
+			silver = 0.02
+			goods_gold = 0.01
+
+
+			category = building_maintenance
+		}
+	}
+
+	modifier = {
+		corporate_extraction_building_cap_level = 1
+		free_building_levels = 3
+		local_production_efficiency = 0.01
+		local_burghers_estate_power = 0.33
+	}
+
+	important_for_AI = yes
+}
+

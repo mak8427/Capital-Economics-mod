@@ -1,52 +1,2054 @@
-﻿corporate_lumber_mill = {
+﻿corporate_alum_mine = {
 	is_foreign = yes
 	stronger_power_projection = no
-	need_good_relation = yes
-	max_levels = rural_building_cap
+	max_levels = corporate_extraction_building_cap
 	pop_type = laborers
 
 	employment_size = rural_peasant_produce_employment
 
 	rural_settlement = yes
-	town = no
-	city = no
-
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
 
 	location_potential = {
-		OR = {
-			vegetation = woods
-			vegetation = forest
-			vegetation = farmland
-			vegetation = jungle
-		}
-		NOT = {
-			raw_material = goods:lumber
-		}
+		raw_material = goods:alum
 	}
 
 	category = rgo_building_category
 
+	important_for_AI = yes
+
 	build_time = rural_build_time
 
-	unique_production_methods = {
-		lumber_mill_maintenance = {
-			produced = lumber
-			output = 1
-
-
-			tools = 0.3 # from 0.4
-
-			category = building_maintenance
-
-			debug_max_profit = 0.7
-		}
-		notool_mill_maintenance = {
-			produced = lumber
-			output = 0.1
-
-			category = building_maintenance
-		}
+	possible_production_methods = {
+		cap_econ_alum_mine_maintenance
 	}
 
 	construction_demand = basic_construction_needs
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_amber_collectors = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = laborers
+
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:amber
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = rural_build_time
+
+	possible_production_methods = {
+		cap_econ_amber_collectors_maintenance
+	}
+
+	construction_demand = basic_construction_needs
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_apiary = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = peasants
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:beeswax
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = rural_build_time
+
+	possible_production_methods = {
+		cap_econ_apiary_maintenance
+	}
+
+	construction_demand = farm_constructions
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_chili_plantation = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = peasants
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:chili
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = plantation_build_time
+
+	possible_production_methods = {
+		cap_econ_chili_plantation_maintenance
+	}
+
+	construction_demand = plantation_construction
+
+	modifier = {
+		scaled_gold_to_building_owner  = 0.1
+	}
+}
+corporate_clay_pit = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = laborers
+
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:clay
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = rural_build_time
+
+	possible_production_methods = {
+		cap_econ_clay_pit_maintenance
+	}
+
+	construction_demand = basic_construction_needs
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_cloves_plantation = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = peasants
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:cloves
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = plantation_build_time
+
+	possible_production_methods = {
+		cap_econ_cloves_plantation_maintenance
+	}
+
+	construction_demand = plantation_construction
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_charcoal_maker = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = laborers
+
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:coal
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = rural_build_time
+
+	possible_production_methods = {
+		cap_econ_charcoal_maker_maintenance
+	}
+
+	construction_demand = guild_construction
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_cocoa_plantation = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = peasants
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:cocoa
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = plantation_build_time
+
+	possible_production_methods = {
+		cap_econ_cocoa_plantation_maintenance
+	}
+
+	construction_demand = plantation_construction
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_coffee_plantation = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = peasants
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:coffee
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = plantation_build_time
+
+	possible_production_methods = {
+		cap_econ_coffee_plantation_maintenance
+	}
+
+	construction_demand = plantation_construction
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_copper_mine = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = laborers
+
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:copper
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = rural_build_time
+
+	possible_production_methods = {
+		cap_econ_copper_mine_maintenance
+	}
+
+	construction_demand = basic_construction_needs
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_cotton_plantation = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = peasants
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:cotton
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = plantation_build_time
+
+	possible_production_methods = {
+		cap_econ_cotton_plantation_maintenance
+	}
+
+	construction_demand = plantation_construction
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_dyes_plantation = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = peasants
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:dyes
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = plantation_build_time
+
+	possible_production_methods = {
+		cap_econ_dyes_plantation_maintenance
+	}
+
+	construction_demand = plantation_construction
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_elephant_ranch = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = peasants
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:elephants
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = rural_build_time
+
+	possible_production_methods = {
+		cap_econ_elephant_ranch_maintenance
+	}
+
+	construction_demand = farm_constructions
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_fiber_crops_farm = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = peasants
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:fiber_crops
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = rural_build_time
+
+	possible_production_methods = {
+		cap_econ_fiber_crops_farm_maintenance
+	}
+
+	construction_demand = farm_constructions
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_fishing_village = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = laborers
+
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:fish
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = village_build_time
+
+	possible_production_methods = {
+		cap_econ_fishing_village_maintenance
+	}
+
+	construction_demand = village_construction
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_fruit_orchard = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = peasants
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:fruit
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = rural_build_time
+
+	possible_production_methods = {
+		cap_econ_fruit_orchard_maintenance
+	}
+
+	construction_demand = farm_constructions
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_fur_trappers = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = laborers
+
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:fur
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = rural_build_time
+
+	possible_production_methods = {
+		cap_econ_fur_trappers_maintenance
+	}
+
+	construction_demand = village_construction
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_gems_mine = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = laborers
+
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:gems
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = rural_build_time
+
+	possible_production_methods = {
+		cap_econ_gems_mine_maintenance
+	}
+
+	construction_demand = basic_construction_needs
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_gold_mine = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = laborers
+
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:goods_gold
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = rural_build_time
+
+	possible_production_methods = {
+		cap_econ_gold_mine_maintenance
+	}
+
+	construction_demand = basic_construction_needs
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_horse_breeders = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = peasants
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:horses
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = rural_build_time
+
+	possible_production_methods = {
+		cap_econ_horse_breeders_maintenance
+	}
+
+	construction_demand = farm_constructions
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_incense_grove = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = peasants
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:incense
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = rural_build_time
+
+	possible_production_methods = {
+		cap_econ_incense_grove_maintenance
+	}
+
+	construction_demand = farm_constructions
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_iron_mine = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = laborers
+
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:iron
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = rural_build_time
+
+	possible_production_methods = {
+		cap_econ_iron_mine_maintenance
+	}
+
+	construction_demand = basic_construction_needs
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_elephant_hunting_grounds = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = laborers
+
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:ivory
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = rural_build_time
+
+	possible_production_methods = {
+		cap_econ_elephant_hunting_grounds_maintenance
+	}
+
+	construction_demand = village_construction
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_lead_mine = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = laborers
+
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:lead
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = rural_build_time
+
+	possible_production_methods = {
+		cap_econ_lead_mine_maintenance
+	}
+
+	construction_demand = basic_construction_needs
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_legumes_farm = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = peasants
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:legumes
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = rural_build_time
+
+	possible_production_methods = {
+		cap_econ_legumes_farm_maintenance
+	}
+
+	construction_demand = farm_constructions
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_livestock_ranch = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = peasants
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:livestock
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = rural_build_time
+
+	possible_production_methods = {
+		cap_econ_livestock_ranch_maintenance
+	}
+
+	construction_demand = farm_constructions
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_lumber_mill = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = laborers
+
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:lumber
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = rural_build_time
+
+	possible_production_methods = {
+		cap_econ_lumber_mill_maintenance
+	}
+
+	construction_demand = basic_construction_needs
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_maize_farm = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = peasants
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:maize
+	}
+
+	category = rgo_building_category
+
+
+
+	build_time = rural_build_time
+
+	possible_production_methods = {
+		cap_econ_maize_farm_maintenance
+	}
+
+	construction_demand = farm_constructions
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_marble_quarry = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = laborers
+
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:marble
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = rural_build_time
+
+	possible_production_methods = {
+		cap_econ_marble_quarry_maintenance
+	}
+
+	construction_demand = basic_construction_needs
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_medicinal_gatherers = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = laborers
+
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:medicaments
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = rural_build_time
+
+	possible_production_methods = {
+		cap_econ_medicinal_gatherers_maintenance
+	}
+
+	construction_demand = basic_construction_needs
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_mercury_mine = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = laborers
+
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:mercury
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = rural_build_time
+
+	possible_production_methods = {
+		cap_econ_mercury_mine_maintenance
+	}
+
+	construction_demand = basic_construction_needs
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_millet_farm = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = peasants
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:millet
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = rural_build_time
+
+	possible_production_methods = {
+		cap_econ_millet_farm_maintenance
+	}
+
+	construction_demand = farm_constructions
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_olive_grove = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = peasants
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:olives
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = rural_build_time
+
+	possible_production_methods = {
+		cap_econ_olive_grove_maintenance
+	}
+
+	construction_demand = farm_constructions
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_pearl_divers = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = laborers
+
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+
+	location_potential = {
+		raw_material = goods:pearls
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = rural_build_time
+
+	possible_production_methods = {
+		cap_econ_pearl_divers_maintenance
+	}
+
+	construction_demand = basic_construction_needs
+}
+
+corporate_pepper_plantation = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = peasants
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:pepper
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = plantation_build_time
+
+	possible_production_methods = {
+		cap_econ_pepper_plantation_maintenance
+	}
+
+	construction_demand = plantation_construction
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_potato_farm = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = peasants
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:potato
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = rural_build_time
+
+	possible_production_methods = {
+		cap_econ_potato_farm_maintenance
+	}
+
+	construction_demand = farm_constructions
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_rice_paddy = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = peasants
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:rice
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = rural_build_time
+
+	possible_production_methods = {
+		cap_econ_rice_paddy_maintenance
+	}
+
+	construction_demand = farm_constructions
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_saffron_fields = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = peasants
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:saffron
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = rural_build_time
+
+	possible_production_methods = {
+		cap_econ_saffron_fields_maintenance
+	}
+
+	construction_demand = farm_constructions
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_salt_collector = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = laborers
+
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:salt
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = rural_build_time
+
+	possible_production_methods = {
+		cap_econ_salt_collector_maintenance
+	}
+
+	construction_demand = farm_constructions
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_saltpeter_mine = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = laborers
+
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:saltpeter
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = rural_build_time
+
+	possible_production_methods = {
+		cap_econ_saltpeter_mine_maintenance
+	}
+
+	construction_demand = basic_construction_needs
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_sand_pit = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = laborers
+
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:sand
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = rural_build_time
+
+	possible_production_methods = {
+		cap_econ_sand_pit_maintenance
+	}
+
+	construction_demand = basic_construction_needs
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_silk_farm = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = peasants
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:silk
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = rural_build_time
+
+	possible_production_methods = {
+		cap_econ_silk_farm_maintenance
+	}
+
+	construction_demand = farm_constructions
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_silver_mine = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = laborers
+
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:silver
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = rural_build_time
+
+	possible_production_methods = {
+		cap_econ_silver_mine_maintenance
+	}
+
+	construction_demand = basic_construction_needs
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_stone_quarry = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = laborers
+
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:stone
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = rural_build_time
+
+	possible_production_methods = {
+		cap_econ_stone_quarry_maintenance
+	}
+
+	construction_demand = basic_construction_needs
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_sugar_plantation = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = peasants
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:sugar
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = plantation_build_time
+
+	possible_production_methods = {
+		cap_econ_sugar_plantation_maintenance
+	}
+
+	construction_demand = plantation_construction
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_tea_plantation = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = peasants
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:tea
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = plantation_build_time
+
+	possible_production_methods = {
+		cap_econ_tea_plantation_maintenance
+	}
+
+	construction_demand = plantation_construction
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_tin_mine = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = laborers
+
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:tin
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = rural_build_time
+
+	possible_production_methods = {
+		cap_econ_tin_mine_maintenance
+	}
+
+	construction_demand = basic_construction_needs
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_tobacco_plantation = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = peasants
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:tobacco
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = plantation_build_time
+
+	possible_production_methods = {
+		cap_econ_tobacco_plantation_maintenance
+	}
+
+	construction_demand = plantation_construction
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_wheat_farm = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = peasants
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:wheat
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = rural_build_time
+
+	possible_production_methods = {
+		cap_econ_wheat_farm_maintenance
+	}
+
+	construction_demand = farm_constructions
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_wild_game_hunting_grounds = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = laborers
+
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:wild_game
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = rural_build_time
+
+	possible_production_methods = {
+		cap_econ_wild_game_hunting_grounds_maintenance
+	}
+
+	construction_demand = village_construction
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_wine_vineyard = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = peasants
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:wine
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = rural_build_time
+
+	possible_production_methods = {
+		cap_econ_wine_vineyard_maintenance
+	}
+
+	construction_demand = farm_constructions
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
+}
+corporate_sheep_farms = {
+	is_foreign = yes
+	stronger_power_projection = no
+	max_levels = corporate_extraction_building_cap
+	pop_type = peasants
+	employment_size = rural_peasant_produce_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	allow = {
+		owner = {
+			within_diplomatic_range = scope:actor
+			giving_scripted_relation = {
+				type = relation_type:cap_econ_extraction_rights
+				target = scope:actor
+			}
+		}
+	}
+	location_potential = {
+		raw_material = goods:wool
+	}
+
+	category = rgo_building_category
+
+	important_for_AI = yes
+
+	build_time = rural_build_time
+
+	possible_production_methods = {
+		cap_econ_sheep_farms_maintenance
+	}
+
+	construction_demand = farm_constructions
+
+	modifier = {
+		scaled_gold_to_building_owner = 0.1
+	}
 }

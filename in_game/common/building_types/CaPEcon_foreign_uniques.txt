@@ -1,0 +1,48 @@
+﻿Mangiatoia = {
+	is_foreign = no
+	max_levels = 10
+
+	pop_type = burghers
+
+	can_close = no
+
+	can_destroy = {
+		custom_tooltip = {
+			text = jesuits_allowed_or_non_catholic
+			owner = {
+				OR = {
+					has_policy = jesuits_allowed
+					religion != religion:catholic
+				}
+			}
+		}
+	}
+
+
+	category = estate_category
+
+	employment_size = huge_foreign_trade_employment
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+
+
+	build_time = super_fast_temporary_house
+
+	unique_production_methods = {
+		mangiatoia = {
+			produced = goods_gold
+			category = building_maintenance
+			output = 1
+		}
+	}
+
+	modifier = {
+		monthly_towards_plutocracy = 0.1
+		local_burghers_estate_power = 1
+		local_burghers_desired_pop_scaled = 10
+		local_unrest = 0.1
+		monthly_burghers_estate_rebel_growth = 0.001
+	}
+}

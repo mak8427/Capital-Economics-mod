@@ -1,0 +1,450 @@
+﻿cap_econ_alum_mine_maintenance = {
+	tools = 0.1
+	lumber = 0.12
+	leather = 0.1
+	produced = alum
+	output = 1
+	category = building_maintenance
+}
+
+cap_econ_amber_collectors_maintenance = {
+	tools = 0.06
+	lumber = 0.15
+	category = building_maintenance
+	produced = amber
+	output = 1
+}
+
+cap_econ_apiary_maintenance = {
+	livestock = 0.5
+	lumber = 0.2
+	tools = 0.1
+	category = building_maintenance
+	produced = beeswax
+	output = 0.8
+}
+
+cap_econ_charcoal_maker_maintenance = {
+	produced = coal
+	output = 0.8
+	lumber = 0.8
+	category = guild_input
+}
+
+cap_econ_chili_plantation_maintenance = {
+	produced = chili
+	output = 1
+	slaves_goods = 0.5
+	leather = 0.12
+	tools = 0.12
+	lumber = 0.12
+	category = building_maintenance
+}
+
+cap_econ_clay_pit_maintenance = {
+	produced = clay
+	output = 1
+	lumber = 0.28
+	category = building_maintenance
+}
+
+cap_econ_cloves_plantation_maintenance = {
+	produced = cloves
+	output = 1
+	slaves_goods = 0.5
+	leather = 0.12
+	tools = 0.12
+	lumber = 0.12
+	category = building_maintenance
+}
+
+cap_econ_cocoa_plantation_maintenance = {
+	produced = cocoa
+	output = 1
+	slaves_goods = 0.5
+	leather = 0.12
+	tools = 0.12
+	lumber = 0.12
+	category = building_maintenance
+}
+
+cap_econ_coffee_plantation_maintenance = {
+	produced = coffee
+	output = 1
+	slaves_goods = 0.5
+	leather = 0.12
+	tools = 0.12
+	lumber = 0.12
+	category = building_maintenance
+}
+
+cap_econ_copper_mine_maintenance = {
+	tools = 0.1
+	lumber = 0.12
+	leather = 0.1
+	produced = copper
+	output = 1
+	category = building_maintenance
+}
+
+cap_econ_cotton_plantation_maintenance = {
+	produced = cotton
+	output = 1
+	slaves_goods = 0.5
+	leather = 0.12
+	tools = 0.12
+	lumber = 0.12
+	category = building_maintenance
+}
+
+cap_econ_dyes_plantation_maintenance = {
+	lumber = 0.45
+	produced = dyes
+	output = 0.2
+	category = guild_input
+}
+
+cap_econ_elephant_hunting_grounds_maintenance = {
+	produced = ivory
+	output = 1
+	tools = 0.2
+	weaponry = 0.2
+	elephants = 0.2
+	category = guild_input
+}
+
+cap_econ_elephant_ranch_maintenance = {
+	produced = elephants
+	output = 0.5
+	lumber = 0.4
+	tools = 0.16
+	category = building_maintenance
+}
+
+cap_econ_fiber_crops_farm_maintenance = {
+	livestock = 0.5
+	lumber = 0.2
+	tools = 0.1
+	category = building_maintenance
+	produced = fiber_crops
+	output = 0.8
+}
+
+cap_econ_fishing_village_maintenance = {
+	produced = fish
+	output = 0.5
+	salt = 0.08
+	tools = 0.02
+	category = building_maintenance
+}
+
+cap_econ_fruit_orchard_maintenance = {
+	produced = fruit
+	output = 0.3
+	lumber = 0.17
+	category = building_maintenance
+}
+
+cap_econ_fur_trappers_maintenance = {
+	produced = fur
+	output = 0.25
+	sand = 0.1
+	tar = 0.02
+	wild_game = 0.4
+	category = building_maintenance
+}
+
+cap_econ_gems_mine_maintenance = {
+	tools = 0.1
+	lumber = 0.12
+	leather = 0.1
+	produced = gems
+	output = 1
+	category = building_maintenance
+}
+
+cap_econ_gold_mine_maintenance = {
+	tools = 0.1
+	lumber = 0.12
+	leather = 0.1
+	produced = goods_gold
+	output = 1
+	category = building_maintenance
+}
+
+cap_econ_horse_breeders_maintenance = {
+	produced = horses
+	output = 1
+	wheat = 1.5
+	horses = 0.3
+	category = building_maintenance
+}
+
+cap_econ_incense_grove_maintenance = {
+	liquor = 0.2
+	pepper = 0.25
+	produced = incense
+	output = 1
+	category = guild_input
+}
+
+cap_econ_iron_mine_maintenance = {
+	produced = iron
+	output = 0.3
+	coal = 0.40
+	category = building_maintenance
+}
+
+cap_econ_lead_mine_maintenance = {
+	tools = 0.1
+	lumber = 0.12
+	leather = 0.1
+	produced = lead
+	output = 1
+	category = building_maintenance
+}
+
+cap_econ_legumes_farm_maintenance = {
+	livestock = 0.5
+	lumber = 0.2
+	tools = 0.1
+	category = building_maintenance
+	produced = legumes
+	output = 0.8
+}
+
+cap_econ_livestock_ranch_maintenance = {
+	tools = 0.025
+	clay = 1.0
+	output = 0.5
+	produced = livestock
+	category = building_maintenance
+}
+
+cap_econ_lumber_mill_maintenance = {
+	produced = lumber
+	output = 1
+	tools = 0.4
+	category = building_maintenance
+}
+
+cap_econ_maize_farm_maintenance = {
+	livestock = 0.5
+	lumber = 0.2
+	tools = 0.1
+	category = building_maintenance
+	produced = maize
+	output = 0.8
+}
+
+cap_econ_marble_quarry_maintenance = {
+	tools = 0.1
+	lumber = 0.12
+	leather = 0.1
+	produced = marble
+	output = 1
+	category = building_maintenance
+}
+
+cap_econ_medicinal_gatherers_maintenance = {
+	wild_game = 0.05
+	fiber_crops = 0.2
+	produced = medicaments
+	output = 0.5
+	category = guild_input
+}
+
+cap_econ_mercury_mine_maintenance = {
+	tools = 0.1
+	lumber = 0.12
+	leather = 0.1
+	produced = mercury
+	output = 1
+	category = building_maintenance
+}
+
+cap_econ_millet_farm_maintenance = {
+	livestock = 0.5
+	lumber = 0.2
+	tools = 0.1
+	category = building_maintenance
+	produced = millet
+	output = 0.8
+}
+
+cap_econ_olive_grove_maintenance = {
+	produced = olives
+	output = 0.3
+	lumber = 0.17
+	category = building_maintenance
+}
+
+cap_econ_pearl_divers_maintenance = {
+	tools = 0.06
+	lumber = 0.15
+	category = building_maintenance
+	produced = pearls
+	output = 1
+}
+
+cap_econ_pepper_plantation_maintenance = {
+	produced = pepper
+	output = 1
+	slaves_goods = 0.5
+	leather = 0.12
+	tools = 0.12
+	lumber = 0.12
+	category = building_maintenance
+}
+
+cap_econ_potato_farm_maintenance = {
+	livestock = 0.5
+	lumber = 0.2
+	tools = 0.1
+	category = building_maintenance
+	produced = potato
+	output = 0.8
+}
+
+cap_econ_rice_paddy_maintenance = {
+	livestock = 0.5
+	lumber = 0.2
+	tools = 0.1
+	category = building_maintenance
+	produced = rice
+	output = 0.8
+}
+
+cap_econ_saffron_fields_maintenance = {
+	livestock = 0.5
+	lumber = 0.2
+	tools = 0.1
+	category = building_maintenance
+	produced = saffron
+	output = 0.8
+}
+
+cap_econ_salt_collector_maintenance = {
+	produced = salt
+	output = 0.3
+	clay  = 2.0
+	category = building_maintenance
+}
+
+cap_econ_saltpeter_mine_maintenance = {
+	pottery = 0.2
+	livestock = 1.0
+	produced = saltpeter
+	output = 1
+	category = guild_input
+}
+
+cap_econ_sand_pit_maintenance = {
+	tools = 0.06
+	lumber = 0.15
+	category = building_maintenance
+	produced = sand
+	output = 1
+}
+
+cap_econ_sheep_farms_maintenance = {
+	produced = wool
+	output = 0.5
+	lumber = 0.4
+	tools = 0.16
+	category = building_maintenance
+}
+
+cap_econ_silk_farm_maintenance = {
+	lumber = 0.14
+	marble = 0.2
+	produced = silk
+	output = 0.35
+	category = building_maintenance
+}
+
+cap_econ_silver_mine_maintenance = {
+	tools = 0.4
+	leather = 0.5
+	lumber = 0.5
+	stone = 0.5
+	liquor = 0.2
+	produced = silver
+	output = 1.0
+	category = building_maintenance
+}
+
+cap_econ_stone_quarry_maintenance = {
+	tools = 0.1
+	lumber = 0.12
+	leather = 0.1
+	produced = stone
+	output = 1
+	category = building_maintenance
+}
+
+cap_econ_sugar_plantation_maintenance = {
+	produced = sugar
+	output = 1
+	slaves_goods = 0.5
+	leather = 0.12
+	tools = 0.12
+	lumber = 0.12
+	category = building_maintenance
+}
+
+cap_econ_tea_plantation_maintenance = {
+	produced = tea
+	output = 1
+	slaves_goods = 0.5
+	leather = 0.12
+	tools = 0.12
+	lumber = 0.12
+	category = building_maintenance
+}
+
+cap_econ_tin_mine_maintenance = {
+	tools = 0.1
+	lumber = 0.12
+	leather = 0.1
+	produced = tin
+	output = 1
+	category = building_maintenance
+}
+
+cap_econ_tobacco_plantation_maintenance = {
+	produced = tobacco
+	output = 1
+	slaves_goods = 0.5
+	leather = 0.12
+	tools = 0.12
+	lumber = 0.12
+	category = building_maintenance
+}
+
+cap_econ_wheat_farm_maintenance = {
+	livestock = 0.5
+	lumber = 0.2
+	tools = 0.1
+	category = building_maintenance
+	produced = wheat
+	output = 0.8
+}
+
+cap_econ_wild_game_hunting_grounds_maintenance = {
+	produced = wild_game
+	output = 1.0
+	weaponry = 0.1
+	wine = 0.1
+	horses = 0.1
+	category = building_maintenance
+}
+
+cap_econ_wine_vineyard_maintenance = {
+	fruit = 1.25
+	lumber = 0.17
+	tools = 0.1
+	produced = wine
+	output = 1
+	category = guild_input
+}
