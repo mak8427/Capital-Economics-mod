@@ -14,10 +14,20 @@ cap_econ.1 = {
 
 	trigger = {
 		any_country = {
-			receiving_scripted_relation = {
+
+			AND = {
+				receiving_scripted_relation = {
 						type = relation_type:cap_econ_extraction_rights
 						target = root
 					}
+				receiving_scripted_relation = {
+						type = relation_type:cap_econ_send_pantalone
+						target = root
+					}
+
+			}
+
+
 
 		}
 	}
@@ -28,7 +38,7 @@ cap_econ.1 = {
 	option = {
 		name = cap_econ.1.a
 		add_gold = { value = root.estate_tax_base:burghers_estate	multiply = 10 }
-		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_extreme_bonus	}
+		#add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_extreme_bonus	}
 		add_gold_to_estate = {
 			estate_type = estate_type:burghers_estate
 			value = { value = root.estate_tax_base:burghers_estate multiply = 10	}
@@ -40,8 +50,8 @@ cap_econ.1 = {
 			}
 		}
 	}
-		option = {
-		name = cap_econ.2.a
+	option = {
+		name = cap_econ.1.b
 		add_gold = { value = root.estate_tax_base:burghers_estate	multiply = 20 }
 		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_mild_bonus	}
 		add_gold_to_estate = {
@@ -68,6 +78,6 @@ cap_econ.1 = {
 		}
 	}
 
-	}
+}
 
 

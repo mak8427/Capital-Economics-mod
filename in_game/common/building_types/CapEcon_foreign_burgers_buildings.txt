@@ -38,10 +38,11 @@
 	}
 
 	modifier = {
-		corporate_extraction_building_cap_level = 1
+		corporate_extraction_building_cap_level = 2
 		free_building_levels = 3
 		local_production_efficiency = 0.01
 		local_burghers_estate_power = 0.33
+		local_max_rgo_size = 1
 	}
 
 	important_for_AI = yes

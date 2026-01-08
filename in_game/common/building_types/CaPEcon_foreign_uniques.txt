@@ -21,9 +21,9 @@
 	}
 
 
-	category = estate_category
+	category = trade_category
 
-	employment_size = huge_foreign_trade_employment
+	employment_size = large_burgher_employment
 
 	rural_settlement = no
 	town = yes
@@ -34,20 +34,21 @@
 
 	unique_production_methods = {
 		mangiatoia = {
-			produced = goods_gold
-			category = building_maintenance
-			output = 1
+		paper = 0.1
+		produced = goods_gold
+		output = 1
+		category = building_maintenance
 		}
 	}
 
 	modifier = {
 		local_burghers_estate_power = 2
-		local_burghers_desired_pop_scaled = 10
-		local_unrest = 0.2
-		monthly_burghers_estate_rebel_growth = 0.01
-		local_pop_join_rebel_threshold = -0.2
-		local_migration_attraction = 1
-		local_migration_speed = 1
+		monthly_burghers_estate_rebel_growth = 0.1
+		local_pop_join_rebel_threshold = 0.2
+		local_unrest = 0.33
+		local_burghers_desired_pop = 1
+		local_migration_attraction = 0.1
+		local_migration_speed = 0.1
 		gold_to_building_owner = 0.5
 	}
 }
