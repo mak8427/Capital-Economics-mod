@@ -1,0 +1,52 @@
+﻿lots_of_pantalonist = {
+	every_owned_location = {
+		limit = {
+			region = root.capital.region
+		}
+
+		every_pop = {
+			limit = {
+				religion = religion:catholic
+			}
+			random_list = {
+				10 = {}
+				40 = {
+					split_pop = {
+						fraction = 0.05
+						religion = religion:pantalonism
+					}
+				}
+				20 = {
+					split_pop = {
+						fraction = 0.10
+						religion = religion:pantalonism
+					}
+				}
+				15 = {
+					split_pop = {
+						fraction = 0.20
+						religion = religion:pantalonism
+					}
+				}
+				10 = {
+					split_pop = {
+						fraction = 0.30
+						religion = religion:pantalonism
+					}
+				}
+				4 = {
+					split_pop = {
+						fraction = 0.40
+						religion = religion:pantalonism
+					}
+				}
+				1 = {
+					split_pop = {
+						fraction = 0.50
+						religion = religion:pantalonism
+					}
+				}
+			}
+		}
+	}
+}

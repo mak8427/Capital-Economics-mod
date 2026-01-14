@@ -13,23 +13,9 @@ cap_econ.1 = {
 	}
 
 	trigger = {
-		any_country = {
-
-			AND = {
-				receiving_scripted_relation = {
-						type = relation_type:cap_econ_extraction_rights
-						target = root
-					}
-				receiving_scripted_relation = {
-						type = relation_type:cap_econ_send_pantalone
-						target = root
-					}
-
-			}
-
-
-
-		}
+		receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
+		giving_scripted_relation_of_type = relation_type:cap_econ_extraction_rights
+		NOT = { has_variable = cap_econ_mangiatoia_event_fired }
 	}
 	immediate = {
 		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }
@@ -48,6 +34,9 @@ cap_econ.1 = {
 				building = building_type:Mangiatoia
 				value = 1
 			}
+		}
+		hidden_effect = {
+			set_variable = { name = cap_econ_mangiatoia_event_fired value = yes }
 		}
 	}
 	option = {
@@ -76,8 +65,26 @@ cap_econ.1 = {
 				value = 1
 			}
 		}
+		hidden_effect = {
+			set_variable = { name = cap_econ_mangiatoia_event_fired value = yes }
+		}
 	}
 
 }
 
+cap_econ.4 = {
+	type = country_event
+	hidden = yes
 
+	trigger = {
+		has_variable = cap_econ_mangiatoia_event_fired
+		OR = {
+			NOT = { receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone }
+			NOT = { giving_scripted_relation_of_type = relation_type:cap_econ_extraction_rights }
+		}
+	}
+
+	immediate = {
+		remove_variable = cap_econ_mangiatoia_event_fired
+	}
+}

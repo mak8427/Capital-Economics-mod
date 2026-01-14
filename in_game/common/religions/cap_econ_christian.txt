@@ -1,4 +1,4 @@
-pantalonism = {
+﻿pantalonism = {
 	color = color_bogomilism
 	group = christian
 
@@ -6,7 +6,7 @@ pantalonism = {
 
 	enable = 1200.1.1 #it is technically unknown, but happened between 927 and 969
 
-	religious_aspects = 4
+	religious_aspects = 3
 	has_religious_influence = yes
 
 

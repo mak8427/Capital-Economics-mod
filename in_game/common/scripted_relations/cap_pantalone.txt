@@ -20,7 +20,6 @@
 					}
 				within_diplomatic_range = scope:actor
 
-
 			}
 
 

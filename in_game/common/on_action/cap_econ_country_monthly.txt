@@ -11,6 +11,9 @@
 monthly_country_pulse_capecon = {
 	events = {
 		cap_econ.1
+		cap_econ.2
+		cap_econ.3
+		cap_econ.4
 
 	}
 }
