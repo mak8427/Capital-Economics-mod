@@ -1,12 +1,11 @@
 ﻿lots_of_pantalonist = {
 	every_owned_location = {
 		limit = {
-			region = root.capital.region
+			has_building = building_type:Mangiatoia
 		}
-
 		every_pop = {
 			limit = {
-				religion = religion:catholic
+				religion != religion:pantalonism
 			}
 			random_list = {
 				10 = {}
@@ -48,5 +47,14 @@
 				}
 			}
 		}
+	}
+}
+
+cap_econ_destroy_mangiatoia = {
+	every_owned_location = {
+		limit = {
+			has_building = building_type:Mangiatoia
+		}
+		destroy_building_forcefully = "building(building_type:Mangiatoia|owner)"
 	}
 }

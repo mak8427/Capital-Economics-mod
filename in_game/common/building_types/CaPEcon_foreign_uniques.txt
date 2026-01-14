@@ -5,12 +5,21 @@
 	pop_type = burghers
 
 	can_close = no
-		allow = {
-		always = no
+	country_potential = {
+		custom_tooltip = {
+			text = not_buildable_only_situation
+			always = no
+		}
+	}
+	allow = {
+		custom_tooltip = {
+			text = not_buildable_only_situation
+			always = no
+		}
 	}
 	can_destroy = {
 		custom_tooltip = {
-			text = jesuits_allowed_or_non_catholic
+			text = pantalone_destruction_will
 			owner = {
 				OR = {
 					has_policy = jesuits_allowed
@@ -21,7 +30,7 @@
 	}
 
 
-	category = trade_category
+	category = religious_category
 
 	employment_size = large_burgher_employment
 
@@ -31,6 +40,8 @@
 
 
 	build_time = super_fast_temporary_house
+	price = free_building
+
 
 	unique_production_methods = {
 		mangiatoia = {
@@ -49,6 +60,12 @@
 		local_burghers_desired_pop = 1
 		local_migration_attraction = 0.1
 		local_migration_speed = 0.1
-		gold_to_building_owner = 0.5
+
+	}
+
+	capital_country_modifier = {
+		global_burghers_estate_power =  0.1
+		minting_income_factor = 0.1
+		monthly_towards_plutocracy = 0.05
 	}
 }

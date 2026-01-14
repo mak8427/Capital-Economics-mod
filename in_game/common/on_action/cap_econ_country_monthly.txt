@@ -1,19 +1,29 @@
-﻿monthly_country_pulse = {
-	random_events = {
-		5 = cap_econ.1
-	}
-	on_actions = {
-		monthly_country_pulse_capecon
-	}
+﻿  monthly_country_pulse = {
+        on_actions = {
+                monthly_country_pulse_capecon
+        }
+  }
 
-}
+  monthly_country_pulse_capecon = {
+	        random_events = {
+	                25 = cap_econ.1
+	                15 = cap_econ.2
+	                10 = cap_econ.5
+	                10 = cap_econ.6
+	                1 = cap_econ.7
+	                1 = cap_econ.8
+	                1 = cap_econ.9
+	                chance_to_happen = 80
+	        }
+        events = {
+            estate_income_fix.1
+		    estate_income_fix.3
+        }
+  }
 
-monthly_country_pulse_capecon = {
+
+  yearly_country_pulse = {
 	events = {
-		cap_econ.1
-		cap_econ.2
-		cap_econ.3
-		cap_econ.4
-
+		estate_income_fix.2
 	}
 }

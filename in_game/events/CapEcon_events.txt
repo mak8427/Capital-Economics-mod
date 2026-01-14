@@ -1,4 +1,4 @@
-namespace = cap_econ
+﻿namespace = cap_econ
 
 
 
@@ -15,7 +15,6 @@ cap_econ.1 = {
 	trigger = {
 		receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
 		giving_scripted_relation_of_type = relation_type:cap_econ_extraction_rights
-		NOT = { has_variable = cap_econ_mangiatoia_event_fired }
 	}
 	immediate = {
 		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }
@@ -23,6 +22,7 @@ cap_econ.1 = {
 
 	option = {
 		name = cap_econ.1.a
+		custom_tooltip = cap_econ.1.a.tt
 		add_gold = { value = root.estate_tax_base:burghers_estate	multiply = 10 }
 		#add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_extreme_bonus	}
 		add_gold_to_estate = {
@@ -41,6 +41,7 @@ cap_econ.1 = {
 	}
 	option = {
 		name = cap_econ.1.b
+		custom_tooltip = cap_econ.1.b.tt
 		add_gold = { value = root.estate_tax_base:burghers_estate	multiply = 20 }
 		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_mild_bonus	}
 		add_gold_to_estate = {
@@ -72,19 +73,474 @@ cap_econ.1 = {
 
 }
 
-cap_econ.4 = {
+cap_econ.5 = {
 	type = country_event
-	hidden = yes
+
+	title = cap_econ.5.title
+	desc = cap_econ.5.desc
+	illustration_tags = {
+		10 = interior
+		10 = happy
+	}
 
 	trigger = {
-		has_variable = cap_econ_mangiatoia_event_fired
-		OR = {
-			NOT = { receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone }
-			NOT = { giving_scripted_relation_of_type = relation_type:cap_econ_extraction_rights }
-		}
+		receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
+		NOT = { has_variable = cap_econ_pantalone_arrived }
 	}
 
 	immediate = {
-		remove_variable = cap_econ_mangiatoia_event_fired
+		random_country = {
+			limit = {
+				receiving_scripted_relation = {
+					type = relation_type:cap_econ_send_pantalone
+					target = root
+				}
+			}
+			save_scope_as = pantalone_sender
+		}
+		set_variable = { name = cap_econ_pantalone_arrived value = yes }
+	}
+
+	option = {
+		name = cap_econ.5.a
+		custom_tooltip = cap_econ.5.a.tt
+		every_owned_location = {
+			limit = {
+				OR = {
+					is_town = yes
+					is_city = yes
+				}
+			}
+			change_building_level_in_location = {
+				building = building_type:Mangiatoia
+				value = 1
+			}
+		}
+	}
+}
+
+cap_econ.6 = {
+	type = country_event
+
+	title = cap_econ.6.title
+	desc = cap_econ.6.desc
+	illustration_tags = {
+		10 = interior
+		10 = happy
+	}
+
+	option = {
+		name = cap_econ.6.a
+		custom_tooltip = cap_econ.6.a.tt
+		if = {
+			limit = {
+				NOT = {
+					any_owned_location = {
+						limit = {
+							OR = {
+								is_town = yes
+								is_city = yes
+							}
+							NOT = { has_building = building_type:library }
+						}
+					}
+				}
+			}
+			add_research_progress = { value = 20 }
+		}
+		else = {
+			random_list = {
+				1 = {
+					random_owned_location = {
+						limit = {
+							OR = { is_town = yes is_city = yes }
+							NOT = { has_building = building_type:library }
+						}
+						change_building_level_in_location = {
+							building = building_type:library
+							value = 1
+						}
+					}
+				}
+				1 = {
+					random_owned_location = {
+						limit = {
+							OR = { is_town = yes is_city = yes }
+							NOT = { has_building = building_type:library }
+						}
+						change_building_level_in_location = {
+							building = building_type:library
+							value = 1
+						}
+					}
+					random_owned_location = {
+						limit = {
+							OR = { is_town = yes is_city = yes }
+							NOT = { has_building = building_type:library }
+						}
+						change_building_level_in_location = {
+							building = building_type:library
+							value = 1
+						}
+					}
+				}
+				1 = {
+					random_owned_location = {
+						limit = {
+							OR = { is_town = yes is_city = yes }
+							NOT = { has_building = building_type:library }
+						}
+						change_building_level_in_location = {
+							building = building_type:library
+							value = 1
+						}
+					}
+					random_owned_location = {
+						limit = {
+							OR = { is_town = yes is_city = yes }
+							NOT = { has_building = building_type:library }
+						}
+						change_building_level_in_location = {
+							building = building_type:library
+							value = 1
+						}
+					}
+					random_owned_location = {
+						limit = {
+							OR = { is_town = yes is_city = yes }
+							NOT = { has_building = building_type:library }
+						}
+						change_building_level_in_location = {
+							building = building_type:library
+							value = 1
+						}
+					}
+				}
+				1 = {
+					random_owned_location = {
+						limit = {
+							OR = { is_town = yes is_city = yes }
+							NOT = { has_building = building_type:library }
+						}
+						change_building_level_in_location = {
+							building = building_type:library
+							value = 1
+						}
+					}
+					random_owned_location = {
+						limit = {
+							OR = { is_town = yes is_city = yes }
+							NOT = { has_building = building_type:library }
+						}
+						change_building_level_in_location = {
+							building = building_type:library
+							value = 1
+						}
+					}
+					random_owned_location = {
+						limit = {
+							OR = { is_town = yes is_city = yes }
+							NOT = { has_building = building_type:library }
+						}
+						change_building_level_in_location = {
+							building = building_type:library
+							value = 1
+						}
+					}
+					random_owned_location = {
+						limit = {
+							OR = { is_town = yes is_city = yes }
+							NOT = { has_building = building_type:library }
+						}
+						change_building_level_in_location = {
+							building = building_type:library
+							value = 1
+						}
+					}
+				}
+				1 = {
+					random_owned_location = {
+						limit = {
+							OR = { is_town = yes is_city = yes }
+							NOT = { has_building = building_type:library }
+						}
+						change_building_level_in_location = {
+							building = building_type:library
+							value = 1
+						}
+					}
+					random_owned_location = {
+						limit = {
+							OR = { is_town = yes is_city = yes }
+							NOT = { has_building = building_type:library }
+						}
+						change_building_level_in_location = {
+							building = building_type:library
+							value = 1
+						}
+					}
+					random_owned_location = {
+						limit = {
+							OR = { is_town = yes is_city = yes }
+							NOT = { has_building = building_type:library }
+						}
+						change_building_level_in_location = {
+							building = building_type:library
+							value = 1
+						}
+					}
+					random_owned_location = {
+						limit = {
+							OR = { is_town = yes is_city = yes }
+							NOT = { has_building = building_type:library }
+						}
+						change_building_level_in_location = {
+							building = building_type:library
+							value = 1
+						}
+					}
+					random_owned_location = {
+						limit = {
+							OR = { is_town = yes is_city = yes }
+							NOT = { has_building = building_type:library }
+						}
+						change_building_level_in_location = {
+							building = building_type:library
+							value = 1
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+cap_econ.7 = {
+	type = country_event
+
+	title = cap_econ.7.title
+	desc = cap_econ.7.desc
+	illustration_tags = {
+		10 = interior
+		10 = happy
+	}
+
+	trigger = {
+		any_owned_location = {
+			is_rural_settlement = yes
+		}
+	}
+
+	option = {
+		name = cap_econ.7.a
+		custom_tooltip = cap_econ.7.a.tt
+		random_owned_location = {
+			limit = { is_rural_settlement = yes }
+			change_location_rank = location_rank:town
+		}
+		random_owned_location = {
+			limit = { is_rural_settlement = yes }
+			change_location_rank = location_rank:town
+		}
+	}
+}
+
+cap_econ.8 = {
+	type = country_event
+
+	title = cap_econ.8.title
+	desc = cap_econ.8.desc
+	illustration_tags = {
+		10 = interior
+		10 = happy
+	}
+
+	trigger = {
+		any_owned_location = {
+			is_rural_settlement = yes
+		}
+	}
+
+	option = {
+		name = cap_econ.8.a
+		custom_tooltip = cap_econ.8.a.tt
+		random_owned_location = {
+			limit = { is_rural_settlement = yes }
+			change_location_rank = location_rank:town
+		}
+	}
+}
+
+cap_econ.9 = {
+	type = country_event
+
+	title = cap_econ.9.title
+	desc = cap_econ.9.desc
+	illustration_tags = {
+		10 = interior
+		10 = happy
+	}
+
+	trigger = {
+		any_owned_location = {
+			is_town = yes
+		}
+	}
+
+	option = {
+		name = cap_econ.9.a
+		custom_tooltip = cap_econ.9.a.tt
+		random_owned_location = {
+			limit = { is_town = yes }
+			change_location_rank = location_rank:city
+		}
+	}
+}
+
+cap_econ.20 = {
+	type = country_event
+	category = situation_event
+
+	title = cap_econ.20.title
+	desc = cap_econ.20.desc
+	image = "gfx/interface/illustrations/situation/reformation.dds"
+
+	trigger = {
+		always = no
+	}
+
+	option = {
+		name = cap_econ.20.a
+		custom_tooltip = cap_econ.20.a.tt
+		hidden_effect = {
+			situation:rise_of_pantalonism = {
+				change_variable = { name = pantalonism_progress add = 5 }
+			}
+		}
+	}
+}
+
+cap_econ.21 = {
+	type = country_event
+	category = situation_event
+
+	title = cap_econ.21.title
+	desc = cap_econ.21.desc
+	image = "gfx/interface/illustrations/situation/reformation.dds"
+
+	trigger = {
+		always = no
+	}
+
+	option = {
+		name = cap_econ.21.a
+		custom_tooltip = cap_econ.21.a.tt
+		hidden_effect = {
+			situation:rise_of_pantalonism = {
+				change_variable = { name = pantalonism_progress add = -5 }
+			}
+		}
+	}
+}
+
+cap_econ.22 = {
+	type = country_event
+
+	title = cap_econ.22.title
+	desc = cap_econ.22.desc
+	image = "gfx/interface/illustrations/situation/reformation.dds"
+
+	trigger = {
+		always = no
+	}
+
+	option = {
+		name = cap_econ.22.a
+		set_variable = { name = cap_econ_force_pantalonism_situation value = 1 }
+		activate_situation = situation:rise_of_pantalonism
+	}
+}
+
+cap_econ.23 = {
+	type = country_event
+	category = situation_event
+
+	title = cap_econ.23.title
+	desc = cap_econ.23.desc
+	image = "gfx/interface/illustrations/situation/reformation.dds"
+
+	trigger = {
+		always = no
+	}
+
+	option = {
+		name = cap_econ.23.a
+		custom_tooltip = cap_econ.23.a.tt
+		set_variable = {
+			name = cap_econ_mangiatoia_conversion_levels
+			value = total_effective_building_levels:Mangiatoia
+		}
+		if = {
+			limit = { var:cap_econ_mangiatoia_conversion_levels > 5 }
+			set_variable = { name = cap_econ_mangiatoia_conversion_levels value = 5 }
+		}
+		set_variable = { name = cap_econ_pantalonism_conversion_fraction value = 0.05 }
+		change_variable = {
+			name = cap_econ_pantalonism_conversion_fraction
+			add = {
+				value = var:cap_econ_mangiatoia_conversion_levels
+				multiply = 0.04
+			}
+		}
+
+		every_province = {
+			every_location_in_province = {
+				every_pop = {
+					limit = { religion != religion:pantalonism }
+					split_pop = {
+						fraction = var:cap_econ_pantalonism_conversion_fraction
+						religion = religion:pantalonism
+					}
+				}
+			}
+		}
+
+		remove_variable = cap_econ_mangiatoia_conversion_levels
+		remove_variable = cap_econ_pantalonism_conversion_fraction
+	}
+}
+
+cap_econ.24 = {
+	type = country_event
+	category = situation_event
+
+	title = cap_econ.24.title
+	desc = cap_econ.24.desc
+	image = "gfx/interface/illustrations/situation/reformation.dds"
+
+	trigger = {
+		always = no
+	}
+
+	option = {
+		name = cap_econ.24.a
+		custom_tooltip = cap_econ.24.a.tt
+		set_variable = { name = cap_econ_mangiatoia_conversion_fired value = yes }
+		every_owned_location = {
+			limit = { has_building_with_at_least_one_level = Mangiatoia }
+			set_variable = {
+				name = cap_econ_mangiatoia_loc_fraction
+				value = "location_building_level(building_type:Mangiatoia)"
+			}
+			change_variable = { name = cap_econ_mangiatoia_loc_fraction multiply = 0.005 }
+			every_pop = {
+				limit = { religion != religion:pantalonism }
+				split_pop = {
+					fraction = var:cap_econ_mangiatoia_loc_fraction
+					religion = religion:pantalonism
+				}
+			}
+			remove_variable = cap_econ_mangiatoia_loc_fraction
+		}
 	}
 }

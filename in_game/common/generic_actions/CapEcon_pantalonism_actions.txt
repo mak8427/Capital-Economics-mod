@@ -1,0 +1,70 @@
+cap_econ_kill_pantalonism_rebels = {
+	type = situation
+
+	allow = {
+		is_situation_active = situation:rise_of_pantalonism
+		scope:actor = {
+			any_owned_location = { any_pop = { religion = religion:pantalonism } }
+		}
+	}
+
+	select_trigger = {
+		looking_for_a = situation
+		target_flag = recipient
+		name = "choose_situation"
+		column = { data = name }
+		visible = {
+			situation:rise_of_pantalonism = this
+			situation_is_active = yes
+			scope:actor = situation:rise_of_pantalonism.var:target_country
+		}
+	}
+
+	effect = {
+		scope:actor ?= {
+			create_rebel = {
+				category = religious
+				religion = religion:pantalonism
+				save_scope_as = target_rebel
+			}
+
+			if = {
+				limit = {
+					any_owned_location = {
+						has_building = building_type:Mangiatoia
+						any_pop = { religion = religion:pantalonism }
+					}
+				}
+				random_owned_location = {
+					limit = {
+						has_building = building_type:Mangiatoia
+						any_pop = { religion = religion:pantalonism }
+					}
+					save_scope_as = target_location
+				}
+			}
+			else = {
+				random_owned_location = {
+					limit = { any_pop = { religion = religion:pantalonism } }
+					save_scope_as = target_location
+				}
+			}
+
+			scope:target_rebel ?= { add_rebel_progress = 0.2 }
+			scope:target_location ?= {
+				every_pop = {
+					limit = {
+						owner = root
+						religion = religion:pantalonism
+					}
+					change_pop_allegiance = scope:target_rebel
+					add_pop_satisfaction = pop_satisfaction_weak_penalty
+				}
+			}
+		}
+	}
+
+	ai_will_do = {
+		add = -100
+	}
+}
