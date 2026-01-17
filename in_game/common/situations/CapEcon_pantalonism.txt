@@ -51,6 +51,7 @@ rise_of_pantalonism = {
 			random_country = {
 				limit = { has_variable = cap_econ_force_pantalonism_situation }
 				save_scope_as = target_country
+				set_variable = { name = target_country value = scope:target_country }
 			}
 		}
 		else = {
@@ -61,6 +62,7 @@ rise_of_pantalonism = {
 					receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
 				}
 				save_scope_as = target_country
+				set_variable = { name = target_country value = scope:target_country }
 			}
 		}
 		# Mark the country as the active target so monthly updates can find it.
@@ -92,6 +94,7 @@ rise_of_pantalonism = {
 			limit = { has_variable = cap_econ_pantalonism_situation_active }
 			save_scope_as = target_country
 		}
+
 		# Use ?= so the block silently skips if no target exists.
 		scope:target_country ?= {
 			# Update Mangiatoia levels from effective staffing in the target country.
@@ -160,7 +163,6 @@ rise_of_pantalonism = {
 			# Random situation events to add variation.
 			if = {
 				limit = {
-					NOT = { has_variable = cap_econ_mangiatoia_conversion_fired }
 					any_owned_location = { has_building_with_at_least_one_level = Mangiatoia }
 				}
 				random_list = {
@@ -180,12 +182,11 @@ rise_of_pantalonism = {
 		}
 		# Trigger the super event when pressure hits 100, then reset pressure.
 		if = {
-			limit = { var:pantalonism_mangiatoia_progress >= 100 }
+			limit = { var:pantalonism_mangiatoia_progress >= 5 }
 			scope:target_country ?= {
 				trigger_event_non_silently = cap_econ.23
-				remove_variable = cap_econ_mangiatoia_conversion_fired
 			}
-			set_variable = { name = pantalonism_mangiatoia_progress value = 0 }
+ 			set_variable = { name = pantalonism_mangiatoia_progress value = 0 }
 		}
 	}
 
@@ -199,7 +200,6 @@ rise_of_pantalonism = {
 			change_government_type = government_type:republic
 			add_reform = government_reform:merchant_republic
 			cap_econ_destroy_mangiatoia = yes
-			remove_variable = cap_econ_mangiatoia_conversion_fired
 			set_variable = cap_econ_pantalonism_situation_completed
 			remove_variable = cap_econ_pantalonism_situation_active
 		}
@@ -211,7 +211,6 @@ rise_of_pantalonism = {
 			limit = { has_variable = cap_econ_pantalonism_situation_active }
 			remove_variable = cap_econ_pantalonism_situation_active
 			remove_variable = cap_econ_mangiatoia_levels
-			remove_variable = cap_econ_mangiatoia_conversion_fired
 		}
 		remove_variable = pantalonism_progress
 		remove_variable = pantalonism_progress_prev

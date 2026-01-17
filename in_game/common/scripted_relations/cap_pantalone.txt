@@ -12,11 +12,11 @@
 	relation_type_for_ai = hostile
 
 	visible = {
-		scope:recipient = {
+		scope:actor = {
 			AND = {
 				receiving_scripted_relation = {
 						type = relation_type:cap_econ_extraction_rights
-						target = scope:actor
+						target = scope:recipient
 					}
 				within_diplomatic_range = scope:actor
 

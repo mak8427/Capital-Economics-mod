@@ -58,3 +58,7 @@ cap_econ_destroy_mangiatoia = {
 		destroy_building_forcefully = "building(building_type:Mangiatoia|owner)"
 	}
 }
+
+
+
+

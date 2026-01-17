@@ -13,8 +13,10 @@ cap_econ.1 = {
 	}
 
 	trigger = {
-		receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
-		giving_scripted_relation_of_type = relation_type:cap_econ_extraction_rights
+		AND = {
+			receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
+			giving_scripted_relation_of_type = relation_type:cap_econ_extraction_rights
+		}
 	}
 	immediate = {
 		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }
@@ -82,11 +84,17 @@ cap_econ.5 = {
 		10 = interior
 		10 = happy
 	}
-
 	trigger = {
-		receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
-		NOT = { has_variable = cap_econ_pantalone_arrived }
+		AND = {
+			receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
+			NOT = { has_variable = cap_econ_pantalone_arrived }
+			giving_scripted_relation_of_type = relation_type:cap_econ_extraction_rights
+			any_owned_location = {
+				is_town = yes
+			}
+		}
 	}
+
 
 	immediate = {
 		random_country = {
@@ -129,6 +137,13 @@ cap_econ.6 = {
 		10 = happy
 	}
 
+	trigger = {
+		AND = {
+			receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
+			giving_scripted_relation_of_type = relation_type:cap_econ_extraction_rights
+		}
+	}
+
 	option = {
 		name = cap_econ.6.a
 		custom_tooltip = cap_econ.6.a.tt
@@ -140,8 +155,8 @@ cap_econ.6 = {
 							OR = {
 								is_town = yes
 								is_city = yes
+								NOT = { has_building = building_type:library }
 							}
-							NOT = { has_building = building_type:library }
 						}
 					}
 				}
@@ -326,8 +341,11 @@ cap_econ.7 = {
 	}
 
 	trigger = {
-		any_owned_location = {
-			is_rural_settlement = yes
+		AND = {
+			receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
+			any_owned_location = {
+				is_rural_settlement = yes
+			}
 		}
 	}
 
@@ -356,9 +374,13 @@ cap_econ.8 = {
 	}
 
 	trigger = {
-		any_owned_location = {
-			is_rural_settlement = yes
+		AND = {
+			receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
+			any_owned_location = {
+				is_rural_settlement = yes
+			}
 		}
+
 	}
 
 	option = {
@@ -382,8 +404,11 @@ cap_econ.9 = {
 	}
 
 	trigger = {
-		any_owned_location = {
-			is_town = yes
+		AND = {
+			receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
+			any_owned_location = {
+							is_town = yes
+			}
 		}
 	}
 
@@ -412,11 +437,6 @@ cap_econ.20 = {
 	option = {
 		name = cap_econ.20.a
 		custom_tooltip = cap_econ.20.a.tt
-		hidden_effect = {
-			situation:rise_of_pantalonism = {
-				change_variable = { name = pantalonism_progress add = 5 }
-			}
-		}
 	}
 }
 
@@ -469,44 +489,45 @@ cap_econ.23 = {
 	desc = cap_econ.23.desc
 	image = "gfx/interface/illustrations/situation/reformation.dds"
 
-	trigger = {
-		always = no
-	}
+
+
 
 	option = {
 		name = cap_econ.23.a
 		custom_tooltip = cap_econ.23.a.tt
-		set_variable = {
-			name = cap_econ_mangiatoia_conversion_levels
-			value = total_effective_building_levels:Mangiatoia
-		}
-		if = {
-			limit = { var:cap_econ_mangiatoia_conversion_levels > 5 }
-			set_variable = { name = cap_econ_mangiatoia_conversion_levels value = 5 }
-		}
-		set_variable = { name = cap_econ_pantalonism_conversion_fraction value = 0.05 }
-		change_variable = {
-			name = cap_econ_pantalonism_conversion_fraction
-			add = {
-				value = var:cap_econ_mangiatoia_conversion_levels
-				multiply = 0.04
+		every_owned_location = {
+			limit = { has_building_with_at_least_one_level = Mangiatoia }
+			set_variable = {
+				name = cap_econ_mangiatoia_loc_fraction
+				value = "location_building_level(building_type:Mangiatoia)"
 			}
-		}
-
-		every_province = {
-			every_location_in_province = {
-				every_pop = {
-					limit = { religion != religion:pantalonism }
-					split_pop = {
-						fraction = var:cap_econ_pantalonism_conversion_fraction
-						religion = religion:pantalonism
-					}
+			change_variable = { name = cap_econ_mangiatoia_loc_fraction multiply = 0.05 }
+			every_pop = {
+				limit = { religion != religion:pantalonism }
+				split_pop = {
+					fraction = var:cap_econ_mangiatoia_loc_fraction
+					religion = religion:pantalonism
 				}
 			}
+			remove_variable = cap_econ_mangiatoia_loc_fraction
 		}
+	}
+	option = {
+		name = cap_econ.23.b
+		custom_tooltip = cap_econ.23.b.tt
+		add_stability = -10
+		every_rebel = {
+			limit = { religion = religion:pantalonism	}
+			save_scope_as = target_rebel
+		}
+		every_pop = {
+			limit = {
+				religion = religion:pantalonism
+				owner = root
+			}
+			change_pop_allegiance = scope:target_rebel
 
-		remove_variable = cap_econ_mangiatoia_conversion_levels
-		remove_variable = cap_econ_pantalonism_conversion_fraction
+		}
 	}
 }
 

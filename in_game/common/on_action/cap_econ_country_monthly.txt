@@ -5,7 +5,14 @@
   }
 
   monthly_country_pulse_capecon = {
-	        random_events = {
+	  trigger = {
+		  		AND = {
+			receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
+			giving_scripted_relation_of_type = relation_type:cap_econ_extraction_rights
+		}
+	  }
+
+	  	        random_events = {
 	                25 = cap_econ.1
 	                15 = cap_econ.2
 	                10 = cap_econ.5
@@ -15,6 +22,7 @@
 	                1 = cap_econ.9
 	                chance_to_happen = 80
 	        }
+
         events = {
             estate_income_fix.1
 		    estate_income_fix.3
