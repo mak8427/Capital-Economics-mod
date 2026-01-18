@@ -1,4 +1,4 @@
-cap_econ_kill_pantalonism_rebels = {
+﻿cap_econ_kill_pantalonism_rebels = {
 	type = situation
 
 	allow = {

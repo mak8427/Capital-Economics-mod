@@ -1,4 +1,4 @@
-REPLACE:city = {
+﻿REPLACE:city = {
 	rank_modifier = {
 		local_burghers_desired_pop = 1.0
 		local_laborers_desired_pop = 1.0

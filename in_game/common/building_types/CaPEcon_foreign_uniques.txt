@@ -69,3 +69,74 @@
 		monthly_towards_plutocracy = 0.05
 	}
 }
+
+
+Mangiatoia_good = {
+	is_foreign = no
+	max_levels = 10
+
+	pop_type = burghers
+
+	can_close = yes
+	country_potential = {
+		custom_tooltip = {
+			text = not_buildable_only_situation
+			always = no
+		}
+	}
+	allow = {
+		custom_tooltip = {
+			text = not_buildable_only_situation
+			always = no
+		}
+	}
+	can_destroy = {
+		custom_tooltip = {
+			text = pantalone_destruction_will
+			owner = {
+					religion != religion:pantalonism
+			}
+		}
+	}
+
+
+	category = religious_category
+
+	employment_size = large_burgher_employment
+
+	rural_settlement = no
+	town = yes
+	city = yes
+
+
+	build_time = super_fast_temporary_house
+	price = p_building_age_6_revolutions
+
+
+	unique_production_methods = {
+		mangiatoia = {
+		paper = 0.1
+		produced = goods_gold
+		output = 0.5
+		category = building_maintenance
+		}
+	}
+
+	modifier = {
+		local_burghers_estate_power = 3
+		local_burghers_desired_pop = 1
+		local_migration_attraction = 0.2
+		local_migration_speed = 0.2
+		local_unrest = -0.1
+		corporate_extraction_building_cap_level = 1
+
+	}
+
+	capital_country_modifier = {
+		global_burghers_estate_power =  0.1
+		minting_income_factor = 0.1
+		monthly_towards_plutocracy = 0.05
+		monthly_inflation = -0.01
+	}
+}
+

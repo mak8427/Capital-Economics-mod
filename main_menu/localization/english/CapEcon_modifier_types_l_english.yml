@@ -1,3 +1,5 @@
 ﻿l_english:
  MODIFIER_TYPE_NAME_corporate_extraction_building_cap_level: "Corporate Extraction Cap"
  MODIFIER_TYPE_DESC_corporate_extraction_building_cap_level: "Increases the maximum level of corporate extraction buildings in this location."
+ STATIC_MODIFIER_NAME_cap_econ_repression: "Pantalonist Repression"
+ STATIC_MODIFIER_DESC_cap_econ_repression: "Crackdowns on Pantalonist influence weaken local control."

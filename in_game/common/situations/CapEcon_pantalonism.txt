@@ -1,223 +1,247 @@
-# Rise of Pantalonism situation.
+﻿# Rise of Pantalonism situation.
 # This is a global situation that selects one target country and
 # tracks two progress bars: Pantalonist population share and
 # Mangiatoia pressure. Comments explain what each section does and why.
 rise_of_pantalonism = {
-	# Use a unique spawn chance so the game does not stack multiple copies.
-	monthly_spawn_chance = monthly_spawn_chance_unique
+    # Use a unique spawn chance so the game does not stack multiple copies.
+    monthly_spawn_chance = monthly_spawn_chance_unique
 
-	# Start when any country is eligible: not completed, and either
-	# forced by console or already has Pantalonism + Pantalone relations.
-	can_start = {
-		any_country = {
-			NOT = { has_variable = cap_econ_pantalonism_situation_completed }
-			OR = {
-				has_variable = cap_econ_force_pantalonism_situation
-				AND = {
-					"religion_percentage_in_country(religion:pantalonism)" > 0
-					receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
-				}
-			}
-		}
-	}
+    # Start when any country is eligible: not completed, and either
+    # forced by console or already has Pantalonism + Pantalone relations.
+    can_start = {
+        any_country = {
+            NOT = { has_variable = cap_econ_pantalonism_situation_completed }
+            OR = {
+                has_variable = cap_econ_force_pantalonism_situation
+                AND = {
+                    "religion_percentage_in_country(religion:pantalonism)" > 0
+                    receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
+                }
+            }
+        }
+    }
 
 
-	# End when the Pantalonist share is high enough.
-	# NOTE: This relies on the engine's implicit situation context.
-	# If you later need an explicit country scope, wrap this in a country check.
-	can_end = {
-		any_country = {
-			has_variable = cap_econ_pantalonism_situation_active
-			"religion_percentage_in_country(religion:pantalonism)" > 0.85
-		}
-	}
+    # End when the target country reaches the Pantalonist share threshold.
+    can_end = {
+        var:target_country = {
+            "religion_percentage_in_country(religion:pantalonism)" > 0.85
+        }
+    }
 
-	# Show the situation only when a country has been marked active.
-	visible = {
-		has_variable = cap_econ_pantalonism_situation_active
-	}
+    # Show the situation only when the target country is marked active.
+    visible = {
+        var:target_country = {
+            has_variable = cap_econ_pantalonism_situation_active
+        }
+    }
 
-	# Initialize counters and select a target country.
-	on_start = {
-		# Initialize shared situation variables so UI never reads unset values.
-		set_variable = { name = pantalonism_mangiatoia_progress value = 0 }
-		set_variable = { name = pantalonism_progress_monthly_change value = 0 }
-		set_variable = { name = pantalonism_mangiatoia_progress_monthly_change value = 0 }
-		# Prefer the forced country if set; otherwise pick any eligible one.
-		if = {
-			limit = {
-				any_country = { has_variable = cap_econ_force_pantalonism_situation }
-			}
-			random_country = {
-				limit = { has_variable = cap_econ_force_pantalonism_situation }
-				save_scope_as = target_country
-				set_variable = { name = target_country value = scope:target_country }
-			}
-		}
-		else = {
-			random_country = {
-				limit = {
-					NOT = { has_variable = cap_econ_pantalonism_situation_completed }
-					"religion_percentage_in_country(religion:pantalonism)" > 0
-					receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
-				}
-				save_scope_as = target_country
-				set_variable = { name = target_country value = scope:target_country }
-			}
-		}
-		# Mark the country as the active target so monthly updates can find it.
-		scope:target_country = {
-			set_variable = cap_econ_pantalonism_situation_active
-			remove_variable = cap_econ_force_pantalonism_situation
-			set_variable = {
-				name = cap_econ_mangiatoia_levels
-				value = total_effective_building_levels:Mangiatoia
-			}
-		}
-		# Copy target data to situation scope for UI display.
-		set_variable = {
-			name = cap_econ_mangiatoia_levels
-			value = scope:target_country.var:cap_econ_mangiatoia_levels
-		}
-		set_variable = {
-			name = pantalonism_progress
-			value = "scope:target_country.religion_percentage_in_country(religion:pantalonism)"
-		}
-		# Convert to percent.
-		change_variable = { name = pantalonism_progress multiply = 100 }
-	}
+    # Initialize counters and select a target country.
+    on_start = {
+        # Initialize shared situation variables so UI never reads unset values.
+        set_variable = { name = pantalonism_mangiatoia_progress value = 0 }
+        set_variable = { name = pantalonism_progress_monthly_change value = 0 }
+        set_variable = { name = pantalonism_mangiatoia_progress_monthly_change value = 0 }
+        set_variable = { name = pantalone_happiness_modifier value = 0 }
+        # Prefer the forced country if set; otherwise pick any eligible one.
+        if = {
+            limit = {
+                any_country = { has_variable = cap_econ_force_pantalonism_situation }
+            }
+            random_country = {
+                limit = { has_variable = cap_econ_force_pantalonism_situation }
+                save_scope_as = target_country
+            }
+        }
+        else = {
+            random_country = {
+                limit = {
+                    NOT = { has_variable = cap_econ_pantalonism_situation_completed }
+                    "religion_percentage_in_country(religion:pantalonism)" > 0
+                    receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
+                }
+                save_scope_as = target_country
+            }
+        }
+        set_variable = { name = target_country value = scope:target_country }
+        # Mark the country as the active target so monthly updates can find it.
+        scope:target_country = {
+            set_variable = cap_econ_pantalonism_situation_active
+            remove_variable = cap_econ_force_pantalonism_situation
+            set_variable = {
+                name = cap_econ_mangiatoia_levels
+                value = total_effective_building_levels:Mangiatoia
+            }
+        }
+        # Copy target data to situation scope for UI display.
+        set_variable = {
+            name = cap_econ_mangiatoia_levels
+            value = scope:target_country.var:cap_econ_mangiatoia_levels
+        }
+        set_variable = {
+            name = pantalonism_progress
+            value = "scope:target_country.religion_percentage_in_country(religion:pantalonism)"
+        }
+        # Convert to percent.
+        change_variable = { name = pantalonism_progress multiply = 100 }
+    }
 
-	# Monthly tick: recompute progress, fire random events, and trigger the super event.
-	on_monthly = {
-		# Find the active country if any exist.
-		random_country = {
-			limit = { has_variable = cap_econ_pantalonism_situation_active }
-			save_scope_as = target_country
-		}
+    # Monthly tick: recompute progress, fire random events, and trigger the super event.
+    on_monthly = {
+        # Find the active country if any exist.
+        random_country = {
+            limit = { has_variable = cap_econ_pantalonism_situation_active }
+            save_scope_as = target_country
+        }
 
-		# Use ?= so the block silently skips if no target exists.
-		scope:target_country ?= {
-			# Update Mangiatoia levels from effective staffing in the target country.
-			set_variable = {
-				name = cap_econ_mangiatoia_levels
-				value = total_effective_building_levels:Mangiatoia
-			}
-			# Use root to keep situation-scoped variables in the situation scope.
-			root = {
-				# Ensure variables exist before we take deltas.
-				if = {
-					limit = { NOT = { has_variable = pantalonism_mangiatoia_progress } }
-					set_variable = { name = pantalonism_mangiatoia_progress value = 0 }
-				}
-				if = {
-					limit = { NOT = { has_variable = pantalonism_progress } }
-					set_variable = { name = pantalonism_progress value = 0 }
-				}
-				# Snapshot previous values to compute "last month" change.
-				set_variable = { name = pantalonism_progress_prev value = var:pantalonism_progress }
-				set_variable = { name = pantalonism_mangiatoia_progress_prev value = var:pantalonism_mangiatoia_progress }
-				# Copy Mangiatoia count into situation scope for UI.
-				set_variable = {
-					name = cap_econ_mangiatoia_levels
-					value = scope:target_country.var:cap_econ_mangiatoia_levels
-				}
-				# Recompute population share progress (percent).
-				set_variable = {
-					name = pantalonism_progress
-					value = "scope:target_country.religion_percentage_in_country(religion:pantalonism)"
-				}
-				change_variable = { name = pantalonism_progress multiply = 100 }
+        # Use ?= so the block silently skips if no target exists.
+        scope:target_country ?= {
+            # Update Mangiatoia levels from effective staffing in the target country.
+            set_variable = {
+                name = cap_econ_mangiatoia_levels
+                value = total_effective_building_levels:Mangiatoia
+            }
 
-				# Mangiatoia pressure increases by 0.1 per Mangiatoia per month.
-				set_variable = {
-					name = cap_econ_mangiatoia_increment
-					value = scope:target_country.var:cap_econ_mangiatoia_levels
-				}
-				change_variable = { name = cap_econ_mangiatoia_increment multiply = 0.1 }
-				change_variable = {
-					name = pantalonism_mangiatoia_progress
-					add = var:cap_econ_mangiatoia_increment
-				}
-				remove_variable = cap_econ_mangiatoia_increment
+            random_list = {
+                30 = { }
+                50 = {
+                    scope:target_country = {
+                        trigger_event_non_silently = cap_econ.20
+                    }
+                }
+            }
 
-				# Clamp and compute monthly deltas for UI display.
-				clamp_variable = { name = pantalonism_progress max = 100 min = 0 }
-				set_variable = {
-					name = pantalonism_progress_monthly_change
-					value = var:pantalonism_progress
-				}
-				change_variable = {
-					name = pantalonism_progress_monthly_change
-					subtract = var:pantalonism_progress_prev
-				}
-				clamp_variable = { name = pantalonism_mangiatoia_progress max = 100 min = 0 }
-				set_variable = {
-					name = pantalonism_mangiatoia_progress_monthly_change
-					value = var:pantalonism_mangiatoia_progress
-				}
-				change_variable = {
-					name = pantalonism_mangiatoia_progress_monthly_change
-					subtract = var:pantalonism_mangiatoia_progress_prev
-				}
-			}
-			# Random situation events to add variation.
-			if = {
-				limit = {
-					any_owned_location = { has_building_with_at_least_one_level = Mangiatoia }
-				}
-				random_list = {
-					5 = { trigger_event_non_silently = cap_econ.20 }
-					5 = { trigger_event_non_silently = cap_econ.21 }
-					1 = { trigger_event_non_silently = cap_econ.24 }
-					89 = { }
-				}
-			}
-			else = {
-				random_list = {
-					5 = { trigger_event_non_silently = cap_econ.20 }
-					5 = { trigger_event_non_silently = cap_econ.21 }
-					90 = { }
-				}
-			}
-		}
-		# Trigger the super event when pressure hits 100, then reset pressure.
-		if = {
-			limit = { var:pantalonism_mangiatoia_progress >= 5 }
-			scope:target_country ?= {
-				trigger_event_non_silently = cap_econ.23
-			}
- 			set_variable = { name = pantalonism_mangiatoia_progress value = 0 }
-		}
-	}
 
-	# When the situation ends, complete the conversion and government change.
-	on_ending = {
-		random_country = {
-			limit = { has_variable = cap_econ_pantalonism_situation_active }
-			change_religion = religion:pantalonism
-			change_religion_for_ruler_and_family = { country = this religion = religion:pantalonism }
-			remove_current_major_government_reform = yes
-			change_government_type = government_type:republic
-			add_reform = government_reform:merchant_republic
-			cap_econ_destroy_mangiatoia = yes
-			set_variable = cap_econ_pantalonism_situation_completed
-			remove_variable = cap_econ_pantalonism_situation_active
-		}
-	}
+            # Use root to keep situation-scoped variables in the situation scope.
+            root = {
 
-	# Cleanup all temporary variables so reruns start clean.
-	on_ended = {
-		random_country = {
-			limit = { has_variable = cap_econ_pantalonism_situation_active }
-			remove_variable = cap_econ_pantalonism_situation_active
-			remove_variable = cap_econ_mangiatoia_levels
-		}
-		remove_variable = pantalonism_progress
-		remove_variable = pantalonism_progress_prev
-		remove_variable = pantalonism_progress_monthly_change
-		remove_variable = pantalonism_mangiatoia_progress
-		remove_variable = pantalonism_mangiatoia_progress_prev
-		remove_variable = pantalonism_mangiatoia_progress_monthly_change
-		remove_variable = cap_econ_mangiatoia_levels
-	}
+
+                # Ensure variables exist before we take deltas.
+                if = {
+                    limit = { NOT = { has_variable = pantalonism_mangiatoia_progress } }
+                    set_variable = { name = pantalonism_mangiatoia_progress value = 0 }
+                }
+                if = {
+                    limit = { NOT = { has_variable = pantalonism_progress } }
+                    set_variable = { name = pantalonism_progress value = 0 }
+                }
+
+                if = {
+                    limit = { NOT = { has_variable = pantalone_happiness_modifier } }
+                    set_variable = { name = pantalone_happiness_modifier value = 0 }
+                }
+                # Snapshot previous values to compute "last month" change.
+                set_variable = { name = pantalonism_progress_prev value = var:pantalonism_progress }
+                set_variable = { name = pantalonism_mangiatoia_progress_prev value = var:pantalonism_mangiatoia_progress }
+                # Copy Mangiatoia count into situation scope for UI.
+                set_variable = {
+                    name = cap_econ_mangiatoia_levels
+                    value = scope:target_country.var:cap_econ_mangiatoia_levels
+                }
+                # Recompute population share progress (percent).
+                set_variable = {
+                    name = pantalonism_progress
+                    value = "scope:target_country.religion_percentage_in_country(religion:pantalonism)"
+                }
+                change_variable = { name = pantalonism_progress multiply = 100 }
+
+                # Mangiatoia pressure increases by 0.1 per Mangiatoia per month.
+                set_variable = {
+                    name = cap_econ_mangiatoia_increment
+                    value = scope:target_country.var:cap_econ_mangiatoia_levels
+                }
+                change_variable = { name = cap_econ_mangiatoia_increment multiply = 0.1 }
+                change_variable = {
+                    name = pantalonism_mangiatoia_progress
+                    add = var:cap_econ_mangiatoia_increment
+                }
+                remove_variable = cap_econ_mangiatoia_increment
+
+                # Clamp and compute monthly deltas for UI display.
+                clamp_variable = { name = pantalonism_progress max = 100 min = 0 }
+                set_variable = {
+                    name = pantalonism_progress_monthly_change
+                    value = var:pantalonism_progress
+                }
+                change_variable = {
+                    name = pantalonism_progress_monthly_change
+                    subtract = var:pantalonism_progress_prev
+                }
+                clamp_variable = { name = pantalonism_mangiatoia_progress max = 100 min = 0 }
+                set_variable = {
+                    name = pantalonism_mangiatoia_progress_monthly_change
+                    value = var:pantalonism_mangiatoia_progress
+                }
+                change_variable = {
+                    name = pantalonism_mangiatoia_progress_monthly_change
+                    subtract = var:pantalonism_mangiatoia_progress_prev
+                }
+            }
+        }
+        # Trigger the super event when pressure hits 100, then reset pressure.
+        if = {
+            limit = { var:pantalonism_mangiatoia_progress >= 100 }
+            scope:target_country ?= {
+                trigger_event_non_silently = cap_econ.23
+            }
+            set_variable = { name = pantalonism_mangiatoia_progress value = 0 }
+        }
+    }
+
+    # When the situation ends, complete the conversion and government change.
+    on_ending = {
+        scope:target_country = {
+            change_religion = religion:pantalonism
+            change_religion_for_ruler_and_family = { country = this religion = religion:pantalonism }
+            remove_current_major_government_reform = yes
+            change_government_type = government_type:republic
+            add_reform = government_reform:merchant_republic
+            set_variable = cap_econ_pantalonism_situation_completed
+            remove_variable = cap_econ_pantalonism_situation_active
+
+            every_country = {
+                limit = {
+                    receiving_scripted_relation = {
+                        type = relation_type:cap_econ_send_pantalone
+                        target = this
+                    }
+                }
+                remove_relation = {
+                    type = relation_type:cap_econ_send_pantalone
+                    first = prev
+                    second = this
+                }
+            }
+            every_owned_location = {
+                limit = { has_building = building_type:Mangiatoia }
+                set_variable = {
+                    name = cap_econ_mangiatoia_levels
+                    value = "location_building_level(building_type:Mangiatoia)"
+                }
+                destroy_all_buildings_of_type = building_type:Mangiatoia
+                change_building_level_in_location = {
+                    building = building_type:Mangiatoia_good
+                    value = var:cap_econ_mangiatoia_levels
+                }
+                remove_variable = cap_econ_mangiatoia_levels
+            }
+
+
+        }
+    }
+
+    # Cleanup all temporary variables so reruns start clean.
+    on_ended = {
+        scope:target_country = {
+            remove_variable = cap_econ_pantalonism_situation_active
+            remove_variable = cap_econ_mangiatoia_levels
+        }
+        remove_variable = pantalonism_progress
+        remove_variable = pantalonism_progress_prev
+        remove_variable = pantalonism_progress_monthly_change
+        remove_variable = pantalonism_mangiatoia_progress
+        remove_variable = pantalonism_mangiatoia_progress_prev
+        remove_variable = pantalonism_mangiatoia_progress_monthly_change
+        remove_variable = cap_econ_mangiatoia_levels
+    }
 }

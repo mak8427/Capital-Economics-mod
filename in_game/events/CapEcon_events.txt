@@ -38,7 +38,6 @@ cap_econ.1 = {
 			}
 		}
 		hidden_effect = {
-			set_variable = { name = cap_econ_mangiatoia_event_fired value = yes }
 		}
 	}
 	option = {
@@ -69,7 +68,6 @@ cap_econ.1 = {
 			}
 		}
 		hidden_effect = {
-			set_variable = { name = cap_econ_mangiatoia_event_fired value = yes }
 		}
 	}
 
@@ -427,16 +425,41 @@ cap_econ.20 = {
 	category = situation_event
 
 	title = cap_econ.20.title
-	desc = cap_econ.20.desc
+	desc = cap_econ.20.des`c
 	image = "gfx/interface/illustrations/situation/reformation.dds"
 
-	trigger = {
-		always = no
-	}
+  trigger = {
+        situation:rise_of_pantalonism = {
+                var:pantalone_happiness_modifier < 0
+        }
+  }
 
 	option = {
 		name = cap_econ.20.a
 		custom_tooltip = cap_econ.20.a.tt
+		every_estate = {
+			limit = {
+				estate_type = estate_type:peasants_estate
+			}
+
+            estate_add_gold = {
+				value = root.country_tax_base
+			}
+	}
+		add_estate_satisfaction = {
+			type = estate_type:peasants_estate
+			value = -0.3
+		}
+		every_pop = {
+			limit = {
+				pop_type = pop_type:peasants
+				religion != religion:pantalonism
+			}
+			split_pop = {
+				fraction = 0.01
+				religion = religion:pantalonism
+			}
+		}
 	}
 }
 
@@ -496,40 +519,42 @@ cap_econ.23 = {
 		name = cap_econ.23.a
 		custom_tooltip = cap_econ.23.a.tt
 		every_owned_location = {
-			limit = { has_building_with_at_least_one_level = Mangiatoia }
-			set_variable = {
-				name = cap_econ_mangiatoia_loc_fraction
-				value = "location_building_level(building_type:Mangiatoia)"
-			}
-			change_variable = { name = cap_econ_mangiatoia_loc_fraction multiply = 0.05 }
-			every_pop = {
-				limit = { religion != religion:pantalonism }
+				every_pop = {
+ 				limit = {
+ 				      AND = {
+ 				              religion != religion:pantalonism
+ 				              pop_type != pop_type:clergy
+ 				      }
+ 				}
 				split_pop = {
-					fraction = var:cap_econ_mangiatoia_loc_fraction
+					fraction = 0.1
 					religion = religion:pantalonism
 				}
 			}
-			remove_variable = cap_econ_mangiatoia_loc_fraction
 		}
 	}
+
 	option = {
 		name = cap_econ.23.b
 		custom_tooltip = cap_econ.23.b.tt
 		add_stability = -10
-		every_rebel = {
-			limit = { religion = religion:pantalonism	}
-			save_scope_as = target_rebel
-		}
-		every_pop = {
+		every_owned_location = {
 			limit = {
-				religion = religion:pantalonism
-				owner = root
+				#whre there is a mangiatoia
+				has_building_with_at_least_one_level = Mangiatoia
 			}
-			change_pop_allegiance = scope:target_rebel
-
+			add_location_modifier = {
+				modifier = cap_econ_repression
+				years = 1
+				mode = add_and_extend
+			}
+		}
+		situation:rise_of_pantalonism = {
+			       change_variable = { name = pantalone_happiness_modifier add = -1 }
+			 }
 		}
 	}
-}
+
 
 cap_econ.24 = {
 	type = country_event
@@ -546,7 +571,6 @@ cap_econ.24 = {
 	option = {
 		name = cap_econ.24.a
 		custom_tooltip = cap_econ.24.a.tt
-		set_variable = { name = cap_econ_mangiatoia_conversion_fired value = yes }
 		every_owned_location = {
 			limit = { has_building_with_at_least_one_level = Mangiatoia }
 			set_variable = {

@@ -1,4 +1,4 @@
-REPLACE:unsupported_building_levels = {
+﻿REPLACE:unsupported_building_levels = {
 	game_data = {
 		category = location
 	}
@@ -13,3 +13,5 @@ REPLACE:surplus_jobs = {
 	local_migration_attraction = 1.0
 	local_population_growth = 0.0025
 }
+
+

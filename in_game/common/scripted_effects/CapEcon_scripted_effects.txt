@@ -50,14 +50,7 @@
 	}
 }
 
-cap_econ_destroy_mangiatoia = {
-	every_owned_location = {
-		limit = {
-			has_building = building_type:Mangiatoia
-		}
-		destroy_building_forcefully = "building(building_type:Mangiatoia|owner)"
-	}
-}
+
 
 
 

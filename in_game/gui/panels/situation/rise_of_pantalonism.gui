@@ -96,6 +96,12 @@ situation_panel = {
 					text_single = {
 						raw_text = "[SituationView.GetActiveSituation.GetSituation.MakeScope.GetVariable('target_country').GetCountry.GetName]"
 					}
+					text_single = {
+						text = "CAP_ECON_PANTALONISM_COUNTRY_PANTALONE_HAPPINESS_MODIFIER"
+					}
+					text_single = {
+						text = "[FixedPointToFloat(SituationView.GetActiveSituation.GetSituation.MakeScope.GetVariable('pantalone_happiness_modifier').GetValue)]"
+					}
 				}
 			}
 		}
@@ -121,7 +127,7 @@ situation_panel = {
 						}
 					}
 					text_single = {
-						text = "[FixedPointToFloat(SituationView.GetActiveSituation.GetSituation.MakeScope.GetVariable('pantalonism_progress').GetValue)|2]%"
+						raw_text = "[FixedPointToFloat(SituationView.GetActiveSituation.GetSituation.MakeScope.GetVariable('pantalonism_progress').GetValue)|2]%"
 						tooltipwidget = {
 							SimpleContextualTooltipType = {
 								lowpriotextcontext = "CAP_ECON_PANTALONISM_PROGRESS_TT"
@@ -179,7 +185,7 @@ situation_panel = {
 						}
 					}
 					text_single = {
-						text = "[FixedPointToFloat(SituationView.GetActiveSituation.GetSituation.MakeScope.GetVariable('pantalonism_mangiatoia_progress').GetValue)|2]%"
+						raw_text = "[FixedPointToFloat(SituationView.GetActiveSituation.GetSituation.MakeScope.GetVariable('pantalonism_mangiatoia_progress').GetValue)|2]%"
 						tooltipwidget = {
 							SimpleContextualTooltipType = {
 								lowpriotextcontext = "CAP_ECON_PANTALONISM_MANGIATOIA_TT"
@@ -205,7 +211,7 @@ situation_panel = {
 							}
 						}
 						text_single = {
-							text = "[SituationView.GetActiveSituation.GetSituation.MakeScope.GetVariable('pantalonism_progress_monthly_change').GetValue|+=2]%"
+							raw_text = "[SituationView.GetActiveSituation.GetSituation.MakeScope.GetVariable('pantalonism_progress_monthly_change').GetValue|+=2]%"
 							tooltipwidget = {
 								SimpleContextualTooltipType = {
 									lowpriotextcontext = "CAP_ECON_PANTALONISM_PROGRESS_TT"
@@ -221,7 +227,7 @@ situation_panel = {
 							}
 						}
 						text_single = {
-							text = "[SituationView.GetActiveSituation.GetSituation.MakeScope.GetVariable('pantalonism_mangiatoia_progress_monthly_change').GetValue|+=2]%"
+							raw_text = "[SituationView.GetActiveSituation.GetSituation.MakeScope.GetVariable('pantalonism_mangiatoia_progress_monthly_change').GetValue|+=2]%"
 							tooltipwidget = {
 								SimpleContextualTooltipType = {
 									lowpriotextcontext = "CAP_ECON_PANTALONISM_MANGIATOIA_TT"

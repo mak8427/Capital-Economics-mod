@@ -34,7 +34,6 @@ cap_econ.2 = {
 				}
 				set_global_variable = { name = cap_econ_pantalonism_enabled value = yes }
 			}
-			set_variable = { name = cap_econ_pantalone_event_fired value = yes }
 			lots_of_pantalonist = yes
 		}
 

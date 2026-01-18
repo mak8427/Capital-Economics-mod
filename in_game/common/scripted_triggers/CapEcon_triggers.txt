@@ -1,4 +1,4 @@
-is_town = {
+﻿is_town = {
 	location_rank = location_rank:town
 }
 
