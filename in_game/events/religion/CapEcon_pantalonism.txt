@@ -13,7 +13,6 @@ cap_econ.2 = {
 
 	trigger = {
 		receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
-		giving_scripted_relation_of_type = relation_type:cap_econ_extraction_rights
 	}
 	immediate = {
 		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }

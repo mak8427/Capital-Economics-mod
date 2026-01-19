@@ -86,7 +86,6 @@ cap_econ.5 = {
 		AND = {
 			receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
 			NOT = { has_variable = cap_econ_pantalone_arrived }
-			giving_scripted_relation_of_type = relation_type:cap_econ_extraction_rights
 			any_owned_location = {
 				is_town = yes
 			}
@@ -94,18 +93,19 @@ cap_econ.5 = {
 	}
 
 
-	immediate = {
-		random_country = {
-			limit = {
-				receiving_scripted_relation = {
-					type = relation_type:cap_econ_send_pantalone
-					target = root
-				}
-			}
-			save_scope_as = pantalone_sender
-		}
-		set_variable = { name = cap_econ_pantalone_arrived value = yes }
-	}
+ 	immediate = {
+ 	      random_country = {
+ 	              limit = {
+ 	                      giving_scripted_relation = {
+ 	                              type = relation_type:cap_econ_send_pantalone
+ 	                              target = root
+ 	                      }
+ 	              }
+ 	              save_scope_as = pantalone_sender
+ 	      }
+ 	      set_variable = { name = cap_econ_pantalone_arrived value = yes }
+ 	}
+
 
 	option = {
 		name = cap_econ.5.a
@@ -136,193 +136,17 @@ cap_econ.6 = {
 	}
 
 	trigger = {
-		AND = {
 			receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
-			giving_scripted_relation_of_type = relation_type:cap_econ_extraction_rights
-		}
 	}
 
 	option = {
 		name = cap_econ.6.a
 		custom_tooltip = cap_econ.6.a.tt
-		if = {
-			limit = {
-				NOT = {
-					any_owned_location = {
-						limit = {
-							OR = {
-								is_town = yes
-								is_city = yes
-								NOT = { has_building = building_type:library }
-							}
-						}
-					}
-				}
-			}
-			add_research_progress = { value = 20 }
-		}
-		else = {
-			random_list = {
-				1 = {
-					random_owned_location = {
-						limit = {
-							OR = { is_town = yes is_city = yes }
-							NOT = { has_building = building_type:library }
-						}
-						change_building_level_in_location = {
-							building = building_type:library
-							value = 1
-						}
-					}
-				}
-				1 = {
-					random_owned_location = {
-						limit = {
-							OR = { is_town = yes is_city = yes }
-							NOT = { has_building = building_type:library }
-						}
-						change_building_level_in_location = {
-							building = building_type:library
-							value = 1
-						}
-					}
-					random_owned_location = {
-						limit = {
-							OR = { is_town = yes is_city = yes }
-							NOT = { has_building = building_type:library }
-						}
-						change_building_level_in_location = {
-							building = building_type:library
-							value = 1
-						}
-					}
-				}
-				1 = {
-					random_owned_location = {
-						limit = {
-							OR = { is_town = yes is_city = yes }
-							NOT = { has_building = building_type:library }
-						}
-						change_building_level_in_location = {
-							building = building_type:library
-							value = 1
-						}
-					}
-					random_owned_location = {
-						limit = {
-							OR = { is_town = yes is_city = yes }
-							NOT = { has_building = building_type:library }
-						}
-						change_building_level_in_location = {
-							building = building_type:library
-							value = 1
-						}
-					}
-					random_owned_location = {
-						limit = {
-							OR = { is_town = yes is_city = yes }
-							NOT = { has_building = building_type:library }
-						}
-						change_building_level_in_location = {
-							building = building_type:library
-							value = 1
-						}
-					}
-				}
-				1 = {
-					random_owned_location = {
-						limit = {
-							OR = { is_town = yes is_city = yes }
-							NOT = { has_building = building_type:library }
-						}
-						change_building_level_in_location = {
-							building = building_type:library
-							value = 1
-						}
-					}
-					random_owned_location = {
-						limit = {
-							OR = { is_town = yes is_city = yes }
-							NOT = { has_building = building_type:library }
-						}
-						change_building_level_in_location = {
-							building = building_type:library
-							value = 1
-						}
-					}
-					random_owned_location = {
-						limit = {
-							OR = { is_town = yes is_city = yes }
-							NOT = { has_building = building_type:library }
-						}
-						change_building_level_in_location = {
-							building = building_type:library
-							value = 1
-						}
-					}
-					random_owned_location = {
-						limit = {
-							OR = { is_town = yes is_city = yes }
-							NOT = { has_building = building_type:library }
-						}
-						change_building_level_in_location = {
-							building = building_type:library
-							value = 1
-						}
-					}
-				}
-				1 = {
-					random_owned_location = {
-						limit = {
-							OR = { is_town = yes is_city = yes }
-							NOT = { has_building = building_type:library }
-						}
-						change_building_level_in_location = {
-							building = building_type:library
-							value = 1
-						}
-					}
-					random_owned_location = {
-						limit = {
-							OR = { is_town = yes is_city = yes }
-							NOT = { has_building = building_type:library }
-						}
-						change_building_level_in_location = {
-							building = building_type:library
-							value = 1
-						}
-					}
-					random_owned_location = {
-						limit = {
-							OR = { is_town = yes is_city = yes }
-							NOT = { has_building = building_type:library }
-						}
-						change_building_level_in_location = {
-							building = building_type:library
-							value = 1
-						}
-					}
-					random_owned_location = {
-						limit = {
-							OR = { is_town = yes is_city = yes }
-							NOT = { has_building = building_type:library }
-						}
-						change_building_level_in_location = {
-							building = building_type:library
-							value = 1
-						}
-					}
-					random_owned_location = {
-						limit = {
-							OR = { is_town = yes is_city = yes }
-							NOT = { has_building = building_type:library }
-						}
-						change_building_level_in_location = {
-							building = building_type:library
-							value = 1
-						}
-					}
-				}
+		random_owned_location = {
+			limit = { OR = { is_town = yes is_city = yes } }
+			change_building_level_in_location = {
+				building = building_type:library
+				value = 1
 			}
 		}
 	}
@@ -587,5 +411,90 @@ cap_econ.24 = {
 			}
 			remove_variable = cap_econ_mangiatoia_loc_fraction
 		}
+	}
+}
+
+cap_econ.25 = {
+	type = country_event
+
+	title = cap_econ.25.title
+	desc = cap_econ.25.desc
+	illustration_tags = {
+		10 = interior
+		10 = angry
+	}
+
+	trigger = {
+		receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
+	}
+
+	immediate = {
+		random_country = {
+			limit = {
+				giving_scripted_relation = {
+					type = relation_type:cap_econ_send_pantalone
+					target = root
+				}
+			}
+			save_scope_as = pantalone_sender
+		}
+	}
+
+	option = {
+		name = cap_econ.25.a
+		custom_tooltip = cap_econ.25.a.tt
+		random_owned_location = {
+			limit = { OR = { is_town = yes is_city = yes } }
+			change_building_level_in_location = {
+				building = building_type:Mangiatoia
+				value = 1
+			}
+		}
+		random_owned_location = {
+			limit = { OR = { is_town = yes is_city = yes } }
+			change_building_level_in_location = {
+				building = building_type:Mangiatoia
+				value = 1
+			}
+		}
+		random_owned_location = {
+			limit = { OR = { is_town = yes is_city = yes } }
+			change_building_level_in_location = {
+				building = building_type:Mangiatoia
+				value = 1
+			}
+		}
+		hidden_effect = {
+			scope:pantalone_sender ?= {
+				trigger_event_non_silently = cap_econ.26
+			}
+		}
+	}
+}
+
+cap_econ.26 = {
+	type = country_event
+
+	title = cap_econ.26.title
+	desc = cap_econ.26.desc
+	illustration_tags = {
+		10 = interior
+		10 = unhappy
+	}
+
+	trigger = {
+		always = no
+	}
+
+	option = {
+		name = cap_econ.26.a
+		custom_tooltip = cap_econ.26.a.tt
+		add_gold = { value = -500 }
+		scope:cap_econ_pantalone_coup_target ?= {
+			set_variable = cap_econ_force_pantalonism_situation
+		}
+		#TODO: Fix this shit
+
+		remove_variable = cap_econ_pantalone_coup_target
 	}
 }

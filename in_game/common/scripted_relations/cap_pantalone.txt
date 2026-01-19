@@ -13,23 +13,30 @@
 
 	  break_enabled = {
         scope:recipient = { religion = religion:pantalonism }
-  }
+      }
 
 
     visible = {
         scope:actor = {
             AND = {
-                receiving_scripted_relation = {
-                    type = relation_type:cap_econ_extraction_rights
-                    target = scope:recipient
-                }
-                within_diplomatic_range = scope:actor
-
+                within_diplomatic_range = scope:recipient
+                scope:actor = { religion = religion:pantalonism }
             }
-
-
         }
     }
+    offer_enabled = {
+        scope:actor = {
+            NOT = {
+                giving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
+            }
+            }
+        }
+
+    offer_effect = {
+                scope:recipient = {
+                        trigger_event_non_silently = cap_econ.5
+                }
+        }
 
     wants_to_receive = {
         add = {

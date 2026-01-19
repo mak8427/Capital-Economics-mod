@@ -4,7 +4,7 @@
 # Mangiatoia pressure. Comments explain what each section does and why.
 rise_of_pantalonism = {
     # Use a unique spawn chance so the game does not stack multiple copies.
-    monthly_spawn_chance = monthly_spawn_chance_unique
+    monthly_spawn_chance = monthly_spawn_chance_ultimate_high
 
     # Start when any country is eligible: not completed, and either
     # forced by console or already has Pantalonism + Pantalone relations.
@@ -14,7 +14,10 @@ rise_of_pantalonism = {
             OR = {
                 has_variable = cap_econ_force_pantalonism_situation
                 AND = {
-                    "religion_percentage_in_country(religion:pantalonism)" > 0
+                    religion_percentage_in_country = {
+                        religion = religion:pantalonism
+                        value > 0
+                    }
                     receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
                 }
             }
@@ -22,17 +25,27 @@ rise_of_pantalonism = {
     }
 
 
+
     # End when the target country reaches the Pantalonist share threshold.
     can_end = {
-        var:target_country = {
-            "religion_percentage_in_country(religion:pantalonism)" > 0.85
+        trigger_if = {
+            limit = { country_exists = situation:rise_of_pantalonism.var:target_country }
+            situation:rise_of_pantalonism.var:target_country = {
+                religion_percentage_in_country = {
+                    religion = religion:pantalonism
+                    value > 0.85
+                }
+            }
         }
     }
 
-    # Show the situation only when the target country is marked active.
+    # Show the situation when the target country is marked active.
     visible = {
-        var:target_country = {
-            has_variable = cap_econ_pantalonism_situation_active
+        trigger_if = {
+            limit = { country_exists = situation:rise_of_pantalonism.var:target_country }
+            situation:rise_of_pantalonism.var:target_country = {
+                has_variable = cap_econ_pantalonism_situation_active
+            }
         }
     }
 
@@ -43,6 +56,7 @@ rise_of_pantalonism = {
         set_variable = { name = pantalonism_progress_monthly_change value = 0 }
         set_variable = { name = pantalonism_mangiatoia_progress_monthly_change value = 0 }
         set_variable = { name = pantalone_happiness_modifier value = 0 }
+        set_variable = cap_econ_pantalonism_situation_active
         # Prefer the forced country if set; otherwise pick any eligible one.
         if = {
             limit = {
@@ -57,7 +71,10 @@ rise_of_pantalonism = {
             random_country = {
                 limit = {
                     NOT = { has_variable = cap_econ_pantalonism_situation_completed }
-                    "religion_percentage_in_country(religion:pantalonism)" > 0
+                    religion_percentage_in_country = {
+                        religion = religion:pantalonism
+                        value > 0
+                    }
                     receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
                 }
                 save_scope_as = target_country
@@ -180,7 +197,7 @@ rise_of_pantalonism = {
         }
         # Trigger the super event when pressure hits 100, then reset pressure.
         if = {
-            limit = { var:pantalonism_mangiatoia_progress >= 100 }
+            limit = { var:pantalonism_mangiatoia_progress >= 5 }
             scope:target_country ?= {
                 trigger_event_non_silently = cap_econ.23
             }
@@ -190,28 +207,18 @@ rise_of_pantalonism = {
 
     # When the situation ends, complete the conversion and government change.
     on_ending = {
-        scope:target_country = {
+        var:target_country ?= {
             change_religion = religion:pantalonism
             change_religion_for_ruler_and_family = { country = this religion = religion:pantalonism }
             remove_current_major_government_reform = yes
             change_government_type = government_type:republic
-            add_reform = government_reform:merchant_republic
+            unlock_government_reform_effect = { type = pantalone_republic }
+            add_reform = government_reform:pantalone_republic
+            add_reform = government_reform:council_of_burghers
             set_variable = cap_econ_pantalonism_situation_completed
             remove_variable = cap_econ_pantalonism_situation_active
 
-            every_country = {
-                limit = {
-                    receiving_scripted_relation = {
-                        type = relation_type:cap_econ_send_pantalone
-                        target = this
-                    }
-                }
-                remove_relation = {
-                    type = relation_type:cap_econ_send_pantalone
-                    first = prev
-                    second = this
-                }
-            }
+
             every_owned_location = {
                 limit = { has_building = building_type:Mangiatoia }
                 set_variable = {
@@ -227,15 +234,54 @@ rise_of_pantalonism = {
             }
 
 
+            every_owned_location = {
+                remove_location_modifier = cap_econ_repression
+                 change_control = control_radical_bonus
+            }
+
+        if = {
+            limit = { country_exists = situation:rise_of_pantalonism.var:target_country }
+            # remove all relations where someone gives Pantalone to the target
+            every_country = {
+                limit = {
+                    giving_scripted_relation = {
+                        type = relation_type:cap_econ_send_pantalone
+                        target = situation:rise_of_pantalonism.var:target_country
+                    }
+                }
+                remove_relation = {
+                    type = relation_type:cap_econ_send_pantalone
+                    first = this
+                    second = situation:rise_of_pantalonism.var:target_country
+                }
+            }
+
+            # remove all relations where target gives Pantalone to someone else
+            every_country = {
+                limit = {
+                    receiving_scripted_relation = {
+                        type = relation_type:cap_econ_send_pantalone
+                        target = situation:rise_of_pantalonism.var:target_country
+                    }
+                }
+                remove_relation = {
+                    type = relation_type:cap_econ_send_pantalone
+                    first = situation:rise_of_pantalonism.var:target_country
+                    second = this
+                }
+            }
         }
+
     }
+        }
 
     # Cleanup all temporary variables so reruns start clean.
     on_ended = {
-        scope:target_country = {
+        var:target_country ?= {
             remove_variable = cap_econ_pantalonism_situation_active
             remove_variable = cap_econ_mangiatoia_levels
         }
+        remove_variable = cap_econ_pantalonism_situation_active
         remove_variable = pantalonism_progress
         remove_variable = pantalonism_progress_prev
         remove_variable = pantalonism_progress_monthly_change
