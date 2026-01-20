@@ -2,6 +2,7 @@
     type = diplomacy
     relation_type = oneway
     break_on_war = no
+    use_with_enemies = yes
     category = {
         offer = CATEGORY_HOSTILE_ACTIONS
         request = CATEGORY_HOSTILE_ACTIONS
@@ -45,33 +46,26 @@
         }
     }
 
-    wants_to_give = {
-        add = {
-            desc = "THEIR_OPINION_TOOLTIP"
-            value = "scope:recipient.opinion(scope:actor)"
-            divide = 5
-        }
-        add = {
-            desc = "DIPLOREASON_DIPLOMATIC_REPUTATION"
-            scope:actor = {
-                value = modifier:diplomatic_reputation
-                multiply = 5
-            }
-        }
-        subtract = {
-            desc = "DIPLOREASON_BASE_RELUCTANCE"
-            value = 25
-        }
-        if = {
-            limit = {
-                scope:recipient = {
-                    is_rival_of = scope:actor
-                }
-            }
-            subtract = {
-                desc = "game_concept_rival"
-                value = 100
-            }
-        }
+
+  wants_to_give = {
+    add = 500
+    add = {
+      desc = "game_concept_rival"
+      if = { limit = { scope:recipient = { is_rival_of = scope:actor } } }
+      value = 200
     }
+
+    add = {
+      desc = "IS_WAR_ENEMY"
+      if = { limit = { scope:recipient = { is_at_war_with = scope:actor } } }
+      value = 200
+    }
+
+    # Prefer countries we dislike
+    subtract = {
+      desc = "game_concept_opinion"
+      scope:actor = { value = "opinion(scope:recipient)" }
+    }
+  }
+
 }

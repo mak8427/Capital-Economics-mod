@@ -39,7 +39,7 @@ rise_of_pantalonism = {
         }
     }
 
-    # Show the situation when the target country is marked active.
+    # Show the situation whenca the target country is marked active.
     visible = {
         trigger_if = {
             limit = { country_exists = situation:rise_of_pantalonism.var:target_country }
@@ -197,7 +197,7 @@ rise_of_pantalonism = {
         }
         # Trigger the super event when pressure hits 100, then reset pressure.
         if = {
-            limit = { var:pantalonism_mangiatoia_progress >= 5 }
+            limit = { var:pantalonism_mangiatoia_progress >= 99 }
             scope:target_country ?= {
                 trigger_event_non_silently = cap_econ.23
             }

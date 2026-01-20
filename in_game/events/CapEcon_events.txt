@@ -318,7 +318,6 @@ cap_econ.22 = {
 	image = "gfx/interface/illustrations/situation/reformation.dds"
 
 	trigger = {
-		always = no
 	}
 
 	option = {
@@ -338,10 +337,19 @@ cap_econ.23 = {
 
 
 
-
 	option = {
 		name = cap_econ.23.a
 		custom_tooltip = cap_econ.23.a.tt
+
+		ai_will_select = {
+			base = 1
+			modifier = {
+				factor = 3
+				stability < 0
+			}
+		}
+
+
 		every_owned_location = {
 				every_pop = {
  				limit = {
@@ -361,7 +369,17 @@ cap_econ.23 = {
 	option = {
 		name = cap_econ.23.b
 		custom_tooltip = cap_econ.23.b.tt
+
 		add_stability = -10
+
+
+		ai_will_select = {
+			base = 1
+			modifier = {
+				factor = 3
+				stability > 10
+			}
+		}
 		every_owned_location = {
 			limit = {
 				#whre there is a mangiatoia
@@ -440,37 +458,42 @@ cap_econ.25 = {
 		}
 	}
 
-	option = {
-		name = cap_econ.25.a
-		custom_tooltip = cap_econ.25.a.tt
-		random_owned_location = {
-			limit = { OR = { is_town = yes is_city = yes } }
-			change_building_level_in_location = {
-				building = building_type:Mangiatoia
-				value = 1
-			}
-		}
-		random_owned_location = {
-			limit = { OR = { is_town = yes is_city = yes } }
-			change_building_level_in_location = {
-				building = building_type:Mangiatoia
-				value = 1
-			}
-		}
-		random_owned_location = {
-			limit = { OR = { is_town = yes is_city = yes } }
-			change_building_level_in_location = {
-				building = building_type:Mangiatoia
-				value = 1
-			}
-		}
-		hidden_effect = {
-			scope:pantalone_sender ?= {
-				trigger_event_non_silently = cap_econ.26
-			}
-		}
+option = {
+        name = cap_econ.25.a
+        custom_tooltip = cap_econ.25.a.tt
+
+        random_owned_location = {
+                limit = { OR = { is_town = yes is_city = yes } }
+                change_building_level_in_location = {
+                        building = building_type:Mangiatoia
+                        value = 1
+                }
+        }
+        random_owned_location = {
+                limit = { OR = { is_town = yes is_city = yes } }
+                change_building_level_in_location = {
+                        building = building_type:Mangiatoia
+                        value = 1
+                }
+        }
+        random_owned_location = {
+                limit = { OR = { is_town = yes is_city = yes } }
+                change_building_level_in_location = {
+                        building = building_type:Mangiatoia
+                        value = 1
+                }
+        }
+
+
+                scope:pantalone_sender ?= {
+                        trigger_event_non_silently = cap_econ.26
+                        add_gold = { value = 300 }
+                }
+
+  }
+
 	}
-}
+
 
 cap_econ.26 = {
 	type = country_event
@@ -486,15 +509,31 @@ cap_econ.26 = {
 		always = no
 	}
 
-	option = {
-		name = cap_econ.26.a
-		custom_tooltip = cap_econ.26.a.tt
-		add_gold = { value = -500 }
-		scope:cap_econ_pantalone_coup_target ?= {
-			set_variable = cap_econ_force_pantalonism_situation
-		}
-		#TODO: Fix this shit
 
-		remove_variable = cap_econ_pantalone_coup_target
-	}
+  option = {
+        name = cap_econ.26.a
+        custom_tooltip = cap_econ.26.a.tt
+        add_gold = { value = -500 }
+
+        scope:cap_econ_pantalone_coup_target ?= {
+                set_variable = cap_econ_force_pantalonism_situation
+        }
+
+        random_country = {
+                limit = {
+                        receiving_scripted_relation = {
+                                type = relation_type:cap_econ_send_pantalone
+                                target = root
+                        }
+                }
+                save_scope_as = pantalone_receiver
+        }
+
+        scope:pantalone_receiver ?= {
+                trigger_event_non_silently = cap_econ.22
+                trigger_event_non_silently = { id = cap_econ.1 days = 1 }
+        }
+
+        remove_variable = cap_econ_pantalone_coup_target
+  }
 }
