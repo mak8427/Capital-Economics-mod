@@ -78,6 +78,40 @@ situation_panel = {
 			}
 		}
 
+		situation_fancy_two_line_card = {
+			block "card_datacontext" { }
+
+			blockoverride "left_flag_properties" {
+				datacontext = "[SituationView.GetActiveSituation.GetSituation.MakeScope.GetVariable('pantalone_sender').GetCountry]"
+				visible = "[SituationView.GetActiveSituation.GetSituation.MakeScope.GetVariable('pantalone_sender').GetCountry.IsValid]"
+			}
+			blockoverride "left_bottom_flag" { }
+			blockoverride "left_top_text" {
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				visible = "[SituationView.GetActiveSituation.GetSituation.MakeScope.GetVariable('pantalone_sender').GetCountry.IsValid]"
+				text = "[SituationView.GetActiveSituation.GetSituation.MakeScope.GetVariable('pantalone_sender').GetCountry.GetName]"
+			}
+			blockoverride "left_bottom_text" {
+				text = "CAP_ECON_PANTALONISM_SENDER"
+			}
+
+			blockoverride "right_flag_properties" {
+				datacontext = "[SituationView.GetActiveSituation.GetSituation.MakeScope.GetVariable('target_country').GetCountry]"
+				visible = "[SituationView.GetActiveSituation.GetSituation.MakeScope.GetVariable('target_country').GetCountry.IsValid]"
+			}
+			blockoverride "right_bottom_flag" { }
+			blockoverride "right_top_text" {
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				visible = "[SituationView.GetActiveSituation.GetSituation.MakeScope.GetVariable('target_country').GetCountry.IsValid]"
+				text = "[SituationView.GetActiveSituation.GetSituation.MakeScope.GetVariable('target_country').GetCountry.GetName]"
+			}
+			blockoverride "right_bottom_text" {
+				text = "CAP_ECON_PANTALONISM_RECEIVER"
+			}
+		}
+
 		situation_card_common = {
 			blockoverride "common_header_icon_texture" {
 				texture = "[SituationView.GetActiveSituation.GetIcon]"

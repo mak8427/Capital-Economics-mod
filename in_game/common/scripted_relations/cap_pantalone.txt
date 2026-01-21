@@ -36,8 +36,24 @@
     offer_effect = {
                 scope:recipient = {
                         trigger_event_non_silently = cap_econ.5
+                        set_variable = { name = cap_econ_pantalone_sender value = scope:actor }
                 }
         }
+    cancel_effect = {
+        scope:recipient = {
+            remove_variable = cap_econ_pantalone_sender
+        }
+    }
+    break_effect = {
+        scope:recipient = {
+            remove_variable = cap_econ_pantalone_sender
+        }
+    }
+    expire_effect = {
+        scope:recipient = {
+            remove_variable = cap_econ_pantalone_sender
+        }
+    }
 
     wants_to_receive = {
         add = {

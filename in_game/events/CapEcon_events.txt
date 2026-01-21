@@ -506,7 +506,6 @@ cap_econ.26 = {
 	}
 
 	trigger = {
-		always = no
 	}
 
 
@@ -514,7 +513,6 @@ cap_econ.26 = {
         name = cap_econ.26.a
         custom_tooltip = cap_econ.26.a.tt
         add_gold = { value = -500 }
-
         scope:cap_econ_pantalone_coup_target ?= {
                 set_variable = cap_econ_force_pantalonism_situation
         }
@@ -531,9 +529,7 @@ cap_econ.26 = {
 
         scope:pantalone_receiver ?= {
                 trigger_event_non_silently = cap_econ.22
-                trigger_event_non_silently = { id = cap_econ.1 days = 1 }
         }
-
         remove_variable = cap_econ_pantalone_coup_target
   }
 }

@@ -81,6 +81,37 @@ rise_of_pantalonism = {
             }
         }
         set_variable = { name = target_country value = scope:target_country }
+        if = {
+            limit = {
+                any_country = {
+                    giving_scripted_relation = {
+                        type = relation_type:cap_econ_send_pantalone
+                        target = scope:target_country
+                    }
+                }
+            }
+            random_country = {
+                limit = {
+                    giving_scripted_relation = {
+                        type = relation_type:cap_econ_send_pantalone
+                        target = scope:target_country
+                    }
+                }
+                save_scope_as = pantalone_sender
+            }
+            situation:rise_of_pantalonism = {
+                set_variable = { name = pantalone_sender value = scope:pantalone_sender }
+            }
+            scope:target_country = {
+                set_variable = { name = cap_econ_pantalone_sender value = scope:pantalone_sender }
+            }
+        }
+        else = {
+            situation:rise_of_pantalonism = {
+                set_variable = { name = pantalone_sender value = scope:target_country }
+            }
+            scope:target_country = { remove_variable = cap_econ_pantalone_sender }
+        }
         # Mark the country as the active target so monthly updates can find it.
         scope:target_country = {
             set_variable = cap_econ_pantalonism_situation_active
@@ -113,6 +144,35 @@ rise_of_pantalonism = {
 
         # Use ?= so the block silently skips if no target exists.
         scope:target_country ?= {
+            if = {
+                limit = {
+                    any_country = {
+                        giving_scripted_relation = {
+                            type = relation_type:cap_econ_send_pantalone
+                            target = scope:target_country
+                        }
+                    }
+                }
+                random_country = {
+                    limit = {
+                        giving_scripted_relation = {
+                            type = relation_type:cap_econ_send_pantalone
+                            target = scope:target_country
+                        }
+                    }
+                    save_scope_as = pantalone_sender
+                }
+                situation:rise_of_pantalonism = {
+                    set_variable = { name = pantalone_sender value = scope:pantalone_sender }
+                }
+                set_variable = { name = cap_econ_pantalone_sender value = scope:pantalone_sender }
+            }
+            else = {
+                situation:rise_of_pantalonism = {
+                    set_variable = { name = pantalone_sender value = scope:target_country }
+                }
+                remove_variable = cap_econ_pantalone_sender
+            }
             # Update Mangiatoia levels from effective staffing in the target country.
             set_variable = {
                 name = cap_econ_mangiatoia_levels
