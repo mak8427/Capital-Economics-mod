@@ -1,7 +1,7 @@
 ﻿  monthly_country_pulse = {
         on_actions = {
                 monthly_country_pulse_capecon
-                monthly_country_pulse_capecon_satisfaction
+                monthly_country_pulse_capecon_2
         }
   }
 
@@ -35,3 +35,22 @@
 		estate_income_fix.2
 	}
 }
+
+  monthly_country_pulse_capecon_2 = {
+	  trigger = {
+		  AND = {
+			  tag = BLG
+			  NOT = {  has_variable = cap_start_pantalone }
+		  }
+
+	  }
+	  events = {
+		  cap_econ.22
+	  }
+	  effect = {
+		add_gold = 1000
+		  set_variable= { name = cap_start_pantalone value = 1 }
+
+	  }
+
+  }

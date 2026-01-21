@@ -1,4 +1,4 @@
-﻿
+# Religious-economic events tied to the spread of Pantalonism.
 namespace = cap_econ
 
 cap_econ.2 = {

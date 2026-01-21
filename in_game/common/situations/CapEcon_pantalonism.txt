@@ -180,10 +180,15 @@ rise_of_pantalonism = {
             }
 
             random_list = {
-                30 = { }
+                50 = { }
                 50 = {
                     scope:target_country = {
                         trigger_event_non_silently = cap_econ.20
+                    }
+                }
+                50 = {
+                    scope:target_country = {
+                        trigger_event_non_silently = cap_econ.27
                     }
                 }
             }
@@ -191,7 +196,6 @@ rise_of_pantalonism = {
 
             # Use root to keep situation-scoped variables in the situation scope.
             root = {
-
 
                 # Ensure variables exist before we take deltas.
                 if = {

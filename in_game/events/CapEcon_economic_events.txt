@@ -1,0 +1,244 @@
+# Economic events tied to Pantalone relations and domestic development.
+namespace = cap_econ
+
+cap_econ.1 = {
+	type = country_event
+
+	title = cap_econ.1.title
+	desc = cap_econ.1.desc
+	illustration_tags = {
+		10 = interior
+		10 = happy
+	}
+
+	trigger = {
+		AND = {
+			receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
+			giving_scripted_relation_of_type = relation_type:cap_econ_extraction_rights
+		}
+	}
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }
+	}
+
+	option = {
+		name = cap_econ.1.a
+		custom_tooltip = cap_econ.1.a.tt
+		add_gold = { value = root.estate_tax_base:burghers_estate	multiply = 10 }
+		#add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_extreme_bonus	}
+		add_gold_to_estate = {
+			estate_type = estate_type:burghers_estate
+			value = { value = root.estate_tax_base:burghers_estate multiply = 10	}
+		}
+		random_owned_non_rural_location = {
+			change_building_level_in_location = {
+				building = building_type:Mangiatoia
+				value = 1
+			}
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = cap_econ.1.b
+		custom_tooltip = cap_econ.1.b.tt
+		add_gold = { value = root.estate_tax_base:burghers_estate	multiply = 20 }
+		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_mild_bonus	}
+		add_gold_to_estate = {
+			estate_type = estate_type:burghers_estate
+			value = { value = root.estate_tax_base:burghers_estate multiply = 5	}
+		}
+		random_owned_non_rural_location = {
+			change_building_level_in_location = {
+				building = building_type:Mangiatoia
+				value = 1
+			}
+		}
+			random_owned_location = {
+			change_building_level_in_location = {
+				building = building_type:Mangiatoia
+				value = 1
+			}
+		}
+			random_owned_location = {
+			change_building_level_in_location = {
+				building = building_type:Mangiatoia
+				value = 1
+			}
+		}
+		hidden_effect = {
+		}
+	}
+
+}
+
+cap_econ.5 = {
+	type = country_event
+
+	title = cap_econ.5.title
+	desc = cap_econ.5.desc
+	illustration_tags = {
+		10 = interior
+		10 = happy
+	}
+	trigger = {
+		AND = {
+			receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
+			NOT = { has_variable = cap_econ_pantalone_arrived }
+			any_owned_location = {
+				is_town = yes
+			}
+		}
+	}
+
+
+ 	immediate = {
+ 	      random_country = {
+ 	              limit = {
+ 	                      giving_scripted_relation = {
+ 	                              type = relation_type:cap_econ_send_pantalone
+ 	                              target = root
+ 	                      }
+ 	              }
+ 	              save_scope_as = pantalone_sender
+ 	      }
+ 	      set_variable = { name = cap_econ_pantalone_arrived value = yes }
+ 	}
+
+
+	option = {
+		name = cap_econ.5.a
+		custom_tooltip = cap_econ.5.a.tt
+		every_owned_location = {
+			limit = {
+				OR = {
+					is_town = yes
+					is_city = yes
+				}
+			}
+			change_building_level_in_location = {
+				building = building_type:Mangiatoia
+				value = 1
+			}
+		}
+	}
+}
+
+cap_econ.6 = {
+	type = country_event
+
+	title = cap_econ.6.title
+	desc = cap_econ.6.desc
+	illustration_tags = {
+		10 = interior
+		10 = happy
+	}
+
+	trigger = {
+			receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
+	}
+
+	option = {
+		name = cap_econ.6.a
+		custom_tooltip = cap_econ.6.a.tt
+		random_owned_location = {
+			limit = { OR = { is_town = yes is_city = yes } }
+			change_building_level_in_location = {
+				building = building_type:library
+				value = 1
+			}
+		}
+	}
+}
+
+cap_econ.7 = {
+	type = country_event
+
+	title = cap_econ.7.title
+	desc = cap_econ.7.desc
+	illustration_tags = {
+		10 = interior
+		10 = happy
+	}
+
+	trigger = {
+		AND = {
+			receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
+			any_owned_location = {
+				is_rural_settlement = yes
+			}
+		}
+	}
+
+	option = {
+		name = cap_econ.7.a
+		custom_tooltip = cap_econ.7.a.tt
+		random_owned_location = {
+			limit = { is_rural_settlement = yes }
+			change_location_rank = location_rank:town
+		}
+		random_owned_location = {
+			limit = { is_rural_settlement = yes }
+			change_location_rank = location_rank:town
+		}
+	}
+}
+
+cap_econ.8 = {
+	type = country_event
+
+	title = cap_econ.8.title
+	desc = cap_econ.8.desc
+	illustration_tags = {
+		10 = interior
+		10 = happy
+	}
+
+	trigger = {
+		AND = {
+			receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
+			any_owned_location = {
+				is_rural_settlement = yes
+			}
+		}
+
+	}
+
+	option = {
+		name = cap_econ.8.a
+		custom_tooltip = cap_econ.8.a.tt
+		random_owned_location = {
+			limit = { is_rural_settlement = yes }
+			change_location_rank = location_rank:town
+		}
+	}
+}
+
+cap_econ.9 = {
+	type = country_event
+
+	title = cap_econ.9.title
+	desc = cap_econ.9.desc
+	illustration_tags = {
+		10 = interior
+		10 = happy
+	}
+
+	trigger = {
+		AND = {
+			receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
+			any_owned_location = {
+						is_town = yes
+			}
+		}
+	}
+
+	option = {
+		name = cap_econ.9.a
+		custom_tooltip = cap_econ.9.a.tt
+		random_owned_location = {
+			limit = { is_town = yes }
+			change_location_rank = location_rank:city
+		}
+	}
+}
