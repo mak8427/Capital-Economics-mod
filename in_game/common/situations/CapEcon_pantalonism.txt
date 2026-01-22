@@ -178,20 +178,41 @@ rise_of_pantalonism = {
                 name = cap_econ_mangiatoia_levels
                 value = total_effective_building_levels:Mangiatoia
             }
-
-            random_list = {
-                50 = { }
-                50 = {
-                    scope:target_country = {
-                        trigger_event_non_silently = cap_econ.20
+            if = {
+                limit = {
+                    situation:rise_of_pantalonism = {
+                        var:pantalone_happiness_modifier < 0
                     }
                 }
-                50 = {
-                    scope:target_country = {
-                        trigger_event_non_silently = cap_econ.27
+                random_list = {
+                    50 = {
+                        scope:target_country = {
+                            trigger_event_non_silently = cap_econ.29
+                        }
+                    }
+                    50 = {
+                        scope:target_country = {
+                            trigger_event_non_silently = cap_econ.20
+                        }
                     }
                 }
             }
+            else = {
+                random_list = {
+                    50 = {
+                        scope:target_country = {
+                            trigger_event_non_silently = cap_econ.29
+                        }
+                    }
+                    50 = {
+                        scope:target_country = {
+                            trigger_event_non_silently = cap_econ.27
+                        }
+                    }
+                }
+            }
+
+
 
 
             # Use root to keep situation-scoped variables in the situation scope.
@@ -333,6 +354,16 @@ rise_of_pantalonism = {
                         first = situation:rise_of_pantalonism.var:target_country
                         second = this
                     }
+                }
+            }
+
+            # Start sending Pantalone to a random rival, if any exist.
+            random_country = {
+                limit = { is_rival_of = root }
+                add_relation = {
+                    type = relation_type:cap_econ_send_pantalone
+                    first = root
+                    second = this
                 }
             }
 

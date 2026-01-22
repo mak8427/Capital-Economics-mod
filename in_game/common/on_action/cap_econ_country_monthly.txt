@@ -3,13 +3,17 @@
         monthly_country_pulse_capecon
         monthly_country_pulse_capecon_2
     }
+    events = {
+        estate_income_fix.1
+        estate_income_fix.3
+    }
 }
 
 monthly_country_pulse_capecon = {
     trigger = {
         receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
-
     }
+
 
     random_events = {
         25 = cap_econ.1
@@ -23,10 +27,7 @@ monthly_country_pulse_capecon = {
         chance_to_happen = 80
     }
 
-    events = {
-        estate_income_fix.1
-        estate_income_fix.3
-    }
+
 }
 
 
@@ -40,7 +41,10 @@ monthly_country_pulse_capecon_2 = {
     trigger = {
         AND = {
             tag = BLG
-            NOT = { has_variable = cap_start_pantalone }
+            NOT = { religion = religion:pantalonism }
+            NOT = { is_situation_active = situation:rise_of_pantalonism }
+
+
         }
 
     }

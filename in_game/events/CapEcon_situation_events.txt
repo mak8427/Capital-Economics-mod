@@ -10,14 +10,21 @@ cap_econ.20 = {
     image = "gfx/interface/illustrations/situation/reformation.dds"
 
     trigger = {
-        situation:rise_of_pantalonism = {
-            var:pantalone_happiness_modifier < 0
-        }
     }
 
     option = {
         name = cap_econ.20.a
         custom_tooltip = cap_econ.20.a.tt
+
+        ai_will_select = {
+              base = 1
+              modifier = {
+                      factor = 2
+                      var:cap_econ_pantalone_happiness_modifier >= 1
+              }
+        }
+
+
         every_estate = {
             limit = {
                 estate_type = estate_type:peasants_estate
@@ -45,6 +52,18 @@ cap_econ.20 = {
     option = {
         name = cap_econ.20.b
         custom_tooltip = cap_econ.20.b.tt
+
+        ai_will_select = {
+              base = 1
+              modifier = {
+                      factor = 2
+                      var:cap_econ_pantalone_happiness_modifier <= 1
+              }
+            modifier = {
+                      factor = 2
+                      gold > root.country_tax_base
+              }
+        }
         set_variable = { name = cap_econ_event value = 0 }
         change_variable = { name = cap_econ_event subtract = prev.country_tax_base }
         add_gold = { value = var:cap_econ_event }
@@ -58,7 +77,7 @@ cap_econ.20 = {
             }
         }
         situation:rise_of_pantalonism = {
-            change_variable = { name = pantalone_happiness_modifier add = -1 }
+            change_variable = { name = pantalone_happiness_modifier add = 1 }
         }
 
 
@@ -227,19 +246,18 @@ cap_econ.27 = {
         add_stability = 10
         add_gold = root.country_tax_base
         #build 3 mangiatoia in the capital
-        random_owned_location = {
+        every_owned_location = {
+            limit = { is_capital = yes }
             if = {
-                limit = {
-                    is_capital = yes
-                    "location_building_level(building_type:Mangiatoia)" < 10
+                limit = { "location_building_level(building_type:Mangiatoia)" < 10
                 }
                 change_building_level_in_location = {
                     building = building_type:Mangiatoia
                     value = 3
                 }
+                }
                 else = {
                     random_owned_location = {
-                        limit = { is_capital = yes }
                         change_building_level_in_location = {
                             building = building_type:Mangiatoia
                             value = 1
@@ -255,7 +273,7 @@ cap_econ.27 = {
 
                     }
                 }
-            }
+
         }
     }
     option = {
@@ -318,5 +336,53 @@ cap_econ.28 = {
             }
         }
 
+    }
+}
+
+cap_econ.29 = {
+    type = country_event
+    category = situation_event
+
+    title = cap_econ.29.title
+    desc = cap_econ.29.desc
+    image = "gfx/interface/illustrations/situation/reformation.dds"
+
+    trigger = {
+    }
+
+    option = {
+        name = cap_econ.29.a
+        custom_tooltip = cap_econ.29.a.tt
+        random_owned_location = {
+            every_pop = {
+                limit = { religion != religion:pantalonism }
+                split_pop = {
+                    fraction = 0.5
+                    religion = religion:pantalonism
+                }
+            }
+        }
+    }
+
+    option = {
+        name = cap_econ.29.b
+        custom_tooltip = cap_econ.29.b.tt
+        add_gold = 100
+        random_owned_location = {
+            every_pop = {
+                limit = { religion != religion:pantalonism }
+                split_pop = {
+                    fraction = 0.25
+                    religion = religion:pantalonism
+                }
+            }
+            every_pop = {
+                limit = { religion = religion:pantalonism }
+                add_pop_satisfaction = { value = -0.2 }
+            }
+        }
+        situation:rise_of_pantalonism = {
+            change_variable = { name = pantalone_happiness_modifier add = -1 }
+        }
     }
 }
