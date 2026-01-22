@@ -1,7 +1,7 @@
 ﻿is_town = {
-	location_rank = location_rank:town
+    location_rank = location_rank:town
 }
 
 is_rural_settlement = {
-	location_rank = location_rank:rural_settlement
+    location_rank = location_rank:rural_settlement
 }

@@ -12,9 +12,9 @@
 
     relation_type_for_ai = hostile
 
-	  break_enabled = {
+    break_enabled = {
         scope:recipient = { religion = religion:pantalonism }
-      }
+    }
 
 
     visible = {
@@ -30,15 +30,15 @@
             NOT = {
                 giving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
             }
-            }
         }
+    }
 
     offer_effect = {
-                scope:recipient = {
-                        trigger_event_non_silently = cap_econ.5
-                        set_variable = { name = cap_econ_pantalone_sender value = scope:actor }
-                }
+        scope:recipient = {
+            trigger_event_non_silently = cap_econ.5
+            set_variable = { name = cap_econ_pantalone_sender value = scope:actor }
         }
+    }
     cancel_effect = {
         scope:recipient = {
             remove_variable = cap_econ_pantalone_sender
@@ -63,25 +63,25 @@
     }
 
 
-  wants_to_give = {
-    add = 500
-    add = {
-      desc = "game_concept_rival"
-      if = { limit = { scope:recipient = { is_rival_of = scope:actor } } }
-      value = 200
-    }
+    wants_to_give = {
+        add = 500
+        add = {
+            desc = "game_concept_rival"
+            if = { limit = { scope:recipient = { is_rival_of = scope:actor } } }
+            value = 200
+        }
 
-    add = {
-      desc = "IS_WAR_ENEMY"
-      if = { limit = { scope:recipient = { is_at_war_with = scope:actor } } }
-      value = 200
-    }
+        add = {
+            desc = "IS_WAR_ENEMY"
+            if = { limit = { scope:recipient = { is_at_war_with = scope:actor } } }
+            value = 200
+        }
 
-    # Prefer countries we dislike
-    subtract = {
-      desc = "game_concept_opinion"
-      scope:actor = { value = "opinion(scope:recipient)" }
+        # Prefer countries we dislike
+        subtract = {
+            desc = "game_concept_opinion"
+            scope:actor = { value = "opinion(scope:recipient)" }
+        }
     }
-  }
 
 }

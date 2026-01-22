@@ -2,143 +2,143 @@
 namespace = cap_econ
 
 cap_econ.25 = {
-	type = country_event
+    type = country_event
 
-	title = cap_econ.25.title
-	desc = cap_econ.25.desc
-	illustration_tags = {
-		10 = interior
-		10 = angry
-	}
+    title = cap_econ.25.title
+    desc = cap_econ.25.desc
+    illustration_tags = {
+        10 = interior
+        10 = angry
+    }
 
-	trigger = {
-		receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
-	}
+    trigger = {
+        receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
+    }
 
-	immediate = {
-		random_country = {
-			limit = {
-				giving_scripted_relation = {
-					type = relation_type:cap_econ_send_pantalone
-					target = root
-				}
-			}
-			save_scope_as = pantalone_sender
-		}
-	}
+    immediate = {
+        random_country = {
+            limit = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_send_pantalone
+                    target = root
+                }
+            }
+            save_scope_as = pantalone_sender
+        }
+    }
 
-option = {
+    option = {
         name = cap_econ.25.a
         custom_tooltip = cap_econ.25.a.tt
 
         random_owned_location = {
-                limit = { OR = { is_town = yes is_city = yes } }
-                change_building_level_in_location = {
-                        building = building_type:Mangiatoia
-                        value = 1
-                }
+            limit = { OR = { is_town = yes is_city = yes } }
+            change_building_level_in_location = {
+                building = building_type:Mangiatoia
+                value = 1
+            }
         }
         random_owned_location = {
-                limit = { OR = { is_town = yes is_city = yes } }
-                change_building_level_in_location = {
-                        building = building_type:Mangiatoia
-                        value = 1
-                }
+            limit = { OR = { is_town = yes is_city = yes } }
+            change_building_level_in_location = {
+                building = building_type:Mangiatoia
+                value = 1
+            }
         }
         random_owned_location = {
-                limit = { OR = { is_town = yes is_city = yes } }
-                change_building_level_in_location = {
-                        building = building_type:Mangiatoia
-                        value = 1
-                }
+            limit = { OR = { is_town = yes is_city = yes } }
+            change_building_level_in_location = {
+                building = building_type:Mangiatoia
+                value = 1
+            }
         }
 
 
-                scope:pantalone_sender ?= {
-                        trigger_event_non_silently = cap_econ.26
-                        add_gold = { value = 300 }
-                }
+        scope:pantalone_sender ?= {
+            trigger_event_non_silently = cap_econ.26
+            add_gold = { value = 300 }
+        }
 
-  }
+    }
 
-	}
+}
 
 
 cap_econ.26 = {
-	type = country_event
+    type = country_event
 
-	title = cap_econ.26.title
-	desc = cap_econ.26.desc
-	illustration_tags = {
-		10 = interior
-		10 = unhappy
-	}
+    title = cap_econ.26.title
+    desc = cap_econ.26.desc
+    illustration_tags = {
+        10 = interior
+        10 = unhappy
+    }
 
-	trigger = {
-	}
+    trigger = {
+    }
 
 
-  option = {
+    option = {
         name = cap_econ.26.a
         custom_tooltip = cap_econ.26.a.tt
         add_gold = { value = -500 }
         scope:cap_econ_pantalone_coup_target ?= {
-                set_variable = cap_econ_force_pantalonism_situation
+            set_variable = cap_econ_force_pantalonism_situation
         }
 
         random_country = {
-                limit = {
-                        receiving_scripted_relation = {
-                                type = relation_type:cap_econ_send_pantalone
-                                target = root
-                        }
+            limit = {
+                receiving_scripted_relation = {
+                    type = relation_type:cap_econ_send_pantalone
+                    target = root
                 }
-                save_scope_as = pantalone_receiver
+            }
+            save_scope_as = pantalone_receiver
         }
 
         scope:pantalone_receiver ?= {
-                trigger_event_non_silently = cap_econ.22
+            trigger_event_non_silently = cap_econ.22
         }
         remove_variable = cap_econ_pantalone_coup_target
-  }
+    }
 }
 
 
 cap_econ.10 = {
-	type = country_event
+    type = country_event
 
-	title = cap_econ.10.title
-	desc = cap_econ.10.desc
-	illustration_tags = {
-		10 = interior
-		10 = unhappy
-	}
+    title = cap_econ.10.title
+    desc = cap_econ.10.desc
+    illustration_tags = {
+        10 = interior
+        10 = unhappy
+    }
 
-	trigger = {
-	}
+    trigger = {
+    }
 
 
-  option = {
+    option = {
         name = cap_econ.10.a
         custom_tooltip = cap_econ.10.a.tt
         add_gold = { value = -500 }
         scope:cap_econ_pantalone_coup_target ?= {
-                set_variable = cap_econ_force_pantalonism_situation
+            set_variable = cap_econ_force_pantalonism_situation
         }
 
         random_country = {
-                limit = {
-                        receiving_scripted_relation = {
-                                type = relation_type:cap_econ_send_pantalone
-                                target = root
-                        }
+            limit = {
+                receiving_scripted_relation = {
+                    type = relation_type:cap_econ_send_pantalone
+                    target = root
                 }
-                save_scope_as = pantalone_receiver
+            }
+            save_scope_as = pantalone_receiver
         }
 
         scope:pantalone_receiver ?= {
-                trigger_event_non_silently = cap_econ.22
+            trigger_event_non_silently = cap_econ.22
         }
         remove_variable = cap_econ_pantalone_coup_target
-  }
+    }
 }

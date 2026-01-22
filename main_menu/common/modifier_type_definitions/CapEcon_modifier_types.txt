@@ -1,6 +1,6 @@
 ﻿corporate_extraction_building_cap_level = {
-	decimals = 0
-	game_data = {
-		category = location
-	}
+    decimals = 0
+    game_data = {
+        category = location
+    }
 }

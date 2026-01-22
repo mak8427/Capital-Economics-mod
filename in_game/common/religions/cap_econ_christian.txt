@@ -1,33 +1,33 @@
 ﻿pantalonism = {
-	color = color_bogomilism
-	group = christian
+    color = color_bogomilism
+    group = christian
 
-	language = emilian_dialect
+    language = emilian_dialect
 
-	enable = 1200.1.1 #it is technically unknown, but happened between 927 and 969
+    enable = 1200.1.1 #it is technically unknown, but happened between 927 and 969
 
-	religious_aspects = 3
-	has_religious_influence = yes
+    religious_aspects = 3
+    has_religious_influence = yes
 
 
-	definition_modifier = {
-		global_burghers_estate_power = 0.5
-		global_nobles_estate_power = -0.1
+    definition_modifier = {
+        global_burghers_estate_power = 0.5
+        global_nobles_estate_power = -0.1
         global_crown_estate_power = -0.1
-		is_battles_preordained = yes
-		global_production_efficiency = 0.1
+        is_battles_preordained = yes
+        global_production_efficiency = 0.1
         global_population_growth = 0.01
-		monthly_religious_influence = 0.1
-		maximum_religious_influence = 400
-	}
+        monthly_religious_influence = 0.1
+        maximum_religious_influence = 400
+    }
 
-	opinions = {
+    opinions = {
         catholic = enemy
-	}
+    }
 
-	unique_names = {
-	}
+    unique_names = {
+    }
 
-	tags = {  christian_gfx abrahamic_gfx }
-	custom_tags = { church_aspects }
+    tags = { christian_gfx abrahamic_gfx }
+    custom_tags = { church_aspects }
 }

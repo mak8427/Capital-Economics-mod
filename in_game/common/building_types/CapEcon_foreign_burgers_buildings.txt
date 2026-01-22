@@ -1,102 +1,102 @@
 ﻿corporate_local_headquarters = {
-	is_foreign = yes
-	stronger_power_projection = no
-	max_levels = corporate_local_headquarters_max_level
-	pop_type = burghers
+    is_foreign = yes
+    stronger_power_projection = no
+    max_levels = corporate_local_headquarters_max_level
+    pop_type = burghers
 
 
-	category = trade_category
+    category = trade_category
 
-	employment_size = large_foreign_trade_employment
+    employment_size = large_foreign_trade_employment
 
-	rural_settlement = yes
-	town = yes
-	city = yes
-	allow = {
-		owner = {
-			within_diplomatic_range = scope:actor
-			giving_scripted_relation = {
-				type = relation_type:cap_econ_extraction_rights
-				target = scope:actor
-			}
-		}
-	}
+    rural_settlement = yes
+    town = yes
+    city = yes
+    allow = {
+        owner = {
+            within_diplomatic_range = scope:actor
+            giving_scripted_relation = {
+                type = relation_type:cap_econ_extraction_rights
+                target = scope:actor
+            }
+        }
+    }
 
-	build_time = trade_post_build_time
+    build_time = trade_post_build_time
 
-	unique_production_methods = {
-		corporate_local_headquarters_maintenance = {
-			paper = 0.5
-			tools = 0.2
-			fine_cloth = 0.5
-			silver = 0.02
-			goods_gold = 0.01
+    unique_production_methods = {
+        corporate_local_headquarters_maintenance = {
+            paper = 0.5
+            tools = 0.2
+            fine_cloth = 0.5
+            silver = 0.02
+            goods_gold = 0.01
 
 
-			category = building_maintenance
-		}
-	}
+            category = building_maintenance
+        }
+    }
 
-	modifier = {
-		corporate_extraction_building_cap_level = 2
-		free_building_levels = 3
-		local_production_efficiency = 0.01
-		local_burghers_estate_power = 0.33
-		local_max_rgo_size = 1
-	}
+    modifier = {
+        corporate_extraction_building_cap_level = 2
+        free_building_levels = 3
+        local_production_efficiency = 0.01
+        local_burghers_estate_power = 0.33
+        local_max_rgo_size = 1
+    }
 
-	important_for_AI = yes
+    important_for_AI = yes
 }
 
 corporate_country_headquarters = {
-	is_foreign = yes
-	max_levels = 1
-	pop_type = burghers
+    is_foreign = yes
+    max_levels = 1
+    pop_type = burghers
 
 
-	category = trade_category
+    category = trade_category
 
-	employment_size = huge_foreign_trade_employment
+    employment_size = huge_foreign_trade_employment
 
-	rural_settlement = yes
-	town = yes
-	city = yes
-	allow = {
-		owner = {
-			within_diplomatic_range = scope:actor
-			giving_scripted_relation = {
-				type = relation_type:cap_econ_extraction_rights
-				target = scope:actor
-			}
-		}
-	}
+    rural_settlement = yes
+    town = yes
+    city = yes
+    allow = {
+        owner = {
+            within_diplomatic_range = scope:actor
+            giving_scripted_relation = {
+                type = relation_type:cap_econ_extraction_rights
+                target = scope:actor
+            }
+        }
+    }
 
-	location_potential = {
-		is_capital = yes
-	}
+    location_potential = {
+        is_capital = yes
+    }
 
-	build_time = trade_post_build_time
+    build_time = trade_post_build_time
 
-	unique_production_methods = {
-		corporate_country_headquarters_maintenance = {
-			paper = 1
-			tools = 0.5
-			fine_cloth = 1
-			silver = 0.1
-			goods_gold = 0.05
-			category = building_maintenance
-		}
-	}
+    unique_production_methods = {
+        corporate_country_headquarters_maintenance = {
+            paper = 1
+            tools = 0.5
+            fine_cloth = 1
+            silver = 0.1
+            goods_gold = 0.05
+            category = building_maintenance
+        }
+    }
 
-	modifier = {
-		global_production_efficiency = 0.01
-		trade_efficiency = 0.05
-		global_burghers_estate_power = 0.05
-		global_merchant_capacity_modifier = 0.05
-		burghers_estate_max_tax = -0.01
-		local_migration_attraction = 1
+    modifier = {
+        global_production_efficiency = 0.01
+        trade_efficiency = 0.05
+        global_burghers_estate_power = 0.05
+        global_merchant_capacity_modifier = 0.05
+        burghers_estate_max_tax = -0.01
+        local_migration_attraction = 1
 
-	}
+    }
 
-	important_for_AI = yes
+    important_for_AI = yes
 }

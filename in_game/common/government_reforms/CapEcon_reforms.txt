@@ -1,52 +1,52 @@
 ﻿pantalone_republic = {
-	major = yes
-	government = republic
+    major = yes
+    government = republic
 
-	locked = {
-		root = { religion = religion:pantalonism }
-	}
-
-  allow = {
+    locked = {
         root = { religion = religion:pantalonism }
-  }
+    }
+
+    allow = {
+        root = { religion = religion:pantalonism }
+    }
 
 
-	country_modifier = {
-		global_burghers_estate_power = 0.5
-		burghers_estate_target_satisfaction = 0.1
-		burghers_estate_satisfaction_recovery = 0.01
-		global_merchant_capacity_modifier = 1
-		trade_income = 0.3
-		global_foreign_build_buildings_cost = -0.5
-		merchant_maintenance_cost = -0.5
-		global_trades_per_burgher = 0.33
-		government_reform_slots = 1
-	}
+    country_modifier = {
+        global_burghers_estate_power = 0.5
+        burghers_estate_target_satisfaction = 0.1
+        burghers_estate_satisfaction_recovery = 0.01
+        global_merchant_capacity_modifier = 1
+        trade_income = 0.3
+        global_foreign_build_buildings_cost = -0.5
+        merchant_maintenance_cost = -0.5
+        global_trades_per_burgher = 0.33
+        government_reform_slots = 1
+    }
 
-	years = 2
+    years = 2
 }
 
 council_of_burghers = {
-	government = republic
+    government = republic
 
-	locked = {
-		root = { religion = religion:pantalonism }
-	}
-
-  allow = {
+    locked = {
         root = { religion = religion:pantalonism }
-  }
+    }
+
+    allow = {
+        root = { religion = religion:pantalonism }
+    }
 
 
-	country_modifier = {
-		global_burghers_estate_power = 0.3
-		global_crown_estate_power = -0.1
-		global_nobles_estate_power = -0.1
-		global_clergy_estate_power = -0.1
-		monthly_towards_plutocracy = 0.33
-		monthly_towards_capital_economy = 0.33
-		government_reform_slots = 1
-	}
+    country_modifier = {
+        global_burghers_estate_power = 0.3
+        global_crown_estate_power = -0.1
+        global_nobles_estate_power = -0.1
+        global_clergy_estate_power = -0.1
+        monthly_towards_plutocracy = 0.33
+        monthly_towards_capital_economy = 0.33
+        government_reform_slots = 1
+    }
 
-	years = 2
+    years = 2
 }

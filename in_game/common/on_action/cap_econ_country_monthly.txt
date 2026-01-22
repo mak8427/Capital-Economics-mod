@@ -1,56 +1,56 @@
-﻿  monthly_country_pulse = {
-        on_actions = {
-                monthly_country_pulse_capecon
-                monthly_country_pulse_capecon_2
-        }
-  }
-
-  monthly_country_pulse_capecon = {
-	  trigger = {
-			receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
-
-	  }
-
-	        random_events = {
-	                25 = cap_econ.1
-	                15 = cap_econ.2
-	                40  = cap_econ.25
-	                5 = cap_econ.5
-	                5 = cap_econ.6
-	                1 = cap_econ.7
-	                1 = cap_econ.8
-	                1 = cap_econ.9
-	                chance_to_happen = 80
-	        }
-
-        events = {
-            estate_income_fix.1
-		    estate_income_fix.3
-        }
-  }
-
-
-  yearly_country_pulse = {
-	events = {
-		estate_income_fix.2
-	}
+﻿monthly_country_pulse = {
+    on_actions = {
+        monthly_country_pulse_capecon
+        monthly_country_pulse_capecon_2
+    }
 }
 
-  monthly_country_pulse_capecon_2 = {
-	  trigger = {
-		  AND = {
-			  tag = BLG
-			  NOT = {  has_variable = cap_start_pantalone }
-		  }
+monthly_country_pulse_capecon = {
+    trigger = {
+        receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
 
-	  }
-	  events = {
-		  cap_econ.22
-	  }
-	  effect = {
-		add_gold = 1000
-		  set_variable= { name = cap_start_pantalone value = 1 }
+    }
 
-	  }
+    random_events = {
+        25 = cap_econ.1
+        15 = cap_econ.2
+        40 = cap_econ.25
+        5 = cap_econ.5
+        5 = cap_econ.6
+        1 = cap_econ.7
+        1 = cap_econ.8
+        1 = cap_econ.9
+        chance_to_happen = 80
+    }
 
-  }
+    events = {
+        estate_income_fix.1
+        estate_income_fix.3
+    }
+}
+
+
+yearly_country_pulse = {
+    events = {
+        estate_income_fix.2
+    }
+}
+
+monthly_country_pulse_capecon_2 = {
+    trigger = {
+        AND = {
+            tag = BLG
+            NOT = { has_variable = cap_start_pantalone }
+        }
+
+    }
+    events = {
+        cap_econ.22
+    }
+    effect = {
+        add_gold = 1000
+        set_variable = { name = cap_start_pantalone value = 1 }
+
+    }
+
+}

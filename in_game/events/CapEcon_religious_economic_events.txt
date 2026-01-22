@@ -2,39 +2,39 @@
 namespace = cap_econ
 
 cap_econ.2 = {
-	type = country_event
+    type = country_event
 
-	title = cap_econ.2.title
-	desc = cap_econ.2.desc
-	illustration_tags = {
-		10 = interior
-		10 = happy
-	}
+    title = cap_econ.2.title
+    desc = cap_econ.2.desc
+    illustration_tags = {
+        10 = interior
+        10 = happy
+    }
 
-	trigger = {
-		receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
-	}
-	immediate = {
-		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }
-	}
+    trigger = {
+        receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
+    }
+    immediate = {
+        event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }
+    }
 
-	option = {
-		name = cap_econ.2.a
-		custom_tooltip = {
-			text = lots_of_pantalonists
-		}
-		hidden_effect = {
-			if = {
-				limit = {
-					NOT = { has_global_variable = cap_econ_pantalonism_enabled }
-				}
-				religion:pantalonism = {
-					enable_religion = yes
-				}
-				set_global_variable = { name = cap_econ_pantalonism_enabled value = yes }
-			}
-			lots_of_pantalonist = yes
-		}
+    option = {
+        name = cap_econ.2.a
+        custom_tooltip = {
+            text = lots_of_pantalonists
+        }
+        hidden_effect = {
+            if = {
+                limit = {
+                    NOT = { has_global_variable = cap_econ_pantalonism_enabled }
+                }
+                religion:pantalonism = {
+                    enable_religion = yes
+                }
+                set_global_variable = { name = cap_econ_pantalonism_enabled value = yes }
+            }
+            lots_of_pantalonist = yes
+        }
 
-	}
+    }
 }

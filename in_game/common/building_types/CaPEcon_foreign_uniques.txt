@@ -1,142 +1,142 @@
 ﻿Mangiatoia = {
-	is_foreign = no
-	max_levels = 10
+    is_foreign = no
+    max_levels = 10
 
-	pop_type = burghers
+    pop_type = burghers
 
-	can_close = no
-	country_potential = {
-		custom_tooltip = {
-			text = not_buildable_only_situation
-			always = no
-		}
-	}
-	allow = {
-		custom_tooltip = {
-			text = not_buildable_only_situation
-			always = no
-		}
-	}
-	can_destroy = {
-		custom_tooltip = {
-			text = pantalone_destruction_will
-			owner = {
-				OR = {
-					has_policy = jesuits_allowed
-					religion != religion:catholic
-				}
-			}
-		}
-	}
-
-
-	category = religious_category
-
-	employment_size = large_burgher_employment
-
-	rural_settlement = no
-	town = yes
-	city = yes
+    can_close = no
+    country_potential = {
+        custom_tooltip = {
+            text = not_buildable_only_situation
+            always = no
+        }
+    }
+    allow = {
+        custom_tooltip = {
+            text = not_buildable_only_situation
+            always = no
+        }
+    }
+    can_destroy = {
+        custom_tooltip = {
+            text = pantalone_destruction_will
+            owner = {
+                OR = {
+                    has_policy = jesuits_allowed
+                    religion != religion:catholic
+                }
+            }
+        }
+    }
 
 
-	build_time = super_fast_temporary_house
-	price = free_building
+    category = religious_category
+
+    employment_size = large_burgher_employment
+
+    rural_settlement = no
+    town = yes
+    city = yes
 
 
-	unique_production_methods = {
-		mangiatoia = {
-		paper = 0.1
-		produced = goods_gold
-		output = 1
-		category = building_maintenance
-		}
-	}
+    build_time = super_fast_temporary_house
+    price = free_building
 
-	modifier = {
-		local_burghers_estate_power = 2
-		monthly_burghers_estate_rebel_growth = 0.1
-		local_pop_join_rebel_threshold = 0.2
-		local_unrest = 0.33
-		local_burghers_desired_pop = 1
-		local_migration_attraction = 0.1
-		local_migration_speed = 0.1
 
-	}
+    unique_production_methods = {
+        mangiatoia = {
+            paper = 0.1
+            produced = goods_gold
+            output = 1
+            category = building_maintenance
+        }
+    }
 
-	capital_country_modifier = {
-		global_burghers_estate_power =  0.1
-		minting_income_factor = 0.1
-		monthly_towards_plutocracy = 0.05
-	}
+    modifier = {
+        local_burghers_estate_power = 2
+        monthly_burghers_estate_rebel_growth = 0.1
+        local_pop_join_rebel_threshold = 0.2
+        local_unrest = 0.33
+        local_burghers_desired_pop = 1
+        local_migration_attraction = 0.1
+        local_migration_speed = 0.1
+
+    }
+
+    capital_country_modifier = {
+        global_burghers_estate_power = 0.1
+        minting_income_factor = 0.1
+        monthly_towards_plutocracy = 0.05
+    }
 }
 
 
 Mangiatoia_good = {
-	is_foreign = no
-	max_levels = 10
+    is_foreign = no
+    max_levels = 10
 
-	pop_type = burghers
+    pop_type = burghers
 
-	can_close = yes
-	country_potential = {
-		custom_tooltip = {
-			text = not_buildable_only_situation
-			always = no
-		}
-	}
-	allow = {
-		custom_tooltip = {
-			text = not_buildable_only_situation
-			always = no
-		}
-	}
-	can_destroy = {
-		custom_tooltip = {
-			text = pantalone_destruction_will
-			owner = {
-					religion != religion:pantalonism
-			}
-		}
-	}
-
-
-	category = religious_category
-
-	employment_size = large_burgher_employment
-
-	rural_settlement = no
-	town = yes
-	city = yes
+    can_close = yes
+    country_potential = {
+        custom_tooltip = {
+            text = not_buildable_only_situation
+            always = no
+        }
+    }
+    allow = {
+        custom_tooltip = {
+            text = not_buildable_only_situation
+            always = no
+        }
+    }
+    can_destroy = {
+        custom_tooltip = {
+            text = pantalone_destruction_will
+            owner = {
+                religion != religion:pantalonism
+            }
+        }
+    }
 
 
-	build_time = super_fast_temporary_house
-	price = p_building_age_6_revolutions
+    category = religious_category
+
+    employment_size = large_burgher_employment
+
+    rural_settlement = no
+    town = yes
+    city = yes
 
 
-	unique_production_methods = {
-		mangiatoia = {
-		paper = 0.1
-		produced = goods_gold
-		output = 0.5
-		category = building_maintenance
-		}
-	}
+    build_time = super_fast_temporary_house
+    price = p_building_age_6_revolutions
 
-	modifier = {
-		local_burghers_estate_power = 3
-		local_burghers_desired_pop = 1
-		local_migration_attraction = 0.2
-		local_migration_speed = 0.2
-		local_unrest = -0.1
-		corporate_extraction_building_cap_level = 1
 
-	}
+    unique_production_methods = {
+        mangiatoia = {
+            paper = 0.1
+            produced = goods_gold
+            output = 0.5
+            category = building_maintenance
+        }
+    }
 
-	capital_country_modifier = {
-		global_burghers_estate_power =  0.1
-		minting_income_factor = 0.1
-		monthly_towards_plutocracy = 0.05
-		monthly_inflation = -0.01
-	}
+    modifier = {
+        local_burghers_estate_power = 3
+        local_burghers_desired_pop = 1
+        local_migration_attraction = 0.2
+        local_migration_speed = 0.2
+        local_unrest = -0.1
+        corporate_extraction_building_cap_level = 1
+
+    }
+
+    capital_country_modifier = {
+        global_burghers_estate_power = 0.1
+        minting_income_factor = 0.1
+        monthly_towards_plutocracy = 0.05
+        monthly_inflation = -0.01
+    }
 }
 

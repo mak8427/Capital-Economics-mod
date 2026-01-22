@@ -300,44 +300,44 @@ rise_of_pantalonism = {
 
             every_owned_location = {
                 remove_location_modifier = cap_econ_repression
-                 change_control = control_radical_bonus
+                change_control = control_radical_bonus
             }
 
-        if = {
-            limit = { country_exists = situation:rise_of_pantalonism.var:target_country }
-            # remove all relations where someone gives Pantalone to the target
-            every_country = {
-                limit = {
-                    giving_scripted_relation = {
+            if = {
+                limit = { country_exists = situation:rise_of_pantalonism.var:target_country }
+                # remove all relations where someone gives Pantalone to the target
+                every_country = {
+                    limit = {
+                        giving_scripted_relation = {
+                            type = relation_type:cap_econ_send_pantalone
+                            target = situation:rise_of_pantalonism.var:target_country
+                        }
+                    }
+                    remove_relation = {
                         type = relation_type:cap_econ_send_pantalone
-                        target = situation:rise_of_pantalonism.var:target_country
+                        first = this
+                        second = situation:rise_of_pantalonism.var:target_country
                     }
                 }
-                remove_relation = {
-                    type = relation_type:cap_econ_send_pantalone
-                    first = this
-                    second = situation:rise_of_pantalonism.var:target_country
+
+                # remove all relations where target gives Pantalone to someone else
+                every_country = {
+                    limit = {
+                        receiving_scripted_relation = {
+                            type = relation_type:cap_econ_send_pantalone
+                            target = situation:rise_of_pantalonism.var:target_country
+                        }
+                    }
+                    remove_relation = {
+                        type = relation_type:cap_econ_send_pantalone
+                        first = situation:rise_of_pantalonism.var:target_country
+                        second = this
+                    }
                 }
             }
 
-            # remove all relations where target gives Pantalone to someone else
-            every_country = {
-                limit = {
-                    receiving_scripted_relation = {
-                        type = relation_type:cap_econ_send_pantalone
-                        target = situation:rise_of_pantalonism.var:target_country
-                    }
-                }
-                remove_relation = {
-                    type = relation_type:cap_econ_send_pantalone
-                    first = situation:rise_of_pantalonism.var:target_country
-                    second = this
-                }
-            }
         }
-
     }
-        }
 
     # Cleanup all temporary variables so reruns start clean.
     on_ended = {
