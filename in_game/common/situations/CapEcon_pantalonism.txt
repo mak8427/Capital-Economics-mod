@@ -359,7 +359,7 @@ rise_of_pantalonism = {
 
             # Start sending Pantalone to a random rival, if any exist.
             random_country = {
-                limit = { is_rival_of = situation:rise_of_pantalonism.var:target_country }
+                limit = { is_enemy_of = situation:rise_of_pantalonism.var:target_country }
                 create_relation = {
                     type = relation_type:cap_econ_send_pantalone
                     first = situation:rise_of_pantalonism.var:target_country
@@ -367,9 +367,10 @@ rise_of_pantalonism = {
                 }
                 scope:target_country = {
                     add_gold = 1000
+                }
             }
         }
-
+    }
 
     # Cleanup all temporary variables so reruns start clean.
     on_ended = {

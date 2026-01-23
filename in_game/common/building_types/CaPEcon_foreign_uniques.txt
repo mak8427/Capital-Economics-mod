@@ -114,7 +114,7 @@ Mangiatoia_good = {
 
 
     unique_production_methods = {
-        mangiatoia = {
+        mangiatoia_good = {
             paper = 0.1
             produced = goods_gold
             output = 0.5
@@ -140,3 +140,61 @@ Mangiatoia_good = {
     }
 }
 
+
+Pantalonism_assembly = {
+    is_foreign = yes
+    max_levels = 10
+
+    pop_type = burghers
+
+    can_close = no
+    country_potential = {
+        custom_tooltip = {
+            text = not_buildable_only_situation
+            always = no
+        }
+    }
+    allow = {
+        custom_tooltip = {
+            text = not_buildable_only_situation
+            always = no
+        }
+    }
+    can_destroy = {
+        custom_tooltip = {
+            text = pantalone_destruction_will
+            owner = {
+                religion != religion:pantalonism
+            }
+        }
+    }
+
+
+    conversion_religion = pantalonism
+    category = religious_category
+
+    employment_size = small_burgher_employment
+
+    rural_settlement = yes
+    town = yes
+    city = yes
+
+
+    build_time = super_fast_temporary_house
+    price = p_building_age_2_renaissance
+
+
+    unique_production_methods = {
+        mangiatoia = {
+            wheat = 0.2
+            produced =beer
+            output = 0.6
+            category = building_maintenance
+        }
+    }
+
+    modifier = {
+        building_missionary_effort = 0.3
+        local_pop_conversion_speed = 0.01
+    }
+}

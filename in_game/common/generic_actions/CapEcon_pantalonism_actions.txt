@@ -68,3 +68,46 @@
         add = -100
     }
 }
+
+cap_econ_fund_mangiatoia = {
+    type = situation
+
+    allow = {
+        is_situation_active = situation:rise_of_pantalonism
+        scope:actor = {
+            religion = religion:pantalonism
+            gold >= 200
+        }
+    }
+
+    select_trigger = {
+        looking_for_a = situation
+        target_flag = recipient
+        name = "choose_situation"
+        column = { data = name }
+        visible = {
+            situation:rise_of_pantalonism = this
+            situation_is_active = yes
+            scope:actor = { religion = religion:pantalonism }
+        }
+    }
+
+    effect = {
+        scope:actor ?= { add_gold = { value = -100 } }
+        situation:rise_of_pantalonism.var:target_country ?= {
+            random_owned_location = {
+                limit = { OR = { is_town = yes is_city = yes } }
+                construct_building = {
+                    building_type = building_type:Pantalonism_assembly
+                    owner = scope:actor
+
+                }
+            }
+
+        }
+    }
+
+    ai_will_do = {
+        add = 0
+    }
+}
