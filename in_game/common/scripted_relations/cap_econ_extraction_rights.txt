@@ -28,18 +28,17 @@
         add = {
             desc = "THEIR_OPINION_TOOLTIP"
             value = "scope:recipient.opinion(scope:actor)"
-            divide = 5
+            divide = 3
         }
         add = {
             desc = "DIPLOREASON_DIPLOMATIC_REPUTATION"
             scope:actor = {
                 value = modifier:diplomatic_reputation
-                multiply = 5
             }
         }
         subtract = {
             desc = "DIPLOREASON_BASE_RELUCTANCE"
-            value = 25
+            value = 50
         }
         if = {
             limit = {
@@ -52,7 +51,27 @@
                 value = 100
             }
         }
+        if = {
+            limit = {
+                scope:recipient = {
+                    religion != scope:actor.religion
+                }
+            }
+            subtract = {
+                desc = "game_concept_religion"
+                value = 25
+            }
+        }
+        else = {
+            add = {
+                desc = "game_concept_religion"
+                value = 25
+            }
+        }
+
     }
+
+
 
 
 }

@@ -324,8 +324,7 @@ rise_of_pantalonism = {
                 change_control = control_radical_bonus
             }
 
-            if = {
-                limit = { country_exists = situation:rise_of_pantalonism.var:target_country }
+
                 # remove all relations where someone gives Pantalone to the target
                 every_country = {
                     limit = {
@@ -355,7 +354,7 @@ rise_of_pantalonism = {
                         second = this
                     }
                 }
-            }
+
 
             # Start sending Pantalone to a random rival, if any exist.
             random_country = {

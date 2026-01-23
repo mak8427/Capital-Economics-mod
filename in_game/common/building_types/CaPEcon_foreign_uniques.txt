@@ -136,7 +136,7 @@ Mangiatoia_good = {
         global_burghers_estate_power = 0.1
         minting_income_factor = 0.1
         monthly_towards_plutocracy = 0.05
-        monthly_inflation = -0.01
+        monthly_inflation = -0.0005
     }
 }
 
@@ -185,7 +185,7 @@ Pantalonism_assembly = {
 
 
     unique_production_methods = {
-        mangiatoia = {
+        beer_production = {
             wheat = 0.2
             produced =beer
             output = 0.6
@@ -194,7 +194,7 @@ Pantalonism_assembly = {
     }
 
     modifier = {
-        building_missionary_effort = 0.3
+        building_missionary_effort = 0.01
         local_pop_conversion_speed = 0.01
     }
 }

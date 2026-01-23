@@ -90,3 +90,6 @@
  break_cap_econ_send_pantalone_happened_title: "Pantalone Withdrawn"
  break_cap_econ_send_pantalone_happened_desc: "We withdrew our Pantalone emissaries from [SCOPE.sCountry('recipient').GetName]."
  break_cap_econ_send_pantalone_proposal_question: "We will no longer spread Pantalonism in [TARGET_COUNTRY.GetName]."
+ cap_econ_bribe_the_estate: "Bribe the Burgers to give us extraction rights"
+ cap_econ_bribe_the_estate_desc: "Our envoys have found a way to bribe the local pantalonits burghers to grant us corporate extraction rights in their towns and cities."
+

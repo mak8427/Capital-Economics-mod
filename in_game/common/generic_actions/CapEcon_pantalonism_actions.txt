@@ -76,7 +76,6 @@ cap_econ_fund_mangiatoia = {
         is_situation_active = situation:rise_of_pantalonism
         scope:actor = {
             religion = religion:pantalonism
-            gold >= 200
         }
     }
 
@@ -93,7 +92,6 @@ cap_econ_fund_mangiatoia = {
     }
 
     effect = {
-        scope:actor ?= { add_gold = { value = -100 } }
         situation:rise_of_pantalonism.var:target_country ?= {
             random_owned_location = {
                 limit = { OR = { is_town = yes is_city = yes } }
@@ -108,6 +106,73 @@ cap_econ_fund_mangiatoia = {
     }
 
     ai_will_do = {
-        add = 0
+        base = 10
+        modifier = {
+            factor = 5 
+            gold > 200
+            
+        }
+        modifier = {
+            factor = -5
+            gold < 50
+            }
+        
+    }
+}
+
+
+cap_econ_bribe_the_estate = {
+    type = situation
+
+    allow = {
+        is_situation_active = situation:rise_of_pantalonism
+        scope:actor = {
+            religion = religion:pantalonism
+        }
+        gold >= 1000
+    }
+
+    select_trigger = {
+        looking_for_a = situation
+        target_flag = recipient
+        name = "choose_situation"
+        column = { data = name }
+        visible = {
+            situation:rise_of_pantalonism = this
+            situation_is_active = yes
+            scope:actor = { religion = religion:pantalonism }
+        }
+    }
+
+  effect = {
+        scope:actor ?= { add_gold = { value = -1000 } }
+        situation:rise_of_pantalonism.var:target_country ?= {
+             create_relation = {
+                  type = relation_type:cap_econ_extraction_rights
+                  first = situation:rise_of_pantalonism.var:target_country
+                  second =scope:actor
+              }
+                add_gold_to_estate = {
+                        estate_type = estate_type:burghers_estate
+                        value = 1000
+                }
+        }
+  }
+    ai_will_do = {
+        base = 20
+        modifier = {
+            factor = -1000
+            receiving_scripted_relation = { target = situation:rise_of_pantalonism.var:target_country type =  relation_type:cap_econ_extraction_rights}
+        }
+        
+        modifier = {
+            factor = 5 
+            gold > 5000
+            
+        }
+        modifier = {
+            factor = -10
+            gold < 2000
+        }
     }
 }
