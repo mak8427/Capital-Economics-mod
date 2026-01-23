@@ -22,19 +22,20 @@
 	uses_maintenance = no
 	price_multiplier = {
 		add = {
-			desc = "pantalone_contribution"
+			desc = "game_concept_monthly_income_trade_and_tax"
 			every_international_organization_member = {
 				limit = {
 					NOT = { is_leader_of_international_organization = root }
 				}
-				add = 1
+				add = monthly_balance
 			}
+			multiply = 0.1
 		}
 	}
 	proportion_for_payer = {
 		add = {
-			desc = "pantalone_contribution"
-			value = 1
+			desc = "game_concept_monthly_income_trade_and_tax"
+			value = monthly_balance
 		}
 	}
 	proportion_for_payee = {
