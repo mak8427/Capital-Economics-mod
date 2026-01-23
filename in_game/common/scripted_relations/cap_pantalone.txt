@@ -2,7 +2,6 @@
     type = diplomacy
     relation_type = oneway
     break_on_war = no
-    use_with_enemies = yes
     category = {
         offer = CATEGORY_HOSTILE_ACTIONS
         request = CATEGORY_HOSTILE_ACTIONS
@@ -61,6 +60,7 @@
             value = 100
         }
     }
+
 
 
     wants_to_give = {
