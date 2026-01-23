@@ -161,7 +161,7 @@ situation_panel = {
                         }
                     }
                     text_single = {
-                        raw_text = "[FixedPointToFloat(SituationView.GetActiveSituation.GetSituation.MakeScope.GetVariable('pantalonism_progress').GetValue)|2]%"
+                        raw_text = "[FixedPointToFloat(SituationView.GetActiveSituation.GetSituation.MakeScope.GetVariable('pantalonism_completion').GetValue)|2]%"
                         tooltipwidget = {
                             SimpleContextualTooltipType = {
                                 lowpriotextcontext = "CAP_ECON_PANTALONISM_PROGRESS_TT"
@@ -171,7 +171,7 @@ situation_panel = {
                     progressbar = {
                         size = { 160 10 }
                         using = morale_progressbar_bar
-                        value = "[FixedPointToFloat(SituationView.GetActiveSituation.GetSituation.MakeScope.GetVariable('pantalonism_progress').GetValue)]"
+                        value = "[FixedPointToFloat(SituationView.GetActiveSituation.GetSituation.MakeScope.GetVariable('pantalonism_completion').GetValue)]"
                         tooltipwidget = {
                             SimpleContextualTooltipType = {
                                 lowpriotextcontext = "CAP_ECON_PANTALONISM_PROGRESS_TT"

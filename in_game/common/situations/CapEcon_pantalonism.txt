@@ -132,6 +132,13 @@ rise_of_pantalonism = {
         }
         # Convert to percent.
         change_variable = { name = pantalonism_progress multiply = 100 }
+
+        set_variable = {
+            name = pantalonism_completion
+            value = "scope:target_country.religion_percentage_in_country(religion:pantalonism)"
+        }
+        # Convert to percent.
+        change_variable = { name = pantalonism_completion multiply = 117 }
     }
 
     # Monthly tick: recompute progress, fire random events, and trigger the super event.
@@ -247,6 +254,13 @@ rise_of_pantalonism = {
                 }
                 change_variable = { name = pantalonism_progress multiply = 100 }
 
+                set_variable = {
+                    name = pantalonism_completion
+                    value = "scope:target_country.religion_percentage_in_country(religion:pantalonism)"
+                }
+                # Convert to percent.
+                change_variable = { name = pantalonism_completion multiply = 117 }
+
                 # Mangiatoia pressure increases by 0.1 per Mangiatoia per month.
                 set_variable = {
                     name = cap_econ_mangiatoia_increment
@@ -325,35 +339,35 @@ rise_of_pantalonism = {
             }
 
 
-                # remove all relations where someone gives Pantalone to the target
-                every_country = {
-                    limit = {
-                        giving_scripted_relation = {
-                            type = relation_type:cap_econ_send_pantalone
-                            target = situation:rise_of_pantalonism.var:target_country
-                        }
-                    }
-                    remove_relation = {
+            # remove all relations where someone gives Pantalone to the target
+            every_country = {
+                limit = {
+                    giving_scripted_relation = {
                         type = relation_type:cap_econ_send_pantalone
-                        first = this
-                        second = situation:rise_of_pantalonism.var:target_country
+                        target = situation:rise_of_pantalonism.var:target_country
                     }
                 }
+                remove_relation = {
+                    type = relation_type:cap_econ_send_pantalone
+                    first = this
+                    second = situation:rise_of_pantalonism.var:target_country
+                }
+            }
 
-                # remove all relations where target gives Pantalone to someone else
-                every_country = {
-                    limit = {
-                        receiving_scripted_relation = {
-                            type = relation_type:cap_econ_send_pantalone
-                            target = situation:rise_of_pantalonism.var:target_country
-                        }
-                    }
-                    remove_relation = {
+            # remove all relations where target gives Pantalone to someone else
+            every_country = {
+                limit = {
+                    receiving_scripted_relation = {
                         type = relation_type:cap_econ_send_pantalone
-                        first = situation:rise_of_pantalonism.var:target_country
-                        second = this
+                        target = situation:rise_of_pantalonism.var:target_country
                     }
                 }
+                remove_relation = {
+                    type = relation_type:cap_econ_send_pantalone
+                    first = situation:rise_of_pantalonism.var:target_country
+                    second = this
+                }
+            }
 
 
             # Start sending Pantalone to a random rival, if any exist.

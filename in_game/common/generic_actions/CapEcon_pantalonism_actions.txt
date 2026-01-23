@@ -20,6 +20,12 @@
         }
     }
 
+    ai_tick = monthly
+    ai_tick_frequency = 1
+
+    automation_tick = never
+    automation_tick_frequency = 12
+
     effect = {
         scope:actor ?= {
             create_rebel = {
@@ -91,6 +97,12 @@ cap_econ_fund_mangiatoia = {
         }
     }
 
+    ai_tick = monthly
+    ai_tick_frequency = 1
+
+    automation_tick = never
+    automation_tick_frequency = 12
+
     effect = {
         situation:rise_of_pantalonism.var:target_country ?= {
             random_owned_location = {
@@ -106,17 +118,19 @@ cap_econ_fund_mangiatoia = {
     }
 
     ai_will_do = {
-        base = 10
-        modifier = {
-            factor = 5 
-            gold > 200
-            
+        add = 10
+        if = {
+            limit = { scope:actor = { gold > 200 } }
+            add = 50
         }
-        modifier = {
-            factor = -5
-            gold < 50
-            }
-        
+        if = {
+            limit = { scope:actor = { gold > 1000 } }
+            add = 1000
+        }
+        if = {
+            limit = { scope:actor = { gold < 50 } }
+            subtract = 1000
+        }
     }
 }
 
@@ -144,6 +158,12 @@ cap_econ_bribe_the_estate = {
         }
     }
 
+    ai_tick = monthly
+    ai_tick_frequency = 1
+
+    automation_tick = never
+    automation_tick_frequency = 12
+
   effect = {
         scope:actor ?= { add_gold = { value = -1000 } }
         situation:rise_of_pantalonism.var:target_country ?= {
@@ -159,20 +179,23 @@ cap_econ_bribe_the_estate = {
         }
   }
     ai_will_do = {
-        base = 20
-        modifier = {
-            factor = -1000
-            receiving_scripted_relation = { target = situation:rise_of_pantalonism.var:target_country type =  relation_type:cap_econ_extraction_rights}
+        add = 20
+        if = {
+            limit = {
+                receiving_scripted_relation = {
+                    target = situation:rise_of_pantalonism.var:target_country
+                    type = relation_type:cap_econ_extraction_rights
+                }
+            }
+            subtract = 1000
         }
-        
-        modifier = {
-            factor = 5 
-            gold > 5000
-            
+        if = {
+            limit = { scope:actor = { gold > 5000 } }
+            add = 200
         }
-        modifier = {
-            factor = -10
-            gold < 2000
+        if = {
+            limit = { scope:actor = { gold < 2000 } }
+            subtract = 50
         }
     }
 }

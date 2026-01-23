@@ -22,6 +22,38 @@
 			format = "RELIGION_FORMAT"
 			start = religion:pantalonism
 		}
+		pantalone_authority = {
+			format = "PANTALONE_AUTHORITY_DISPLAY"
+			change_format = "VARIABLE_CHANGE_FORMAT"
+			min = 0
+			max = 100
+			monthly_change = {
+				add = {
+					add = {
+						desc = "PANTALONE_AUTHORITY_BASE"
+						value = 0.05
+					}
+					add = {
+						desc = "PANTALONE_AUTHORITY_MEMBERS"
+						value = total_members
+						multiply = 0.002
+					}
+					add = {
+						desc = "PANTALONE_AUTHORITY_LEADER_STABILITY"
+						value = leader_country.stability
+						multiply = 0.01
+					}
+					add = {
+						desc = "PANTALONE_AUTHORITY_LEADER_AT_WAR"
+						if = {
+							limit = { leader_country = { is_at_war = yes } }
+							value = -0.05
+						}
+						else = { value = 0 }
+					}
+				}
+			}
+		}
 	}
 
 	create_visible_trigger = { always = no }

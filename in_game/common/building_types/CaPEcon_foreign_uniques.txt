@@ -194,7 +194,6 @@ Pantalonism_assembly = {
     }
 
     modifier = {
-        building_missionary_effort = 0.01
-        local_pop_conversion_speed = 0.01
+        building_missionary_effort = 0.05
     }
 }
