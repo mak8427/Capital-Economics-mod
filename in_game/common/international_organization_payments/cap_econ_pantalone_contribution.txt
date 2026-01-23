@@ -1,0 +1,46 @@
+﻿pantalone_contribution = {
+	get_payer_list = {
+		every_international_organization_member = {
+			limit = {
+				NOT = { is_leader_of_international_organization = root }
+			}
+			add_to_local_variable_list = {
+				name = payers
+				target = this
+			}
+		}
+	}
+	get_payee_list = {
+		leader_country ?= {
+			add_to_local_variable_list = {
+				name = payees
+				target = this
+			}
+		}
+	}
+	price = pantalone_contribution_price
+	uses_maintenance = no
+	price_multiplier = {
+		add = {
+			desc = "pantalone_contribution"
+			every_international_organization_member = {
+				limit = {
+					NOT = { is_leader_of_international_organization = root }
+				}
+				add = 1
+			}
+		}
+	}
+	proportion_for_payer = {
+		add = {
+			desc = "pantalone_contribution"
+			value = 1
+		}
+	}
+	proportion_for_payee = {
+		add = {
+			desc = "pantalone_contribution"
+			value = 1
+		}
+	}
+}

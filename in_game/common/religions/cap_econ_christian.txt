@@ -21,6 +21,8 @@
         maximum_religious_influence = 400
     }
 
+    tithe = 0.02
+
     opinions = {
         catholic = enemy
     }

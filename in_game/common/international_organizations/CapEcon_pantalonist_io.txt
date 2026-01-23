@@ -1,0 +1,49 @@
+﻿cap_econ_pantalonist_io = {
+	has_target = no
+	unique = yes
+	expel_members_who_are_targets_of_other_members = no
+
+	has_leader_country = yes
+	leader_type = country
+	leader_change_trigger_type = none
+	leader_change_method = none
+	disband_if_no_leader = no
+	show_on_diplomatic_map = yes
+	leader_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_LEADER_COLOR
+
+	leader = {
+		leader_country ?= {
+			add_to_list = leaders
+		}
+	}
+
+	variables = {
+		religion = {
+			format = "RELIGION_FORMAT"
+			start = religion:pantalonism
+		}
+	}
+
+	create_visible_trigger = { always = no }
+	invite_visible_trigger = { always = no }
+
+	can_join_trigger = {
+		religion = religion:pantalonism
+	}
+	can_leave_trigger = { always = no }
+	auto_leave_trigger = {
+		NOT = { religion = religion:pantalonism }
+	}
+	can_lead_trigger = {
+		is_subject = no
+		religion = religion:pantalonism
+	}
+
+	monthly_effect = { }
+	ai_desire_to_join = { }
+	ai_desire_to_allow_new_member = { }
+
+	payments_implemented = {
+		pantalone_contribution
+	}
+}

@@ -1,0 +1,101 @@
+organization_panel = {
+	blockoverride "organization_overview_tab_visible" {}
+	blockoverride "organization_panel_overview_visible" {
+		visible = "[InternationalOrganizationsView.Vars.NotExistOrHasValue( 'organizations', 'overview' )]"
+	}
+	blockoverride "organization_members_tab_down" {
+		down = "[InternationalOrganizationsView.Vars.HasValue( 'organizations', 'members' )]"
+	}
+	blockoverride "organization_panel_members_visible" {
+		visible = "[InternationalOrganizationsView.Vars.HasValue( 'organizations', 'members' )]"
+	}
+
+	blockoverride "organization_overview_list_bg" {
+		margin = {10 0}
+		spacing = 10
+	}
+	blockoverride "organization_overview_filtered_list" {
+		margin_top = 5
+		filtered_sorted_list = {
+			datacontext = "[InternationalOrganizationsView.GetMembersSortSearch]"
+			blockoverride "scroll_list_is_empty" {
+				visible = "[IsDataModelEmpty(InternationalOrganizationsView.GetMemberItems)]"
+			}
+			blockoverride "scroll_list_is_empty_text" {
+				text = "MEMBERS_SCROLL_LIST_EMPTY"
+			}
+			blockoverride "scroll_list_layout" {
+				vbox = {
+					block "organization_overview_list_bg" {
+						using = layoutpolicy_expanding
+						using = bg_secondary_inner_alt
+						margin_bottom = 20
+					}
+					card_io_payments = {}
+
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						datamodel = "[InternationalOrganizationsView.GetMemberItems]"
+						item = {
+							estates_summary = {
+								visible = "[And(Not(IsDataModelEmpty(MemberTypeItem.GetCountries)), MemberTypeItem.IsAllMembers)]"
+								blockoverride "summary_datamodel" {
+									datamodel = "[MemberTypeItem.GetCountries]"
+								}
+								blockoverride "header_content" {
+									tagtooltip_enabled = yes
+									tooltipwidget = {
+										ContextualTooltipType = {
+											blockoverride "title_icon" {
+												icon = {
+													using = tooltip_title_icon_size
+													texture = "[MemberTypeItem.GetIcon]"
+												}
+											}
+											blockoverride "title_text" {
+												text = "[MemberTypeItem.GetName]"
+											}
+											blockoverride "concept_link" {
+												text = "[international_organization|e]"
+											}
+											blockoverride "tooltip_content" {
+												TooltipTextBlock = {
+													blockoverride "text" {
+														text = "INTERNATIONAL_ORGANIZATION_TT_MEMBER"
+													}
+												}
+											}
+										}
+									}
+									vbox = {
+										autoresize = yes
+										layoutpolicy_horizontal = expanding
+										hbox = {
+											layoutpolicy_horizontal = expanding
+											icon = {
+												size = { 25 25 }
+												texture = "[MemberTypeItem.GetIcon]"
+												texture_density = 2
+												glow = {
+													name = "drop_shadow"
+													glow_radius = 3
+													color = {0.0 0.0 0.0 1.0}
+													alpha = 0.5
+												}
+											}
+											text_single = {
+												layoutpolicy_horizontal = expanding
+												autoresize = no
+												raw_text = "[MemberTypeItem.GetMembersAmount] [MemberTypeItem.GetName]"
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

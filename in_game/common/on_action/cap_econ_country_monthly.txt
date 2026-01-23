@@ -14,7 +14,6 @@ monthly_country_pulse_capecon = {
         receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
     }
 
-
     random_events = {
         25 = cap_econ.1
         15 = cap_econ.2
@@ -34,6 +33,9 @@ monthly_country_pulse_capecon = {
 yearly_country_pulse = {
     events = {
         estate_income_fix.2
+        }
+    on_actions = {
+        yearly_country_pulse_capecon_io
     }
 }
 
@@ -43,7 +45,6 @@ monthly_country_pulse_capecon_2 = {
             tag = BLG
             NOT = { religion = religion:pantalonism }
             NOT = { is_situation_active = situation:rise_of_pantalonism }
-
 
         }
 
@@ -57,4 +58,47 @@ monthly_country_pulse_capecon_2 = {
 
     }
 
+}
+
+yearly_country_pulse_capecon_io = {
+    trigger = {
+        exists = root.religion
+        religion = religion:pantalonism
+    }
+    effect = {
+        if = {
+            limit = { NOT = { exists = international_organization:cap_econ_pantalonist_io } }
+            create_international_organization = {
+                type = international_organization_type:cap_econ_pantalonist_io
+                hidden_effect = {
+                    add_country_to_international_organization = prev
+                    if = {
+                        limit = { exists = c:BLG c:BLG = { religion = religion:pantalonism } }
+                        set_leader_country = c:BLG
+                    }
+                    else = { set_leader_country = prev }
+                }
+            }
+        }
+        else = {
+            if = {
+                limit = {
+                    NOT = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
+                international_organization:cap_econ_pantalonist_io = {
+                    add_country_to_international_organization_no_update = prev
+                    if = {
+                        limit = { international_organization_has_leader = no }
+                        if = {
+                            limit = { exists = c:BLG c:BLG = { religion = religion:pantalonism } }
+                            set_leader_country = c:BLG
+                        }
+                        else = { set_leader_country = prev }
+                    }
+                }
+            }
+        }
+    }
 }

@@ -1,0 +1,3 @@
+pantalone_contribution_price = {
+	gold = 1
+}
