@@ -1,5 +1,8 @@
 organization_panel = {
 	blockoverride "organization_overview_tab_visible" {}
+	blockoverride "organization_laws_tab_visible" {
+		visible = yes
+	}
 	blockoverride "organization_panel_overview_visible" {
 		visible = "[InternationalOrganizationsView.Vars.NotExistOrHasValue( 'organizations', 'overview' )]"
 	}
@@ -67,9 +70,8 @@ organization_panel = {
 											}
 										}
 									}
-									vbox = {
-										autoresize = yes
-										layoutpolicy_horizontal = expanding
+										vbox = {
+											layoutpolicy_horizontal = expanding
 										hbox = {
 											layoutpolicy_horizontal = expanding
 											icon = {

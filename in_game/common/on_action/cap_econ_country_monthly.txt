@@ -25,7 +25,24 @@ monthly_country_pulse_capecon = {
         1 = cap_econ.9
         chance_to_happen = 80
     }
-
+  effect = {
+      if = {
+          limit = { religion = religion:pantalonism }
+          every_country = {
+              limit = {
+                  giving_scripted_relation = {
+                      type = relation_type:cap_econ_send_pantalone
+                      target = root
+                  }
+              }
+              remove_relation = {
+                  type = relation_type:cap_econ_send_pantalone
+                  first = this
+                  second = root
+              }
+          }
+      }
+  }
 
 }
 
@@ -33,7 +50,7 @@ monthly_country_pulse_capecon = {
 yearly_country_pulse = {
     events = {
         estate_income_fix.2
-        }
+    }
     on_actions = {
         yearly_country_pulse_capecon_io
     }
@@ -62,8 +79,8 @@ monthly_country_pulse_capecon_2 = {
 
 yearly_country_pulse_capecon_io = {
     trigger = {
-        exists = root.religion
         religion = religion:pantalonism
+        NOT = { is_member_of_international_organization = international_organization:cap_econ_pantalonist_io }
     }
     effect = {
         if = {

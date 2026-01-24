@@ -10,6 +10,18 @@
 	disband_if_no_leader = no
 	show_on_diplomatic_map = yes
 	leader_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_LEADER_COLOR
+	has_parliament = yes
+	parliament_type = hre_court_assembly
+	resolution_widget = parliament
+	laws = {
+		pantalone_stability_law = no_pantalone_stability_policy
+		pantalone_production_law = no_pantalone_production_policy
+	}
+	on_creation = {
+		international_organization_unlock_law_effect = { type = pantalone_stability_law }
+		international_organization_unlock_law_effect = { type = pantalone_production_law }
+	}
+
 
 	leader = {
 		leader_country ?= {
@@ -27,6 +39,8 @@
 			change_format = "VARIABLE_CHANGE_FORMAT"
 			min = 0
 			max = 100
+			start = 0
+
 			monthly_change = {
 				add = {
 					add = {
@@ -42,14 +56,6 @@
 						desc = "PANTALONE_AUTHORITY_LEADER_STABILITY"
 						value = leader_country.stability
 						multiply = 0.01
-					}
-					add = {
-						desc = "PANTALONE_AUTHORITY_LEADER_AT_WAR"
-						if = {
-							limit = { leader_country = { is_at_war = yes } }
-							value = -0.05
-						}
-						else = { value = 0 }
 					}
 				}
 			}
@@ -71,11 +77,21 @@
 		religion = religion:pantalonism
 	}
 
-	monthly_effect = { }
+	monthly_effect = {
+		if = {
+			limit = {
+				international_organization_has_policy = policy:pantalone_stability_policy
+			}
+			every_international_organization_member = {
+				add_stability = 0.10
+			}
+		}
+	}
 	ai_desire_to_join = { }
 	ai_desire_to_allow_new_member = { }
 
 	payments_implemented = {
 		pantalone_contribution
 	}
+
 }

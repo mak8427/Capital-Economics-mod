@@ -4,3 +4,7 @@
         category = location
     }
 }
+
+pantalone_authority = {
+    decimals = 0
+}

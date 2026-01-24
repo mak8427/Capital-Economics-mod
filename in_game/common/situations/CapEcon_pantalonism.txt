@@ -318,6 +318,7 @@ rise_of_pantalonism = {
             remove_variable = cap_econ_pantalonism_situation_active
 
 
+
             every_owned_location = {
                 limit = { has_building = building_type:Mangiatoia }
                 set_variable = {
@@ -378,10 +379,10 @@ rise_of_pantalonism = {
                     first = situation:rise_of_pantalonism.var:target_country
                     second = this
                 }
-                scope:target_country = {
-                    add_gold = 1000
-                }
             }
+
+
+
         }
     }
 

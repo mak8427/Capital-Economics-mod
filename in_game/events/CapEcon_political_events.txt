@@ -107,41 +107,35 @@ cap_econ.26 = {
 }
 
 
-cap_econ.10 = {
+cap_econ.11 = {
     type = country_event
 
-    title = cap_econ.10.title
-    desc = cap_econ.10.desc
+    title = cap_econ.11.title
+    desc = cap_econ.11.desc
     illustration_tags = {
         10 = interior
         10 = unhappy
     }
 
     trigger = {
-    }
-
-
-    option = {
-        name = cap_econ.10.a
-        custom_tooltip = cap_econ.10.a.tt
-        add_gold = { value = -500 }
-        scope:cap_econ_pantalone_coup_target ?= {
-            set_variable = cap_econ_force_pantalonism_situation
+       NOT = { giving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone }
         }
 
-        random_country = {
-            limit = {
-                receiving_scripted_relation = {
-                    type = relation_type:cap_econ_send_pantalone
-                    target = root
-                }
-            }
-            save_scope_as = pantalone_receiver
-        }
 
-        scope:pantalone_receiver ?= {
-            trigger_event_non_silently = cap_econ.22
-        }
-        remove_variable = cap_econ_pantalone_coup_target
-    }
+ option = {
+      name = cap_econ.11.a
+      custom_tooltip = cap_econ.11.a.tt
+
+  random_country = {
+      limit = { is_rival_of = root }
+      save_scope_as = pantalone_receiver
+      create_relation = {
+          type = relation_type:cap_econ_send_pantalone
+          first = root
+          second = this
+      }
+  }
+
+  }
+
 }

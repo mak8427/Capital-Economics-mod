@@ -10,6 +10,7 @@
     }
 
     relation_type_for_ai = hostile
+    use_with_enemies = yes
 
     break_enabled = {
         scope:recipient = { religion = religion:pantalonism }
@@ -25,11 +26,14 @@
         }
     }
     offer_enabled = {
-        scope:actor = {
-            NOT = {
-                giving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
+        NOT = {
+            giving_scripted_relation = {
+                type = relation_type:cap_econ_send_pantalone
+                target = scope:recipient
             }
         }
+        scope:actor = { religion = religion:pantalonism }
+        scope:recipient = { religion != religion:pantalonism }
     }
 
     offer_effect = {
@@ -64,7 +68,10 @@
 
 
     wants_to_give = {
-        add = 500
+        add = {
+            desc = "DIPLOREASON_BASE_RELUCTANCE"
+            value = 200
+        }
         add = {
             desc = "game_concept_rival"
             if = { limit = { scope:recipient = { is_rival_of = scope:actor } } }
@@ -81,6 +88,14 @@
         subtract = {
             desc = "game_concept_opinion"
             scope:actor = { value = "opinion(scope:recipient)" }
+        }
+    }
+
+    wants_to_receive_diplo_chance = {
+        base = 100
+        modifier = {
+            factor = 3
+            if = { limit = { scope:recipient = { is_rival_of = scope:actor } } }
         }
     }
 

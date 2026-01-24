@@ -15,9 +15,17 @@
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -64,9 +72,17 @@ corporate_country_headquarters = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }

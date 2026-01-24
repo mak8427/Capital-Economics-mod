@@ -12,20 +12,24 @@
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
+
         }
     }
 
     location_potential = {
         OR = {
-
-            vegetation = woods
-            vegetation = forest
-            vegetation = farmland
-            vegetation = jungle
             raw_material = goods:alum
         }
 
@@ -61,9 +65,17 @@ corporate_amber_collectors = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -100,9 +112,17 @@ corporate_apiary = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -139,9 +159,17 @@ corporate_chili_plantation = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -179,9 +207,17 @@ corporate_clay_pit = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -218,9 +254,17 @@ corporate_cloves_plantation = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -258,9 +302,17 @@ corporate_charcoal_maker = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -297,9 +349,17 @@ corporate_cocoa_plantation = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -336,9 +396,17 @@ corporate_coffee_plantation = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -376,9 +444,17 @@ corporate_copper_mine = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -415,9 +491,17 @@ corporate_cotton_plantation = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -454,9 +538,17 @@ corporate_dyes_plantation = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -493,9 +585,17 @@ corporate_elephant_ranch = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -532,9 +632,17 @@ corporate_fiber_crops_farm = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -572,9 +680,17 @@ corporate_fishing_village = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -611,9 +727,17 @@ corporate_fruit_orchard = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -651,9 +775,17 @@ corporate_fur_trappers = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -691,9 +823,17 @@ corporate_gems_mine = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -731,9 +871,17 @@ corporate_gold_mine = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -770,9 +918,17 @@ corporate_horse_breeders = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -809,9 +965,17 @@ corporate_incense_grove = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -849,9 +1013,17 @@ corporate_iron_mine = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -889,9 +1061,17 @@ corporate_elephant_hunting_grounds = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -929,9 +1109,17 @@ corporate_lead_mine = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -968,9 +1156,17 @@ corporate_legumes_farm = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -1007,9 +1203,17 @@ corporate_livestock_ranch = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -1047,9 +1251,17 @@ corporate_lumber_mill = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -1086,9 +1298,17 @@ corporate_maize_farm = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -1125,9 +1345,17 @@ corporate_marble_quarry = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -1165,9 +1393,17 @@ corporate_medicinal_gatherers = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -1205,9 +1441,17 @@ corporate_mercury_mine = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -1244,9 +1488,17 @@ corporate_millet_farm = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -1283,9 +1535,17 @@ corporate_olive_grove = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -1323,9 +1583,17 @@ corporate_pearl_divers = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -1363,9 +1631,17 @@ corporate_pepper_plantation = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -1402,9 +1678,17 @@ corporate_potato_farm = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -1441,9 +1725,17 @@ corporate_rice_paddy = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -1480,9 +1772,17 @@ corporate_saffron_fields = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -1520,9 +1820,17 @@ corporate_salt_collector = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -1560,9 +1868,17 @@ corporate_saltpeter_mine = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -1600,9 +1916,17 @@ corporate_sand_pit = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -1639,9 +1963,17 @@ corporate_silk_farm = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -1679,9 +2011,17 @@ corporate_silver_mine = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -1719,9 +2059,17 @@ corporate_stone_quarry = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -1758,9 +2106,17 @@ corporate_sugar_plantation = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -1797,9 +2153,17 @@ corporate_tea_plantation = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -1837,9 +2201,17 @@ corporate_tin_mine = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -1876,9 +2248,17 @@ corporate_tobacco_plantation = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -1915,9 +2295,17 @@ corporate_wheat_farm = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -1955,9 +2343,17 @@ corporate_wild_game_hunting_grounds = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -1994,9 +2390,17 @@ corporate_wine_vineyard = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
@@ -2033,9 +2437,17 @@ corporate_sheep_farms = {
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
-            giving_scripted_relation = {
-                type = relation_type:cap_econ_extraction_rights
-                target = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
             }
         }
     }
