@@ -7,6 +7,10 @@
         estate_income_fix.1
         estate_income_fix.3
     }
+    random_events = {
+        chance_to_happen = 10
+        30 = cap_econ.11
+    }
 }
 
 monthly_country_pulse_capecon = {
@@ -17,6 +21,7 @@ monthly_country_pulse_capecon = {
     random_events = {
         25 = cap_econ.1
         15 = cap_econ.2
+        5 = cap_econ.30
         40 = cap_econ.25
         5 = cap_econ.5
         5 = cap_econ.6

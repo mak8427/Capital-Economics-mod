@@ -9,9 +9,15 @@
  cap_econ.2.title: "Pantalone on the Shore"
  cap_econ.2.desc: "Pantalone strides onto the shore, flings gold into the crowd, pays for every pamphlet twice, and calls the sermon ‘on the house.’ Coins roll through the streets, bread appears in every hand, and faith spreads faster than the sound of money hitting the ground."
  cap_econ.2.a: "Let the gospel spread."
- cap_econ.2.a.tt: "Increases the number of Pantalonist pops in the capital area."
+cap_econ.2.a.tt: "Increases the number of Pantalonist pops in the capital area."
 
- lots_of_pantalonists: "A share of pops in the capital area will convert to Pantalonism."
+lots_of_pantalonists: "A share of pops in the capital area will convert to Pantalonism."
+
+ cap_econ.30.title: "Pacchetto the Devout"
+ cap_econ.30.desc: "A young Piedmontese preacher named Pacchetto arrives with fervor and sharp intellect. His sermons draw crowds, and his counsel is as potent as his faith."
+ cap_econ.30.a: "Welcome him to the court."
+ surname_pacchetto: "Pacchetto"
+ name_pacchetto: "Alessandro"
 
  cap_econ.5.title: "Pantalone Arrives in [COUNTRY.GetName] from [SCOPE.sCountry('pantalone_sender').GetName]!"
  cap_econ.5.desc: "Pantalone arrives from abroad dragging wagons of gold marked PAID. He throws coins into the streets, hands out cured meats like greetings, and before anyone can ask why, Mangiatoie spring up everywhere—lavish, loud, and fully paid for."
@@ -106,3 +112,7 @@
  cap_econ.29.a.tt: "In a rural settlement, 50% of non-Pantalonist pops convert."
  cap_econ.29.b: "Skim the purse."
  cap_econ.29.b.tt: "Gain 100 gold, convert 25% of non-Pantalonist pops in a rural settlement, and anger Pantalonists."
+ cap_econ.11.title: "Pantalone visits a new country"
+ cap_econ.11.desc: "Pantalone is bored of the same old places. He wants to see new lands and spread his influence further. Where should he go next?"
+ cap_econ.11.a: "Send him to [SCOPE.sCountry('arrival').GetName]."
+ cap_econ.11.a.tt: "he will go to a random country that does not have Pantalonism yet."

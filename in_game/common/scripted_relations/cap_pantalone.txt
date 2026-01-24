@@ -17,23 +17,21 @@
     }
 
 
+
     visible = {
-        scope:actor = {
-            AND = {
-                within_diplomatic_range = scope:recipient
-                scope:actor = { religion = religion:pantalonism }
-            }
-        }
+        within_diplomatic_range = scope:recipient
+        religion = religion:pantalonism
+        scope:recipient = { religion != religion:pantalonism }
     }
     offer_enabled = {
+        religion = religion:pantalonism
+        scope:recipient = { religion != religion:pantalonism }
         NOT = {
             giving_scripted_relation = {
                 type = relation_type:cap_econ_send_pantalone
                 target = scope:recipient
             }
         }
-        scope:actor = { religion = religion:pantalonism }
-        scope:recipient = { religion != religion:pantalonism }
     }
 
     offer_effect = {

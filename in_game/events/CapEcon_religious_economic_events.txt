@@ -38,3 +38,43 @@ cap_econ.2 = {
 
     }
 }
+
+cap_econ.30 = {
+    type = country_event
+
+    title = cap_econ.30.title
+    desc = cap_econ.30.desc
+    illustration_tags = {
+        10 = interior
+        10 = happy
+    }
+
+    trigger = {
+        religion = religion:pantalonism
+        NOT = { has_variable = cap_econ_pacchetto_spawned }
+    }
+
+    immediate = {
+        create_character = {
+            last_name = surname_pacchetto
+            first_name = name_pacchetto
+            culture = culture:piedmontese
+            religion = religion:pantalonism
+            estate = estate_type:clergy_estate
+            adm = { 100 100 }
+            dip = { 100 100 }
+            mil = { 100 100 }
+            age = { 24 24 }
+            create_in_limbo = yes
+            save_scope_as = cap_econ_pacchetto
+        }
+    }
+
+    option = {
+        name = cap_econ.30.a
+        scope:cap_econ_pacchetto ?= {
+            move_country = root
+        }
+        set_variable = cap_econ_pacchetto_spawned
+    }
+}
