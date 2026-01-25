@@ -40,8 +40,7 @@
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = rural_build_time
 
     possible_production_methods = {
@@ -91,8 +90,7 @@ corporate_amber_collectors = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = rural_build_time
 
     possible_production_methods = {
@@ -141,8 +139,7 @@ corporate_apiary = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = rural_build_time
 
     possible_production_methods = {
@@ -191,8 +188,7 @@ corporate_chili_plantation = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = plantation_build_time
 
     possible_production_methods = {
@@ -242,8 +238,7 @@ corporate_clay_pit = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = rural_build_time
 
     possible_production_methods = {
@@ -292,8 +287,7 @@ corporate_cloves_plantation = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = plantation_build_time
 
     possible_production_methods = {
@@ -343,8 +337,7 @@ corporate_charcoal_maker = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = rural_build_time
 
     possible_production_methods = {
@@ -393,8 +386,7 @@ corporate_cocoa_plantation = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = plantation_build_time
 
     possible_production_methods = {
@@ -443,8 +435,7 @@ corporate_coffee_plantation = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = plantation_build_time
 
     possible_production_methods = {
@@ -494,8 +485,7 @@ corporate_copper_mine = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = rural_build_time
 
     possible_production_methods = {
@@ -544,8 +534,7 @@ corporate_cotton_plantation = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = plantation_build_time
 
     possible_production_methods = {
@@ -594,8 +583,7 @@ corporate_dyes_plantation = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = plantation_build_time
 
     possible_production_methods = {
@@ -644,8 +632,7 @@ corporate_elephant_ranch = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = rural_build_time
 
     possible_production_methods = {
@@ -694,8 +681,7 @@ corporate_fiber_crops_farm = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = rural_build_time
 
     possible_production_methods = {
@@ -745,8 +731,7 @@ corporate_fishing_village = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = village_build_time
 
     possible_production_methods = {
@@ -795,8 +780,7 @@ corporate_fruit_orchard = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = rural_build_time
 
     possible_production_methods = {
@@ -846,8 +830,7 @@ corporate_fur_trappers = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = rural_build_time
 
     possible_production_methods = {
@@ -897,8 +880,7 @@ corporate_gems_mine = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = rural_build_time
 
     possible_production_methods = {
@@ -948,8 +930,7 @@ corporate_gold_mine = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = rural_build_time
 
     possible_production_methods = {
@@ -998,8 +979,7 @@ corporate_horse_breeders = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = rural_build_time
 
     possible_production_methods = {
@@ -1048,8 +1028,7 @@ corporate_incense_grove = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = rural_build_time
 
     possible_production_methods = {
@@ -1099,8 +1078,7 @@ corporate_iron_mine = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = rural_build_time
 
     possible_production_methods = {
@@ -1150,8 +1128,7 @@ corporate_elephant_hunting_grounds = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = rural_build_time
 
     possible_production_methods = {
@@ -1201,8 +1178,7 @@ corporate_lead_mine = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = rural_build_time
 
     possible_production_methods = {
@@ -1251,8 +1227,7 @@ corporate_legumes_farm = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = rural_build_time
 
     possible_production_methods = {
@@ -1301,8 +1276,7 @@ corporate_livestock_ranch = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = rural_build_time
 
     possible_production_methods = {
@@ -1352,8 +1326,7 @@ corporate_lumber_mill = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = rural_build_time
 
     possible_production_methods = {
@@ -1449,8 +1422,7 @@ corporate_marble_quarry = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = rural_build_time
 
     possible_production_methods = {
@@ -1500,8 +1472,7 @@ corporate_medicinal_gatherers = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = rural_build_time
 
     possible_production_methods = {
@@ -1551,8 +1522,7 @@ corporate_mercury_mine = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = rural_build_time
 
     possible_production_methods = {
@@ -1601,8 +1571,7 @@ corporate_millet_farm = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = rural_build_time
 
     possible_production_methods = {
@@ -1651,8 +1620,7 @@ corporate_olive_grove = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = rural_build_time
 
     possible_production_methods = {
@@ -1706,8 +1674,7 @@ corporate_pearl_divers = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = rural_build_time
 
     possible_production_methods = {
@@ -1753,8 +1720,7 @@ corporate_pepper_plantation = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = plantation_build_time
 
     possible_production_methods = {
@@ -1803,8 +1769,7 @@ corporate_potato_farm = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = rural_build_time
 
     possible_production_methods = {
@@ -1853,8 +1818,7 @@ corporate_rice_paddy = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = rural_build_time
 
     possible_production_methods = {
@@ -1903,8 +1867,7 @@ corporate_saffron_fields = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = rural_build_time
 
     possible_production_methods = {
@@ -1954,8 +1917,7 @@ corporate_salt_collector = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = rural_build_time
 
     possible_production_methods = {
@@ -2005,8 +1967,7 @@ corporate_saltpeter_mine = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = rural_build_time
 
     possible_production_methods = {
@@ -2056,8 +2017,7 @@ corporate_sand_pit = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = rural_build_time
 
     possible_production_methods = {
@@ -2106,8 +2066,7 @@ corporate_silk_farm = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = rural_build_time
 
     possible_production_methods = {
@@ -2157,8 +2116,7 @@ corporate_silver_mine = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = rural_build_time
 
     possible_production_methods = {
@@ -2208,8 +2166,7 @@ corporate_stone_quarry = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = rural_build_time
 
     possible_production_methods = {
@@ -2258,8 +2215,7 @@ corporate_sugar_plantation = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = plantation_build_time
 
     possible_production_methods = {
@@ -2308,8 +2264,7 @@ corporate_tea_plantation = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = plantation_build_time
 
     possible_production_methods = {
@@ -2359,8 +2314,7 @@ corporate_tin_mine = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = rural_build_time
 
     possible_production_methods = {
@@ -2409,8 +2363,7 @@ corporate_tobacco_plantation = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = plantation_build_time
 
     possible_production_methods = {
@@ -2459,8 +2412,7 @@ corporate_wheat_farm = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = rural_build_time
 
     possible_production_methods = {
@@ -2510,8 +2462,7 @@ corporate_wild_game_hunting_grounds = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = rural_build_time
 
     possible_production_methods = {
@@ -2560,8 +2511,7 @@ corporate_wine_vineyard = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = rural_build_time
 
     possible_production_methods = {
@@ -2610,8 +2560,7 @@ corporate_sheep_farms = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     build_time = rural_build_time
 
     possible_production_methods = {

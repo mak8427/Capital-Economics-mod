@@ -245,3 +245,61 @@ pantalone_contribution_law = {
 		}
 	}
 }
+
+pantalone_redistribution_law = {
+	type = international_organization
+	law_category = administrative
+	custom_tags = { forbids_no_policy }
+	potential = {
+		international_organization_type = international_organization_type:cap_econ_pantalonist_io
+	}
+	allow = {
+		always = yes
+	}
+	locked = { }
+
+	pantalone_dividends_leader_policy = {
+		wants_propose_policy = {
+			subtract = {
+				desc = "DIPLOREASON_BASE"
+				value = 10
+			}
+		}
+		wants_this_policy_bias = {
+			subtract = {
+				desc = "POLICY_BASE_REASON_KEEP_POLICY"
+				value = 10
+			}
+		}
+	}
+
+	pantalone_dividends_equal_policy = {
+		wants_propose_policy = {
+			add = {
+				desc = "DIPLOREASON_BASE"
+				value = 10
+			}
+		}
+		wants_this_policy_bias = {
+			add = {
+				desc = "POLICY_BASE_REASON_KEEP_POLICY"
+				value = 30
+			}
+		}
+	}
+
+	pantalone_dividends_split_policy = {
+		wants_propose_policy = {
+			subtract = {
+				desc = "DIPLOREASON_BASE"
+				value = 10
+			}
+		}
+		wants_this_policy_bias = {
+			add = {
+				desc = "POLICY_BASE_REASON_KEEP_POLICY"
+				value = 0
+			}
+		}
+	}
+}

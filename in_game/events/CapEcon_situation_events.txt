@@ -17,10 +17,13 @@ cap_econ.20 = {
         custom_tooltip = cap_econ.20.a.tt
 
         ai_will_select = {
-            base = 1
-            modifier = {
-                factor = 2
-                var:cap_econ_pantalone_happiness_modifier >= 1
+            value = 1
+            if = {
+                limit = {
+                    has_variable = cap_econ_pantalone_happiness_modifier
+                    var:cap_econ_pantalone_happiness_modifier >= 1
+                }
+                add = 1
             }
         }
 
@@ -54,14 +57,17 @@ cap_econ.20 = {
         custom_tooltip = cap_econ.20.b.tt
 
         ai_will_select = {
-            base = 1
-            modifier = {
-                factor = 2
-                var:cap_econ_pantalone_happiness_modifier <= 1
+            value = 1
+            if = {
+                limit = {
+                    has_variable = cap_econ_pantalone_happiness_modifier
+                    var:cap_econ_pantalone_happiness_modifier <= 1
+                }
+                add = 1
             }
-            modifier = {
-                factor = 2
-                gold > root.country_tax_base
+            if = {
+                limit = { gold > root.country_tax_base }
+                add = 1
             }
         }
         set_variable = { name = cap_econ_event value = 0 }
@@ -137,10 +143,10 @@ cap_econ.23 = {
         custom_tooltip = cap_econ.23.a.tt
 
         ai_will_select = {
-            base = 1
-            modifier = {
-                factor = 3
-                stability < 0
+            value = 1
+            if = {
+                limit = { stability < 0 }
+                add = 2
             }
         }
 
@@ -169,10 +175,10 @@ cap_econ.23 = {
 
 
         ai_will_select = {
-            base = 1
-            modifier = {
-                factor = 3
-                stability > 10
+            value = 1
+            if = {
+                limit = { stability > 10 }
+                add = 2
             }
         }
         every_owned_location = {

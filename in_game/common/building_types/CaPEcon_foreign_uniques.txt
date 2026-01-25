@@ -155,8 +155,7 @@ Pantalonism_assembly = {
     important_for_AI = yes
     AI_ignore_available_worker_flag = yes
     lifts_fog_of_war = yes
-    ai_foreign_ignore_naval_range = yes
-
+    
     can_close = no
     country_potential = {
         custom_tooltip = {

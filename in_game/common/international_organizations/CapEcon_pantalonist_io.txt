@@ -6,22 +6,24 @@
 	has_leader_country = yes
 	leader_type = country
 	leader_change_trigger_type = none
-	leader_change_method = none
+	leader_change_method = vote
 	disband_if_no_leader = no
 	show_on_diplomatic_map = yes
 	leader_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_LEADER_COLOR
 	has_parliament = yes
-	parliament_type = hre_court_assembly
+	parliament_type = dutch_parliament
 	resolution_widget = parliament
 	laws = {
 		pantalone_stability_law = no_pantalone_stability_policy
 		pantalone_production_law = no_pantalone_production_policy
 		pantalone_contribution_law = no_pantalone_contribution_policy
+		pantalone_redistribution_law = pantalone_dividends_leader_policy
 	}
 	on_creation = {
 		international_organization_unlock_law_effect = { type = pantalone_stability_law }
 		international_organization_unlock_law_effect = { type = pantalone_production_law }
 		international_organization_unlock_law_effect = { type = pantalone_contribution_law }
+		international_organization_unlock_law_effect = { type = pantalone_redistribution_law }
 	}
 
 

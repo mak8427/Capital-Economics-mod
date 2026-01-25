@@ -11,10 +11,40 @@
 		}
 	}
 	get_payee_list = {
-		leader_country ?= {
-			add_to_local_variable_list = {
-				name = payees
-				target = this
+		if = {
+			limit = {
+				international_organization_has_policy = policy:pantalone_dividends_equal_policy
+			}
+			every_international_organization_member = {
+				add_to_local_variable_list = {
+					name = payees
+					target = this
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				international_organization_has_policy = policy:pantalone_dividends_split_policy
+			}
+			leader_country ?= {
+				add_to_local_variable_list = {
+					name = payees
+					target = this
+				}
+			}
+			every_international_organization_member = {
+				add_to_local_variable_list = {
+					name = payees
+					target = this
+				}
+			}
+		}
+		else = {
+			leader_country ?= {
+				add_to_local_variable_list = {
+					name = payees
+					target = this
+				}
 			}
 		}
 	}
@@ -47,9 +77,33 @@
 		}
 	}
 	proportion_for_payee = {
-		add = {
-			desc = "pantalone_contribution"
-			value = 1
+		if = {
+			limit = {
+				scope:recipient = {
+					international_organization_has_policy = policy:pantalone_dividends_split_policy
+				}
+			}
+			if = {
+				limit = {
+					root = { is_leader_of_international_organization = scope:recipient }
+				}
+				add = {
+					desc = "pantalone_contribution"
+					value = scope:recipient.total_members
+				}
+			}
+			else = {
+				add = {
+					desc = "pantalone_contribution"
+					value = 1
+				}
+			}
+		}
+		else = {
+			add = {
+				desc = "pantalone_contribution"
+				value = 1
+			}
 		}
 
 	}
