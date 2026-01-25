@@ -3,6 +3,9 @@
     max_levels = 10
 
     pop_type = burghers
+    important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
 
     can_close = no
     country_potential = {
@@ -76,6 +79,9 @@ Mangiatoia_good = {
     max_levels = 10
 
     pop_type = burghers
+    important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
 
     can_close = yes
     country_potential = {
@@ -146,6 +152,10 @@ Pantalonism_assembly = {
     max_levels = 10
 
     pop_type = burghers
+    important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     can_close = no
     country_potential = {

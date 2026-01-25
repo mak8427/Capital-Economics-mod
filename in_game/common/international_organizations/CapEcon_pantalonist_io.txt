@@ -16,10 +16,12 @@
 	laws = {
 		pantalone_stability_law = no_pantalone_stability_policy
 		pantalone_production_law = no_pantalone_production_policy
+		pantalone_contribution_law = no_pantalone_contribution_policy
 	}
 	on_creation = {
 		international_organization_unlock_law_effect = { type = pantalone_stability_law }
 		international_organization_unlock_law_effect = { type = pantalone_production_law }
+		international_organization_unlock_law_effect = { type = pantalone_contribution_law }
 	}
 
 
@@ -50,7 +52,7 @@
 					add = {
 						desc = "PANTALONE_AUTHORITY_MEMBERS"
 						value = total_members
-						multiply = 0.002
+						multiply = 0.05
 					}
 					add = {
 						desc = "PANTALONE_AUTHORITY_LEADER_STABILITY"
@@ -59,6 +61,10 @@
 					}
 				}
 			}
+		}
+		contribution_modifier = {
+			format = "CAP_ECON_DIVIDENDS_FORMAT"
+			start = 20
 		}
 	}
 

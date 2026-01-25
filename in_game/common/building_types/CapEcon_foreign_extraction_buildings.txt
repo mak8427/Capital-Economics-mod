@@ -38,6 +38,9 @@
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = rural_build_time
 
@@ -86,6 +89,9 @@ corporate_amber_collectors = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = rural_build_time
 
@@ -133,6 +139,9 @@ corporate_apiary = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = rural_build_time
 
@@ -180,6 +189,9 @@ corporate_chili_plantation = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = plantation_build_time
 
@@ -228,6 +240,9 @@ corporate_clay_pit = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = rural_build_time
 
@@ -275,6 +290,9 @@ corporate_cloves_plantation = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = plantation_build_time
 
@@ -323,6 +341,9 @@ corporate_charcoal_maker = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = rural_build_time
 
@@ -370,6 +391,9 @@ corporate_cocoa_plantation = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = plantation_build_time
 
@@ -417,6 +441,9 @@ corporate_coffee_plantation = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = plantation_build_time
 
@@ -465,6 +492,9 @@ corporate_copper_mine = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = rural_build_time
 
@@ -512,6 +542,9 @@ corporate_cotton_plantation = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = plantation_build_time
 
@@ -559,6 +592,9 @@ corporate_dyes_plantation = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = plantation_build_time
 
@@ -606,6 +642,9 @@ corporate_elephant_ranch = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = rural_build_time
 
@@ -653,6 +692,9 @@ corporate_fiber_crops_farm = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = rural_build_time
 
@@ -701,6 +743,9 @@ corporate_fishing_village = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = village_build_time
 
@@ -748,6 +793,9 @@ corporate_fruit_orchard = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = rural_build_time
 
@@ -796,6 +844,9 @@ corporate_fur_trappers = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = rural_build_time
 
@@ -844,6 +895,9 @@ corporate_gems_mine = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = rural_build_time
 
@@ -892,6 +946,9 @@ corporate_gold_mine = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = rural_build_time
 
@@ -939,6 +996,9 @@ corporate_horse_breeders = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = rural_build_time
 
@@ -986,6 +1046,9 @@ corporate_incense_grove = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = rural_build_time
 
@@ -1034,6 +1097,9 @@ corporate_iron_mine = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = rural_build_time
 
@@ -1082,6 +1148,9 @@ corporate_elephant_hunting_grounds = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = rural_build_time
 
@@ -1130,6 +1199,9 @@ corporate_lead_mine = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = rural_build_time
 
@@ -1177,6 +1249,9 @@ corporate_legumes_farm = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = rural_build_time
 
@@ -1224,6 +1299,9 @@ corporate_livestock_ranch = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = rural_build_time
 
@@ -1272,6 +1350,9 @@ corporate_lumber_mill = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = rural_build_time
 
@@ -1366,6 +1447,9 @@ corporate_marble_quarry = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = rural_build_time
 
@@ -1414,6 +1498,9 @@ corporate_medicinal_gatherers = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = rural_build_time
 
@@ -1462,6 +1549,9 @@ corporate_mercury_mine = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = rural_build_time
 
@@ -1509,6 +1599,9 @@ corporate_millet_farm = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = rural_build_time
 
@@ -1556,6 +1649,9 @@ corporate_olive_grove = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = rural_build_time
 
@@ -1608,6 +1704,9 @@ corporate_pearl_divers = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = rural_build_time
 
@@ -1652,6 +1751,9 @@ corporate_pepper_plantation = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = plantation_build_time
 
@@ -1699,6 +1801,9 @@ corporate_potato_farm = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = rural_build_time
 
@@ -1746,6 +1851,9 @@ corporate_rice_paddy = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = rural_build_time
 
@@ -1793,6 +1901,9 @@ corporate_saffron_fields = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = rural_build_time
 
@@ -1841,6 +1952,9 @@ corporate_salt_collector = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = rural_build_time
 
@@ -1889,6 +2003,9 @@ corporate_saltpeter_mine = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = rural_build_time
 
@@ -1937,6 +2054,9 @@ corporate_sand_pit = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = rural_build_time
 
@@ -1984,6 +2104,9 @@ corporate_silk_farm = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = rural_build_time
 
@@ -2032,6 +2155,9 @@ corporate_silver_mine = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = rural_build_time
 
@@ -2080,6 +2206,9 @@ corporate_stone_quarry = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = rural_build_time
 
@@ -2127,6 +2256,9 @@ corporate_sugar_plantation = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = plantation_build_time
 
@@ -2174,6 +2306,9 @@ corporate_tea_plantation = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = plantation_build_time
 
@@ -2222,6 +2357,9 @@ corporate_tin_mine = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = rural_build_time
 
@@ -2269,6 +2407,9 @@ corporate_tobacco_plantation = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = plantation_build_time
 
@@ -2316,6 +2457,9 @@ corporate_wheat_farm = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = rural_build_time
 
@@ -2364,6 +2508,9 @@ corporate_wild_game_hunting_grounds = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = rural_build_time
 
@@ -2411,6 +2558,9 @@ corporate_wine_vineyard = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = rural_build_time
 
@@ -2458,6 +2608,9 @@ corporate_sheep_farms = {
     category = rgo_building_category
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 
     build_time = rural_build_time
 

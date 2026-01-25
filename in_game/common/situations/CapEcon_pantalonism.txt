@@ -31,13 +31,19 @@ rise_of_pantalonism = {
         trigger_if = {
             limit = { country_exists = situation:rise_of_pantalonism.var:target_country }
             situation:rise_of_pantalonism.var:target_country = {
-                religion_percentage_in_country = {
-                    religion = religion:pantalonism
-                    value > 0.85
+                OR = {
+                    religion_percentage_in_country = {
+                        religion = religion:pantalonism
+                        value > 0.85
+                    }
+                    NOT = {any_owned_location = { is_town = yes} }
+                    # If there is a trigger for building-based countries, add it here:
+                    # is_building_based_country = yes
                 }
             }
         }
     }
+
 
     # Show the situation whenca the target country is marked active.
     visible = {
@@ -312,11 +318,16 @@ rise_of_pantalonism = {
             remove_current_major_government_reform = yes
             change_government_type = government_type:republic
             unlock_government_reform_effect = { type = pantalone_republic }
+
+
+            every_current_reforms = {
+                scope:target_country = { remove_reform = prev }
+            }
             add_reform = government_reform:pantalone_republic
             add_reform = government_reform:council_of_burghers
+
             set_variable = cap_econ_pantalonism_situation_completed
             remove_variable = cap_econ_pantalonism_situation_active
-
 
 
             every_owned_location = {
@@ -380,7 +391,6 @@ rise_of_pantalonism = {
                     second = this
                 }
             }
-
 
 
         }

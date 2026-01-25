@@ -19,23 +19,31 @@
 		}
 	}
 	price = pantalone_contribution_price
-	uses_maintenance = no
+	uses_maintenance = yes
+	min_slider_value = 0.05
+
+
 	price_multiplier = {
 		add = {
 			desc = "game_concept_monthly_income_trade_and_tax"
 			every_international_organization_member = {
 				limit = {
 					NOT = { is_leader_of_international_organization = root }
+					monthly_balance > 0
 				}
 				add = monthly_balance
 			}
-			multiply = 0.1
+			multiply = var:contribution_modifier
+			multiply = 0.01
 		}
 	}
 	proportion_for_payer = {
-		add = {
-			desc = "game_concept_monthly_income_trade_and_tax"
-			value = monthly_balance
+		if = {
+			limit = { monthly_balance > 0 }
+			add = {
+				desc = "game_concept_monthly_income_trade_and_tax"
+				value = monthly_balance
+			}
 		}
 	}
 	proportion_for_payee = {
@@ -45,4 +53,5 @@
 		}
 
 	}
+
 }

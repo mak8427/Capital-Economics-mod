@@ -141,12 +141,26 @@ cap_econ.6 = {
     option = {
         name = cap_econ.6.a
         custom_tooltip = cap_econ.6.a.tt
-        random_owned_location = {
-            limit = { OR = { is_town = yes is_city = yes } }
-            change_building_level_in_location = {
-                building = building_type:library
-                value = 1
+        if = {
+            limit = {
+                any_owned_location = {
+                    OR = { is_town = yes is_city = yes }
+                    NOT = { has_building = building_type:library }
+                }
             }
+            random_owned_location = {
+                limit = {
+                    OR = { is_town = yes is_city = yes }
+                    NOT = { has_building = building_type:library }
+                }
+                change_building_level_in_location = {
+                    building = building_type:library
+                    value = 1
+                }
+            }
+        }
+        else = {
+            add_research_progress = { value = 10 }
         }
     }
 }

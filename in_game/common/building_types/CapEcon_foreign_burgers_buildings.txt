@@ -54,6 +54,9 @@
     }
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 }
 
 corporate_country_headquarters = {
@@ -115,4 +118,7 @@ corporate_country_headquarters = {
     }
 
     important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+    ai_foreign_ignore_naval_range = yes
 }

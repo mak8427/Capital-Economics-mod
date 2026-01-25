@@ -1,0 +1,247 @@
+﻿pantalone_stability_law = {
+	type = international_organization
+	law_category = administrative
+
+	custom_tags = {  }
+	potential = {
+		international_organization_type = international_organization_type:cap_econ_pantalonist_io
+	}
+	allow = {
+		international_organization:cap_econ_pantalonist_io = {
+			var:pantalone_authority >= 50
+		}
+	}
+	locked = { }
+
+	no_pantalone_stability_policy = {
+		wants_this_policy_bias = {
+			subtract = {
+				desc = "POLICY_BASE_REASON_KEEP_POLICY"
+				value = 50
+			}
+		}
+	}
+
+	pantalone_stability_policy = {
+		on_activate = {
+			international_organization:cap_econ_pantalonist_io = {
+				change_variable = { name = pantalone_authority add = -50 }
+			}
+		}
+
+		country_modifier = {
+			stability_decay =  -0.1
+			stability_cost = -0.05
+		}
+
+
+		wants_propose_policy = {
+			add = {
+				desc = "DIPLOREASON_BASE"
+				value = 50
+			}
+		}
+		wants_this_policy_bias = {
+			add = {
+				desc = "POLICY_BASE_REASON_KEEP_POLICY"
+				value = 20
+			}
+		}
+	}
+
+}
+
+
+pantalone_production_law = {
+	type = international_organization
+	law_category = administrative
+	custom_tags = { forbids_no_policy }
+	potential = {
+		international_organization_type = international_organization_type:cap_econ_pantalonist_io
+	}
+	allow = {
+		international_organization:cap_econ_pantalonist_io = {
+			var:pantalone_authority >= 50
+		}
+	}
+	locked = { }
+
+	no_pantalone_production_policy = {
+		wants_this_policy_bias = {
+			subtract = {
+				desc = "POLICY_BASE_REASON_KEEP_POLICY"
+				value = 50
+			}
+		}
+	}
+
+	pantalone_production_policy = {
+		on_activate = {
+			international_organization:cap_econ_pantalonist_io = {
+				change_variable = { name = pantalone_authority add = -50 }
+			}
+		}
+		country_modifier = {
+			global_production_efficiency = small_production_efficiency_bonus
+		}
+		wants_propose_policy = {
+			add = {
+				desc = "DIPLOREASON_BASE"
+				value = 50
+			}
+		}
+		wants_this_policy_bias = {
+			add = {
+				desc = "POLICY_BASE_REASON_KEEP_POLICY"
+				value = 20
+			}
+		}
+	}
+}
+
+
+pantalone_contribution_law = {
+	type = international_organization
+	law_category = administrative
+	custom_tags = { }
+
+	potential = {
+		international_organization_type = international_organization_type:cap_econ_pantalonist_io
+	}
+	allow = {
+		international_organization:cap_econ_pantalonist_io = {
+			var:pantalone_authority >= 50
+		}
+	}
+	locked = { }
+
+	no_pantalone_contribution_policy = {
+		on_activate = {
+			international_organization:cap_econ_pantalonist_io = {
+				set_variable = { name = contribution_modifier value = 20 }
+			}
+		}
+		wants_this_policy_bias = {
+			subtract = {
+				desc = "POLICY_BASE_REASON_KEEP_POLICY"
+				value = 50
+			}
+		}
+	}
+
+	pantalone_contribution_policy_1 = {
+
+		on_activate = {
+			international_organization:cap_econ_pantalonist_io = {
+				change_variable = { name = pantalone_authority add = -50 }
+			}
+			international_organization:cap_econ_pantalonist_io = {
+				set_variable = { name = contribution_modifier value = 30 }
+			}
+		}
+		wants_propose_policy = {
+			add = {
+				desc = "DIPLOREASON_BASE"
+				value = 50
+			}
+		}
+		wants_this_policy_bias = {
+			add = {
+				desc = "POLICY_BASE_REASON_KEEP_POLICY"
+				value = 20
+			}
+		}
+	}
+
+	pantalone_contribution_policy_2 = {
+		on_activate = {
+			international_organization:cap_econ_pantalonist_io = {
+				change_variable = { name = pantalone_authority add = -50 }
+			}
+			international_organization:cap_econ_pantalonist_io = {
+				set_variable = { name = contribution_modifier value = 40 }
+			}
+		}
+		wants_propose_policy = {
+			add = {
+				desc = "DIPLOREASON_BASE"
+				value = 30
+			}
+		}
+		wants_this_policy_bias = {
+			add = {
+				desc = "POLICY_BASE_REASON_KEEP_POLICY"
+				value = 10
+			}
+		}
+	}
+
+	pantalone_contribution_policy_3 = {
+		on_activate = {
+			international_organization:cap_econ_pantalonist_io = {
+				change_variable = { name = pantalone_authority add = -50 }
+			}
+			international_organization:cap_econ_pantalonist_io = {
+				set_variable = { name = contribution_modifier value = 60 }
+			}
+		}
+		wants_propose_policy = {
+			add = {
+				desc = "DIPLOREASON_BASE"
+				value = 10
+			}
+		}
+		wants_this_policy_bias = {
+			subtract = {
+				desc = "POLICY_BASE_REASON_KEEP_POLICY"
+				value = 10
+			}
+		}
+	}
+
+	pantalone_contribution_policy_4 = {
+		on_activate = {
+			international_organization:cap_econ_pantalonist_io = {
+				change_variable = { name = pantalone_authority add = -50 }
+			}
+			international_organization:cap_econ_pantalonist_io = {
+				set_variable = { name = contribution_modifier value = 80 }
+			}
+		}
+		wants_propose_policy = {
+			subtract = {
+				desc = "DIPLOREASON_BASE"
+				value = 10
+			}
+		}
+		wants_this_policy_bias = {
+			subtract = {
+				desc = "POLICY_BASE_REASON_KEEP_POLICY"
+				value = 20
+			}
+		}
+	}
+
+	pantalone_contribution_policy_5 = {
+		on_activate = {
+			international_organization:cap_econ_pantalonist_io = {
+				change_variable = { name = pantalone_authority add = -50 }
+			}
+			international_organization:cap_econ_pantalonist_io = {
+				set_variable = { name = contribution_modifier value = 100 }
+			}
+		}
+		wants_propose_policy = {
+			subtract = {
+				desc = "DIPLOREASON_BASE"
+				value = 30
+			}
+		}
+		wants_this_policy_bias = {
+			subtract = {
+				desc = "POLICY_BASE_REASON_KEEP_POLICY"
+				value = 40
+			}
+		}
+	}
+}
