@@ -1,0 +1,186 @@
+﻿move_population_between_locations_religion = {
+	ability = adm
+	allow_multiple = yes
+
+	potential = {
+		is_rebel_country = no
+		num_locations > 2
+	}
+
+	allow = {
+		total_population >= 1
+	}
+
+	select_trigger = {
+		looking_for_a = location
+		source = actor
+		target_flag = target
+	name = "move_population_between_locations_religion_select_source"
+	none_available_msg_key = "move_population_between_locations_religion_no_sources"
+		column = {
+			data = name
+		}
+		column = {
+			data = population
+		}
+		enabled = {
+			location_population_percentage > 0.05
+            not = { has_variable = mvthem_move_pop_active }
+        }
+		map_color = define:NMapColors|MAP_COLOR_HIGH
+	}
+
+
+	select_trigger = {
+      looking_for_a = religion
+      target_flag = target_religion
+	name = "move_population_between_locations_select_religion"
+	none_available_msg_key = "move_population_between_locations_religion_no_religions"
+      column = { data = name }
+      visible = {
+          scope:target = {
+              religion_percentage = {
+                  religion = root        # “root” = candidate culture
+                  value > 0             # only show if present in the source
+              }
+          }
+      }
+  	}
+
+
+
+	select_trigger = {
+		looking_for_a = location
+		source = actor
+		target_flag = target_1
+	name = "move_population_between_locations_religion_select_destination"
+	none_available_msg_key = "move_population_between_locations_religion_no_destinations"
+		column = {
+			data = name
+		}
+		column = {
+			data = population
+		}
+		visible = {
+			not = { province_definition = scope:target.province_definition }
+		}
+		enabled = {
+			population >= 1
+			location_population_percentage < 1
+            not = { has_variable = mvthem_move_pop_active }
+        }
+		map_color = define:NMapColors|MAP_COLOR_HIGH
+	}
+
+	on_activate = {
+		scope:target ?= { }
+		scope:target_1 ?= { }
+		if = {
+			limit = {
+				exists = scope:target
+				exists = scope:target_1
+			}
+			scope:target = {
+				set_variable = { name = mvthem_move_pop_active value = 1 }
+			}
+			scope:target_1 = {
+				set_variable = { name = mvthem_move_pop_active value = 1 }
+			}
+			add_migration = {
+				owner = scope:actor
+				from_location = scope:target
+				to_location = scope:target_1
+				religion = scope:target_religion
+				amount = {
+					if = {
+						limit = { 
+							scope:target_1.population > 0
+							scope:target_1 = { has_variable = mvthem_move_pop_active }
+						}
+						value = mvthem_move_population_monthly_transfer
+						divide = 1000
+					}
+					else = {
+						value = 0
+					}
+				}
+				months = -1
+			}
+				scope:target = {
+					add_location_modifier = {
+						modifier = move_population_between_locations_penalty
+						years = -1
+						mode = add_and_extend
+					}
+				}
+				scope:target_1 = {
+					add_location_modifier = {
+						modifier = move_population_between_locations_penalty
+						years = -1
+						mode = add_and_extend
+					}
+				}
+		}
+	}
+
+	on_deactivate = {
+		if = {
+			limit = {
+				exists = scope:target
+				exists = scope:target_1
+			}
+			remove_migration = {
+				owner = scope:actor
+				from_location = scope:target
+				to_location = scope:target_1
+				religion = scope:target_religion
+
+			}
+			scope:target = {
+				remove_location_modifier = move_population_between_locations_penalty
+			}
+			scope:target_1 = {
+				remove_location_modifier = move_population_between_locations_penalty
+			}
+			scope:target = {
+				remove_variable = mvthem_move_pop_active
+			}
+			scope:target_1 = {
+                remove_variable = mvthem_move_pop_active
+			}
+		}
+	}
+
+	country_modifier = {
+	}
+
+	is_finished = {
+		trigger_if = {
+			limit = {
+				exists = scope:target
+				exists = scope:target_1
+			}
+			or = {
+				scope:target = {
+					location_population_percentage <= 0.05
+				}
+				scope:target = {
+      				religion_percentage = {
+          			religion ?= scope:target_religion
+          			value < 0.01
+     				}				
+  				}
+				
+				
+
+				scope:target_1 = {
+					location_population_percentage >= 1
+				}
+			}
+		}
+	}
+
+	map_marker = {
+		show_for_owner = yes
+	}
+}

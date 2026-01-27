@@ -73,8 +73,86 @@ cap_econ.30 = {
     option = {
         name = cap_econ.30.a
         scope:cap_econ_pacchetto ?= {
-            move_country = root
+            set_new_ruler = scope:cap_econ_pacchetto
+
         }
         set_variable = cap_econ_pacchetto_spawned
+    }
+}
+
+cap_econ.31 = {
+    type = country_event
+
+    title = cap_econ.31.title
+    desc = cap_econ.31.desc
+    illustration_tags = {
+        10 = interior
+        10 = happy
+    }
+
+    trigger = {
+       religion = religion:pantalonism
+    }
+
+    option = {
+        name = cap_econ.31.a
+        custom_tooltip = cap_econ.31.a.tt
+        add_gold = {
+            value = root.country_tax_base
+            multiply = 5
+        }
+    }
+    option = {
+        name = cap_econ.31.b
+        custom_tooltip = cap_econ.31.b.tt
+        add_stability = 10
+        add_research_progress = cap_econ_research_progress_gift
+    }
+}
+
+cap_econ.32 = {
+    type = country_event
+
+    title = cap_econ.32.title
+    desc = cap_econ.32.desc
+    illustration_tags = {
+        10 = interior
+        10 = happy
+    }
+
+    trigger = {
+       religion = religion:pantalonism
+    }
+
+    option = {
+        name = cap_econ.32.a
+        custom_tooltip = cap_econ.32.a.tt
+        add_gold_to_estate = {
+            estate_type = estate_type:burghers_estate
+            value = {
+                value = root.country_tax_base
+                multiply = 5
+            }
+        }
+    }
+    option = {
+        name = cap_econ.32.b
+        custom_tooltip = cap_econ.32.b.tt
+        add_gold_to_estate = {
+            estate_type = estate_type:burghers_estate
+            value = {
+                value = root.country_tax_base
+                multiply = 4
+            }
+        }
+        add_gold = root.country_tax_base
+    }
+    option = {
+        name = cap_econ.32.c
+        custom_tooltip = cap_econ.32.c.tt
+        add_country_modifier = {
+            modifier = cap_econ_pantalone_tax_gift
+            days = 365
+        }
     }
 }

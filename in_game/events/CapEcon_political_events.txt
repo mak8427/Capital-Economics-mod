@@ -131,7 +131,7 @@ cap_econ.11 = {
                     limit = {
                         is_rival_of = root
                         religion != religion:pantalonism
-                        any_owned_location = { is_town = yes }
+                        any_owned_location = { is_capital = yes }
                     }
                     save_scope_as = arrival
                 }
@@ -141,7 +141,7 @@ cap_econ.11 = {
                     limit = {
                         has_mutual_scripted_relation_of_type = relation_type:alliance
                         religion != religion:pantalonism
-                        any_owned_location = { is_town = yes }
+                        any_owned_location = { is_capital = yes }
                     }
                     save_scope_as = arrival
                 }

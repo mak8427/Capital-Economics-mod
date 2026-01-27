@@ -146,6 +146,93 @@ Mangiatoia_good = {
     }
 }
 
+Mangiatoia_foreign = {
+    is_foreign = yes
+    max_levels = 10
+
+    pop_type = burghers
+    important_for_AI = yes
+    AI_ignore_available_worker_flag = yes
+    lifts_fog_of_war = yes
+
+    can_close = no
+    country_potential = {
+        custom_tooltip = {
+            text = not_buildable_only_situation
+            always = no
+        }
+    }
+    allow = {
+        owner = {
+            within_diplomatic_range = scope:actor
+            OR = {
+                giving_scripted_relation = {
+                    type = relation_type:cap_econ_extraction_rights
+                    target = scope:actor
+                }
+                AND = {
+                    is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    scope:actor = {
+                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
+                    }
+                }
+            }
+        }
+    }
+    can_destroy = {
+        custom_tooltip = {
+            text = pantalone_destruction_will
+            owner = {
+                OR = {
+                    has_policy = jesuits_allowed
+                    religion != religion:catholic
+                }
+            }
+        }
+    }
+
+    category = religious_category
+
+    employment_size = large_burgher_employment
+    conversion_religion = pantalonism
+
+    rural_settlement = no
+    town = yes
+    city = yes
+    expensive = yes
+
+    build_time = trade_post_build_time
+    price = p_building_age_3_discovery
+
+    unique_production_methods = {
+        mangiatoia = {
+            paper = 0.1
+            produced = goods_gold
+            output = 1
+            category = building_maintenance
+        }
+    }
+
+    modifier = {
+        local_burghers_estate_power = 2
+        monthly_burghers_estate_rebel_growth = 0.1
+        local_pop_join_rebel_threshold = 0.2
+        local_unrest = 0.33
+        local_burghers_desired_pop = 1
+        local_migration_attraction = 0.1
+        local_migration_speed = 0.1
+        scaled_gold_to_building_owner = 0.1
+        building_missionary_effort = 0.1
+
+    }
+
+    capital_country_modifier = {
+        global_burghers_estate_power = 0.1
+        minting_income_factor = 0.1
+        monthly_towards_plutocracy = 0.05
+    }
+}
+
 
 Pantalonism_assembly = {
     is_foreign = yes
@@ -200,6 +287,13 @@ Pantalonism_assembly = {
             output = 0.6
             category = building_maintenance
         }
+        cloth_production = {
+            wool = 0.2
+            produced =cloth
+            output = 0.5
+            category = building_maintenance
+        }
+
     }
 
     modifier = {

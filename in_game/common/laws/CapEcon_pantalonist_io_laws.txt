@@ -54,7 +54,7 @@
 
 pantalone_production_law = {
 	type = international_organization
-	law_category = administrative
+	law_category = socioeconomic
 	custom_tags = { forbids_no_policy }
 	potential = {
 		international_organization_type = international_organization_type:cap_econ_pantalonist_io
@@ -246,6 +246,173 @@ pantalone_contribution_law = {
 	}
 }
 
+pantalone_estate_contribution_law = {
+	type = international_organization
+	law_category = administrative
+	custom_tags = { }
+
+	potential = {
+		international_organization_type = international_organization_type:cap_econ_pantalonist_io
+	}
+	allow = {
+		international_organization:cap_econ_pantalonist_io = {
+			var:pantalone_authority >= 50
+		}
+	}
+	locked = { }
+
+	no_pantalone_estate_contribution_policy = {
+		on_activate = {
+			international_organization:cap_econ_pantalonist_io = {
+				set_variable = { name = estate_contribution_modifier value = 10 }
+			}
+		}
+		wants_this_policy_bias = {
+			subtract = {
+				desc = "POLICY_BASE_REASON_KEEP_POLICY"
+				value = 50
+			}
+		}
+	}
+
+	pantalone_estate_contribution_policy_1 = {
+		on_activate = {
+			international_organization:cap_econ_pantalonist_io = {
+				change_variable = { name = pantalone_authority add = -50 }
+			}
+			international_organization:cap_econ_pantalonist_io = {
+				set_variable = { name = estate_contribution_modifier value = 20 }
+			}
+		}
+		wants_propose_policy = {
+			add = {
+				desc = "DIPLOREASON_BASE"
+				value = 40
+			}
+		}
+		wants_this_policy_bias = {
+			add = {
+				desc = "POLICY_BASE_REASON_KEEP_POLICY"
+				value = 10
+			}
+		}
+	}
+
+	pantalone_estate_contribution_policy_2 = {
+		on_activate = {
+			international_organization:cap_econ_pantalonist_io = {
+				change_variable = { name = pantalone_authority add = -50 }
+			}
+			international_organization:cap_econ_pantalonist_io = {
+				set_variable = { name = estate_contribution_modifier value = 30 }
+			}
+		}
+		wants_propose_policy = {
+			add = {
+				desc = "DIPLOREASON_BASE"
+				value = 25
+			}
+		}
+		wants_this_policy_bias = {
+			add = {
+				desc = "POLICY_BASE_REASON_KEEP_POLICY"
+				value = 0
+			}
+		}
+	}
+
+	pantalone_estate_contribution_policy_3 = {
+		on_activate = {
+			international_organization:cap_econ_pantalonist_io = {
+				change_variable = { name = pantalone_authority add = -50 }
+			}
+			international_organization:cap_econ_pantalonist_io = {
+				set_variable = { name = estate_contribution_modifier value = 40 }
+			}
+		}
+		wants_propose_policy = {
+			add = {
+				desc = "DIPLOREASON_BASE"
+				value = 10
+			}
+		}
+		wants_this_policy_bias = {
+			subtract = {
+				desc = "POLICY_BASE_REASON_KEEP_POLICY"
+				value = 10
+			}
+		}
+	}
+
+	pantalone_estate_contribution_policy_4 = {
+		on_activate = {
+			international_organization:cap_econ_pantalonist_io = {
+				change_variable = { name = pantalone_authority add = -50 }
+			}
+			international_organization:cap_econ_pantalonist_io = {
+				set_variable = { name = estate_contribution_modifier value = 50 }
+			}
+		}
+		wants_propose_policy = {
+			subtract = {
+				desc = "DIPLOREASON_BASE"
+				value = 10
+			}
+		}
+		wants_this_policy_bias = {
+			subtract = {
+				desc = "POLICY_BASE_REASON_KEEP_POLICY"
+				value = 20
+			}
+		}
+	}
+}
+
+pantalone_leader_payment_law = {
+	type = international_organization
+	law_category = socioeconomic
+	custom_tags = { forbids_no_policy }
+
+	potential = {
+		international_organization_type = international_organization_type:cap_econ_pantalonist_io
+	}
+	allow = {
+		international_organization:cap_econ_pantalonist_io = {
+			var:pantalone_authority >= 10
+		}
+	}
+	locked = { }
+
+	pantalone_leader_exempt_policy = {
+		wants_this_policy_bias = {
+			add = {
+				desc = "POLICY_BASE_REASON_KEEP_POLICY"
+				value = 30
+			}
+		}
+	}
+
+	pantalone_leader_pays_policy = {
+		on_activate = {
+			international_organization:cap_econ_pantalonist_io = {
+				change_variable = { name = pantalone_authority add = -10 }
+			}
+		}
+		wants_propose_policy = {
+			add = {
+				desc = "DIPLOREASON_BASE"
+				value = 10
+			}
+		}
+		wants_this_policy_bias = {
+			subtract = {
+				desc = "POLICY_BASE_REASON_KEEP_POLICY"
+				value = 20
+			}
+		}
+	}
+}
+
 pantalone_redistribution_law = {
 	type = international_organization
 	law_category = administrative
@@ -300,6 +467,84 @@ pantalone_redistribution_law = {
 				desc = "POLICY_BASE_REASON_KEEP_POLICY"
 				value = 0
 			}
+		}
+	}
+}
+
+pantalone_defense_law = {
+	type = international_organization
+	law_category = military
+	custom_tags = { }
+	potential = {
+		international_organization_type = international_organization_type:cap_econ_pantalonist_io
+	}
+	allow = { always = yes }
+	locked = { }
+
+	no_pantalone_defense_policy = {
+		wants_this_policy_bias = {
+			subtract = {
+				desc = "POLICY_BASE_REASON_KEEP_POLICY"
+				value = 20
+			}
+		}
+	}
+
+	pantalone_defense_manual_policy = {
+		diplomatic_capacity_cost = possible_defence_upkeep_cost
+		join_defensive_wars_can_call = {
+			custom_tooltip = {
+				text = JOIN_WARS_DEFAULT_REASON
+				always = yes
+			}
+		}
+		wants_this_policy_bias = {
+			add = io_members_and_potential_members_opinion_value
+			add = {
+				desc = "NEEDS_ALLIES_AGAINST_STRONG_RIVALS_AND_NEIGHBOURS"
+				value = country_needs_allies_value
+				max = 30
+				min = 0.5
+			}
+		}
+		wants_propose_policy = {
+			add = {
+				desc = "DIPLOREASON_BASE"
+				value = 20
+			}
+		}
+	}
+
+	pantalone_defense_auto_policy = {
+		diplomatic_capacity_cost = automatic_defence_upkeep_cost
+		join_defensive_wars_auto_call = {
+			custom_tooltip = {
+				text = JOIN_WARS_DEFAULT_REASON
+				always = yes
+			}
+		}
+		wants_this_policy_bias = {
+			add = {
+				desc = "DIPLOREASON_BASE"
+				value = -20
+			}
+			add = {
+				desc = "OPINION_OF_OTHER_MEMBERS"
+				value = io_members_and_potential_members_opinion_value
+				multiply = 1.2
+				min = -100
+				max = 100
+			}
+            add = {
+                desc = "NEEDS_ALLIES_AGAINST_STRONG_RIVALS_AND_NEIGHBOURS"
+                value = country_needs_allies_value
+				multiply = 1.2
+                max = 30
+                min = 0.5
+            }
+		}
+		wants_propose_policy = {
+			value = 0
 		}
 	}
 }

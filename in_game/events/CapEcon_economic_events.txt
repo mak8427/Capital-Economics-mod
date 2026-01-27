@@ -198,6 +198,166 @@ cap_econ.7 = {
     }
 }
 
+cap_econ.33 = {
+    type = country_event
+
+    title = cap_econ.33.title
+    desc = cap_econ.33.desc
+    illustration_tags = {
+        10 = interior
+        10 = happy
+    }
+
+    trigger = {
+        receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
+        any_owned_location = { OR = { is_town = yes is_city = yes } }
+    }
+
+    option = {
+        name = cap_econ.33.a
+        custom_tooltip = cap_econ.33.a.tt
+        random_owned_location = {
+            limit = { OR = { is_town = yes is_city = yes } }
+            change_building_level_in_location = {
+                building = building_type:Mangiatoia_good
+                value = 1
+            }
+        }
+        random_owned_location = {
+            limit = { OR = { is_town = yes is_city = yes } }
+            change_building_level_in_location = {
+                building = building_type:Mangiatoia_good
+                value = 1
+            }
+        }
+        random_owned_location = {
+            limit = { OR = { is_town = yes is_city = yes } }
+            change_building_level_in_location = {
+                building = building_type:Mangiatoia_good
+                value = 1
+            }
+        }
+    }
+    option = {
+        name = cap_econ.33.b
+        custom_tooltip = cap_econ.33.b.tt
+        add_country_modifier = {
+            modifier = cap_econ_cabinet_boost
+            years = 1
+        }
+    }
+}
+
+cap_econ.34 = {
+    type = country_event
+
+    title = cap_econ.34.title
+    desc = cap_econ.34.desc
+    illustration_tags = {
+        10 = interior
+        10 = happy
+    }
+
+    trigger = {
+        receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
+        any_owned_location = { OR = { is_town = yes is_city = yes } }
+    }
+
+    option = {
+        name = cap_econ.34.a
+        custom_tooltip = cap_econ.34.a.tt
+        random_owned_location = {
+            limit = { OR = { is_town = yes is_city = yes } }
+            add_pop = {
+                culture = root.culture
+                religion = root.religion
+                type = pop_type:laborers
+                size = {
+                    add = root.country_tax_base
+                    multiply = 0.05
+                    min = 0.5
+                }
+            }
+        }
+    }
+    option = {
+        name = cap_econ.34.b
+        custom_tooltip = cap_econ.34.b.tt
+        add_country_modifier = {
+            modifier = cap_econ_diplomatic_reputation_boost
+            years = 1
+        }
+    }
+}
+
+cap_econ.35 = {
+    type = country_event
+
+    title = cap_econ.35.title
+    desc = cap_econ.35.desc
+    illustration_tags = {
+        10 = interior
+        10 = happy
+    }
+
+    trigger = {
+        receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
+        any_owned_location = { OR = { is_town = yes is_city = yes } }
+    }
+
+    option = {
+        name = cap_econ.35.a
+        custom_tooltip = cap_econ.35.a.tt
+        random_owned_location = {
+            limit = { OR = { is_town = yes is_city = yes } }
+            add_location_modifier = {
+                modifier = cap_econ_production_efficiency_boost
+                years = 2
+            }
+        }
+    }
+    option = {
+        name = cap_econ.35.b
+        custom_tooltip = cap_econ.35.b.tt
+        add_stability = 1
+        add_gold = root.country_tax_base
+    }
+}
+
+cap_econ.36 = {
+    type = country_event
+
+    title = cap_econ.36.title
+    desc = cap_econ.36.desc
+    illustration_tags = {
+        10 = interior
+        10 = happy
+    }
+
+    trigger = {
+        receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
+        any_owned_location = { OR = { is_town = yes is_city = yes is_rural_settlement = yes } }
+    }
+
+    option = {
+        name = cap_econ.36.a
+        custom_tooltip = cap_econ.36.a.tt
+        random_owned_location = {
+            add_location_modifier = {
+                modifier = cap_econ_rgo_expansion
+            }
+        }
+    }
+    option = {
+        name = cap_econ.36.b
+        custom_tooltip = cap_econ.36.b.tt
+        add_country_modifier = {
+            modifier = cap_econ_conversion_drive
+            years = 1
+        }
+    }
+}
+
 cap_econ.8 = {
     type = country_event
 

@@ -8,7 +8,8 @@
 
     religious_aspects = 3
     has_religious_influence = yes
-
+    has_cardinals = yes
+    has_religious_head = yes
 
     definition_modifier = {
         global_burghers_estate_power = 0.5
@@ -19,6 +20,7 @@
         global_population_growth = 0.01
         monthly_religious_influence = 0.1
         maximum_religious_influence = 400
+        global_pop_conversion_speed = 0.02
     }
 
     tithe = 0.02

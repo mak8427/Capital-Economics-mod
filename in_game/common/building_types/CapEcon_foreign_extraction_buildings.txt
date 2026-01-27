@@ -1575,6 +1575,7 @@ corporate_millet_farm = {
     build_time = rural_build_time
 
     possible_production_methods = {
+
         cap_econ_millet_farm_maintenance
     }
 

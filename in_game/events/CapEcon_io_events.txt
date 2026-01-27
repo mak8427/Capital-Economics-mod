@@ -1,0 +1,43 @@
+﻿namespace = cap_econ_io
+
+# Hidden yearly check to create/join the Pantalonist IO for eligible countries.
+cap_econ_io.1 = {
+    type = country_event
+    hidden = yes
+
+    trigger = {
+        religion = religion:pantalonism
+        NOT = { is_member_of_international_organization = international_organization:cap_econ_pantalonist_io }
+    }
+
+    immediate = {
+        save_scope_as = pantalone_joiner
+        if = {
+            limit = { NOT = { exists = international_organization:cap_econ_pantalonist_io } }
+            create_international_organization = {
+                type = international_organization_type:cap_econ_pantalonist_io
+                hidden_effect = {
+                    add_country_to_international_organization = scope:pantalone_joiner
+                    if = {
+                        limit = { exists = c:BLG c:BLG = { religion = religion:pantalonism } }
+                        set_leader_country = c:BLG
+                    }
+                    else = { set_leader_country = scope:pantalone_joiner }
+                }
+            }
+        }
+        else = {
+            international_organization:cap_econ_pantalonist_io = {
+                add_country_to_international_organization_no_update = scope:pantalone_joiner
+                if = {
+                    limit = { international_organization_has_leader = no }
+                    if = {
+                        limit = { exists = c:BLG c:BLG = { religion = religion:pantalonism } }
+                        set_leader_country = c:BLG
+                    }
+                    else = { set_leader_country = scope:pantalone_joiner }
+                }
+            }
+        }
+    }
+}

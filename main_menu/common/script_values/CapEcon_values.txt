@@ -1,0 +1,2 @@
+# CapEcon script values.
+cap_econ_research_progress_gift = 50

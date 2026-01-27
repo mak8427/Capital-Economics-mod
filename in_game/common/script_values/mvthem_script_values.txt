@@ -1,0 +1,30 @@
+# Script values for Move Them cabinet action
+mvthem_move_population_monthly_transfer = {
+	if = {
+		limit = {
+			scope:target_1 = { has_variable = mvthem_move_pop_active }
+		}
+		value = scope:target_1.population
+		multiply = 5
+		if = {
+			limit = { exists = scope:cabinet }
+			add = {
+				value = scope:target_1.population
+				multiply = 5
+				multiply = {
+					value = "scope:cabinet.effective_skill" 
+					 
+				}
+			}
+		} 
+		max = 1000
+		min = 100
+	}
+	else = {
+		value = 0
+	}
+}
+
+mvthem_move_population_monthly_transfer_display = {
+	value = mvthem_move_population_monthly_transfer
+}

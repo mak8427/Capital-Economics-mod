@@ -106,7 +106,6 @@ cap_econ_fund_mangiatoia = {
     effect = {
         situation:rise_of_pantalonism.var:target_country ?= {
             random_owned_location = {
-                limit = { OR = { is_town = yes is_city = yes } }
                 construct_building = {
                     building_type = building_type:Pantalonism_assembly
                     owner = scope:actor
@@ -124,12 +123,68 @@ cap_econ_fund_mangiatoia = {
             add = 50
         }
         if = {
+            limit = { scope:actor = { gold < 200 } }
+            subtract = 50
+        }
+    }
+}
+
+cap_econ_fund_mangiatoia_foreign = {
+    type = situation
+
+    allow = {
+        is_situation_active = situation:rise_of_pantalonism
+        scope:actor = {
+            religion = religion:pantalonism
+        }
+    }
+
+    select_trigger = {
+        looking_for_a = situation
+        target_flag = recipient
+        name = "choose_situation"
+        column = { data = name }
+        visible = {
+            situation:rise_of_pantalonism = this
+            situation_is_active = yes
+            scope:actor = { religion = religion:pantalonism }
+        }
+    }
+
+    ai_tick = monthly
+    ai_tick_frequency = 6
+    show_message_to_target = yes
+    automation_tick = never
+    automation_tick_frequency = 12
+
+    effect = {
+        situation:rise_of_pantalonism.var:target_country ?= {
+            random_owned_location = {
+                limit = {
+                    OR = { is_town = yes is_city = yes }
+                    "location_building_level(building_type:Mangiatoia_foreign)" < 10
+                }
+                construct_building = {
+                    building_type = building_type:Mangiatoia_foreign
+                    owner = scope:actor
+                }
+            }
+        }
+    }
+
+    ai_will_do = {
+        add = 10
+        if = {
+            limit = { scope:actor = { gold > 500 } }
+            add = 50
+        }
+        if = {
             limit = { scope:actor = { gold > 1000 } }
             add = 1000
         }
         if = {
-            limit = { scope:actor = { gold < 50 } }
-            subtract = 1000
+            limit = { scope:actor = { gold < 500 } }
+            subtract = 100
         }
     }
 }

@@ -4,7 +4,7 @@
 	expel_members_who_are_targets_of_other_members = no
 
 	has_leader_country = yes
-	leader_type = country
+	leader_type = character
 	leader_change_trigger_type = none
 	leader_change_method = vote
 	disband_if_no_leader = no
@@ -17,19 +17,25 @@
 		pantalone_stability_law = no_pantalone_stability_policy
 		pantalone_production_law = no_pantalone_production_policy
 		pantalone_contribution_law = no_pantalone_contribution_policy
+		pantalone_estate_contribution_law = no_pantalone_estate_contribution_policy
+		pantalone_leader_payment_law = pantalone_leader_exempt_policy
 		pantalone_redistribution_law = pantalone_dividends_leader_policy
+		pantalone_defense_law = no_pantalone_defense_policy
 	}
 	on_creation = {
 		international_organization_unlock_law_effect = { type = pantalone_stability_law }
 		international_organization_unlock_law_effect = { type = pantalone_production_law }
 		international_organization_unlock_law_effect = { type = pantalone_contribution_law }
+		international_organization_unlock_law_effect = { type = pantalone_estate_contribution_law }
+		international_organization_unlock_law_effect = { type = pantalone_leader_payment_law }
 		international_organization_unlock_law_effect = { type = pantalone_redistribution_law }
+		international_organization_unlock_law_effect = { type = pantalone_defense_law }
 	}
 
 
 	leader = {
 		leader_country ?= {
-			add_to_list = leaders
+			ruler ?= { add_to_list = leaders }
 		}
 	}
 
@@ -67,6 +73,10 @@
 		contribution_modifier = {
 			format = "CAP_ECON_DIVIDENDS_FORMAT"
 			start = 20
+		}
+		estate_contribution_modifier = {
+			format = "CAP_ECON_DIVIDENDS_FORMAT"
+			start = 10
 		}
 	}
 

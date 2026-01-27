@@ -36,7 +36,7 @@ rise_of_pantalonism = {
                         religion = religion:pantalonism
                         value > 0.85
                     }
-                    NOT = {any_owned_location = { is_town = yes} }
+                    NOT = {any_owned_location = { is_capital = yes } }
                     # If there is a trigger for building-based countries, add it here:
                     # is_building_based_country = yes
                 }
@@ -191,6 +191,10 @@ rise_of_pantalonism = {
                 name = cap_econ_mangiatoia_levels
                 value = total_effective_building_levels:Mangiatoia
             }
+            change_variable = {
+                name = cap_econ_mangiatoia_levels
+                add = total_effective_building_levels:Mangiatoia_foreign
+            }
             if = {
                 limit = {
                     situation:rise_of_pantalonism = {
@@ -312,9 +316,9 @@ rise_of_pantalonism = {
 
     # When the situation ends, complete the conversion and government change.
     on_ending = {
-        var:target_country ?= {
+        scope:target_country ?= {
             change_religion = religion:pantalonism
-            change_religion_for_ruler_and_family = { country = this religion = religion:pantalonism }
+            change_religion_for_ruler_and_family = { country = scope:target_country religion = religion:pantalonism }
             remove_current_major_government_reform = yes
             change_government_type = government_type:republic
             unlock_government_reform_effect = { type = pantalone_republic }
@@ -398,7 +402,7 @@ rise_of_pantalonism = {
 
     # Cleanup all temporary variables so reruns start clean.
     on_ended = {
-        var:target_country ?= {
+        scope:target_country ?= {
             remove_variable = cap_econ_pantalonism_situation_active
             remove_variable = cap_econ_mangiatoia_levels
         }

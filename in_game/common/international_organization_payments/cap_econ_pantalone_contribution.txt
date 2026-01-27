@@ -1,12 +1,37 @@
 ﻿pantalone_contribution = {
 	get_payer_list = {
-		every_international_organization_member = {
+		if = {
 			limit = {
-				NOT = { is_leader_of_international_organization = root }
+				international_organization_has_policy = policy:pantalone_leader_pays_policy
 			}
-			add_to_local_variable_list = {
-				name = payers
-				target = this
+			every_international_organization_member = {
+				add_to_local_variable_list = {
+					name = payers
+					target = this
+				}
+				every_estate = {
+					add_to_local_variable_list = {
+						name = payers
+						target = this
+					}
+				}
+			}
+		}
+		else = {
+			every_international_organization_member = {
+				limit = {
+					NOT = { is_leader_of_international_organization = root }
+				}
+				add_to_local_variable_list = {
+					name = payers
+					target = this
+				}
+				every_estate = {
+					add_to_local_variable_list = {
+						name = payers
+						target = this
+					}
+				}
 			}
 		}
 	}
@@ -56,23 +81,80 @@
 	price_multiplier = {
 		add = {
 			desc = "game_concept_monthly_income_trade_and_tax"
-			every_international_organization_member = {
+			if = {
 				limit = {
-					NOT = { is_leader_of_international_organization = root }
-					monthly_balance > 0
+					international_organization_has_policy = policy:pantalone_leader_pays_policy
 				}
-				add = monthly_balance
+				every_international_organization_member = {
+					limit = { monthly_balance > 0 }
+					add = monthly_balance
+				}
+			}
+			else = {
+				every_international_organization_member = {
+					limit = {
+						NOT = { is_leader_of_international_organization = root }
+						monthly_balance > 0
+					}
+					add = monthly_balance
+				}
 			}
 			multiply = var:contribution_modifier
+			multiply = 0.01
+		}
+		add = {
+			desc = "pantalone_contribution_estates"
+			if = {
+				limit = {
+					international_organization_has_policy = policy:pantalone_leader_pays_policy
+				}
+				every_international_organization_member = {
+					add = {
+						every_estate = {
+							add = estate_taxable_income
+						}
+					}
+				}
+			}
+			else = {
+				every_international_organization_member = {
+					limit = {
+						NOT = { is_leader_of_international_organization = root }
+					}
+					add = {
+						every_estate = {
+							add = estate_taxable_income
+						}
+					}
+				}
+			}
+			multiply = var:estate_contribution_modifier
 			multiply = 0.01
 		}
 	}
 	proportion_for_payer = {
 		if = {
-			limit = { monthly_balance > 0 }
+			limit = { exists = owner }
 			add = {
-				desc = "game_concept_monthly_income_trade_and_tax"
-				value = monthly_balance
+				desc = "pantalone_contribution_estates"
+				value = estate_taxable_income
+			}
+			multiply = {
+				value = scope:recipient.var:estate_contribution_modifier
+				multiply = 0.01
+			}
+		}
+		else = {
+			if = {
+				limit = { monthly_balance > 0 }
+				add = {
+					desc = "game_concept_monthly_income_trade_and_tax"
+					value = monthly_balance
+				}
+				multiply = {
+					value = scope:recipient.var:contribution_modifier
+					multiply = 0.01
+				}
 			}
 		}
 	}

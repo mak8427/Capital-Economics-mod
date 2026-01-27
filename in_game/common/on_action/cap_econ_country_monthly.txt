@@ -10,6 +10,12 @@
     random_events = {
         chance_to_happen = 10
         30 = cap_econ.11
+        20 = cap_econ.31
+        20 =  cap_econ.32
+        15 = cap_econ.33
+        15 = cap_econ.34
+        15 = cap_econ.35
+        15 = cap_econ.36
     }
 }
 
@@ -85,42 +91,8 @@ monthly_country_pulse_capecon_2 = {
 yearly_country_pulse_capecon_io = {
     trigger = {
         religion = religion:pantalonism
-        NOT = { is_member_of_international_organization = international_organization:cap_econ_pantalonist_io }
     }
-    effect = {
-        if = {
-            limit = { NOT = { exists = international_organization:cap_econ_pantalonist_io } }
-            create_international_organization = {
-                type = international_organization_type:cap_econ_pantalonist_io
-                hidden_effect = {
-                    add_country_to_international_organization = prev
-                    if = {
-                        limit = { exists = c:BLG c:BLG = { religion = religion:pantalonism } }
-                        set_leader_country = c:BLG
-                    }
-                    else = { set_leader_country = prev }
-                }
-            }
-        }
-        else = {
-            if = {
-                limit = {
-                    NOT = {
-                        is_member_of_international_organization = international_organization:cap_econ_pantalonist_io
-                    }
-                }
-                international_organization:cap_econ_pantalonist_io = {
-                    add_country_to_international_organization_no_update = prev
-                    if = {
-                        limit = { international_organization_has_leader = no }
-                        if = {
-                            limit = { exists = c:BLG c:BLG = { religion = religion:pantalonism } }
-                            set_leader_country = c:BLG
-                        }
-                        else = { set_leader_country = prev }
-                    }
-                }
-            }
-        }
+    events = {
+        cap_econ_io.1
     }
 }
