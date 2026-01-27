@@ -1,0 +1,114 @@
+namespace = cap_econ_corp
+
+cap_econ_corp.1 = {
+    type = country_event
+    hidden = yes
+
+    trigger = {
+        is_subject_type = international_company
+    }
+
+    immediate = {
+        overlord ?= { save_scope_as = cap_econ_corp_overlord }
+        if = {
+            limit = {
+                scope:cap_econ_corp_overlord = {
+                    within_diplomatic_range = root
+                }
+            }
+            set_variable = { name = cap_econ_corporate_build_cost value = 500 }
+            while = {
+                limit = { gold >= var:cap_econ_corporate_build_cost }
+                count = 100
+                if = {
+                    limit = { NOT = { has_variable = cap_econ_corp_first_built } }
+                    set_variable = { name = cap_econ_corp_first_built value = 1 }
+                    save_scope_as = cap_econ_corp_target
+                }
+                else = {
+                    random_country = {
+                        limit = {
+                            religion = religion:pantalonism
+                            within_diplomatic_range = root
+                            NOT = { this = scope:cap_econ_corp_overlord }
+                        }
+                        save_scope_as = cap_econ_corp_target
+                    }
+                    scope:cap_econ_corp_target ?= { }
+                    else = {
+                        scope:cap_econ_corp_overlord ?= { save_scope_as = cap_econ_corp_target }
+                    }
+                }
+                scope:cap_econ_corp_target ?= {
+                    cap_econ_corporate_build_once = yes
+                }
+            }
+            remove_variable = cap_econ_corporate_build_cost
+            remove_variable = cap_econ_corp_first_built
+        }
+    }
+
+    option = {
+        name = cap_econ_corp.1.a
+    }
+}
+
+cap_econ_corp.2 = {
+    type = country_event
+    hidden = yes
+
+    trigger = {
+        is_subject_type = international_company
+    }
+
+    immediate = {
+        overlord ?= { save_scope_as = cap_econ_corp_overlord }
+        if = {
+            limit = {
+                scope:cap_econ_corp_overlord = {
+                    within_diplomatic_range = root
+                    giving_scripted_relation = {
+                        type = relation_type:cap_econ_extraction_rights
+                        target = root
+                    }
+                }
+            }
+            set_variable = { name = cap_econ_corporate_build_cost value = 500 }
+            while = {
+                limit = { gold >= var:cap_econ_corporate_build_cost }
+                count = 100
+                if = {
+                    limit = { NOT = { has_variable = cap_econ_corp_first_built } }
+                    set_variable = { name = cap_econ_corp_first_built value = 1 }
+                    save_scope_as = cap_econ_corp_target
+                }
+                else = {
+                    random_country = {
+                        limit = {
+                            giving_scripted_relation = {
+                                type = relation_type:cap_econ_extraction_rights
+                                target = root
+                            }
+                            within_diplomatic_range = root
+                            NOT = { this = scope:cap_econ_corp_overlord }
+                        }
+                        save_scope_as = cap_econ_corp_target
+                    }
+                    scope:cap_econ_corp_target ?= { }
+                    else = {
+                        scope:cap_econ_corp_overlord ?= { save_scope_as = cap_econ_corp_target }
+                    }
+                }
+                scope:cap_econ_corp_target ?= {
+                    cap_econ_corporate_build_once = yes
+                }
+            }
+            remove_variable = cap_econ_corporate_build_cost
+            remove_variable = cap_econ_corp_first_built
+        }
+    }
+
+    option = {
+        name = cap_econ_corp.1.a
+    }
+}

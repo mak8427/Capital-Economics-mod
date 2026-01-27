@@ -209,7 +209,7 @@ cap_econ.33 = {
     }
 
     trigger = {
-        receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
+        religion = religion:pantalonism
         any_owned_location = { OR = { is_town = yes is_city = yes } }
     }
 
@@ -259,7 +259,7 @@ cap_econ.34 = {
     }
 
     trigger = {
-        receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
+        religion = religion:pantalonism
         any_owned_location = { OR = { is_town = yes is_city = yes } }
     }
 
@@ -301,7 +301,7 @@ cap_econ.35 = {
     }
 
     trigger = {
-        receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
+        religion = religion:pantalonism
         any_owned_location = { OR = { is_town = yes is_city = yes } }
     }
 
@@ -335,7 +335,7 @@ cap_econ.36 = {
     }
 
     trigger = {
-        receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
+        religion = religion:pantalonism
         any_owned_location = { OR = { is_town = yes is_city = yes is_rural_settlement = yes } }
     }
 
@@ -370,7 +370,7 @@ cap_econ.8 = {
 
     trigger = {
         AND = {
-            receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
+        religion = religion:pantalonism
             any_owned_location = {
                 is_rural_settlement = yes
             }
@@ -400,7 +400,9 @@ cap_econ.9 = {
 
     trigger = {
         AND = {
+            OR = {         religion = religion:pantalonism
             receiving_scripted_relation_of_type = relation_type:cap_econ_send_pantalone
+ }
             any_owned_location = {
                 is_town = yes
             }

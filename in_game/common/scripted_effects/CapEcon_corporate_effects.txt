@@ -1,0 +1,816 @@
+cap_econ_corporate_build_once = {
+    scope:cap_econ_corp_target ?= {
+        if = {
+            limit = {
+                any_owned_location = {
+                    limit = {
+                        OR = {
+                    AND = {
+                        raw_material = goods:elephants
+                        "location_building_level(building_type:corporate_elephant_ranch)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:goods_gold
+                        "location_building_level(building_type:corporate_gold_mine)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:silver
+                        "location_building_level(building_type:corporate_silver_mine)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:chili
+                        "location_building_level(building_type:corporate_chili_plantation)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:cloves
+                        "location_building_level(building_type:corporate_cloves_plantation)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:marble
+                        "location_building_level(building_type:corporate_marble_quarry)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:pepper
+                        "location_building_level(building_type:corporate_pepper_plantation)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:saffron
+                        "location_building_level(building_type:corporate_saffron_fields)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:amber
+                        "location_building_level(building_type:corporate_amber_collectors)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:cocoa
+                        "location_building_level(building_type:corporate_cocoa_plantation)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:dyes
+                        "location_building_level(building_type:corporate_dyes_plantation)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:gems
+                        "location_building_level(building_type:corporate_gems_mine)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:ivory
+                        "location_building_level(building_type:corporate_elephant_hunting_grounds)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:pearls
+                        "location_building_level(building_type:corporate_pearl_divers)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:salt
+                        "location_building_level(building_type:corporate_salt_collector)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:silk
+                        "location_building_level(building_type:corporate_silk_farm)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:alum
+                        "location_building_level(building_type:corporate_alum_mine)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:coffee
+                        "location_building_level(building_type:corporate_coffee_plantation)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:copper
+                        "location_building_level(building_type:corporate_copper_mine)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:horses
+                        "location_building_level(building_type:corporate_horse_breeders)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:iron
+                        "location_building_level(building_type:corporate_iron_mine)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:mercury
+                        "location_building_level(building_type:corporate_mercury_mine)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:sugar
+                        "location_building_level(building_type:corporate_sugar_plantation)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:tea
+                        "location_building_level(building_type:corporate_tea_plantation)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:tobacco
+                        "location_building_level(building_type:corporate_tobacco_plantation)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:incense
+                        "location_building_level(building_type:corporate_incense_grove)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:wool
+                        "location_building_level(building_type:corporate_sheep_farms)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:beeswax
+                        "location_building_level(building_type:corporate_apiary)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:coal
+                        "location_building_level(building_type:corporate_charcoal_maker)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:fiber_crops
+                        "location_building_level(building_type:corporate_fiber_crops_farm)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:fur
+                        "location_building_level(building_type:corporate_fur_trappers)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:lead
+                        "location_building_level(building_type:corporate_lead_mine)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:saltpeter
+                        "location_building_level(building_type:corporate_saltpeter_mine)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:tin
+                        "location_building_level(building_type:corporate_tin_mine)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:wine
+                        "location_building_level(building_type:corporate_wine_vineyard)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:livestock
+                        "location_building_level(building_type:corporate_livestock_ranch)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:lumber
+                        "location_building_level(building_type:corporate_lumber_mill)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:cotton
+                        "location_building_level(building_type:corporate_cotton_plantation)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:fish
+                        "location_building_level(building_type:corporate_fishing_village)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:fruit
+                        "location_building_level(building_type:corporate_fruit_orchard)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:legumes
+                        "location_building_level(building_type:corporate_legumes_farm)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:maize
+                        "location_building_level(building_type:corporate_maize_farm)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:medicaments
+                        "location_building_level(building_type:corporate_medicinal_gatherers)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:millet
+                        "location_building_level(building_type:corporate_millet_farm)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:olives
+                        "location_building_level(building_type:corporate_olive_grove)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:potato
+                        "location_building_level(building_type:corporate_potato_farm)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:rice
+                        "location_building_level(building_type:corporate_rice_paddy)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:stone
+                        "location_building_level(building_type:corporate_stone_quarry)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:wheat
+                        "location_building_level(building_type:corporate_wheat_farm)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:wild_game
+                        "location_building_level(building_type:corporate_wild_game_hunting_grounds)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:clay
+                        "location_building_level(building_type:corporate_clay_pit)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:sand
+                        "location_building_level(building_type:corporate_sand_pit)" < corporate_extraction_building_cap
+                    }
+                        }
+                    }
+                }
+            }
+            random_owned_location = {
+                limit = {
+                    OR = {
+                    AND = {
+                        raw_material = goods:elephants
+                        "location_building_level(building_type:corporate_elephant_ranch)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:goods_gold
+                        "location_building_level(building_type:corporate_gold_mine)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:silver
+                        "location_building_level(building_type:corporate_silver_mine)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:chili
+                        "location_building_level(building_type:corporate_chili_plantation)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:cloves
+                        "location_building_level(building_type:corporate_cloves_plantation)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:marble
+                        "location_building_level(building_type:corporate_marble_quarry)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:pepper
+                        "location_building_level(building_type:corporate_pepper_plantation)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:saffron
+                        "location_building_level(building_type:corporate_saffron_fields)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:amber
+                        "location_building_level(building_type:corporate_amber_collectors)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:cocoa
+                        "location_building_level(building_type:corporate_cocoa_plantation)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:dyes
+                        "location_building_level(building_type:corporate_dyes_plantation)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:gems
+                        "location_building_level(building_type:corporate_gems_mine)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:ivory
+                        "location_building_level(building_type:corporate_elephant_hunting_grounds)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:pearls
+                        "location_building_level(building_type:corporate_pearl_divers)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:salt
+                        "location_building_level(building_type:corporate_salt_collector)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:silk
+                        "location_building_level(building_type:corporate_silk_farm)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:alum
+                        "location_building_level(building_type:corporate_alum_mine)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:coffee
+                        "location_building_level(building_type:corporate_coffee_plantation)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:copper
+                        "location_building_level(building_type:corporate_copper_mine)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:horses
+                        "location_building_level(building_type:corporate_horse_breeders)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:iron
+                        "location_building_level(building_type:corporate_iron_mine)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:mercury
+                        "location_building_level(building_type:corporate_mercury_mine)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:sugar
+                        "location_building_level(building_type:corporate_sugar_plantation)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:tea
+                        "location_building_level(building_type:corporate_tea_plantation)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:tobacco
+                        "location_building_level(building_type:corporate_tobacco_plantation)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:incense
+                        "location_building_level(building_type:corporate_incense_grove)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:wool
+                        "location_building_level(building_type:corporate_sheep_farms)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:beeswax
+                        "location_building_level(building_type:corporate_apiary)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:coal
+                        "location_building_level(building_type:corporate_charcoal_maker)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:fiber_crops
+                        "location_building_level(building_type:corporate_fiber_crops_farm)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:fur
+                        "location_building_level(building_type:corporate_fur_trappers)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:lead
+                        "location_building_level(building_type:corporate_lead_mine)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:saltpeter
+                        "location_building_level(building_type:corporate_saltpeter_mine)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:tin
+                        "location_building_level(building_type:corporate_tin_mine)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:wine
+                        "location_building_level(building_type:corporate_wine_vineyard)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:livestock
+                        "location_building_level(building_type:corporate_livestock_ranch)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:lumber
+                        "location_building_level(building_type:corporate_lumber_mill)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:cotton
+                        "location_building_level(building_type:corporate_cotton_plantation)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:fish
+                        "location_building_level(building_type:corporate_fishing_village)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:fruit
+                        "location_building_level(building_type:corporate_fruit_orchard)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:legumes
+                        "location_building_level(building_type:corporate_legumes_farm)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:maize
+                        "location_building_level(building_type:corporate_maize_farm)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:medicaments
+                        "location_building_level(building_type:corporate_medicinal_gatherers)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:millet
+                        "location_building_level(building_type:corporate_millet_farm)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:olives
+                        "location_building_level(building_type:corporate_olive_grove)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:potato
+                        "location_building_level(building_type:corporate_potato_farm)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:rice
+                        "location_building_level(building_type:corporate_rice_paddy)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:stone
+                        "location_building_level(building_type:corporate_stone_quarry)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:wheat
+                        "location_building_level(building_type:corporate_wheat_farm)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:wild_game
+                        "location_building_level(building_type:corporate_wild_game_hunting_grounds)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:clay
+                        "location_building_level(building_type:corporate_clay_pit)" < corporate_extraction_building_cap
+                    }
+                    AND = {
+                        raw_material = goods:sand
+                        "location_building_level(building_type:corporate_sand_pit)" < corporate_extraction_building_cap
+                    }
+                    }
+                }
+            if = {
+                limit = { raw_material = goods:elephants "location_building_level(building_type:corporate_elephant_ranch)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_elephant_ranch
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:goods_gold "location_building_level(building_type:corporate_gold_mine)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_gold_mine
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:silver "location_building_level(building_type:corporate_silver_mine)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_silver_mine
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:chili "location_building_level(building_type:corporate_chili_plantation)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_chili_plantation
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:cloves "location_building_level(building_type:corporate_cloves_plantation)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_cloves_plantation
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:marble "location_building_level(building_type:corporate_marble_quarry)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_marble_quarry
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:pepper "location_building_level(building_type:corporate_pepper_plantation)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_pepper_plantation
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:saffron "location_building_level(building_type:corporate_saffron_fields)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_saffron_fields
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:amber "location_building_level(building_type:corporate_amber_collectors)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_amber_collectors
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:cocoa "location_building_level(building_type:corporate_cocoa_plantation)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_cocoa_plantation
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:dyes "location_building_level(building_type:corporate_dyes_plantation)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_dyes_plantation
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:gems "location_building_level(building_type:corporate_gems_mine)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_gems_mine
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:ivory "location_building_level(building_type:corporate_elephant_hunting_grounds)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_elephant_hunting_grounds
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:pearls "location_building_level(building_type:corporate_pearl_divers)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_pearl_divers
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:salt "location_building_level(building_type:corporate_salt_collector)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_salt_collector
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:silk "location_building_level(building_type:corporate_silk_farm)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_silk_farm
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:alum "location_building_level(building_type:corporate_alum_mine)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_alum_mine
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:coffee "location_building_level(building_type:corporate_coffee_plantation)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_coffee_plantation
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:copper "location_building_level(building_type:corporate_copper_mine)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_copper_mine
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:horses "location_building_level(building_type:corporate_horse_breeders)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_horse_breeders
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:iron "location_building_level(building_type:corporate_iron_mine)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_iron_mine
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:mercury "location_building_level(building_type:corporate_mercury_mine)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_mercury_mine
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:sugar "location_building_level(building_type:corporate_sugar_plantation)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_sugar_plantation
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:tea "location_building_level(building_type:corporate_tea_plantation)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_tea_plantation
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:tobacco "location_building_level(building_type:corporate_tobacco_plantation)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_tobacco_plantation
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:incense "location_building_level(building_type:corporate_incense_grove)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_incense_grove
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:wool "location_building_level(building_type:corporate_sheep_farms)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_sheep_farms
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:beeswax "location_building_level(building_type:corporate_apiary)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_apiary
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:coal "location_building_level(building_type:corporate_charcoal_maker)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_charcoal_maker
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:fiber_crops "location_building_level(building_type:corporate_fiber_crops_farm)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_fiber_crops_farm
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:fur "location_building_level(building_type:corporate_fur_trappers)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_fur_trappers
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:lead "location_building_level(building_type:corporate_lead_mine)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_lead_mine
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:saltpeter "location_building_level(building_type:corporate_saltpeter_mine)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_saltpeter_mine
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:tin "location_building_level(building_type:corporate_tin_mine)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_tin_mine
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:wine "location_building_level(building_type:corporate_wine_vineyard)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_wine_vineyard
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:livestock "location_building_level(building_type:corporate_livestock_ranch)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_livestock_ranch
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:lumber "location_building_level(building_type:corporate_lumber_mill)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_lumber_mill
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:cotton "location_building_level(building_type:corporate_cotton_plantation)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_cotton_plantation
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:fish "location_building_level(building_type:corporate_fishing_village)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_fishing_village
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:fruit "location_building_level(building_type:corporate_fruit_orchard)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_fruit_orchard
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:legumes "location_building_level(building_type:corporate_legumes_farm)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_legumes_farm
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:maize "location_building_level(building_type:corporate_maize_farm)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_maize_farm
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:medicaments "location_building_level(building_type:corporate_medicinal_gatherers)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_medicinal_gatherers
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:millet "location_building_level(building_type:corporate_millet_farm)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_millet_farm
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:olives "location_building_level(building_type:corporate_olive_grove)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_olive_grove
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:potato "location_building_level(building_type:corporate_potato_farm)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_potato_farm
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:rice "location_building_level(building_type:corporate_rice_paddy)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_rice_paddy
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:stone "location_building_level(building_type:corporate_stone_quarry)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_stone_quarry
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:wheat "location_building_level(building_type:corporate_wheat_farm)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_wheat_farm
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:wild_game "location_building_level(building_type:corporate_wild_game_hunting_grounds)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_wild_game_hunting_grounds
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:clay "location_building_level(building_type:corporate_clay_pit)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_clay_pit
+                    owner = root
+                }
+            }
+            else_if = {
+                limit = { raw_material = goods:sand "location_building_level(building_type:corporate_sand_pit)" < corporate_extraction_building_cap }
+                construct_building = {
+                    building_type = building_type:corporate_sand_pit
+                    owner = root
+                }
+            }
+            }
+        }
+        else = {
+            if = {
+                limit = {
+                    any_owned_location = {
+                        limit = { "location_building_level(building_type:corporate_local_headquarters)" < corporate_local_headquarters_max_level }
+                    }
+                }
+                random_owned_location = {
+                    limit = { "location_building_level(building_type:corporate_local_headquarters)" < corporate_local_headquarters_max_level }
+                    construct_building = {
+                        building_type = building_type:corporate_local_headquarters
+                        owner = root
+                    }
+                }
+            }
+        }
+    }
+}

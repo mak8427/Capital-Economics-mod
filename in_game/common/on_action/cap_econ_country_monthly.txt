@@ -16,6 +16,7 @@
         15 = cap_econ.34
         15 = cap_econ.35
         15 = cap_econ.36
+        5 =cap_econ.9
     }
 }
 
@@ -89,9 +90,6 @@ monthly_country_pulse_capecon_2 = {
 }
 
 yearly_country_pulse_capecon_io = {
-    trigger = {
-        religion = religion:pantalonism
-    }
     events = {
         cap_econ_io.1
     }

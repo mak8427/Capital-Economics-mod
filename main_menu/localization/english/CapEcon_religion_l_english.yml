@@ -1,0 +1,10 @@
+﻿l_english:
+ denaro_god: "Denaro"
+ denaro_god_desc: "Denaro blesses the coffers of the faithful, turning faith into steady revenue."
+ worship_denaro_god: "$worship_title1$ the $denaro_god$ $worship_title2$"
+ worship_denaro_god_desc: "$worship_desc1$ the [ShowGodName('denaro_god')] $worship_desc2$"
+
+ produttivita_god: "Produttività"
+ produttivita_god_desc: "Produttività rewards industry and discipline, raising the output of every workshop."
+ worship_produttivita_god: "$worship_title1$ the $produttivita_god$ $worship_title2$"
+ worship_produttivita_god_desc: "$worship_desc1$ the [ShowGodName('produttivita_god')] $worship_desc2$"

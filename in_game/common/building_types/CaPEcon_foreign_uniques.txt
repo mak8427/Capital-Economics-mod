@@ -53,6 +53,13 @@
             output = 1
             category = building_maintenance
         }
+        mangiatoia_silver = {
+            paper = 0.1
+            produced = silver
+            output = 1
+            category = building_maintenance
+        }
+
     }
 
     modifier = {
@@ -123,6 +130,12 @@ Mangiatoia_good = {
         mangiatoia_good = {
             paper = 0.1
             produced = goods_gold
+            output = 0.5
+            category = building_maintenance
+        }
+        mangiatoia_good_silver = {
+            paper = 0.1
+            produced = silver
             output = 0.5
             category = building_maintenance
         }
@@ -208,19 +221,18 @@ Mangiatoia_foreign = {
         mangiatoia = {
             paper = 0.1
             produced = goods_gold
-            output = 1
+            output = 0.5
             category = building_maintenance
         }
     }
 
     modifier = {
-        local_burghers_estate_power = 2
-        monthly_burghers_estate_rebel_growth = 0.1
-        local_pop_join_rebel_threshold = 0.2
-        local_unrest = 0.33
+        local_burghers_estate_power = 3
         local_burghers_desired_pop = 1
-        local_migration_attraction = 0.1
-        local_migration_speed = 0.1
+        local_migration_attraction = 0.2
+        local_migration_speed = 0.2
+        local_unrest = -0.1
+        corporate_extraction_building_cap_level = 1
         scaled_gold_to_building_owner = 0.1
         building_missionary_effort = 0.1
 
@@ -282,13 +294,13 @@ Pantalonism_assembly = {
 
     unique_production_methods = {
         beer_production = {
-            wheat = 0.2
+            wheat = 0.3
             produced =beer
             output = 0.6
             category = building_maintenance
         }
         cloth_production = {
-            wool = 0.2
+            wool = 0.3
             produced =cloth
             output = 0.5
             category = building_maintenance

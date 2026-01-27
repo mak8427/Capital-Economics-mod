@@ -14,7 +14,7 @@
 
     break_enabled = {
         scope:recipient = { religion = religion:pantalonism }
-        scope:recipient = {NOT = {any_owned_location = { is_town = yes} }}
+        scope:recipient = {any_owned_location = {OR = {is_city = yes is_city = no }  }  }
     }
 
 
@@ -23,12 +23,14 @@
         within_diplomatic_range = scope:recipient
         scope:actor = { religion = religion:pantalonism }
         scope:recipient = { religion != religion:pantalonism }
-        scope:recipient = { NOT = { any_owned_location = { is_town = yes } } }
+        scope:recipient = {any_owned_location = {OR = {is_city = yes is_city = no }  }  }
+
     }
     offer_enabled = {
         scope:actor = { religion = religion:pantalonism }
         scope:recipient = { religion != religion:pantalonism }
-        scope:recipient = { NOT = { any_owned_location = { is_town = yes } } }
+        scope:recipient = {any_owned_location = {OR = {is_city = yes is_city = no }  }  }
+
         NOT = {
             giving_scripted_relation = {
                 type = relation_type:cap_econ_send_pantalone

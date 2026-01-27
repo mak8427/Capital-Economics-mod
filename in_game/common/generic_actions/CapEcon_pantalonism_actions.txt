@@ -60,7 +60,7 @@
             scope:target_location ?= {
                 every_pop = {
                     limit = {
-                        owner = root
+                        owner = scope:actor
                         religion = religion:pantalonism
                     }
                     change_pop_allegiance = scope:target_rebel
@@ -98,7 +98,7 @@ cap_econ_fund_mangiatoia = {
     }
 
     ai_tick = monthly
-    ai_tick_frequency = 1
+    ai_tick_frequency = 6
 
     automation_tick = never
     automation_tick_frequency = 12
@@ -251,6 +251,92 @@ cap_econ_bribe_the_estate = {
         if = {
             limit = { scope:actor = { gold < 2000 } }
             subtract = 50
+        }
+    }
+}
+
+cap_econ_subsidize_conversion = {
+    type = situation
+
+    allow = {
+        is_situation_active = situation:rise_of_pantalonism
+        scope:actor = {
+            religion = religion:pantalonism
+            gold >= {
+                value = situation:rise_of_pantalonism.var:target_country.country_tax_base
+                multiply = 8
+            }
+        }
+    }
+
+    select_trigger = {
+        looking_for_a = situation
+        target_flag = recipient
+        name = "choose_situation"
+        column = { data = name }
+        visible = {
+            situation:rise_of_pantalonism = this
+            situation_is_active = yes
+            scope:actor = { religion = religion:pantalonism }
+        }
+    }
+
+    ai_tick = monthly
+    ai_tick_frequency = 6
+
+    automation_tick = never
+    automation_tick_frequency = 12
+
+    effect = {
+        custom_tooltip = cap_econ_subsidize_conversion_tt
+        scope:actor ?= {
+            add_gold = {
+                value = situation:rise_of_pantalonism.var:target_country.country_tax_base
+                multiply = -8
+            }
+        }
+        situation:rise_of_pantalonism.var:target_country ?= {
+            add_gold = {
+                value = country_tax_base
+                multiply = 8
+            }
+            hidden_effect = {
+                every_owned_location = {
+                    every_pop = {
+                        limit = { religion != religion:pantalonism }
+                        split_pop = {
+                            fraction = 0.1
+                            religion = religion:pantalonism
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    ai_will_do = {
+        add = 5
+        if = {
+            limit = {
+                scope:actor = {
+                    gold > {
+                        value = situation:rise_of_pantalonism.var:target_country.country_tax_base
+                        multiply = 16
+                    }
+                }
+            }
+            add = 20
+        }
+        if = {
+            limit = {
+                scope:actor = {
+                    gold < {
+                        value = situation:rise_of_pantalonism.var:target_country.country_tax_base
+                        multiply = 8
+                    }
+                }
+            }
+            subtract = 100
         }
     }
 }

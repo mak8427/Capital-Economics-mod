@@ -1,0 +1,17 @@
+﻿denaro_god = {
+	icon = god_folk_yellow
+
+	country_modifier = {
+		tax_income_efficiency = 0.05
+	}
+	religion = pantalonism
+}
+
+produttivita_god = {
+	icon = god_folk_green
+
+	country_modifier = {
+		global_production_efficiency = 0.05
+	}
+	religion = pantalonism
+}

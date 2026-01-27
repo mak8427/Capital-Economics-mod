@@ -1,0 +1,4 @@
+﻿subject_pays_international_company = {
+	scaled_gold = 0.33
+	ignore_inflation = yes
+}
