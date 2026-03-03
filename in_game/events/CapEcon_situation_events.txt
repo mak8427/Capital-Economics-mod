@@ -126,6 +126,7 @@ cap_econ.22 = {
         name = cap_econ.22.a
         set_variable = { name = cap_econ_force_pantalonism_situation value = 1 }
         activate_situation = situation:rise_of_pantalonism
+        add_gold = 1000
     }
 }
 

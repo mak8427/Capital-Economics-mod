@@ -3,10 +3,6 @@
         monthly_country_pulse_capecon
         monthly_country_pulse_capecon_2
     }
-    events = {
-        estate_income_fix.1
-        estate_income_fix.3
-    }
     random_events = {
         chance_to_happen = 10
         30 = cap_econ.11
@@ -60,9 +56,6 @@ monthly_country_pulse_capecon = {
 
 
 yearly_country_pulse = {
-    events = {
-        estate_income_fix.2
-    }
     on_actions = {
         yearly_country_pulse_capecon_io
     }
@@ -82,7 +75,6 @@ monthly_country_pulse_capecon_2 = {
         cap_econ.22
     }
     effect = {
-        add_gold = 1000
         set_variable = { name = cap_start_pantalone value = 1 }
 
     }

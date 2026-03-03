@@ -86,6 +86,12 @@
 	can_join_trigger = {
 		religion = religion:pantalonism
 	}
+	can_initiate_policy_votes = {
+		is_leader_of_international_organization = scope:recipient
+	}
+	can_vote_in_parliament = {
+		is_member_of_international_organization = scope:recipient
+	}
 	can_leave_trigger = { always = no }
 	auto_leave_trigger = {
 		NOT = { religion = religion:pantalonism }

@@ -3,8 +3,7 @@ cap_econ_corporate_build_once = {
         if = {
             limit = {
                 any_owned_location = {
-                    limit = {
-                        OR = {
+                    OR = {
                     AND = {
                         raw_material = goods:elephants
                         "location_building_level(building_type:corporate_elephant_ranch)" < corporate_extraction_building_cap
@@ -214,7 +213,6 @@ cap_econ_corporate_build_once = {
                         "location_building_level(building_type:corporate_sand_pit)" < corporate_extraction_building_cap
                     }
                         }
-                    }
                 }
             }
             random_owned_location = {
@@ -800,7 +798,7 @@ cap_econ_corporate_build_once = {
             if = {
                 limit = {
                     any_owned_location = {
-                        limit = { "location_building_level(building_type:corporate_local_headquarters)" < corporate_local_headquarters_max_level }
+                        "location_building_level(building_type:corporate_local_headquarters)" < corporate_local_headquarters_max_level
                     }
                 }
                 random_owned_location = {
