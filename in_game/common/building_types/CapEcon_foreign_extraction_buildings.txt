@@ -1,7 +1,15 @@
 ﻿corporate_alum_mine = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_alum_mine)"
+        }
+    }
     pop_type = laborers
 
     employment_size = rural_peasant_produce_employment
@@ -56,7 +64,15 @@
 corporate_amber_collectors = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_amber_collectors)"
+        }
+    }
     pop_type = laborers
 
     employment_size = rural_peasant_produce_employment
@@ -106,7 +122,15 @@ corporate_amber_collectors = {
 corporate_apiary = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_apiary)"
+        }
+    }
     pop_type = peasants
     employment_size = rural_peasant_produce_employment
 
@@ -155,7 +179,15 @@ corporate_apiary = {
 corporate_chili_plantation = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_chili_plantation)"
+        }
+    }
     pop_type = peasants
     employment_size = rural_peasant_produce_employment
 
@@ -204,7 +236,15 @@ corporate_chili_plantation = {
 corporate_clay_pit = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_clay_pit)"
+        }
+    }
     pop_type = laborers
 
     employment_size = rural_peasant_produce_employment
@@ -254,7 +294,15 @@ corporate_clay_pit = {
 corporate_cloves_plantation = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_cloves_plantation)"
+        }
+    }
     pop_type = peasants
     employment_size = rural_peasant_produce_employment
 
@@ -303,7 +351,15 @@ corporate_cloves_plantation = {
 corporate_charcoal_maker = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_charcoal_maker)"
+        }
+    }
     pop_type = laborers
 
     employment_size = rural_peasant_produce_employment
@@ -353,7 +409,15 @@ corporate_charcoal_maker = {
 corporate_cocoa_plantation = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_cocoa_plantation)"
+        }
+    }
     pop_type = peasants
     employment_size = rural_peasant_produce_employment
 
@@ -402,7 +466,15 @@ corporate_cocoa_plantation = {
 corporate_coffee_plantation = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_coffee_plantation)"
+        }
+    }
     pop_type = peasants
     employment_size = rural_peasant_produce_employment
 
@@ -451,7 +523,15 @@ corporate_coffee_plantation = {
 corporate_copper_mine = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_copper_mine)"
+        }
+    }
     pop_type = laborers
 
     employment_size = rural_peasant_produce_employment
@@ -501,7 +581,15 @@ corporate_copper_mine = {
 corporate_cotton_plantation = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_cotton_plantation)"
+        }
+    }
     pop_type = peasants
     employment_size = rural_peasant_produce_employment
 
@@ -550,7 +638,15 @@ corporate_cotton_plantation = {
 corporate_dyes_plantation = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_dyes_plantation)"
+        }
+    }
     pop_type = peasants
     employment_size = rural_peasant_produce_employment
 
@@ -599,7 +695,15 @@ corporate_dyes_plantation = {
 corporate_elephant_ranch = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_elephant_ranch)"
+        }
+    }
     pop_type = peasants
     employment_size = rural_peasant_produce_employment
 
@@ -648,7 +752,15 @@ corporate_elephant_ranch = {
 corporate_fiber_crops_farm = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_fiber_crops_farm)"
+        }
+    }
     pop_type = peasants
     employment_size = rural_peasant_produce_employment
 
@@ -697,7 +809,15 @@ corporate_fiber_crops_farm = {
 corporate_fishing_village = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_fishing_village)"
+        }
+    }
     pop_type = laborers
 
     employment_size = rural_peasant_produce_employment
@@ -747,7 +867,15 @@ corporate_fishing_village = {
 corporate_fruit_orchard = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_fruit_orchard)"
+        }
+    }
     pop_type = peasants
     employment_size = rural_peasant_produce_employment
 
@@ -796,7 +924,15 @@ corporate_fruit_orchard = {
 corporate_fur_trappers = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_fur_trappers)"
+        }
+    }
     pop_type = laborers
 
     employment_size = rural_peasant_produce_employment
@@ -846,7 +982,15 @@ corporate_fur_trappers = {
 corporate_gems_mine = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_gems_mine)"
+        }
+    }
     pop_type = laborers
 
     employment_size = rural_peasant_produce_employment
@@ -896,7 +1040,15 @@ corporate_gems_mine = {
 corporate_gold_mine = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_gold_mine)"
+        }
+    }
     pop_type = laborers
 
     employment_size = rural_peasant_produce_employment
@@ -946,7 +1098,15 @@ corporate_gold_mine = {
 corporate_horse_breeders = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_horse_breeders)"
+        }
+    }
     pop_type = peasants
     employment_size = rural_peasant_produce_employment
 
@@ -995,7 +1155,15 @@ corporate_horse_breeders = {
 corporate_incense_grove = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_incense_grove)"
+        }
+    }
     pop_type = peasants
     employment_size = rural_peasant_produce_employment
 
@@ -1044,7 +1212,15 @@ corporate_incense_grove = {
 corporate_iron_mine = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_iron_mine)"
+        }
+    }
     pop_type = laborers
 
     employment_size = rural_peasant_produce_employment
@@ -1094,7 +1270,15 @@ corporate_iron_mine = {
 corporate_elephant_hunting_grounds = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_elephant_hunting_grounds)"
+        }
+    }
     pop_type = laborers
 
     employment_size = rural_peasant_produce_employment
@@ -1144,7 +1328,15 @@ corporate_elephant_hunting_grounds = {
 corporate_lead_mine = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_lead_mine)"
+        }
+    }
     pop_type = laborers
 
     employment_size = rural_peasant_produce_employment
@@ -1194,7 +1386,15 @@ corporate_lead_mine = {
 corporate_legumes_farm = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_legumes_farm)"
+        }
+    }
     pop_type = peasants
     employment_size = rural_peasant_produce_employment
 
@@ -1243,7 +1443,15 @@ corporate_legumes_farm = {
 corporate_livestock_ranch = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_livestock_ranch)"
+        }
+    }
     pop_type = peasants
     employment_size = rural_peasant_produce_employment
 
@@ -1292,7 +1500,15 @@ corporate_livestock_ranch = {
 corporate_lumber_mill = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_lumber_mill)"
+        }
+    }
     pop_type = laborers
 
     employment_size = rural_peasant_produce_employment
@@ -1342,7 +1558,15 @@ corporate_lumber_mill = {
 corporate_maize_farm = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_maize_farm)"
+        }
+    }
     pop_type = peasants
     employment_size = rural_peasant_produce_employment
 
@@ -1388,7 +1612,15 @@ corporate_maize_farm = {
 corporate_marble_quarry = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_marble_quarry)"
+        }
+    }
     pop_type = laborers
 
     employment_size = rural_peasant_produce_employment
@@ -1438,7 +1670,15 @@ corporate_marble_quarry = {
 corporate_medicinal_gatherers = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_medicinal_gatherers)"
+        }
+    }
     pop_type = laborers
 
     employment_size = rural_peasant_produce_employment
@@ -1488,7 +1728,15 @@ corporate_medicinal_gatherers = {
 corporate_mercury_mine = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_mercury_mine)"
+        }
+    }
     pop_type = laborers
 
     employment_size = rural_peasant_produce_employment
@@ -1538,7 +1786,15 @@ corporate_mercury_mine = {
 corporate_millet_farm = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_millet_farm)"
+        }
+    }
     pop_type = peasants
     employment_size = rural_peasant_produce_employment
 
@@ -1588,7 +1844,15 @@ corporate_millet_farm = {
 corporate_olive_grove = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_olive_grove)"
+        }
+    }
     pop_type = peasants
     employment_size = rural_peasant_produce_employment
 
@@ -1637,7 +1901,15 @@ corporate_olive_grove = {
 corporate_pearl_divers = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_pearl_divers)"
+        }
+    }
     pop_type = laborers
 
     employment_size = rural_peasant_produce_employment
@@ -1688,7 +1960,15 @@ corporate_pearl_divers = {
 corporate_pepper_plantation = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_pepper_plantation)"
+        }
+    }
     pop_type = peasants
     employment_size = rural_peasant_produce_employment
 
@@ -1737,7 +2017,15 @@ corporate_pepper_plantation = {
 corporate_potato_farm = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_potato_farm)"
+        }
+    }
     pop_type = peasants
     employment_size = rural_peasant_produce_employment
 
@@ -1786,7 +2074,15 @@ corporate_potato_farm = {
 corporate_rice_paddy = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_rice_paddy)"
+        }
+    }
     pop_type = peasants
     employment_size = rural_peasant_produce_employment
 
@@ -1835,7 +2131,15 @@ corporate_rice_paddy = {
 corporate_saffron_fields = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_saffron_fields)"
+        }
+    }
     pop_type = peasants
     employment_size = rural_peasant_produce_employment
 
@@ -1884,7 +2188,15 @@ corporate_saffron_fields = {
 corporate_salt_collector = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_salt_collector)"
+        }
+    }
     pop_type = laborers
 
     employment_size = rural_peasant_produce_employment
@@ -1934,7 +2246,15 @@ corporate_salt_collector = {
 corporate_saltpeter_mine = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_saltpeter_mine)"
+        }
+    }
     pop_type = laborers
 
     employment_size = rural_peasant_produce_employment
@@ -1984,7 +2304,15 @@ corporate_saltpeter_mine = {
 corporate_sand_pit = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_sand_pit)"
+        }
+    }
     pop_type = laborers
 
     employment_size = rural_peasant_produce_employment
@@ -2034,7 +2362,15 @@ corporate_sand_pit = {
 corporate_silk_farm = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_silk_farm)"
+        }
+    }
     pop_type = peasants
     employment_size = rural_peasant_produce_employment
 
@@ -2083,7 +2419,15 @@ corporate_silk_farm = {
 corporate_silver_mine = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_silver_mine)"
+        }
+    }
     pop_type = laborers
 
     employment_size = rural_peasant_produce_employment
@@ -2133,7 +2477,15 @@ corporate_silver_mine = {
 corporate_stone_quarry = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_stone_quarry)"
+        }
+    }
     pop_type = laborers
 
     employment_size = rural_peasant_produce_employment
@@ -2183,7 +2535,15 @@ corporate_stone_quarry = {
 corporate_sugar_plantation = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_sugar_plantation)"
+        }
+    }
     pop_type = peasants
     employment_size = rural_peasant_produce_employment
 
@@ -2232,7 +2592,15 @@ corporate_sugar_plantation = {
 corporate_tea_plantation = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_tea_plantation)"
+        }
+    }
     pop_type = peasants
     employment_size = rural_peasant_produce_employment
 
@@ -2281,7 +2649,15 @@ corporate_tea_plantation = {
 corporate_tin_mine = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_tin_mine)"
+        }
+    }
     pop_type = laborers
 
     employment_size = rural_peasant_produce_employment
@@ -2331,7 +2707,15 @@ corporate_tin_mine = {
 corporate_tobacco_plantation = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_tobacco_plantation)"
+        }
+    }
     pop_type = peasants
     employment_size = rural_peasant_produce_employment
 
@@ -2380,7 +2764,15 @@ corporate_tobacco_plantation = {
 corporate_wheat_farm = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_wheat_farm)"
+        }
+    }
     pop_type = peasants
     employment_size = rural_peasant_produce_employment
 
@@ -2429,7 +2821,15 @@ corporate_wheat_farm = {
 corporate_wild_game_hunting_grounds = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_wild_game_hunting_grounds)"
+        }
+    }
     pop_type = laborers
 
     employment_size = rural_peasant_produce_employment
@@ -2479,7 +2879,15 @@ corporate_wild_game_hunting_grounds = {
 corporate_wine_vineyard = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_wine_vineyard)"
+        }
+    }
     pop_type = peasants
     employment_size = rural_peasant_produce_employment
 
@@ -2528,7 +2936,15 @@ corporate_wine_vineyard = {
 corporate_sheep_farms = {
     is_foreign = yes
     stronger_power_projection = no
-    max_levels = corporate_extraction_building_cap
+    max_levels = {
+        value = corporate_extraction_building_cap
+        subtract = {
+            value = cap_econ_total_corporate_extraction_levels
+        }
+        add = {
+            value = "location_building_level(building_type:corporate_sheep_farms)"
+        }
+    }
     pop_type = peasants
     employment_size = rural_peasant_produce_employment
 

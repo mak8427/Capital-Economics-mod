@@ -11,11 +11,12 @@
 	show_on_diplomatic_map = yes
 	leader_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_LEADER_COLOR
 	has_parliament = yes
-	parliament_type = dutch_parliament
+	parliament_type = no_organization_parliament
 	resolution_widget = parliament
 	laws = {
 		pantalone_stability_law = no_pantalone_stability_policy
 		pantalone_production_law = no_pantalone_production_policy
+		pantalone_imperial_diet_law = no_pantalone_imperial_diet_policy
 		pantalone_contribution_law = no_pantalone_contribution_policy
 		pantalone_estate_contribution_law = no_pantalone_estate_contribution_policy
 		pantalone_leader_payment_law = pantalone_leader_exempt_policy
@@ -25,11 +26,13 @@
 	on_creation = {
 		international_organization_unlock_law_effect = { type = pantalone_stability_law }
 		international_organization_unlock_law_effect = { type = pantalone_production_law }
+		international_organization_unlock_law_effect = { type = pantalone_imperial_diet_law }
 		international_organization_unlock_law_effect = { type = pantalone_contribution_law }
 		international_organization_unlock_law_effect = { type = pantalone_estate_contribution_law }
 		international_organization_unlock_law_effect = { type = pantalone_leader_payment_law }
 		international_organization_unlock_law_effect = { type = pantalone_redistribution_law }
 		international_organization_unlock_law_effect = { type = pantalone_defense_law }
+		set_variable = cap_econ_io_diet_migrated
 	}
 
 
@@ -102,6 +105,27 @@
 	}
 
 	monthly_effect = {
+		# Existing saves created before the diet law was added should keep a usable parliament setup.
+		if = {
+			limit = {
+				NOT = { has_variable = cap_econ_io_diet_migrated }
+			}
+			international_organization_unlock_law_effect = { type = pantalone_imperial_diet_law }
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							international_organization_has_policy = policy:pantalone_early_imperial_diet_policy
+							international_organization_has_policy = policy:pantalone_bi_camerial_imperial_diet_policy
+							international_organization_has_policy = policy:pantalone_tri_camerial_imperial_diet_policy
+						}
+					}
+				}
+				add_policy_to_international_organization = policy:pantalone_early_imperial_diet_policy
+			}
+			set_variable = cap_econ_io_diet_migrated
+		}
+
 		if = {
 			limit = {
 				international_organization_has_policy = policy:pantalone_stability_policy

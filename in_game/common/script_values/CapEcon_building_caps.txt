@@ -9,6 +9,165 @@
     }
 }
 
+cap_econ_total_corporate_extraction_levels = {
+    add = {
+        value = "location_building_level(building_type:corporate_alum_mine)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_amber_collectors)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_apiary)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_chili_plantation)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_clay_pit)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_cloves_plantation)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_charcoal_maker)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_cocoa_plantation)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_coffee_plantation)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_copper_mine)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_cotton_plantation)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_dyes_plantation)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_elephant_ranch)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_fiber_crops_farm)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_fishing_village)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_fruit_orchard)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_fur_trappers)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_gems_mine)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_gold_mine)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_horse_breeders)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_incense_grove)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_iron_mine)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_elephant_hunting_grounds)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_lead_mine)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_legumes_farm)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_livestock_ranch)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_lumber_mill)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_maize_farm)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_marble_quarry)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_medicinal_gatherers)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_mercury_mine)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_millet_farm)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_olive_grove)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_pearl_divers)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_pepper_plantation)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_potato_farm)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_rice_paddy)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_saffron_fields)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_salt_collector)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_saltpeter_mine)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_sand_pit)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_silk_farm)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_silver_mine)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_stone_quarry)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_sugar_plantation)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_tea_plantation)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_tin_mine)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_tobacco_plantation)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_wheat_farm)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_wild_game_hunting_grounds)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_wine_vineyard)"
+    }
+    add = {
+        value = "location_building_level(building_type:corporate_sheep_farms)"
+    }
+}
+
 
 corporate_local_headquarters_max_level = {
     add = {

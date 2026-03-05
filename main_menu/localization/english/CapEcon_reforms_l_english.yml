@@ -1,6 +1,12 @@
-﻿l_english:
+l_english:
  pantalone_republic: "Pantalone Republic"
  pantalone_republic_desc: "A republic built around Pantalonist commerce, granting the burghers unrivaled influence and steady favor."
+ pantalone_company: "Pantalone Company"
+ pantalone_company_desc: "A corporate state organized for Pantalonist commerce, granting the burghers unrivaled influence and steady favor."
+ council_of_burghers: "Council of Burghers"
+ council_of_burghers_desc: "The urban merchant class dominates policy, steering the state toward capital and trade."
+ council_of_burghers_company: "Corporate Council of Burghers"
+ council_of_burghers_company_desc: "A corporate board of burghers directs policy and keeps the company aligned with profit and capital growth."
  pantalonism: "Pantalonism"
  pantalonism_ADJ: "Pantalonist"
  pantalonism_desc: "The Extreme Cult of Pantalone, the glorification of a sin"
