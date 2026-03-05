@@ -6,5 +6,6 @@
 #
  MODIFIER_TYPE_NAME_corporate_extraction_building_cap_level: "Corporate Extraction Cap"
  MODIFIER_TYPE_DESC_corporate_extraction_building_cap_level: "Increases the maximum level of corporate extraction buildings in this location."
- STATIC_MODIFIER_NAME_cap_econ_repression: "Pantalonist Repression"
+ MODIFIER_TYPE_NAME_pantalone_authority: "Pantalone Authority"
+ MODIFIER_TYPE_DESC_pantalone_authority: "Represents a league leader's ability to direct and coordinate the Pantalonist League."
  STATIC_MODIFIER_DESC_cap_econ_repression: "Crackdowns on Pantalonist influence weaken local control."

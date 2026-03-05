@@ -4,4 +4,6 @@
 # - Reasoning: keeping this logic in a dedicated file isolates balancing and avoids accidental vanilla overlap.
 # - Maintenance: keep localization keys in sync with scripted ids and GUI references to prevent missing-text fallbacks.
 #
+ cap_econ_corp.1.t: "Corporate Expansion"
+ cap_econ_corp.2.t: "Corporate Extraction"
  cap_econ_corp.1.a: "Continue"

@@ -6,3 +6,5 @@
 #
  international_company: "International Company"
  international_company_desc: "An $international_company$ is a chartered mercantile [subject|e] created to expand foreign trade and investment. It operates as a [ShowGovernmentTypeName('company')], pays heavy dividends to its [overlord|e], and maintains limited diplomacy."
+ LEAD_international_company: "an"
+ AM_international_company: "an"

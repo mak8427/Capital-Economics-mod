@@ -1,4 +1,4 @@
-# Maintainer Note:
+﻿# Maintainer Note:
 # - Purpose: CapEcon_renaissance_levies.txt defines unit levy templates used by the Pantalone_Economics feature set.
 # - Reasoning: keeping this logic in a dedicated file isolates balancing and avoids accidental vanilla overlap.
 # - Maintenance: when renaming keys/scopes, update cross-file references and localization entries in the same change.

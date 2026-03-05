@@ -1,4 +1,4 @@
-l_english:
+﻿l_english:
 # Maintainer Note:
 # - Purpose: CapEcon_reforms_l_english.yml defines English localization keys used by the Pantalone_Economics feature set.
 # - Reasoning: keeping this logic in a dedicated file isolates balancing and avoids accidental vanilla overlap.
@@ -12,6 +12,3 @@ l_english:
  council_of_burghers_desc: "The urban merchant class dominates policy, steering the state toward capital and trade."
  council_of_burghers_company: "Corporate Council of Burghers"
  council_of_burghers_company_desc: "A corporate board of burghers directs policy and keeps the company aligned with profit and capital growth."
- pantalonism: "Pantalonism"
- pantalonism_ADJ: "Pantalonist"
- pantalonism_desc: "The Extreme Cult of Pantalone, the glorification of a sin"

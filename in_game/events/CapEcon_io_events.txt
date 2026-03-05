@@ -9,6 +9,7 @@ namespace = cap_econ_io
 cap_econ_io.1 = {
     type = country_event
     hidden = yes
+    title = cap_econ_io.1.t
 
     trigger = {
         religion = religion:pantalonism

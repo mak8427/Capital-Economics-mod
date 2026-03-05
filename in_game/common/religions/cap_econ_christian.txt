@@ -4,7 +4,7 @@
 # - Maintenance: when renaming keys/scopes, update cross-file references and localization entries in the same change.
 
 pantalonism = {
-    color = color_bogomilism
+    color = { 0.85 0.64 0.19 }
     group = christian
 
     language = emilian_dialect

@@ -57,7 +57,7 @@ council_of_burghers = {
 }
 
 pantalone_company = {
-    major = yes
+    major = no
     government = company
 
     potential = {

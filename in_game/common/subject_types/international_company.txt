@@ -69,6 +69,9 @@ international_company = {
 				remove_reform = prev
 			}
 		}
+		# Banking-country reform is used by vanilla country rank localization selectors
+		# (country_ranks.txt) to route county/duchy/kingdom/empire naming away from Count/County fallback.
+		add_reform = government_reform:banking_country
 		add_reform = government_reform:pantalone_company
 		add_reform = government_reform:council_of_burghers_company
 		create_relation = {

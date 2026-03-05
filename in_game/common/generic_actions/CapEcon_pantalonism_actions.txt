@@ -203,7 +203,7 @@ cap_econ_bribe_the_estate = {
         scope:actor = {
             religion = religion:pantalonism
         }
-        gold >= 1000
+        scope:actor = { gold >= 1000 }
     }
 
     select_trigger = {
@@ -242,9 +242,11 @@ cap_econ_bribe_the_estate = {
         add = 20
         if = {
             limit = {
-                receiving_scripted_relation = {
-                    target = situation:rise_of_pantalonism.var:target_country
-                    type = relation_type:cap_econ_extraction_rights
+                scope:actor = {
+                    receiving_scripted_relation = {
+                        target = situation:rise_of_pantalonism.var:target_country
+                        type = relation_type:cap_econ_extraction_rights
+                    }
                 }
             }
             subtract = 1000

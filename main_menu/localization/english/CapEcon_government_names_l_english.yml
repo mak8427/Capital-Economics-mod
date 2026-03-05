@@ -1,4 +1,4 @@
-l_english:
+﻿l_english:
 # Maintainer Note:
 # - Purpose: CapEcon_government_names_l_english.yml defines English localization keys used by the Pantalone_Economics feature set.
 # - Reasoning: keeping this logic in a dedicated file isolates balancing and avoids accidental vanilla overlap.
@@ -12,25 +12,46 @@ l_english:
  rank_county_company_ruler_male: "Chairman"
  rank_county_company_ruler_female: "Chairwoman"
 
+ # Vanilla country rank resolver uses the bank rank keys when a country has banking_country reform.
+ rank_county_bank: "Company"
+ rank_county_bank_ruler_male: "Chairman"
+ rank_county_bank_ruler_female: "Chairwoman"
+
  rank_duchy_company: "Company"
  rank_duchy_company_ADJ: "corporate"
  rank_duchy_company_ruler_male: "Chairman"
  rank_duchy_company_ruler_female: "Chairwoman"
+
+ rank_duchy_bank: "Company"
+ rank_duchy_bank_ruler_male: "Chairman"
+ rank_duchy_bank_ruler_female: "Chairwoman"
 
  rank_kingdom_company: "Company"
  rank_kingdom_company_ADJ: "corporate"
  rank_kingdom_company_ruler_male: "Chairman"
  rank_kingdom_company_ruler_female: "Chairwoman"
 
+ rank_kingdom_bank: "Company"
+ rank_kingdom_bank_ruler_male: "Chairman"
+ rank_kingdom_bank_ruler_female: "Chairwoman"
+
  rank_empire_company: "Company"
  rank_empire_company_ADJ: "corporate"
  rank_empire_company_ruler_male: "Chairman"
  rank_empire_company_ruler_female: "Chairwoman"
 
+ rank_empire_bank: "Company"
+ rank_empire_bank_ruler_male: "Chairman"
+ rank_empire_bank_ruler_female: "Chairwoman"
+
  company_rank_county_international_company_full: "$NAME$ International Company"
  company_rank_duchy_international_company_full: "$NAME$ International Company"
  company_rank_kingdom_international_company_full: "$NAME$ International Company"
  company_rank_empire_international_company_full: "$NAME$ International Company"
+ bank_rank_county_international_company_full: "$NAME$ International Company"
+ bank_rank_duchy_international_company_full: "$NAME$ International Company"
+ bank_rank_kingdom_international_company_full: "$NAME$ International Company"
+ bank_rank_empire_international_company_full: "$NAME$ International Company"
  republic_rank_county_international_company_full: "$NAME$ International Company"
  republic_rank_duchy_international_company_full: "$NAME$ International Company"
  republic_rank_kingdom_international_company_full: "$NAME$ International Company"

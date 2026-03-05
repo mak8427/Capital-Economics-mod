@@ -1,4 +1,4 @@
-# Maintainer Note:
+﻿# Maintainer Note:
 # - Purpose: CapEcon_corporate_events.txt defines event chains and event outcomes used by the Pantalone_Economics feature set.
 # - Reasoning: keeping this logic in a dedicated file isolates balancing and avoids accidental vanilla overlap.
 # - Maintenance: when renaming keys/scopes, update cross-file references and localization entries in the same change.
@@ -8,6 +8,7 @@ namespace = cap_econ_corp
 cap_econ_corp.1 = {
     type = country_event
     hidden = yes
+    title = cap_econ_corp.1.t
 
     trigger = {
         is_subject_type = international_company
@@ -42,8 +43,8 @@ cap_econ_corp.1 = {
                         }
                         save_scope_as = cap_econ_corp_target
                     }
-                    scope:cap_econ_corp_target ?= { }
-                    else = {
+                    if = {
+                        limit = { NOT = { exists = scope:cap_econ_corp_target } }
                         scope:cap_econ_corp_overlord ?= { save_scope_as = cap_econ_corp_target }
                     }
                 }
@@ -64,6 +65,7 @@ cap_econ_corp.1 = {
 cap_econ_corp.2 = {
     type = country_event
     hidden = yes
+    title = cap_econ_corp.2.t
 
     trigger = {
         is_subject_type = international_company
@@ -103,8 +105,8 @@ cap_econ_corp.2 = {
                         }
                         save_scope_as = cap_econ_corp_target
                     }
-                    scope:cap_econ_corp_target ?= { }
-                    else = {
+                    if = {
+                        limit = { NOT = { exists = scope:cap_econ_corp_target } }
                         scope:cap_econ_corp_overlord ?= { save_scope_as = cap_econ_corp_target }
                     }
                 }
