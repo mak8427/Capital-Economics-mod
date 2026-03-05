@@ -1,4 +1,9 @@
 ﻿l_english:
+# Maintainer Note:
+# - Purpose: CapEcon_units_l_english.yml defines English localization keys used by the Pantalone_Economics feature set.
+# - Reasoning: keeping this logic in a dedicated file isolates balancing and avoids accidental vanilla overlap.
+# - Maintenance: keep localization keys in sync with scripted ids and GUI references to prevent missing-text fallbacks.
+#
  a_macellai_levy: "Macellai Levy"
  a_macellai_levy_desc: "Raised from common workers and guild laborers, the Macellai levy fights as a light infantry force with stronger shock power than ordinary peasant levies."
  levy_a_macellai: "$a_macellai_levy$"

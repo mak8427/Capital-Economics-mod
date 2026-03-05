@@ -1,4 +1,10 @@
+# Maintainer Note:
+# - Purpose: CapEcon_pantalonist_io_laws.txt defines law and policy definitions used by the Pantalone_Economics feature set.
+# - Reasoning: keeping this logic in a dedicated file isolates balancing and avoids accidental vanilla overlap.
+# - Maintenance: when renaming keys/scopes, update cross-file references and localization entries in the same change.
+
 pantalone_stability_law = {
+	# Baseline administrative law: trades authority for stability-focused bonuses.
 	type = international_organization
 	law_category = administrative
 	custom_tags = { }
@@ -45,6 +51,7 @@ pantalone_stability_law = {
 }
 
 pantalone_production_law = {
+	# Socioeconomic law: pushes member economies toward production efficiency.
 	type = international_organization
 	law_category = socioeconomic
 	custom_tags = { forbids_no_policy }
@@ -90,6 +97,7 @@ pantalone_production_law = {
 }
 
 pantalone_imperial_diet_law = {
+	# Tiered institutional law controlling parliament structure inside the IO.
 	type = international_organization
 	law_category = administrative
 	has_levels = yes
@@ -103,6 +111,7 @@ pantalone_imperial_diet_law = {
 	no_pantalone_imperial_diet_policy = {
 		level = 1
 		allow = {
+			# NOTE: these level-transition checks evaluate against the organization scope when recipient is set.
 			scope:recipient = {
 				OR = {
 					international_organization_has_policy = policy:no_pantalone_imperial_diet_policy
@@ -212,6 +221,7 @@ pantalone_imperial_diet_law = {
 }
 
 pantalone_contribution_law = {
+	# Tiered contribution law: converts authority into stronger mandatory contribution rates.
 	type = international_organization
 	law_category = administrative
 	has_levels = yes
@@ -394,6 +404,7 @@ pantalone_contribution_law = {
 }
 
 pantalone_estate_contribution_law = {
+	# Mirrors contribution scaling but targets estate-oriented economic extraction.
 	type = international_organization
 	law_category = administrative
 	has_levels = yes
@@ -546,6 +557,7 @@ pantalone_estate_contribution_law = {
 }
 
 pantalone_leader_payment_law = {
+	# Controls whether the IO leader is exempt or pays into the same framework.
 	type = international_organization
 	law_category = socioeconomic
 	custom_tags = { forbids_no_policy }
@@ -588,6 +600,7 @@ pantalone_leader_payment_law = {
 }
 
 pantalone_redistribution_law = {
+	# Chooses dividend distribution model among leader-focused, equalized, or mixed splits.
 	type = international_organization
 	law_category = administrative
 	custom_tags = { forbids_no_policy }
@@ -644,6 +657,7 @@ pantalone_redistribution_law = {
 }
 
 pantalone_defense_law = {
+	# Military coordination law for defense call behavior and diplomatic upkeep.
 	type = international_organization
 	law_category = military
 	has_levels = yes

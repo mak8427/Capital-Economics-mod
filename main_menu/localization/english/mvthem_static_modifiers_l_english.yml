@@ -1,3 +1,8 @@
 ﻿l_english:
+# Maintainer Note:
+# - Purpose: mvthem_static_modifiers_l_english.yml defines English localization keys used by the Pantalone_Economics feature set.
+# - Reasoning: keeping this logic in a dedicated file isolates balancing and avoids accidental vanilla overlap.
+# - Maintenance: keep localization keys in sync with scripted ids and GUI references to prevent missing-text fallbacks.
+#
  STATIC_MODIFIER_NAME_move_population_between_locations_penalty: "Forceful Migrations!"
  STATIC_MODIFIER_DESC_move_population_between_locations_penalty: "Forced resettlement stokes anger and weakens local control."

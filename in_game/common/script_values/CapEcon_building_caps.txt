@@ -1,4 +1,9 @@
-﻿corporate_extraction_building_cap = {
+﻿# Maintainer Note:
+# - Purpose: CapEcon_building_caps.txt defines scripted value formulas used by the Pantalone_Economics feature set.
+# - Reasoning: keeping this logic in a dedicated file isolates balancing and avoids accidental vanilla overlap.
+# - Maintenance: when renaming keys/scopes, update cross-file references and localization entries in the same change.
+
+corporate_extraction_building_cap = {
     add = {
         desc = "BUILDING_LEVEL_BASE"
         value = 1

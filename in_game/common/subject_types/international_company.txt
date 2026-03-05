@@ -1,4 +1,9 @@
-﻿international_company = {
+﻿# Maintainer Note:
+# - Purpose: international_company.txt defines subject type rules used by the Pantalone_Economics feature set.
+# - Reasoning: keeping this logic in a dedicated file isolates balancing and avoids accidental vanilla overlap.
+# - Maintenance: when renaming keys/scopes, update cross-file references and localization entries in the same change.
+
+international_company = {
 	type = building
 	color = subject_trade_company
 	level = 1
@@ -52,9 +57,12 @@
 	}
 
 	on_enable = {
+		# Enforce deterministic identity for newly created companies.
+		# Without this block, release paths can fall back to generic rank/title and reform defaults.
 		change_country_type = building
 		change_government_type = government_type:company
 		remove_current_major_government_reform = yes
+		# Clear inherited reforms first so the company always starts from the intended reform package.
 		save_temporary_scope_as = cap_econ_international_company_scope
 		every_current_reforms = {
 			scope:cap_econ_international_company_scope = {

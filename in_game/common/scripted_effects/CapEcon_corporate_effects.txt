@@ -1,7 +1,13 @@
+# Maintainer Note:
+# - Purpose: CapEcon_corporate_effects.txt defines reusable scripted effects used by the Pantalone_Economics feature set.
+# - Reasoning: keeping this logic in a dedicated file isolates balancing and avoids accidental vanilla overlap.
+# - Maintenance: when renaming keys/scopes, update cross-file references and localization entries in the same change.
+
 cap_econ_corporate_build_once = {
     scope:cap_econ_corp_target ?= {
         if = {
             limit = {
+                # Stage 1: check if any extraction-compatible location still has room under the extraction cap.
                 any_owned_location = {
                     OR = {
                     AND = {
@@ -426,8 +432,10 @@ cap_econ_corporate_build_once = {
                         raw_material = goods:sand
                         "location_building_level(building_type:corporate_sand_pit)" < corporate_extraction_building_cap
                     }
-                    }
                 }
+            }
+            # Stage 2: pick one eligible location, then construct exactly one matching corporate extractor.
+            # else_if ordering acts as deterministic priority when multiple goods checks are true.
             if = {
                 limit = { raw_material = goods:elephants "location_building_level(building_type:corporate_elephant_ranch)" < corporate_extraction_building_cap }
                 construct_building = {
@@ -795,6 +803,7 @@ cap_econ_corporate_build_once = {
             }
         }
         else = {
+            # Fallback: if no extractor can be added, expand local headquarters first to raise future extraction capacity.
             if = {
                 limit = {
                     any_owned_location = {

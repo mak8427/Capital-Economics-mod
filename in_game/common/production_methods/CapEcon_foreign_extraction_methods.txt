@@ -1,4 +1,9 @@
-﻿cap_econ_alum_mine_maintenance = {
+﻿# Maintainer Note:
+# - Purpose: CapEcon_foreign_extraction_methods.txt defines production method definitions used by the Pantalone_Economics feature set.
+# - Reasoning: keeping this logic in a dedicated file isolates balancing and avoids accidental vanilla overlap.
+# - Maintenance: when renaming keys/scopes, update cross-file references and localization entries in the same change.
+
+cap_econ_alum_mine_maintenance = {
     tools = 0.1
     lumber = 0.12
     leather = 0.1

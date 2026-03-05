@@ -1,4 +1,9 @@
-﻿cap_econ_pantalonist_io = {
+﻿# Maintainer Note:
+# - Purpose: CapEcon_pantalonist_io.txt defines international organization setup used by the Pantalone_Economics feature set.
+# - Reasoning: keeping this logic in a dedicated file isolates balancing and avoids accidental vanilla overlap.
+# - Maintenance: when renaming keys/scopes, update cross-file references and localization entries in the same change.
+
+cap_econ_pantalonist_io = {
 	has_target = no
 	unique = yes
 	expel_members_who_are_targets_of_other_members = no

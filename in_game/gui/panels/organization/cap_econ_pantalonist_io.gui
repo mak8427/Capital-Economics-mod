@@ -1,3 +1,8 @@
+# Maintainer Note:
+# - Purpose: cap_econ_pantalonist_io.gui defines in-game GUI layouts and bindings used by the Pantalone_Economics feature set.
+# - Reasoning: keeping this logic in a dedicated file isolates balancing and avoids accidental vanilla overlap.
+# - Maintenance: keep widget names and bound scripted values synchronized with situation/event data providers.
+
 organization_panel = {
 
 	blockoverride "organization_panel_middle_botton" {

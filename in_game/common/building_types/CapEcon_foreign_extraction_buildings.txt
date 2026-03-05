@@ -1,6 +1,14 @@
-﻿corporate_alum_mine = {
+﻿# Maintainer Note:
+# - Purpose: CapEcon_foreign_extraction_buildings.txt defines building type definitions used by the Pantalone_Economics feature set.
+# - Reasoning: keeping this logic in a dedicated file isolates balancing and avoids accidental vanilla overlap.
+# - Maintenance: when renaming keys/scopes, update cross-file references and localization entries in the same change.
+
+corporate_alum_mine = {
     is_foreign = yes
     stronger_power_projection = no
+    # Shared extraction cap formula:
+    # max for this specific building = location cap - all extraction levels + this building's current levels.
+    # This keeps one pool shared across all corporate extraction types in the location.
     max_levels = {
         value = corporate_extraction_building_cap
         subtract = {
@@ -20,6 +28,8 @@
     allow = {
         owner = {
             within_diplomatic_range = scope:actor
+            # Access is granted either by explicit extraction rights relation
+            # or by both countries being members of the Pantalonist IO.
             OR = {
                 giving_scripted_relation = {
                     type = relation_type:cap_econ_extraction_rights

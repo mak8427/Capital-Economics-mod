@@ -1,3 +1,8 @@
+# Maintainer Note:
+# - Purpose: rise_of_pantalonism.gui defines in-game GUI layouts and bindings used by the Pantalone_Economics feature set.
+# - Reasoning: keeping this logic in a dedicated file isolates balancing and avoids accidental vanilla overlap.
+# - Maintenance: keep widget names and bound scripted values synchronized with situation/event data providers.
+
 situation_panel = {
     ##################################### MAIN IMAGE #####################################
     blockoverride "situation_panel_image" {

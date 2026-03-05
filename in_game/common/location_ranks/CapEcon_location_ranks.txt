@@ -1,4 +1,9 @@
-﻿REPLACE:city = {
+﻿# Maintainer Note:
+# - Purpose: CapEcon_location_ranks.txt defines location rank thresholds and modifiers used by the Pantalone_Economics feature set.
+# - Reasoning: keeping this logic in a dedicated file isolates balancing and avoids accidental vanilla overlap.
+# - Maintenance: when renaming keys/scopes, update cross-file references and localization entries in the same change.
+
+REPLACE:city = {
     rank_modifier = {
         local_burghers_desired_pop = 1.0
         local_laborers_desired_pop = 1.0

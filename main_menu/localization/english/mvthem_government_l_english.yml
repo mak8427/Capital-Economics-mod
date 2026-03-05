@@ -1,4 +1,9 @@
 ﻿l_english:
+# Maintainer Note:
+# - Purpose: mvthem_government_l_english.yml defines English localization keys used by the Pantalone_Economics feature set.
+# - Reasoning: keeping this logic in a dedicated file isolates balancing and avoids accidental vanilla overlap.
+# - Maintenance: keep localization keys in sync with scripted ids and GUI references to prevent missing-text fallbacks.
+#
  move_population_between_locations_culture:0 "Move Population by Culture"
  move_population_between_locations_culture_desc:0 "Force [pops|e] of a chosen [culture|e] to migrate between our [location|e]."
  move_population_between_locations_culture_action:0 "Send [SCOPE.sCulture('target_culture').GetNameWithNoTooltip] [pops|e] to [SCOPE.sLocation('target_1').GetName]"

@@ -1,4 +1,9 @@
 l_english:
+# Maintainer Note:
+# - Purpose: CapEcon_government_names_l_english.yml defines English localization keys used by the Pantalone_Economics feature set.
+# - Reasoning: keeping this logic in a dedicated file isolates balancing and avoids accidental vanilla overlap.
+# - Maintenance: keep localization keys in sync with scripted ids and GUI references to prevent missing-text fallbacks.
+#
  company: "Company"
  company_desc: "A $company$ is a [government_type|e] where [rulers|e] are selected through corporate governance and serve as executives of the state."
 

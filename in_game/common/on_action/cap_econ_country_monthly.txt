@@ -1,4 +1,9 @@
-﻿monthly_country_pulse = {
+﻿# Maintainer Note:
+# - Purpose: cap_econ_country_monthly.txt defines on_action hooks and pulse entry points used by the Pantalone_Economics feature set.
+# - Reasoning: keeping this logic in a dedicated file isolates balancing and avoids accidental vanilla overlap.
+# - Maintenance: when renaming keys/scopes, update cross-file references and localization entries in the same change.
+
+monthly_country_pulse = {
     on_actions = {
         monthly_country_pulse_capecon
         monthly_country_pulse_capecon_2

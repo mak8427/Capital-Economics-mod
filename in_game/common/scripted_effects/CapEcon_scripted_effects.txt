@@ -1,4 +1,9 @@
-﻿lots_of_pantalonist = {
+﻿# Maintainer Note:
+# - Purpose: CapEcon_scripted_effects.txt defines reusable scripted effects used by the Pantalone_Economics feature set.
+# - Reasoning: keeping this logic in a dedicated file isolates balancing and avoids accidental vanilla overlap.
+# - Maintenance: when renaming keys/scopes, update cross-file references and localization entries in the same change.
+
+lots_of_pantalonist = {
     every_owned_location = {
         limit = {
             has_building = building_type:Mangiatoia

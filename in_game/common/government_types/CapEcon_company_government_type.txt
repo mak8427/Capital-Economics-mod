@@ -1,3 +1,8 @@
+# Maintainer Note:
+# - Purpose: CapEcon_company_government_type.txt defines government type definitions used by the Pantalone_Economics feature set.
+# - Reasoning: keeping this logic in a dedicated file isolates balancing and avoids accidental vanilla overlap.
+# - Maintenance: when renaming keys/scopes, update cross-file references and localization entries in the same change.
+
 company = {
 	heir_selection = republic_2_year_terms
 	heir_selection = republic_4_year_terms

@@ -1,4 +1,9 @@
-﻿namespace = cap_econ_io
+﻿# Maintainer Note:
+# - Purpose: CapEcon_io_events.txt defines event chains and event outcomes used by the Pantalone_Economics feature set.
+# - Reasoning: keeping this logic in a dedicated file isolates balancing and avoids accidental vanilla overlap.
+# - Maintenance: when renaming keys/scopes, update cross-file references and localization entries in the same change.
+
+namespace = cap_econ_io
 
 # Hidden yearly check to create/join the Pantalonist IO for eligible countries.
 cap_econ_io.1 = {

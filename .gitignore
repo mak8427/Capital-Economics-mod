@@ -1,0 +1,5 @@
+# Maintainer Note:
+# - Purpose: .gitignore defines workspace hygiene rules used by the Pantalone_Economics feature set.
+# - Reasoning: keeping this logic in a dedicated file isolates balancing and avoids accidental vanilla overlap.
+# - Maintenance: only ignore generated/editor artifacts; do not hide source assets that should be tracked.
+

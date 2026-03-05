@@ -1,3 +1,8 @@
+# Maintainer Note:
+# - Purpose: mvthem_location_modifiers.txt defines static modifier bundles used by the Pantalone_Economics feature set.
+# - Reasoning: keeping this logic in a dedicated file isolates balancing and avoids accidental vanilla overlap.
+# - Maintenance: when renaming keys/scopes, update cross-file references and localization entries in the same change.
+
 move_population_between_locations_penalty = {
 	game_data = {
 		category = location

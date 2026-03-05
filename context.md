@@ -1,78 +1,114 @@
-# Pantalone_Economics mod context
+<!-- Maintainer Note:
+- Purpose: context.md documents the mod architecture, ownership boundaries, and maintenance workflow for Pantalone_Economics.
+- Reasoning: this file is the onboarding map for new maintainers so they can change mechanics safely without breaking cross-file links.
+- Maintenance: update this file whenever a system is added, removed, renamed, or moved to a different script domain.
+-->
 
-## Overview
+# Pantalone_Economics Maintainer Context
 
-This is a Europa Universalis V mod focused on foreign corporate extraction, new religious content (Pantalonism), and a
-scripted situation that tracks the rise of Pantalonism. It adds diplomacy relations, building types, production methods,
-scripted effects, events, UI for a custom situation panel, and localization plus icons.
+## What this mod adds
 
-## Top-level layout
+Pantalone_Economics is a gameplay-heavy EU5 mod centered on four connected systems:
 
-- `in_game/`: gameplay scripts (events, common data, GUI).
-- `main_menu/`: localization, modifier definitions, and interface icons.
-- `Mangiatoia.dds`, `pantalonism.dds`: icon assets at the root.
-- `main.py`: sample PyCharm script (not used by the mod).
+1. Pantalonism religion content and conversion pressure.
+2. Corporate foreign extraction buildings and ownership logic.
+3. International-company subject gameplay with custom government naming.
+4. A Pantalonist international organization with custom law/parliament GUI.
 
-## Core mechanics
+The core design principle is: **economic expansion drives religious and political pressure, and those pressures feed back into state organization and subject behavior**.
 
-- Pantalonism religion: `in_game/common/religions/cap_econ_christian.txt` defines a new Christian-group religion with
-  estate power and economic modifiers.
-- Pantalone relations: scripted diplomacy relations for sending a Pantalone and granting extraction rights in
-  `in_game/common/scripted_relations/cap_pantalone.txt` and
-  `in_game/common/scripted_relations/cap_econ_extraction_rights.txt`.
-- Rise of Pantalonism situation: `in_game/common/situations/CapEcon_pantalonism.txt` defines a global situation
-  targeting one country, tracking Pantalonist population share and Mangiatoia pressure, and updating monthly.
-- Situation UI: `in_game/gui/panels/situation/rise_of_pantalonism.gui` adds a custom panel showing target country,
-  progress bars, and pie chart.
-- Events and monthly pulse:
-    - `in_game/common/on_action/cap_econ_country_monthly.txt` runs a monthly pulse for eligible countries, firing
-      CapEcon events and estate income fixes.
-    - `in_game/events/CapEcon_events.txt` and `in_game/events/religion/CapEcon_pantalonism.txt` add country events tied
-      to the relations and religion.
-    - `in_game/events/estate_income_fix.txt` adds hidden events that compensate estates for control shortfalls and
-      manage estate gold.
-- Scripted effects/triggers:
-    - `in_game/common/scripted_effects/CapEcon_scripted_effects.txt` provides effects like converting pops to
-      Pantalonism and destroying Mangiatoia buildings.
-    - `in_game/common/scripted_triggers/CapEcon_triggers.txt` defines helper triggers for location rank checks.
-- Buildings and production methods:
-    - `in_game/common/building_types/CapEcon_foreign_extraction_buildings.txt` defines many foreign-owned extraction
-      buildings gated by extraction rights.
-    - `in_game/common/building_types/CapEcon_foreign_burgers_buildings.txt` adds corporate HQ buildings that boost caps
-      and local effects.
-    - `in_game/common/building_types/CaPEcon_foreign_uniques.txt` defines the Mangiatoia building (not player-buildable,
-      tied to the situation).
-    - `in_game/common/production_methods/CapEcon_foreign_extraction_methods.txt` provides maintenance/output methods for
-      the corporate buildings.
-- Caps and ranks:
-    - `in_game/common/script_values/CapEcon_building_caps.txt` defines scripted caps for corporate extraction and HQ max
-      levels.
-    - `in_game/common/location_ranks/CapEcon_location_ranks.txt` replaces town/city rank modifiers and requirements.
+## Repository layout
 
-## UI, localization, and icons
+- `in_game/`: gameplay scripts (common definitions, event logic, and in-game GUI).
+- `main_menu/`: localization, modifier metadata, and icon assets used by UI/game concepts.
+- `docs/comment_coverage.md`: sidecar manifest proving every tracked file is documented.
+- root `.dds` files: legacy/source texture assets kept for compatibility.
 
-- Localization: `main_menu/localization/english/` includes text for buildings, events, diplomacy, modifiers, interfaces,
-  and religions.
-- Modifiers: `main_menu/common/modifier_type_definitions/CapEcon_modifier_types.txt`,
-  `main_menu/common/modifier_icons/CapEcon_modifier_icons.txt`, and
-  `main_menu/common/static_modifiers/CapEcon_static_modifiers.txt`.
-- Icons: `main_menu/gfx/interface/icons/buildings/` and `main_menu/gfx/interface/icons/religion/` include DDS icons for
-  corporate buildings and Pantalonism.
+## System map by folder
 
-## Notes
+### `in_game/common/`
 
-- `in_game/common/script_values/CapEcon_scripted_values.txt` is currently empty (only a BOM).
-- `main.py` appears to be a template file and not used by the mod scripts.
+- `advances/`: unlock gates for units/tech-driven content.
+- `building_types/`: all custom corporate and Mangiatoia building definitions.
+- `cabinet_actions/`: scripted population movement actions.
+- `generic_actions/`: clickable/global action logic (including Pantalonism actions).
+- `gods/`, `religions/`, `religious_aspects/`: religion package definitions.
+- `government_reforms/`, `government_types/`: reform and government identity rules.
+- `international_organizations/`, `laws/`, `parliament_types/`, `international_organization_payments/`: IO governance stack.
+- `on_action/`: periodic hooks that trigger mod behavior.
+- `prices/`, `script_values/`, `static_modifiers/`: balancing constants and computed values.
+- `scripted_effects/`, `scripted_triggers/`, `scripted_relations/`: reusable script API.
+- `situations/`: long-running state machine for Rise of Pantalonism.
+- `subject_types/`: `international_company` lifecycle and behavior.
+- `production_methods/`, `unit_types/`, `levies/`, `location_ranks/`: content support and scaling.
 
-## Reference game files
+### `in_game/events/`
 
-There is a full base-game reference tree at `../GAME_FILES/` (relative to this mod root). It is useful for checking
-vanilla definitions, GUI patterns, and localization.
+- `CapEcon_*_events.txt`: event chains for economy, politics, corporate behavior, and situation spikes.
+- `CapEcon_situation_events.txt`: high-impact branch events tied to the situation progress model.
 
-Top-level structure in `../GAME_FILES/`:
+### `in_game/gui/`
 
-- `in_game/`: base game scripting content (common data, events, GUI, map data, setup).
-- `main_menu/`: base menu assets, GUI, localization, and modifier definitions.
-- `mod/`: core game assets/config (fonts, gfx, gui, localization, settings, sound, etc.).
-- `dlc/`: DLC content packs (shared + packs with gfx and localization).
-- `loading_screen/`: loading screen assets and fonts.
+- `panels/situation/rise_of_pantalonism.gui`: custom situation panel.
+- `panels/organization/cap_econ_pantalonist_io.gui`: custom organization panel.
+
+### `main_menu/common/`
+
+- `modifier_type_definitions/`, `modifier_icons/`, `static_modifiers/`, `script_values/`: UI/meta definitions for presenting custom effects.
+
+### `main_menu/localization/english/`
+
+- One file family per domain: buildings, events, diplomacy, reforms, subjects, religion, interfaces, units, modifiers, etc.
+- Rule: every scripted key added in `in_game/` must be localized here in the same change.
+
+### `main_menu/gfx/interface/`
+
+- `icons/buildings/`: building icons for all corporate and Mangiatoia assets.
+- `icons/religion/`: religion icon assets.
+- `advance/`: advance icon assets.
+
+## Critical cross-file dependencies
+
+- Building ids in `in_game/common/building_types/*.txt` must match:
+  - production methods in `in_game/common/production_methods/*.txt`
+  - localization keys in `main_menu/localization/english/CapEcon_buildings_l_english.yml`
+  - icon filenames in `main_menu/gfx/interface/icons/buildings/`
+
+- Subject/government behavior spans:
+  - `in_game/common/subject_types/international_company.txt`
+  - `in_game/common/government_types/CapEcon_company_government_type.txt`
+  - `in_game/common/government_reforms/CapEcon_reforms.txt`
+  - `main_menu/localization/english/CapEcon_government_names_l_english.yml`
+
+- Situation logic spans:
+  - `in_game/common/situations/CapEcon_pantalonism.txt`
+  - `in_game/events/CapEcon_situation_events.txt`
+  - `in_game/common/generic_actions/CapEcon_pantalonism_actions.txt`
+  - `in_game/gui/panels/situation/rise_of_pantalonism.gui`
+
+- IO law behavior spans:
+  - `in_game/common/international_organizations/CapEcon_pantalonist_io.txt`
+  - `in_game/common/laws/CapEcon_pantalonist_io_laws.txt`
+  - `in_game/common/parliament_types/CapEcon_pantalonist_io_parliament_types.txt`
+  - `in_game/gui/panels/organization/cap_econ_pantalonist_io.gui`
+
+## Maintainer workflow
+
+When changing mechanics, follow this order:
+
+1. Update the source logic file (`in_game/common` or `in_game/events`).
+2. Update dependent script references (effects, relations, scripted values, GUI bindings).
+3. Update localization and icon references.
+4. Update `docs/comment_coverage.md` if file set changed.
+5. Re-run in-game error log checks (scope errors, undefined keys, missing localization).
+
+## Commenting standard used in this repo
+
+- Every text/script file contains a top `Maintainer Note` that explains purpose, reasoning, and maintenance constraints.
+- Complex logic sections (loops, multi-branch scope logic, side-effect-heavy blocks) include inline comments to explain intent.
+- Binary files (`.dds`) are documented through the sidecar manifest `docs/comment_coverage.md`.
+
+## Reference vanilla tree
+
+- Base reference content lives in `../GAME_FILES/`.
+- Use it to confirm vanilla patterns for scope usage, subject behavior, law structure, and localization naming conventions.

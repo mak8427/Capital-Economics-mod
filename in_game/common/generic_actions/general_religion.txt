@@ -1,4 +1,9 @@
-﻿convert_religion = {
+﻿# Maintainer Note:
+# - Purpose: general_religion.txt defines generic interaction actions used by the Pantalone_Economics feature set.
+# - Reasoning: keeping this logic in a dedicated file isolates balancing and avoids accidental vanilla overlap.
+# - Maintenance: when renaming keys/scopes, update cross-file references and localization entries in the same change.
+
+convert_religion = {
 	type = owncountry
 
 	sound = UI_action_religion_generic	

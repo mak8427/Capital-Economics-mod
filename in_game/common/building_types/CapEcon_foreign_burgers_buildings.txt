@@ -1,4 +1,9 @@
-﻿corporate_local_headquarters = {
+﻿# Maintainer Note:
+# - Purpose: CapEcon_foreign_burgers_buildings.txt defines building type definitions used by the Pantalone_Economics feature set.
+# - Reasoning: keeping this logic in a dedicated file isolates balancing and avoids accidental vanilla overlap.
+# - Maintenance: when renaming keys/scopes, update cross-file references and localization entries in the same change.
+
+corporate_local_headquarters = {
     is_foreign = yes
     stronger_power_projection = no
     max_levels = corporate_local_headquarters_max_level

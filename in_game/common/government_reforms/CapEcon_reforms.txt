@@ -1,4 +1,9 @@
-﻿pantalone_republic = {
+﻿# Maintainer Note:
+# - Purpose: CapEcon_reforms.txt defines government reform definitions used by the Pantalone_Economics feature set.
+# - Reasoning: keeping this logic in a dedicated file isolates balancing and avoids accidental vanilla overlap.
+# - Maintenance: when renaming keys/scopes, update cross-file references and localization entries in the same change.
+
+pantalone_republic = {
     major = yes
     government = republic
 

@@ -1,4 +1,9 @@
-﻿pantalonism_justified_conflicts = {
+﻿# Maintainer Note:
+# - Purpose: cap_econ_pantalonism.txt defines religious aspect definitions used by the Pantalone_Economics feature set.
+# - Reasoning: keeping this logic in a dedicated file isolates balancing and avoids accidental vanilla overlap.
+# - Maintenance: when renaming keys/scopes, update cross-file references and localization entries in the same change.
+
+pantalonism_justified_conflicts = {
 	religion = pantalonism
 
 	modifier = {

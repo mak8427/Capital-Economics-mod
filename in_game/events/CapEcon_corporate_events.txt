@@ -1,3 +1,8 @@
+# Maintainer Note:
+# - Purpose: CapEcon_corporate_events.txt defines event chains and event outcomes used by the Pantalone_Economics feature set.
+# - Reasoning: keeping this logic in a dedicated file isolates balancing and avoids accidental vanilla overlap.
+# - Maintenance: when renaming keys/scopes, update cross-file references and localization entries in the same change.
+
 namespace = cap_econ_corp
 
 cap_econ_corp.1 = {
@@ -17,15 +22,18 @@ cap_econ_corp.1 = {
                 }
             }
             set_variable = { name = cap_econ_corporate_build_cost value = 500 }
+            # Spend available gold in 500 chunks; each chunk triggers one build attempt.
             while = {
                 limit = { gold >= var:cap_econ_corporate_build_cost }
                 count = 100
                 if = {
+                    # First build always targets the company itself to guarantee local growth.
                     limit = { NOT = { has_variable = cap_econ_corp_first_built } }
                     set_variable = { name = cap_econ_corp_first_built value = 1 }
                     save_scope_as = cap_econ_corp_target
                 }
                 else = {
+                    # Later builds are distributed to valid partners; fall back to overlord if none are valid.
                     random_country = {
                         limit = {
                             religion = religion:pantalonism
@@ -74,6 +82,7 @@ cap_econ_corp.2 = {
                 }
             }
             set_variable = { name = cap_econ_corporate_build_cost value = 500 }
+            # Same spending loop as event .1, but partner selection is restricted to extraction-rights holders.
             while = {
                 limit = { gold >= var:cap_econ_corporate_build_cost }
                 count = 100

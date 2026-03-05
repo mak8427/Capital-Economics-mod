@@ -1,4 +1,9 @@
-﻿corporate_extraction_building_cap_level = {
+﻿# Maintainer Note:
+# - Purpose: CapEcon_modifier_icons.txt defines modifier icon bindings used by the Pantalone_Economics feature set.
+# - Reasoning: keeping this logic in a dedicated file isolates balancing and avoids accidental vanilla overlap.
+# - Maintenance: when renaming keys/scopes, update cross-file references and localization entries in the same change.
+
+corporate_extraction_building_cap_level = {
     positive = "gfx/interface/icons/modifier_types/construction_center_max_level.dds"
 }
 
