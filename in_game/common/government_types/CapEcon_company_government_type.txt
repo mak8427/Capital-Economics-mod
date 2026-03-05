@@ -21,7 +21,7 @@ company = {
 	heir_selection = military_dictatorship
 	heir_selection = matrilineal_non_exclusive
 
-	map_color = gov_republic
+	map_color = gov_theocracy
 
 	government_power = republican_tradition
 

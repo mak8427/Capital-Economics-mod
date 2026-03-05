@@ -8,4 +8,8 @@
  MODIFIER_TYPE_DESC_corporate_extraction_building_cap_level: "Increases the maximum level of corporate extraction buildings in this location."
  MODIFIER_TYPE_NAME_pantalone_authority: "Pantalone Authority"
  MODIFIER_TYPE_DESC_pantalone_authority: "Represents a league leader's ability to direct and coordinate the Pantalonist League."
+ MODIFIER_TYPE_NAME_subject_pays_international_company_cost_modifier: "International Company Pays Overlord"
+ MODIFIER_TYPE_DESC_subject_pays_international_company_cost_modifier: "Impacts how much an [international_company|E] pays to its [overlord|E] each month."
+ MODIFIER_TYPE_NAME_pantalone_contribution_price_cost_modifier: "$pantalone_contribution$ Cost Modifier"
+ MODIFIER_TYPE_DESC_pantalone_contribution_price_cost_modifier: "Impacts the [costs|E] of [ShowPaymentName('pantalone_contribution')] in the Pantalonist League."
  STATIC_MODIFIER_DESC_cap_econ_repression: "Crackdowns on Pantalonist influence weaken local control."

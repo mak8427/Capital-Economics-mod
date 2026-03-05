@@ -1,0 +1,107 @@
+﻿# Maintainer Note:
+# - Purpose: CapEcon_pantalonist_io_election.txt defines the leadership election resolution for the Pantalonist League.
+# - Reasoning: vote-based IO leadership requires an explicit election resolution to avoid runtime validation errors.
+# - Maintenance: keep this resolution id synchronized with leadership_election_resolution in CapEcon_pantalonist_io.txt.
+
+cap_econ_pantalonist_io_election = {
+	loc = election
+
+	potential = {
+		always = yes
+	}
+
+	allow = {
+	}
+
+	ai_tick = monthly
+
+	is_live = {
+		scope:recipient = {
+			international_organization_has_leader = no
+		}
+	}
+
+	can_vote = {
+		scope:actor = {
+			has_ruler = yes
+			is_member_of_international_organization = scope:recipient
+		}
+	}
+
+	votes = {
+		add = {
+			desc = "[elector|e]"
+			value = 1
+		}
+	}
+
+	total_votes_needed = {
+		add = {
+			value = scope:total_votes_available
+			multiply = 0.5
+		}
+	}
+
+	requires_explicit_votes = no
+
+	should_finalize_vote = {
+		custom_tooltip = {
+			text = OVER_HALF_OF_VOTES
+			scope:highest_vote >= scope:total_votes_needed
+		}
+	}
+
+	select_trigger = {
+		looking_for_a = international_organization
+		target_flag = recipient
+		name = "choose_international_organization"
+		column = {
+			data = name
+		}
+		visible = {
+			international_organization_type = international_organization_type:cap_econ_pantalonist_io
+		}
+		enabled = {
+		}
+	}
+
+	select_trigger = {
+		looking_for_a = country
+		source = recipient
+		target_flag = vote
+		allow_self = yes
+		name = "election_select_country"
+		none_available_msg_key = "election_select_no_countries"
+		default_sort = great_power_score
+		column = {
+			data = name
+		}
+		column = {
+			data = great_power_score
+		}
+		visible = {
+			can_lead_international_organization = scope:recipient
+		}
+		enabled = {
+			OR = {
+				NOT = { exists = scope:actor }
+				NOR = {
+					is_rival_of = scope:actor
+					is_enemy_of = scope:actor
+					is_at_war_with = scope:actor
+				}
+			}
+		}
+	}
+
+	effect = {
+		if = {
+			limit = {
+				exists = scope:vote
+			}
+			scope:recipient = {
+				set_leader_country = scope:vote
+			}
+		}
+	}
+}

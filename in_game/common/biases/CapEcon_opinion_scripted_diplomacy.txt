@@ -1,0 +1,8 @@
+﻿# Maintainer Note:
+# - Purpose: CapEcon_opinion_scripted_diplomacy.txt defines IO member opinion baseline for custom international organizations.
+# - Reasoning: custom IO types with member-opinion behavior require an explicit io_opinion_* entry to pass validation.
+# - Maintenance: keep io_opinion keys aligned with international organization type ids.
+
+io_opinion_cap_econ_pantalonist_io = {
+	value = 0
+}

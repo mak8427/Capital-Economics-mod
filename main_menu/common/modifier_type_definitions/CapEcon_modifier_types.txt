@@ -13,3 +13,18 @@ corporate_extraction_building_cap_level = {
 pantalone_authority = {
     decimals = 0
 }
+
+subject_pays_international_company_cost_modifier = {
+    percent = yes
+    game_data = {
+        category = country
+    }
+}
+
+pantalone_contribution_price_cost_modifier = {
+    color = bad
+    percent = yes
+    game_data = {
+        category = country
+    }
+}

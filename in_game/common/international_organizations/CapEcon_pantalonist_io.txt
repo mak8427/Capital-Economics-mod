@@ -12,6 +12,7 @@ cap_econ_pantalonist_io = {
 	leader_type = character
 	leader_change_trigger_type = none
 	leader_change_method = vote
+	leadership_election_resolution = cap_econ_pantalonist_io_election
 	disband_if_no_leader = no
 	show_on_diplomatic_map = yes
 	leader_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_LEADER_COLOR
