@@ -1,0 +1,28 @@
+company = {
+	heir_selection = republic_2_year_terms
+	heir_selection = republic_4_year_terms
+	heir_selection = oligarchic_elective
+	heir_selection = lottery_election
+	heir_selection = doge_election
+	heir_selection = peasant_elective
+	heir_selection = veche_selection
+	heir_selection = bank_selection
+	heir_selection = pirate_elective
+	heir_selection = signoria_selection
+	heir_selection = diarchic_election
+	heir_selection = admiralty_regime_heir_selection
+	heir_selection = general_heir_selection
+	heir_selection = podesta_elective
+	heir_selection = military_dictatorship
+	heir_selection = matrilineal_non_exclusive
+
+	map_color = gov_republic
+
+	government_power = republican_tradition
+
+	default_character_estate = burghers_estate
+
+	modifier = {
+		court_language_is_market_language_importance_modifier = 1
+	}
+}

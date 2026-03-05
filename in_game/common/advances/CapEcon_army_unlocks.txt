@@ -1,0 +1,9 @@
+cap_econ_unlock_macellai_advance = {
+	age = age_2_renaissance
+	icon = pantalonism
+	requires = unlock_peasant_levy_advance
+	unlock_levy = levy_a_macellai
+	allow = {
+		religion = religion:pantalonism
+	}
+}

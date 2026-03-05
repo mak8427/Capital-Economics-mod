@@ -1,0 +1,9 @@
+a_macellai_levy = {
+	category = army_infantry
+	copy_from = a_age_2_renaissance_infantry
+	buildable = no
+	light = yes
+	levy = yes
+	combat_power = 1.5
+	gfx_tags = { light_tag }
+}

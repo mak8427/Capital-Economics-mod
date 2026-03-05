@@ -1,0 +1,12 @@
+levy_a_macellai = {
+	size = 0.05
+
+	allowed_pop_type = peasants
+	allowed_pop_type = laborers
+
+	country_allow = {
+		religion = religion:pantalonism
+	}
+
+	unit = a_macellai_levy
+}

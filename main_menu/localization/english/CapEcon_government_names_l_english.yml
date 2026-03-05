@@ -1,0 +1,41 @@
+l_english:
+ company: "Company"
+ company_desc: "A $company$ is a [government_type|e] where [rulers|e] are selected through corporate governance and serve as executives of the state."
+
+ rank_county_company: "Company"
+ rank_county_company_ADJ: "corporate"
+ rank_county_company_ruler_male: "Chairman"
+ rank_county_company_ruler_female: "Chairwoman"
+
+ rank_duchy_company: "Company"
+ rank_duchy_company_ADJ: "corporate"
+ rank_duchy_company_ruler_male: "Chairman"
+ rank_duchy_company_ruler_female: "Chairwoman"
+
+ rank_kingdom_company: "Company"
+ rank_kingdom_company_ADJ: "corporate"
+ rank_kingdom_company_ruler_male: "Chairman"
+ rank_kingdom_company_ruler_female: "Chairwoman"
+
+ rank_empire_company: "Company"
+ rank_empire_company_ADJ: "corporate"
+ rank_empire_company_ruler_male: "Chairman"
+ rank_empire_company_ruler_female: "Chairwoman"
+
+ company_rank_county_international_company_full: "$NAME$ International Company"
+ company_rank_duchy_international_company_full: "$NAME$ International Company"
+ company_rank_kingdom_international_company_full: "$NAME$ International Company"
+ company_rank_empire_international_company_full: "$NAME$ International Company"
+ republic_rank_county_international_company_full: "$NAME$ International Company"
+ republic_rank_duchy_international_company_full: "$NAME$ International Company"
+ republic_rank_kingdom_international_company_full: "$NAME$ International Company"
+ republic_rank_empire_international_company_full: "$NAME$ International Company"
+
+ company_male_rank_county_pantalone_company: "Chairman"
+ company_female_rank_county_pantalone_company: "Chairwoman"
+ company_male_rank_duchy_pantalone_company: "Chairman"
+ company_female_rank_duchy_pantalone_company: "Chairwoman"
+ company_male_rank_kingdom_pantalone_company: "Chairman"
+ company_female_rank_kingdom_pantalone_company: "Chairwoman"
+ company_male_rank_empire_pantalone_company: "Chairman"
+ company_female_rank_empire_pantalone_company: "Chairwoman"
