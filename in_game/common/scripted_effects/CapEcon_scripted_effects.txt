@@ -55,6 +55,21 @@ lots_of_pantalonist = {
     }
 }
 
+get_mangiatoia_capacity = {
+    set_variable = { name = mangiatoia_capacity value = 0 }
+    every_owned_location = {
+        limit = {
+            is_city = yes
+            "location_building_level(building_type:Mangiatoia_good)" < 10
+        }
+        change_variable = {
+            name = mangiatoia_capacity
+            add = 10
+            subtract = "location_building_level(building_type:Mangiatoia_good)"
+        }
+    }
+}
+
 
 
 

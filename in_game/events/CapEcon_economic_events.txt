@@ -215,34 +215,53 @@ cap_econ.33 = {
 
     trigger = {
         religion = religion:pantalonism
-        any_owned_location = { OR = { is_town = yes is_city = yes } }
+        any_owned_location = {
+            is_city = yes
+            "location_building_level(building_type:Mangiatoia_good)" < 10
+        }
     }
+
+    immediate = {
+        get_mangiatoia_capacity = yes
+    }
+
 
     option = {
         name = cap_econ.33.a
         custom_tooltip = cap_econ.33.a.tt
-        random_owned_location = {
-            limit = { OR = { is_town = yes is_city = yes } }
-            change_building_level_in_location = {
-                building = building_type:Mangiatoia_good
-                value = 1
+
+            random_owned_location = {
+                limit = {
+                    is_city = yes
+                    "location_building_level(building_type:Mangiatoia_good)" < 10
+                }
+                change_building_level_in_location = {
+                    building = building_type:Mangiatoia_good
+                    value = 1
+                }
+            }
+            random_owned_location = {
+                limit = {
+                    is_city = yes
+                    "location_building_level(building_type:Mangiatoia_good)" < 10
+                }
+                change_building_level_in_location = {
+                    building = building_type:Mangiatoia_good
+                    value = 1
+                }
+            }
+            random_owned_location = {
+                limit = {
+                    is_city = yes
+                    "location_building_level(building_type:Mangiatoia_good)" < 10
+                }
+                change_building_level_in_location = {
+                    building = building_type:Mangiatoia_good
+                    value = 1
+                }
             }
         }
-        random_owned_location = {
-            limit = { OR = { is_town = yes is_city = yes } }
-            change_building_level_in_location = {
-                building = building_type:Mangiatoia_good
-                value = 1
-            }
-        }
-        random_owned_location = {
-            limit = { OR = { is_town = yes is_city = yes } }
-            change_building_level_in_location = {
-                building = building_type:Mangiatoia_good
-                value = 1
-            }
-        }
-    }
+
     option = {
         name = cap_econ.33.b
         custom_tooltip = cap_econ.33.b.tt
