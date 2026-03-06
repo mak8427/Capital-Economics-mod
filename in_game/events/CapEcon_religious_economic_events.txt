@@ -72,15 +72,13 @@ cap_econ.30 = {
             age = { 24 24 }
             create_in_limbo = yes
             save_scope_as = cap_econ_pacchetto
+
         }
     }
 
     option = {
         name = cap_econ.30.a
-        scope:cap_econ_pacchetto ?= {
-            set_new_ruler = scope:cap_econ_pacchetto
-
-        }
+        scope:cap_econ_pacchetto = { move_country = root }
         set_variable = cap_econ_pacchetto_spawned
     }
 }
