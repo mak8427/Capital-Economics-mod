@@ -10,3 +10,7 @@ is_town = {
 is_rural_settlement = {
     location_rank = location_rank:rural_settlement
 }
+
+location_is_below_mangiatoia_limit = {
+
+}

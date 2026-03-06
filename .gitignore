@@ -3,3 +3,5 @@
 # - Reasoning: keeping this logic in a dedicated file isolates balancing and avoids accidental vanilla overlap.
 # - Maintenance: only ignore generated/editor artifacts; do not hide source assets that should be tracked.
 
+.idea/
+.metadata/
