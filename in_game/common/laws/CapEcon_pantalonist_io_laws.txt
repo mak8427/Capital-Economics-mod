@@ -109,7 +109,6 @@ pantalone_imperial_diet_law = {
 	locked = { }
 
 	no_pantalone_imperial_diet_policy = {
-		level = 1
 		allow = {
 			# NOTE: these level-transition checks evaluate against the organization scope when recipient is set.
 			scope:recipient = {
@@ -131,7 +130,7 @@ pantalone_imperial_diet_law = {
 	}
 
 	pantalone_early_imperial_diet_policy = {
-		level = 2
+		level = 1
 		allow = {
 			scope:recipient = {
 				var:pantalone_authority >= 50
@@ -161,7 +160,7 @@ pantalone_imperial_diet_law = {
 	}
 
 	pantalone_bi_camerial_imperial_diet_policy = {
-		level = 3
+		level = 2
 		allow = {
 			scope:recipient = {
 				var:pantalone_authority >= 50
@@ -191,7 +190,7 @@ pantalone_imperial_diet_law = {
 	}
 
 	pantalone_tri_camerial_imperial_diet_policy = {
-		level = 4
+		level = 3
 		allow = {
 			scope:recipient = {
 				var:pantalone_authority >= 50
@@ -233,7 +232,6 @@ pantalone_contribution_law = {
 	locked = { }
 
 	no_pantalone_contribution_policy = {
-		level = 1
 		allow = {
 			scope:recipient = {
 				OR = {
@@ -254,7 +252,7 @@ pantalone_contribution_law = {
 	}
 
 	pantalone_contribution_policy_1 = {
-		level = 2
+		level = 1
 		allow = {
 			scope:recipient = {
 				var:pantalone_authority >= 50
@@ -284,7 +282,7 @@ pantalone_contribution_law = {
 	}
 
 	pantalone_contribution_policy_2 = {
-		level = 3
+		level = 2
 		allow = {
 			scope:recipient = {
 				var:pantalone_authority >= 50
@@ -314,7 +312,7 @@ pantalone_contribution_law = {
 	}
 
 	pantalone_contribution_policy_3 = {
-		level = 4
+		level = 3
 		allow = {
 			scope:recipient = {
 				var:pantalone_authority >= 50
@@ -344,7 +342,7 @@ pantalone_contribution_law = {
 	}
 
 	pantalone_contribution_policy_4 = {
-		level = 5
+		level = 4
 		allow = {
 			scope:recipient = {
 				var:pantalone_authority >= 50
@@ -374,7 +372,7 @@ pantalone_contribution_law = {
 	}
 
 	pantalone_contribution_policy_5 = {
-		level = 6
+		level = 5
 		allow = {
 			scope:recipient = {
 				var:pantalone_authority >= 50
@@ -416,7 +414,6 @@ pantalone_estate_contribution_law = {
 	locked = { }
 
 	no_pantalone_estate_contribution_policy = {
-		level = 1
 		allow = {
 			scope:recipient = {
 				OR = {
@@ -437,7 +434,7 @@ pantalone_estate_contribution_law = {
 	}
 
 	pantalone_estate_contribution_policy_1 = {
-		level = 2
+		level = 1
 		allow = {
 			scope:recipient = {
 				var:pantalone_authority >= 50
@@ -467,7 +464,7 @@ pantalone_estate_contribution_law = {
 	}
 
 	pantalone_estate_contribution_policy_2 = {
-		level = 3
+		level = 2
 		allow = {
 			scope:recipient = {
 				var:pantalone_authority >= 50
@@ -497,7 +494,7 @@ pantalone_estate_contribution_law = {
 	}
 
 	pantalone_estate_contribution_policy_3 = {
-		level = 4
+		level = 3
 		allow = {
 			scope:recipient = {
 				var:pantalone_authority >= 50
@@ -527,7 +524,7 @@ pantalone_estate_contribution_law = {
 	}
 
 	pantalone_estate_contribution_policy_4 = {
-		level = 5
+		level = 4
 		allow = {
 			scope:recipient = {
 				var:pantalone_authority >= 50
@@ -669,7 +666,6 @@ pantalone_defense_law = {
 	locked = { }
 
 	no_pantalone_defense_policy = {
-		level = 1
 		allow = {
 			scope:recipient = {
 				OR = {
@@ -687,7 +683,7 @@ pantalone_defense_law = {
 	}
 
 	pantalone_defense_manual_policy = {
-		level = 2
+		level = 1
 		allow = {
 			scope:recipient = {
 				OR = {
@@ -722,7 +718,7 @@ pantalone_defense_law = {
 	}
 
 	pantalone_defense_auto_policy = {
-		level = 3
+		level = 2
 		allow = {
 			scope:recipient = {
 				OR = {
