@@ -17,7 +17,7 @@ cap_econ_pantalonist_io = {
 	show_on_diplomatic_map = yes
 	leader_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_LEADER_COLOR
 	has_parliament = yes
-	parliament_type = no_organization_parliament
+	parliament_type = cap_econ_founding_diet
 	resolution_widget = parliament
 	laws = {
 		pantalone_stability_law = no_pantalone_stability_policy
@@ -68,7 +68,7 @@ cap_econ_pantalonist_io = {
 			change_format = "VARIABLE_CHANGE_FORMAT"
 			min = 0
 			max = 100
-			start = 0
+			start = 1
 
 			monthly_change = {
 				add = {
@@ -127,19 +127,25 @@ cap_econ_pantalonist_io = {
 				NOT = { has_variable = cap_econ_io_diet_migrated }
 			}
 			international_organization_unlock_law_effect = { type = pantalone_imperial_diet_law }
-		if = {
-			limit = {
-				NOT = {
-					OR = {
-						international_organization_has_policy = policy:no_pantalone_imperial_diet_policy
-						international_organization_has_policy = policy:pantalone_early_imperial_diet_policy
-						international_organization_has_policy = policy:pantalone_bi_camerial_imperial_diet_policy
-						international_organization_has_policy = policy:pantalone_tri_camerial_imperial_diet_policy
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							international_organization_has_policy = policy:no_pantalone_imperial_diet_policy
+							international_organization_has_policy = policy:pantalone_early_imperial_diet_policy
+							international_organization_has_policy = policy:pantalone_bi_camerial_imperial_diet_policy
+							international_organization_has_policy = policy:pantalone_tri_camerial_imperial_diet_policy
+						}
 					}
 				}
+				add_policy_to_international_organization = policy:no_pantalone_imperial_diet_policy
 			}
-			add_policy_to_international_organization = policy:no_pantalone_imperial_diet_policy
-		}
+			if = {
+				limit = {
+					parliament_type = parliament_type:no_organization_parliament
+				}
+				set_parliament_type = parliament_type:cap_econ_founding_diet
+			}
 			set_variable = cap_econ_io_diet_migrated
 		}
 
