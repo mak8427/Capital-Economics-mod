@@ -1,0 +1,49 @@
+﻿PERFORM_cap_econ_kill_pantalonism_rebels_ACTION={
+log=yes
+onmap=no
+popup=yes
+idle=no
+option=yes
+pausepopup=no
+message_category = military
+}
+
+PERFORM_cap_econ_fund_mangiatoia_ACTION={
+log=yes
+onmap=no
+popup=yes
+idle=no
+option=yes
+pausepopup=no
+message_category = economy
+}
+
+PERFORM_cap_econ_fund_mangiatoia_foreign_ACTION={
+log=yes
+onmap=no
+popup=yes
+idle=no
+option=yes
+pausepopup=no
+message_category = economy
+}
+
+PERFORM_cap_econ_bribe_the_estate_ACTION={
+log=yes
+onmap=no
+popup=yes
+idle=no
+option=yes
+pausepopup=no
+message_category = diplomacy
+}
+
+PERFORM_cap_econ_subsidize_conversion_ACTION={
+log=yes
+onmap=no
+popup=yes
+idle=no
+option=yes
+pausepopup=no
+message_category = religion
+}

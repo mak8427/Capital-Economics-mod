@@ -16,6 +16,20 @@ cap_econ_early_imperial_diet = {
 	}
 }
 
+cap_econ_founding_diet = {
+	type = international_organization
+	potential = {
+		international_organization_type = international_organization_type:cap_econ_pantalonist_io
+	}
+	locked = { parliament_type = parliament_type:cap_econ_founding_diet }
+	modifier = {
+		# Level-0 baseline chamber: keeps law voting functional before the first real diet reform passes.
+		has_international_parliament = yes
+		uses_parliament_for_law_votes = yes
+		forbid_multiple_policies_vote = yes
+	}
+}
+
 cap_econ_bi_camerial_imperial_diet = {
 	type = international_organization
 	potential = {

@@ -17,7 +17,7 @@ cap_econ_pantalonist_io = {
 	show_on_diplomatic_map = yes
 	leader_color = define:NMapColors|INTERNATIONAL_ORGANIZATION_LEADER_COLOR
 	has_parliament = yes
-	parliament_type = no_organization_parliament
+	parliament_type = cap_econ_founding_diet
 	resolution_widget = parliament
 	laws = {
 		pantalone_stability_law = no_pantalone_stability_policy
@@ -38,6 +38,16 @@ cap_econ_pantalonist_io = {
 		international_organization_unlock_law_effect = { type = pantalone_leader_payment_law }
 		international_organization_unlock_law_effect = { type = pantalone_redistribution_law }
 		international_organization_unlock_law_effect = { type = pantalone_defense_law }
+		# Custom IOs do not get the same implicit starting-law bootstrap as hardcoded vanilla organizations,
+		# so we explicitly enact the initial policy for each law tree on creation.
+		add_policy_to_international_organization = policy:no_pantalone_stability_policy
+		add_policy_to_international_organization = policy:no_pantalone_production_policy
+		add_policy_to_international_organization = policy:no_pantalone_imperial_diet_policy
+		add_policy_to_international_organization = policy:no_pantalone_contribution_policy
+		add_policy_to_international_organization = policy:no_pantalone_estate_contribution_policy
+		add_policy_to_international_organization = policy:pantalone_leader_exempt_policy
+		add_policy_to_international_organization = policy:pantalone_dividends_leader_policy
+		add_policy_to_international_organization = policy:no_pantalone_defense_policy
 		set_variable = cap_econ_io_diet_migrated
 	}
 
@@ -58,7 +68,7 @@ cap_econ_pantalonist_io = {
 			change_format = "VARIABLE_CHANGE_FORMAT"
 			min = 0
 			max = 100
-			start = 0
+			start = 1
 
 			monthly_change = {
 				add = {
@@ -121,13 +131,20 @@ cap_econ_pantalonist_io = {
 				limit = {
 					NOT = {
 						OR = {
+							international_organization_has_policy = policy:no_pantalone_imperial_diet_policy
 							international_organization_has_policy = policy:pantalone_early_imperial_diet_policy
 							international_organization_has_policy = policy:pantalone_bi_camerial_imperial_diet_policy
 							international_organization_has_policy = policy:pantalone_tri_camerial_imperial_diet_policy
 						}
 					}
 				}
-				add_policy_to_international_organization = policy:pantalone_early_imperial_diet_policy
+				add_policy_to_international_organization = policy:no_pantalone_imperial_diet_policy
+			}
+			if = {
+				limit = {
+					parliament_type = parliament_type:no_organization_parliament
+				}
+				set_parliament_type = parliament_type:cap_econ_founding_diet
 			}
 			set_variable = cap_econ_io_diet_migrated
 		}
