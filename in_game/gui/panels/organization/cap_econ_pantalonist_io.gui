@@ -49,14 +49,11 @@ organization_panel = {
 	blockoverride "organization_overview_list_bg" { spacing = 5 }
 	blockoverride "organization_main_actions_extra_visible" { visible = yes }
 	blockoverride "organization_overview_filtered_list" {
+		margin_top = 5
 		filtered_sorted_list = {
-			block "organization_overview_filtered_list_type" {
-				datacontext = "[InternationalOrganizationsView.GetSpecialMembersSortSearch]"
-				blockoverride "scroll_list_is_empty" {
-					block "scroll_overview_empty_visible" {
-						visible = "[IsDataModelEmpty(InternationalOrganizationsView.GetSpecialMemberItems)]"
-					}
-				}
+			datacontext = "[InternationalOrganizationsView.GetMembersSortSearch]"
+			blockoverride "scroll_list_is_empty" {
+				visible = "[IsDataModelEmpty(InternationalOrganizationsView.GetMemberItems)]"
 			}
 			blockoverride "scroll_list_is_empty_text" {
 				text = "MEMBERS_SCROLL_LIST_EMPTY"
@@ -152,7 +149,7 @@ organization_panel = {
 
 					vbox = {
 						layoutpolicy_horizontal = expanding
-						datamodel = "[InternationalOrganizationsView.GetSpecialMemberItems]"
+						datamodel = "[InternationalOrganizationsView.GetMemberItems]"
 						item = {
 							block "organization_overview_list_item" {
 								vbox = {
