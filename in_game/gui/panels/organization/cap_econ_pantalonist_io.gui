@@ -4,12 +4,6 @@
 # - Maintenance: keep widget names and bound scripted values synchronized with situation/event data providers.
 
 organization_panel = {
-
-	blockoverride "organization_panel_middle_botton" {
-		
-	}
-
-
 	blockoverride "io_decoration" {
 		allow_outside = yes
 		icon = {
@@ -258,7 +252,9 @@ organization_panel = {
 			}
 		}
 	}
-	blockoverride "organization_overview_list_custom_bottom" {}
+	blockoverride "organization_overview_list_custom_bottom" {
+		card_io_payments = {}
+	}
 
 	blockoverride "abilities_margins_ios" {
 		margin_left = 45
