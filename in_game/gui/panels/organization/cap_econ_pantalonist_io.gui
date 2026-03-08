@@ -4,6 +4,10 @@
 # - Maintenance: keep widget names and bound scripted values synchronized with situation/event data providers.
 
 organization_panel = {
+	blockoverride "organization_panel_middle_botton" {
+		
+	}
+
 	blockoverride "io_decoration" {
 		allow_outside = yes
 		icon = {
@@ -44,6 +48,128 @@ organization_panel = {
 
 	blockoverride "organization_overview_list_bg" { spacing = 5 }
 	blockoverride "organization_main_actions_extra_visible" { visible = yes }
+	blockoverride "organization_overview_filtered_list" {
+		filtered_sorted_list = {
+			block "organization_overview_filtered_list_type" {
+				datacontext = "[InternationalOrganizationsView.GetSpecialMembersSortSearch]"
+				blockoverride "scroll_list_is_empty" {
+					block "scroll_overview_empty_visible" {
+						visible = "[IsDataModelEmpty(InternationalOrganizationsView.GetSpecialMemberItems)]"
+					}
+				}
+			}
+			blockoverride "scroll_list_is_empty_text" {
+				text = "MEMBERS_SCROLL_LIST_EMPTY"
+			}
+			blockoverride "scroll_list_layout" {
+				vbox = {
+					block "organization_overview_list_bg" {
+						using = layoutpolicy_expanding
+						using = bg_secondary_inner_alt
+						margin_bottom = 20
+						spacing = 5
+					}
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						margin = { 10 2 }
+						spacing = 10
+
+						block "organization_overview_list_custom_top_extra" {}
+						card_actions = {
+							block "organization_main_actions_extra_visible" { visible = "[InternationalOrganizationsView.HasActions]" }
+							blockoverride "card_header_text" {
+								text = "MAIN_ACTIONS"
+							}
+							blockoverride "card_header_icon" {
+								block "io_main_actions_icon" {
+									texture = "[InternationalOrganization.GetIcon]"
+								}
+							}
+
+							blockoverride "actions_override" {
+								vbox = {
+									spacing = 2
+									layoutpolicy_horizontal = expanding
+									scrollarea = {
+										maximumsize = { 470 400 }
+										scrollbarpolicy_horizontal = always_off
+										autoresizescrollarea = yes
+										scrollbar_vertical = {
+											using = Scrollbar_Vertical
+										}
+										scrollwidget = {
+											dynamicgridbox = {
+												datamodel = "[InternationalOrganizationsView.GetActions]"
+												item = {
+													widget = {
+														size = { 470 37 }
+														action_button_diamond = {
+															parentanchor = center
+															visible = "[Not(EqualTo_string(GenericAction.GetKey, 'contribute_to_organization_treasury'))]"
+															size = { 470 30 }
+															text = "[GenericAction.GetNameWithNoTooltip]"
+															title = "[GenericAction.GetNameWithNoTooltip]"
+															actor = "[InternationalOrganizationsView.GetPlayer]"
+															parameter = {
+																parameter_name = "recipient"
+																parameter_value = "[InternationalOrganizationsView.GetInternationalOrganization]"
+															}
+															left_action = { action_name = "[GenericAction.GetKey]" }
+															tooltipwidget = {
+																using = io_generic_action_button_tooltip
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+									scrollarea = {
+										block "organization_main_actions_extra_visible" { visible = no }
+										maximumsize = { 470 400 }
+										scrollbarpolicy_horizontal = always_off
+										autoresizescrollarea = yes
+										scrollbar_vertical = {
+											using = Scrollbar_Vertical
+										}
+										scrollwidget = {
+											widget = {
+												vbox = {
+													set_parent_size_to_minimum = yes
+													margin = { 0 5 }
+													ignoreinvisible = yes
+													spacing = 6
+													block "organization_main_actions_extra" {}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+						card_io_payments = {}
+					}
+
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						datamodel = "[InternationalOrganizationsView.GetSpecialMemberItems]"
+						item = {
+							block "organization_overview_list_item" {
+								vbox = {
+									layoutpolicy_horizontal = expanding
+									spacing = 10
+									using = members_entry
+									visible = "[Not(IsDataModelEmpty(MemberTypeItem.GetCountries))]"
+								}
+							}
+						}
+					}
+
+					block "organization_overview_list_custom_bottom" {}
+				}
+			}
+		}
+	}
 	blockoverride "organization_overview_list_custom_top_extra" {
 		card_expandable = {
 			blockoverride "card_expandable_size" {
@@ -252,9 +378,7 @@ organization_panel = {
 			}
 		}
 	}
-	blockoverride "organization_overview_list_custom_bottom" {
-		card_io_payments = {}
-	}
+	blockoverride "organization_overview_list_custom_bottom" {}
 
 	blockoverride "abilities_margins_ios" {
 		margin_left = 45
