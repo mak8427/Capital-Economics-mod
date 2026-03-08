@@ -109,6 +109,7 @@
  CAP_ECON_IMPERIAL_LAWS_TITLE: "League Reform Framework"
  CAP_ECON_IMPERIAL_LAWS_DESC: "These laws define the constitutional and economic structure of the Pantalonist League, including its Diet, dividend system, and common defense rules."
  CAP_ECON_IMPERIAL_DIET: "Imperial Diet"
+ CAP_ECON_LEAGUE_VOTE_TITLE: "League Vote"
  CAP_ECON_VOTE_IO_LEADER_DESC: "Cast your vote in the current league leadership election."
  diplomatic_status_cap_econ_pantalonist_io_name: "Pantalonist League Member"
  diplomatic_status_cap_econ_pantalonist_io_tooltip: "This country is part of the Pantalonist League and follows its shared diplomatic framework."
