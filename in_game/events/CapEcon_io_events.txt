@@ -34,7 +34,7 @@ cap_econ_io.1 = {
         }
         else = {
             international_organization:cap_econ_pantalonist_io = {
-                add_country_to_international_organization_no_update = scope:pantalone_joiner
+                add_country_to_international_organization = scope:pantalone_joiner
                 if = {
                     limit = { international_organization_has_leader = no }
                     if = {

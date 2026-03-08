@@ -171,6 +171,7 @@ situation_panel = {
                             SimpleContextualTooltipType = {
                                 lowpriotextcontext = "CAP_ECON_PANTALONISM_PROGRESS_TT"
                             }
+
                         }
                     }
                     progressbar = {
