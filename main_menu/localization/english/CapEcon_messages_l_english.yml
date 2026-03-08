@@ -1,0 +1,55 @@
+﻿l_english:
+# Maintainer Note:
+# - Purpose: CapEcon_messages_l_english.yml defines notification text for custom generic actions used by the mod.
+# - Reasoning: generic actions emit message types that must be localized explicitly to avoid runtime missing-message warnings.
+# - Maintenance: add matching PERFORM/WE_PERFORM/ACTION_* keys whenever a new action should notify the player.
+#
+ PERFORM_cap_econ_kill_pantalonism_rebels_ACTION_SETUP: "When a country launches a crackdown against Pantalonist rebels during the Rise of Pantalonism."
+ PERFORM_cap_econ_kill_pantalonism_rebels_ACTION_HEADER: "$MESSENGER$"
+ PERFORM_cap_econ_kill_pantalonism_rebels_ACTION_TITLE: "Pantalonist Rebels Targeted"
+ PERFORM_cap_econ_kill_pantalonism_rebels_ACTION_EFFECTS: "$EFFECT$"
+ PERFORM_cap_econ_kill_pantalonism_rebels_ACTION_LOG: "$PERFORM_cap_econ_kill_pantalonism_rebels_ACTION_TITLE$"
+ PERFORM_cap_econ_kill_pantalonism_rebels_ACTION_BTN1: "OK"
+ PERFORM_cap_econ_kill_pantalonism_rebels_ACTION_BTN2: "OK"
+ PERFORM_cap_econ_kill_pantalonism_rebels_ACTION_BTN3: "$common_string_go_to$"
+ PERFORM_cap_econ_kill_pantalonism_rebels_ACTION_MAP: ""
+
+ PERFORM_cap_econ_fund_mangiatoia_ACTION_SETUP: "When a Pantalonist patron funds a Mangiatoia during the Rise of Pantalonism."
+ PERFORM_cap_econ_fund_mangiatoia_ACTION_HEADER: "$MESSENGER$"
+ PERFORM_cap_econ_fund_mangiatoia_ACTION_TITLE: "Mangiatoia Funded"
+ PERFORM_cap_econ_fund_mangiatoia_ACTION_EFFECTS: "$EFFECT$"
+ PERFORM_cap_econ_fund_mangiatoia_ACTION_LOG: "$PERFORM_cap_econ_fund_mangiatoia_ACTION_TITLE$"
+ PERFORM_cap_econ_fund_mangiatoia_ACTION_BTN1: "OK"
+ PERFORM_cap_econ_fund_mangiatoia_ACTION_BTN2: "OK"
+ PERFORM_cap_econ_fund_mangiatoia_ACTION_BTN3: "$common_string_go_to$"
+ PERFORM_cap_econ_fund_mangiatoia_ACTION_MAP: ""
+
+ PERFORM_cap_econ_fund_mangiatoia_foreign_ACTION_SETUP: "When a foreign Pantalonist patron funds a Mangiatoia abroad during the Rise of Pantalonism."
+ PERFORM_cap_econ_fund_mangiatoia_foreign_ACTION_HEADER: "$MESSENGER$"
+ PERFORM_cap_econ_fund_mangiatoia_foreign_ACTION_TITLE: "Foreign Mangiatoia Funded"
+ PERFORM_cap_econ_fund_mangiatoia_foreign_ACTION_EFFECTS: "$EFFECT$"
+ PERFORM_cap_econ_fund_mangiatoia_foreign_ACTION_LOG: "$PERFORM_cap_econ_fund_mangiatoia_foreign_ACTION_TITLE$"
+ PERFORM_cap_econ_fund_mangiatoia_foreign_ACTION_BTN1: "OK"
+ PERFORM_cap_econ_fund_mangiatoia_foreign_ACTION_BTN2: "OK"
+ PERFORM_cap_econ_fund_mangiatoia_foreign_ACTION_BTN3: "$common_string_go_to$"
+ PERFORM_cap_econ_fund_mangiatoia_foreign_ACTION_MAP: ""
+
+ PERFORM_cap_econ_bribe_the_estate_ACTION_SETUP: "When a country bribes local estates to secure extraction privileges during the Rise of Pantalonism."
+ PERFORM_cap_econ_bribe_the_estate_ACTION_HEADER: "$MESSENGER$"
+ PERFORM_cap_econ_bribe_the_estate_ACTION_TITLE: "Estate Bribery"
+ PERFORM_cap_econ_bribe_the_estate_ACTION_EFFECTS: "$EFFECT$"
+ PERFORM_cap_econ_bribe_the_estate_ACTION_LOG: "$PERFORM_cap_econ_bribe_the_estate_ACTION_TITLE$"
+ PERFORM_cap_econ_bribe_the_estate_ACTION_BTN1: "OK"
+ PERFORM_cap_econ_bribe_the_estate_ACTION_BTN2: "OK"
+ PERFORM_cap_econ_bribe_the_estate_ACTION_BTN3: "$common_string_go_to$"
+ PERFORM_cap_econ_bribe_the_estate_ACTION_MAP: ""
+
+ PERFORM_cap_econ_subsidize_conversion_ACTION_SETUP: "When a Pantalonist state subsidizes conversion in a target country."
+ PERFORM_cap_econ_subsidize_conversion_ACTION_HEADER: "$MESSENGER$"
+ PERFORM_cap_econ_subsidize_conversion_ACTION_TITLE: "Conversion Subsidized"
+ PERFORM_cap_econ_subsidize_conversion_ACTION_EFFECTS: "$EFFECT$"
+ PERFORM_cap_econ_subsidize_conversion_ACTION_LOG: "$PERFORM_cap_econ_subsidize_conversion_ACTION_TITLE$"
+ PERFORM_cap_econ_subsidize_conversion_ACTION_BTN1: "OK"
+ PERFORM_cap_econ_subsidize_conversion_ACTION_BTN2: "OK"
+ PERFORM_cap_econ_subsidize_conversion_ACTION_BTN3: "$common_string_go_to$"
+ PERFORM_cap_econ_subsidize_conversion_ACTION_MAP: ""

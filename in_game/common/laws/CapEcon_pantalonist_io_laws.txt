@@ -7,29 +7,35 @@ pantalone_stability_law = {
 	# Baseline administrative law: trades authority for stability-focused bonuses.
 	type = international_organization
 	law_category = administrative
+	has_levels = yes
 	custom_tags = { }
 	potential = {
 		international_organization_type = international_organization_type:cap_econ_pantalonist_io
 	}
-	allow = {
-		international_organization:cap_econ_pantalonist_io = {
-			var:pantalone_authority >= 50
-		}
-	}
+	allow = { always = yes }
 	locked = { }
 
 	no_pantalone_stability_policy = {
+		level = 1
+		allow = {
+			international_organization_has_policy = policy:pantalone_stability_policy
+		}
 		wants_this_policy_bias = {
 			subtract = {
 				desc = "POLICY_BASE_REASON_KEEP_POLICY"
-				value = 50
+				value = 1
 			}
 		}
 	}
 
 	pantalone_stability_policy = {
+		level = 2
+		allow = {
+			var:pantalone_authority >= 1
+			international_organization_has_policy = policy:no_pantalone_stability_policy
+		}
 		on_activate = {
-			change_variable = { name = pantalone_authority add = -50 }
+			change_variable = { name = pantalone_authority add = -1 }
 		}
 		country_modifier = {
 			stability_decay = -0.1
@@ -38,7 +44,7 @@ pantalone_stability_law = {
 		wants_propose_policy = {
 			add = {
 				desc = "DIPLOREASON_BASE"
-				value = 50
+				value = 1
 			}
 		}
 		wants_this_policy_bias = {
@@ -54,29 +60,35 @@ pantalone_production_law = {
 	# Socioeconomic law: pushes member economies toward production efficiency.
 	type = international_organization
 	law_category = socioeconomic
-	custom_tags = { forbids_no_policy }
+	has_levels = yes
+	custom_tags = { }
 	potential = {
 		international_organization_type = international_organization_type:cap_econ_pantalonist_io
 	}
-	allow = {
-		international_organization:cap_econ_pantalonist_io = {
-			var:pantalone_authority >= 50
-		}
-	}
+	allow = { always = yes }
 	locked = { }
 
 	no_pantalone_production_policy = {
+		level = 1
+		allow = {
+			international_organization_has_policy = policy:pantalone_production_policy
+		}
 		wants_this_policy_bias = {
 			subtract = {
 				desc = "POLICY_BASE_REASON_KEEP_POLICY"
-				value = 50
+				value = 1
 			}
 		}
 	}
 
 	pantalone_production_policy = {
+		level = 2
+		allow = {
+			var:pantalone_authority >= 1
+			international_organization_has_policy = policy:no_pantalone_production_policy
+		}
 		on_activate = {
-			change_variable = { name = pantalone_authority add = -50 }
+			change_variable = { name = pantalone_authority add = -1 }
 		}
 		country_modifier = {
 			global_production_efficiency = small_production_efficiency_bonus
@@ -84,7 +96,7 @@ pantalone_production_law = {
 		wants_propose_policy = {
 			add = {
 				desc = "DIPLOREASON_BASE"
-				value = 50
+				value = 1
 			}
 		}
 		wants_this_policy_bias = {
@@ -111,16 +123,11 @@ pantalone_imperial_diet_law = {
 	no_pantalone_imperial_diet_policy = {
 		level = 1
 		allow = {
-			# NOTE: these level-transition checks evaluate against the organization scope when recipient is set.
-			scope:recipient = {
-				OR = {
-					international_organization_has_policy = policy:no_pantalone_imperial_diet_policy
-					international_organization_has_policy = policy:pantalone_early_imperial_diet_policy
-				}
-			}
+			international_organization_has_policy = policy:pantalone_early_imperial_diet_policy
 		}
 		on_activate = {
-			set_parliament_type = parliament_type:no_organization_parliament
+			# Keep a minimal chamber active at level 1 so members can still initiate and vote on law reforms.
+			set_parliament_type = parliament_type:cap_econ_founding_diet
 		}
 		wants_this_policy_bias = {
 			subtract = {
@@ -133,23 +140,20 @@ pantalone_imperial_diet_law = {
 	pantalone_early_imperial_diet_policy = {
 		level = 2
 		allow = {
-			scope:recipient = {
-				var:pantalone_authority >= 50
-				OR = {
-					international_organization_has_policy = policy:no_pantalone_imperial_diet_policy
-					international_organization_has_policy = policy:pantalone_early_imperial_diet_policy
-					international_organization_has_policy = policy:pantalone_bi_camerial_imperial_diet_policy
-				}
+			var:pantalone_authority >= 1
+			OR = {
+				international_organization_has_policy = policy:no_pantalone_imperial_diet_policy
+				international_organization_has_policy = policy:pantalone_bi_camerial_imperial_diet_policy
 			}
 		}
 		on_activate = {
-			change_variable = { name = pantalone_authority add = -50 }
+			change_variable = { name = pantalone_authority add = -1 }
 			set_parliament_type = parliament_type:cap_econ_early_imperial_diet
 		}
 		wants_propose_policy = {
 			add = {
 				desc = "DIPLOREASON_BASE"
-				value = 50
+				value = 1
 			}
 		}
 		wants_this_policy_bias = {
@@ -163,17 +167,14 @@ pantalone_imperial_diet_law = {
 	pantalone_bi_camerial_imperial_diet_policy = {
 		level = 3
 		allow = {
-			scope:recipient = {
-				var:pantalone_authority >= 50
-				OR = {
-					international_organization_has_policy = policy:pantalone_early_imperial_diet_policy
-					international_organization_has_policy = policy:pantalone_bi_camerial_imperial_diet_policy
-					international_organization_has_policy = policy:pantalone_tri_camerial_imperial_diet_policy
-				}
+			var:pantalone_authority >= 1
+			OR = {
+				international_organization_has_policy = policy:pantalone_early_imperial_diet_policy
+				international_organization_has_policy = policy:pantalone_tri_camerial_imperial_diet_policy
 			}
 		}
 		on_activate = {
-			change_variable = { name = pantalone_authority add = -50 }
+			change_variable = { name = pantalone_authority add = -1 }
 			set_parliament_type = parliament_type:cap_econ_bi_camerial_imperial_diet
 		}
 		wants_propose_policy = {
@@ -193,16 +194,11 @@ pantalone_imperial_diet_law = {
 	pantalone_tri_camerial_imperial_diet_policy = {
 		level = 4
 		allow = {
-			scope:recipient = {
-				var:pantalone_authority >= 50
-				OR = {
-					international_organization_has_policy = policy:pantalone_bi_camerial_imperial_diet_policy
-					international_organization_has_policy = policy:pantalone_tri_camerial_imperial_diet_policy
-				}
-			}
+			var:pantalone_authority >= 1
+			international_organization_has_policy = policy:pantalone_bi_camerial_imperial_diet_policy
 		}
 		on_activate = {
-			change_variable = { name = pantalone_authority add = -50 }
+			change_variable = { name = pantalone_authority add = -1 }
 			set_parliament_type = parliament_type:cap_econ_tri_camerial_imperial_diet
 		}
 		wants_propose_policy = {
@@ -235,12 +231,7 @@ pantalone_contribution_law = {
 	no_pantalone_contribution_policy = {
 		level = 1
 		allow = {
-			scope:recipient = {
-				OR = {
-					international_organization_has_policy = policy:no_pantalone_contribution_policy
-					international_organization_has_policy = policy:pantalone_contribution_policy_1
-				}
-			}
+			international_organization_has_policy = policy:pantalone_contribution_policy_1
 		}
 		on_activate = {
 			set_variable = { name = contribution_modifier value = 20 }
@@ -248,7 +239,7 @@ pantalone_contribution_law = {
 		wants_this_policy_bias = {
 			subtract = {
 				desc = "POLICY_BASE_REASON_KEEP_POLICY"
-				value = 50
+				value = 1
 			}
 		}
 	}
@@ -256,23 +247,20 @@ pantalone_contribution_law = {
 	pantalone_contribution_policy_1 = {
 		level = 2
 		allow = {
-			scope:recipient = {
-				var:pantalone_authority >= 50
-				OR = {
-					international_organization_has_policy = policy:no_pantalone_contribution_policy
-					international_organization_has_policy = policy:pantalone_contribution_policy_1
-					international_organization_has_policy = policy:pantalone_contribution_policy_2
-				}
+			var:pantalone_authority >= 1
+			OR = {
+				international_organization_has_policy = policy:no_pantalone_contribution_policy
+				international_organization_has_policy = policy:pantalone_contribution_policy_2
 			}
 		}
 		on_activate = {
-			change_variable = { name = pantalone_authority add = -50 }
+			change_variable = { name = pantalone_authority add = -1 }
 			set_variable = { name = contribution_modifier value = 30 }
 		}
 		wants_propose_policy = {
 			add = {
 				desc = "DIPLOREASON_BASE"
-				value = 50
+				value = 1
 			}
 		}
 		wants_this_policy_bias = {
@@ -286,17 +274,14 @@ pantalone_contribution_law = {
 	pantalone_contribution_policy_2 = {
 		level = 3
 		allow = {
-			scope:recipient = {
-				var:pantalone_authority >= 50
-				OR = {
-					international_organization_has_policy = policy:pantalone_contribution_policy_1
-					international_organization_has_policy = policy:pantalone_contribution_policy_2
-					international_organization_has_policy = policy:pantalone_contribution_policy_3
-				}
+			var:pantalone_authority >= 1
+			OR = {
+				international_organization_has_policy = policy:pantalone_contribution_policy_1
+				international_organization_has_policy = policy:pantalone_contribution_policy_3
 			}
 		}
 		on_activate = {
-			change_variable = { name = pantalone_authority add = -50 }
+			change_variable = { name = pantalone_authority add = -1 }
 			set_variable = { name = contribution_modifier value = 40 }
 		}
 		wants_propose_policy = {
@@ -316,17 +301,14 @@ pantalone_contribution_law = {
 	pantalone_contribution_policy_3 = {
 		level = 4
 		allow = {
-			scope:recipient = {
-				var:pantalone_authority >= 50
-				OR = {
-					international_organization_has_policy = policy:pantalone_contribution_policy_2
-					international_organization_has_policy = policy:pantalone_contribution_policy_3
-					international_organization_has_policy = policy:pantalone_contribution_policy_4
-				}
+			var:pantalone_authority >= 1
+			OR = {
+				international_organization_has_policy = policy:pantalone_contribution_policy_2
+				international_organization_has_policy = policy:pantalone_contribution_policy_4
 			}
 		}
 		on_activate = {
-			change_variable = { name = pantalone_authority add = -50 }
+			change_variable = { name = pantalone_authority add = -1 }
 			set_variable = { name = contribution_modifier value = 60 }
 		}
 		wants_propose_policy = {
@@ -346,17 +328,14 @@ pantalone_contribution_law = {
 	pantalone_contribution_policy_4 = {
 		level = 5
 		allow = {
-			scope:recipient = {
-				var:pantalone_authority >= 50
-				OR = {
-					international_organization_has_policy = policy:pantalone_contribution_policy_3
-					international_organization_has_policy = policy:pantalone_contribution_policy_4
-					international_organization_has_policy = policy:pantalone_contribution_policy_5
-				}
+			var:pantalone_authority >= 1
+			OR = {
+				international_organization_has_policy = policy:pantalone_contribution_policy_3
+				international_organization_has_policy = policy:pantalone_contribution_policy_5
 			}
 		}
 		on_activate = {
-			change_variable = { name = pantalone_authority add = -50 }
+			change_variable = { name = pantalone_authority add = -1 }
 			set_variable = { name = contribution_modifier value = 80 }
 		}
 		wants_propose_policy = {
@@ -376,16 +355,11 @@ pantalone_contribution_law = {
 	pantalone_contribution_policy_5 = {
 		level = 6
 		allow = {
-			scope:recipient = {
-				var:pantalone_authority >= 50
-				OR = {
-					international_organization_has_policy = policy:pantalone_contribution_policy_4
-					international_organization_has_policy = policy:pantalone_contribution_policy_5
-				}
-			}
+			var:pantalone_authority >= 1
+			international_organization_has_policy = policy:pantalone_contribution_policy_4
 		}
 		on_activate = {
-			change_variable = { name = pantalone_authority add = -50 }
+			change_variable = { name = pantalone_authority add = -1 }
 			set_variable = { name = contribution_modifier value = 100 }
 		}
 		wants_propose_policy = {
@@ -418,12 +392,7 @@ pantalone_estate_contribution_law = {
 	no_pantalone_estate_contribution_policy = {
 		level = 1
 		allow = {
-			scope:recipient = {
-				OR = {
-					international_organization_has_policy = policy:no_pantalone_estate_contribution_policy
-					international_organization_has_policy = policy:pantalone_estate_contribution_policy_1
-				}
-			}
+			international_organization_has_policy = policy:pantalone_estate_contribution_policy_1
 		}
 		on_activate = {
 			set_variable = { name = estate_contribution_modifier value = 10 }
@@ -431,7 +400,7 @@ pantalone_estate_contribution_law = {
 		wants_this_policy_bias = {
 			subtract = {
 				desc = "POLICY_BASE_REASON_KEEP_POLICY"
-				value = 50
+				value = 1
 			}
 		}
 	}
@@ -439,17 +408,14 @@ pantalone_estate_contribution_law = {
 	pantalone_estate_contribution_policy_1 = {
 		level = 2
 		allow = {
-			scope:recipient = {
-				var:pantalone_authority >= 50
-				OR = {
-					international_organization_has_policy = policy:no_pantalone_estate_contribution_policy
-					international_organization_has_policy = policy:pantalone_estate_contribution_policy_1
-					international_organization_has_policy = policy:pantalone_estate_contribution_policy_2
-				}
+			var:pantalone_authority >= 1
+			OR = {
+				international_organization_has_policy = policy:no_pantalone_estate_contribution_policy
+				international_organization_has_policy = policy:pantalone_estate_contribution_policy_2
 			}
 		}
 		on_activate = {
-			change_variable = { name = pantalone_authority add = -50 }
+			change_variable = { name = pantalone_authority add = -1 }
 			set_variable = { name = estate_contribution_modifier value = 20 }
 		}
 		wants_propose_policy = {
@@ -469,17 +435,14 @@ pantalone_estate_contribution_law = {
 	pantalone_estate_contribution_policy_2 = {
 		level = 3
 		allow = {
-			scope:recipient = {
-				var:pantalone_authority >= 50
-				OR = {
-					international_organization_has_policy = policy:pantalone_estate_contribution_policy_1
-					international_organization_has_policy = policy:pantalone_estate_contribution_policy_2
-					international_organization_has_policy = policy:pantalone_estate_contribution_policy_3
-				}
+			var:pantalone_authority >= 1
+			OR = {
+				international_organization_has_policy = policy:pantalone_estate_contribution_policy_1
+				international_organization_has_policy = policy:pantalone_estate_contribution_policy_3
 			}
 		}
 		on_activate = {
-			change_variable = { name = pantalone_authority add = -50 }
+			change_variable = { name = pantalone_authority add = -1 }
 			set_variable = { name = estate_contribution_modifier value = 30 }
 		}
 		wants_propose_policy = {
@@ -499,17 +462,14 @@ pantalone_estate_contribution_law = {
 	pantalone_estate_contribution_policy_3 = {
 		level = 4
 		allow = {
-			scope:recipient = {
-				var:pantalone_authority >= 50
-				OR = {
-					international_organization_has_policy = policy:pantalone_estate_contribution_policy_2
-					international_organization_has_policy = policy:pantalone_estate_contribution_policy_3
-					international_organization_has_policy = policy:pantalone_estate_contribution_policy_4
-				}
+			var:pantalone_authority >= 1
+			OR = {
+				international_organization_has_policy = policy:pantalone_estate_contribution_policy_2
+				international_organization_has_policy = policy:pantalone_estate_contribution_policy_4
 			}
 		}
 		on_activate = {
-			change_variable = { name = pantalone_authority add = -50 }
+			change_variable = { name = pantalone_authority add = -1 }
 			set_variable = { name = estate_contribution_modifier value = 40 }
 		}
 		wants_propose_policy = {
@@ -529,16 +489,11 @@ pantalone_estate_contribution_law = {
 	pantalone_estate_contribution_policy_4 = {
 		level = 5
 		allow = {
-			scope:recipient = {
-				var:pantalone_authority >= 50
-				OR = {
-					international_organization_has_policy = policy:pantalone_estate_contribution_policy_3
-					international_organization_has_policy = policy:pantalone_estate_contribution_policy_4
-				}
-			}
+			var:pantalone_authority >= 1
+			international_organization_has_policy = policy:pantalone_estate_contribution_policy_3
 		}
 		on_activate = {
-			change_variable = { name = pantalone_authority add = -50 }
+			change_variable = { name = pantalone_authority add = -1 }
 			set_variable = { name = estate_contribution_modifier value = 50 }
 		}
 		wants_propose_policy = {
@@ -560,18 +515,19 @@ pantalone_leader_payment_law = {
 	# Controls whether the IO leader is exempt or pays into the same framework.
 	type = international_organization
 	law_category = socioeconomic
-	custom_tags = { forbids_no_policy }
+	has_levels = yes
+	custom_tags = { }
 	potential = {
 		international_organization_type = international_organization_type:cap_econ_pantalonist_io
 	}
-	allow = {
-		international_organization:cap_econ_pantalonist_io = {
-			var:pantalone_authority >= 10
-		}
-	}
+	allow = { always = yes }
 	locked = { }
 
 	pantalone_leader_exempt_policy = {
+		level = 1
+		allow = {
+			international_organization_has_policy = policy:pantalone_leader_pays_policy
+		}
 		wants_this_policy_bias = {
 			add = {
 				desc = "POLICY_BASE_REASON_KEEP_POLICY"
@@ -581,8 +537,13 @@ pantalone_leader_payment_law = {
 	}
 
 	pantalone_leader_pays_policy = {
+		level = 2
+		allow = {
+			var:pantalone_authority >= 5
+			international_organization_has_policy = policy:pantalone_leader_exempt_policy
+		}
 		on_activate = {
-			change_variable = { name = pantalone_authority add = -10 }
+			change_variable = { name = pantalone_authority add = -5 }
 		}
 		wants_propose_policy = {
 			add = {
@@ -603,7 +564,7 @@ pantalone_redistribution_law = {
 	# Chooses dividend distribution model among leader-focused, equalized, or mixed splits.
 	type = international_organization
 	law_category = administrative
-	custom_tags = { forbids_no_policy }
+	custom_tags = { }
 	potential = {
 		international_organization_type = international_organization_type:cap_econ_pantalonist_io
 	}
@@ -611,6 +572,9 @@ pantalone_redistribution_law = {
 	locked = { }
 
 	pantalone_dividends_leader_policy = {
+		allow = {
+			NOT = { international_organization_has_policy = policy:pantalone_dividends_leader_policy }
+		}
 		wants_propose_policy = {
 			subtract = {
 				desc = "DIPLOREASON_BASE"
@@ -626,6 +590,9 @@ pantalone_redistribution_law = {
 	}
 
 	pantalone_dividends_equal_policy = {
+		allow = {
+			NOT = { international_organization_has_policy = policy:pantalone_dividends_equal_policy }
+		}
 		wants_propose_policy = {
 			add = {
 				desc = "DIPLOREASON_BASE"
@@ -641,6 +608,9 @@ pantalone_redistribution_law = {
 	}
 
 	pantalone_dividends_split_policy = {
+		allow = {
+			NOT = { international_organization_has_policy = policy:pantalone_dividends_split_policy }
+		}
 		wants_propose_policy = {
 			subtract = {
 				desc = "DIPLOREASON_BASE"
@@ -671,12 +641,7 @@ pantalone_defense_law = {
 	no_pantalone_defense_policy = {
 		level = 1
 		allow = {
-			scope:recipient = {
-				OR = {
-					international_organization_has_policy = policy:no_pantalone_defense_policy
-					international_organization_has_policy = policy:pantalone_defense_manual_policy
-				}
-			}
+			international_organization_has_policy = policy:pantalone_defense_manual_policy
 		}
 		wants_this_policy_bias = {
 			subtract = {
@@ -689,12 +654,10 @@ pantalone_defense_law = {
 	pantalone_defense_manual_policy = {
 		level = 2
 		allow = {
-			scope:recipient = {
-				OR = {
-					international_organization_has_policy = policy:no_pantalone_defense_policy
-					international_organization_has_policy = policy:pantalone_defense_manual_policy
-					international_organization_has_policy = policy:pantalone_defense_auto_policy
-				}
+			var:pantalone_authority >= 1
+			OR = {
+				international_organization_has_policy = policy:no_pantalone_defense_policy
+				international_organization_has_policy = policy:pantalone_defense_auto_policy
 			}
 		}
 		diplomatic_capacity_cost = possible_defence_upkeep_cost
@@ -724,12 +687,8 @@ pantalone_defense_law = {
 	pantalone_defense_auto_policy = {
 		level = 3
 		allow = {
-			scope:recipient = {
-				OR = {
-					international_organization_has_policy = policy:pantalone_defense_manual_policy
-					international_organization_has_policy = policy:pantalone_defense_auto_policy
-				}
-			}
+			var:pantalone_authority >= 1
+			international_organization_has_policy = policy:pantalone_defense_manual_policy
 		}
 		diplomatic_capacity_cost = automatic_defence_upkeep_cost
 		join_defensive_wars_auto_call = {

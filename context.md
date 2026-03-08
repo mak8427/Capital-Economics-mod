@@ -56,6 +56,12 @@ The core design principle is: **economic expansion drives religious and politica
 
 - `modifier_type_definitions/`, `modifier_icons/`, `static_modifiers/`, `script_values/`: UI/meta definitions for presenting custom effects.
 
+### `main_menu/gui/`
+
+- Use uniquely named mod files such as `CapEcon_*.txt` or `CapEcon_*.gui` when extending shared GUI registries.
+- Do **not** create mod files with the exact vanilla filename for global registries like `messagetypes.txt` unless you intentionally mean to override the whole file.
+- In practice: custom message type additions belong in `main_menu/gui/CapEcon_messagetypes.txt`, not `main_menu/gui/messagetypes.txt`.
+
 ### `main_menu/localization/english/`
 
 - One file family per domain: buildings, events, diplomacy, reforms, subjects, religion, interfaces, units, modifiers, etc.
@@ -99,8 +105,9 @@ When changing mechanics, follow this order:
 1. Update the source logic file (`in_game/common` or `in_game/events`).
 2. Update dependent script references (effects, relations, scripted values, GUI bindings).
 3. Update localization and icon references.
-4. Update `docs/comment_coverage.md` if file set changed.
-5. Re-run in-game error log checks (scope errors, undefined keys, missing localization).
+4. For GUI registry extensions, verify the mod file uses a unique prefixed filename instead of a vanilla exact-name override.
+5. Update `docs/comment_coverage.md` if file set changed.
+6. Re-run in-game error log checks (scope errors, undefined keys, missing localization).
 
 ## Commenting standard used in this repo
 

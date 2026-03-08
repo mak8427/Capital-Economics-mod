@@ -250,8 +250,9 @@ organization_panel = {
 			hbox = {
 				layoutpolicy_horizontal = expanding
 				margin = {15 5}
-				using = members_entry
+				using = hre_members_entry
 			}
+			visible = "[Not( EqualTo_string(MemberTypeItem.GetName, ShowSpecialStatusName('emperor')) )]"
 			blockoverride "member_item_visibility"{
 				visible = "[Not( IsDataModelEmpty(MemberTypeItem.GetCountries) )]"
 			}
@@ -403,9 +404,9 @@ template hre_elector_flag_entry {
 									}
 								}
 							}
-					
+						
 							blockoverride "title_text" {
-								raw_text = "[Country.GetNameWithNoTooltip]'s Imperial Vote"
+								raw_text = "[Country.GetNameWithNoTooltip]'s League Vote"
 							}
 					
 							blockoverride "concept_link" {
@@ -440,7 +441,7 @@ template hre_elector_flag_entry {
 				autoresize = yes
 				tooltip_enabled = "[Country.IsValid]"
 				tooltipwidget = {
-					ContextualTooltipType = {
+						ContextualTooltipType = {
 						blockoverride "title_icon" {
 							icon = {
 								using = tooltip_title_icon_size
@@ -455,9 +456,9 @@ template hre_elector_flag_entry {
 							}
 						}
 				
-						blockoverride "title_text" {
-							text = "IMPERIAL_VOTE_TITLE"
-						}
+							blockoverride "title_text" {
+								text = "CAP_ECON_LEAGUE_VOTE_TITLE"
+							}
 				
 						blockoverride "concept_link" {
 							text = "[vote|e]"

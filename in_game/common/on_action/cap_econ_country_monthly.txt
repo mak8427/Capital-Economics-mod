@@ -79,11 +79,6 @@ monthly_country_pulse_capecon_2 = {
     events = {
         cap_econ.22
     }
-    effect = {
-        set_variable = { name = cap_start_pantalone value = 1 }
-
-    }
-
 }
 
 yearly_country_pulse_capecon_io = {
