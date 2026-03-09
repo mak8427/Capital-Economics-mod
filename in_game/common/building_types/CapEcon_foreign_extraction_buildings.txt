@@ -65,7 +65,7 @@ corporate_alum_mine = {
         cap_econ_alum_mine_maintenance
     }
 
-    construction_demand = basic_construction_needs
+    construction_demand = RGO_construction
 
     modifier = {
         scaled_gold_to_building_owner = 0.1
@@ -123,7 +123,7 @@ corporate_amber_collectors = {
         cap_econ_amber_collectors_maintenance
     }
 
-    construction_demand = basic_construction_needs
+    construction_demand = RGO_construction
 
     modifier = {
         scaled_gold_to_building_owner = 0.1
@@ -295,7 +295,7 @@ corporate_clay_pit = {
         cap_econ_clay_pit_maintenance
     }
 
-    construction_demand = basic_construction_needs
+    construction_demand = RGO_construction
 
     modifier = {
         scaled_gold_to_building_owner = 0.1
@@ -582,7 +582,7 @@ corporate_copper_mine = {
         cap_econ_copper_mine_maintenance
     }
 
-    construction_demand = basic_construction_needs
+    construction_demand = RGO_construction
 
     modifier = {
         scaled_gold_to_building_owner = 0.1
@@ -1041,7 +1041,7 @@ corporate_gems_mine = {
         cap_econ_gems_mine_maintenance
     }
 
-    construction_demand = basic_construction_needs
+    construction_demand = RGO_construction
 
     modifier = {
         scaled_gold_to_building_owner = 0.1
@@ -1099,7 +1099,7 @@ corporate_gold_mine = {
         cap_econ_gold_mine_maintenance
     }
 
-    construction_demand = basic_construction_needs
+    construction_demand = RGO_construction
 
     modifier = {
         scaled_gold_to_building_owner = 0.1
@@ -1271,7 +1271,7 @@ corporate_iron_mine = {
         cap_econ_iron_mine_maintenance
     }
 
-    construction_demand = basic_construction_needs
+    construction_demand = RGO_construction
 
     modifier = {
         scaled_gold_to_building_owner = 0.1
@@ -1387,7 +1387,7 @@ corporate_lead_mine = {
         cap_econ_lead_mine_maintenance
     }
 
-    construction_demand = basic_construction_needs
+    construction_demand = RGO_construction
 
     modifier = {
         scaled_gold_to_building_owner = 0.1
@@ -1559,7 +1559,7 @@ corporate_lumber_mill = {
         cap_econ_lumber_mill_maintenance
     }
 
-    construction_demand = basic_construction_needs
+    construction_demand = RGO_construction
 
     modifier = {
         scaled_gold_to_building_owner = 0.1
@@ -1671,7 +1671,7 @@ corporate_marble_quarry = {
         cap_econ_marble_quarry_maintenance
     }
 
-    construction_demand = basic_construction_needs
+    construction_demand = RGO_construction
 
     modifier = {
         scaled_gold_to_building_owner = 0.1
@@ -1729,7 +1729,7 @@ corporate_medicinal_gatherers = {
         cap_econ_medicinal_gatherers_maintenance
     }
 
-    construction_demand = basic_construction_needs
+    construction_demand = RGO_construction
 
     modifier = {
         scaled_gold_to_building_owner = 0.1
@@ -1787,7 +1787,7 @@ corporate_mercury_mine = {
         cap_econ_mercury_mine_maintenance
     }
 
-    construction_demand = basic_construction_needs
+    construction_demand = RGO_construction
 
     modifier = {
         scaled_gold_to_building_owner = 0.1
@@ -1964,7 +1964,7 @@ corporate_pearl_divers = {
         cap_econ_pearl_divers_maintenance
     }
 
-    construction_demand = basic_construction_needs
+    construction_demand = RGO_construction
 }
 
 corporate_pepper_plantation = {
@@ -2305,7 +2305,7 @@ corporate_saltpeter_mine = {
         cap_econ_saltpeter_mine_maintenance
     }
 
-    construction_demand = basic_construction_needs
+    construction_demand = RGO_construction
 
     modifier = {
         scaled_gold_to_building_owner = 0.1
@@ -2363,7 +2363,7 @@ corporate_sand_pit = {
         cap_econ_sand_pit_maintenance
     }
 
-    construction_demand = basic_construction_needs
+    construction_demand = RGO_construction
 
     modifier = {
         scaled_gold_to_building_owner = 0.1
@@ -2478,7 +2478,7 @@ corporate_silver_mine = {
         cap_econ_silver_mine_maintenance
     }
 
-    construction_demand = basic_construction_needs
+    construction_demand = RGO_construction
 
     modifier = {
         scaled_gold_to_building_owner = 0.1
@@ -2536,7 +2536,7 @@ corporate_stone_quarry = {
         cap_econ_stone_quarry_maintenance
     }
 
-    construction_demand = basic_construction_needs
+    construction_demand = RGO_construction
 
     modifier = {
         scaled_gold_to_building_owner = 0.1
@@ -2708,7 +2708,7 @@ corporate_tin_mine = {
         cap_econ_tin_mine_maintenance
     }
 
-    construction_demand = basic_construction_needs
+    construction_demand = RGO_construction
 
     modifier = {
         scaled_gold_to_building_owner = 0.1

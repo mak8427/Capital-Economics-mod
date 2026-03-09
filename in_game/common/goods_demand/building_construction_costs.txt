@@ -1,0 +1,11 @@
+RGO_construction = {
+    lumber = 20
+    masonry = 20
+    tools = 20
+    glass = 20
+    fine_cloth = 20
+    goods_gold = 20
+    marble = 20
+    masonry = 20
+    category = building_construction
+}
